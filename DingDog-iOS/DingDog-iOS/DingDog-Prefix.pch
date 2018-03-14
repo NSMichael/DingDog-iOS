@@ -19,6 +19,8 @@
     #import "AFNetworkActivityIndicatorManager.h"
     #import "ReactiveCocoa.h"
     #import "RACEXTScope.h"
+    #import "Mantle.h"
+    #import "Masonry.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"
@@ -30,5 +32,7 @@
     #import "NSString+Common.h"
     #import "CustomBadge.h"
     #import "YYKit.h"
+    #import "EnumDefinition.h"
+    #import "TTTAttributedLabel.h"
 
 #endif /* DingDog_Prefix_pch */

@@ -63,7 +63,8 @@
 
 - (void)setupWelcomeViewController {
     
-    [self goToRootVC];
+    [self goToLoginVC];
+//    [self goToRootVC];
 }
 
 - (void)goToLoginVC {

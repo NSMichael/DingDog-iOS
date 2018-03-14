@@ -14,9 +14,6 @@
 #define TEST_MODE               NO  //发布时记得关闭这个状态
 #define SOCKET_ENABLE           YES
 
-//#define CP_Id CP_gh001  用来做窗帘和沙发的装饰
-
-
 #define CP_APPSTORE_WQF         0
 #define CP_INHOUSE_AC           200
 
