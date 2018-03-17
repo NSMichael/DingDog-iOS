@@ -346,6 +346,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
 		BB467CBF2057CE0400D18C97 /* DingDog-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DingDog-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CC22057CE0400D18C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB467CC32057CE0400D18C97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -359,7 +360,6 @@
 		BB467CE22057CE0400D18C97 /* DingDog-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DingDog-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CE62057CE0400D18C97 /* DingDog_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DingDog_iOSUITests.m; sourceTree = "<group>"; };
 		BB467CE82057CE0400D18C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB467CFF2057D0ED00D18C97 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
 		BB467D022057D28900D18C97 /* RootTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabViewController.h; sourceTree = "<group>"; };
 		BB467D032057D28900D18C97 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		BB467D042057D28900D18C97 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
@@ -1042,6 +1042,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A449A57205D230C0034FC73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BB467CB62057CE0400D18C97 = {
 			isa = PBXGroup;
 			children = (
@@ -1073,14 +1081,13 @@
 				BB467CF72057D00A00D18C97 /* Classes */,
 				BB467CF62057D00100D18C97 /* Architecture */,
 				BB467CFE2057D01500D18C97 /* Vendors */,
-				BB467CFD2057D01000D18C97 /* Resource */,
+				1A449A57205D230C0034FC73 /* Resources */,
 				BB467CC22057CE0400D18C97 /* AppDelegate.h */,
 				BB467CC32057CE0400D18C97 /* AppDelegate.m */,
 				BB467CCB2057CE0400D18C97 /* Assets.xcassets */,
 				BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */,
 				BB467CD02057CE0400D18C97 /* Info.plist */,
 				BB467CD12057CE0400D18C97 /* main.m */,
-				BB467CFF2057D0ED00D18C97 /* DingDog-Prefix.pch */,
 			);
 			path = "DingDog-iOS";
 			sourceTree = "<group>";
@@ -1169,13 +1176,6 @@
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
 			);
 			path = Tab4;
-			sourceTree = "<group>";
-		};
-		BB467CFD2057D01000D18C97 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
@@ -2807,7 +2807,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
@@ -2823,7 +2823,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
