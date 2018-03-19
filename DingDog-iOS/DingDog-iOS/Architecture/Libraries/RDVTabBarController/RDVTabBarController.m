@@ -212,7 +212,7 @@
         }
         
         [[weakSelf tabBar] setFrame:CGRectMake(0, tabBarStartingY, viewSize.width, tabBarHeight)];
-        [[weakSelf contentView] setFrame:CGRectMake(0, 0, viewSize.width, contentViewHeight)];
+        [[weakSelf contentView] setFrame:CGRectMake(0, 0, viewSize.width, contentViewHeight - tabBarHeight)];
     };
     
     void (^completion)(BOOL) = ^(BOOL finished){

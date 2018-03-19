@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MessageModel.h"
 
 extern NSString * const MessageListCellIdentifier;
 
 @interface MessageListCell : UITableViewCell
+
+- (void)configCellDataWithMessageModel:(MessageModel *)model;
 
 @end

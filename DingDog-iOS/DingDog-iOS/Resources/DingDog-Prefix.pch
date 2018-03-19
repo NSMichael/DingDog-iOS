@@ -35,5 +35,6 @@
     #import "YYKit.h"
     #import "EnumDefinition.h"
     #import "TTTAttributedLabel.h"
+    #import "UITableViewCell+Height.h"
 
 #endif /* DingDog_Prefix_pch */

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
+		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
 		BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCB2057CE0400D18C97 /* Assets.xcassets */; };
 		BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */; };
@@ -348,6 +350,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
+		1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Height.m"; sourceTree = "<group>"; };
 		1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
 		BB467CBF2057CE0400D18C97 /* DingDog-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DingDog-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CC22057CE0400D18C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1048,6 +1054,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2A7C75205FF15600786EC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A7C76205FF16800786EC0 /* MessageModel.h */,
+				1A2A7C77205FF16800786EC0 /* MessageModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A449A57205D230C0034FC73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1144,6 +1159,7 @@
 			children = (
 				BB467D162057D36E00D18C97 /* Tab1_RootViewController.h */,
 				BB467D172057D36E00D18C97 /* Tab1_RootViewController.m */,
+				1A2A7C75205FF15600786EC0 /* Models */,
 				BB873C3A205FA84A0013C6D6 /* Cells */,
 			);
 			path = Tab1;
@@ -1609,6 +1625,8 @@
 				BB467EB02057E1F200D18C97 /* UIColor+expanded.m */,
 				BB74D3912058B9CB00F8A55B /* NSData+WBEncode.h */,
 				BB74D3902058B9CB00F8A55B /* NSData+WBEncode.m */,
+				1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */,
+				1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -2446,6 +2464,7 @@
 				BB467D532057DEE600D18C97 /* DDAbstractDatabaseLogger.m in Sources */,
 				BB467D8D2057E06300D18C97 /* UIImageView+AFNetworking.m in Sources */,
 				BB74D48C2058BA9200F8A55B /* YYCGUtilities.m in Sources */,
+				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
 				BB74D4512058BA9200F8A55B /* YYImageCoder.m in Sources */,
 				BB74D30A2058B8F900F8A55B /* ACPDownloadView.m in Sources */,
 				BB74D3752058B93900F8A55B /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
@@ -2461,6 +2480,7 @@
 				BB467E6E2057E14000D18C97 /* RACDynamicSequence.m in Sources */,
 				BB74D3762058B93900F8A55B /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				BB74D35D2058B93900F8A55B /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */,
 				BB467D592057DFB600D18C97 /* SplashView.m in Sources */,
 				BB74D36B2058B93900F8A55B /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				BB74D44D2058BA9200F8A55B /* YYImageCache.m in Sources */,
@@ -2835,7 +2855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
@@ -2851,7 +2871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
