@@ -326,6 +326,8 @@
 		BB74D5042058FA0F00F8A55B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB74D4F92058FA0F00F8A55B /* Info.plist */; };
 		BB74D50820591EA700F8A55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB74D50720591E7F00F8A55B /* Foundation.framework */; };
 		BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */; };
+		BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873C3C205FA94D0013C6D6 /* MessageListCell.m */; };
+		BB873C41205FB0030013C6D6 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873C40205FB0020013C6D6 /* ODRefreshControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1014,6 +1016,10 @@
 		BB74D50720591E7F00F8A55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB74D50A205923CC00F8A55B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		BB873C3B205FA94D0013C6D6 /* MessageListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
+		BB873C3C205FA94D0013C6D6 /* MessageListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
+		BB873C3F205FB0020013C6D6 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		BB873C40205FB0020013C6D6 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1138,6 +1144,7 @@
 			children = (
 				BB467D162057D36E00D18C97 /* Tab1_RootViewController.h */,
 				BB467D172057D36E00D18C97 /* Tab1_RootViewController.m */,
+				BB873C3A205FA84A0013C6D6 /* Cells */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -1181,6 +1188,7 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BB873C3E205FB0020013C6D6 /* ODRefreshControl */,
 				BB74D509205923CC00F8A55B /* TTTAttributedLabel */,
 				BB74D4DF2058FA0F00F8A55B /* Masonry */,
 				BB74D4D12058F9C300F8A55B /* LYEmptyView */,
@@ -1236,11 +1244,11 @@
 		BB467D0C2057D31000D18C97 /* RDVTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				BB467D102057D31000D18C97 /* RDVTabBar.h */,
 				BB467D0D2057D31000D18C97 /* RDVTabBar.m */,
 				BB467D0E2057D31000D18C97 /* RDVTabBarController.h */,
-				BB467D0F2057D31000D18C97 /* RDVTabBarItem.h */,
-				BB467D102057D31000D18C97 /* RDVTabBar.h */,
 				BB467D112057D31000D18C97 /* RDVTabBarController.m */,
+				BB467D0F2057D31000D18C97 /* RDVTabBarItem.h */,
 				BB467D122057D31000D18C97 /* RDVTabBarItem.m */,
 			);
 			path = RDVTabBarController;
@@ -2204,6 +2212,24 @@
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
+		BB873C3A205FA84A0013C6D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BB873C3B205FA94D0013C6D6 /* MessageListCell.h */,
+				BB873C3C205FA94D0013C6D6 /* MessageListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BB873C3E205FB0020013C6D6 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				BB873C3F205FB0020013C6D6 /* ODRefreshControl.h */,
+				BB873C40205FB0020013C6D6 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2523,6 +2549,7 @@
 				BB467E842057E14000D18C97 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
 				BB74D3682058B93900F8A55B /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				BB467D812057E06300D18C97 /* AFHTTPSessionManager.m in Sources */,
+				BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */,
 				BB74D4DE2058F9C300F8A55B /* LYEmptyView.m in Sources */,
 				BB74D4572058BA9200F8A55B /* CALayer+YYWebImage.m in Sources */,
 				BB467EAD2057E14000D18C97 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
@@ -2619,6 +2646,7 @@
 				BB467EA62057E14000D18C97 /* RACEagerSequence.m in Sources */,
 				BB467E7D2057E14000D18C97 /* RACKVOChannel.m in Sources */,
 				BB467EAB2057E14000D18C97 /* RACImmediateScheduler.m in Sources */,
+				BB873C41205FB0030013C6D6 /* ODRefreshControl.m in Sources */,
 				BB74D4532058BA9200F8A55B /* _YYWebImageSetter.m in Sources */,
 				BB467E7A2057E14000D18C97 /* RACErrorSignal.m in Sources */,
 				BB74D4872058BA9200F8A55B /* NSDate+YYAdd.m in Sources */,
@@ -2807,7 +2835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
@@ -2823,7 +2851,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";

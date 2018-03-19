@@ -61,6 +61,7 @@
 }
 
 - (void)layoutSubviews {
+    /*
     CGSize frameSize = self.frame.size;
     CGFloat minimumContentHeight = [self minimumContentHeight];
     
@@ -83,6 +84,37 @@
         
         [item setFrame:CGRectMake(self.contentEdgeInsets.left + (index * self.itemWidth),
                                   roundf(frameSize.height - itemHeight) - self.contentEdgeInsets.top,
+                                  self.itemWidth, itemHeight - self.contentEdgeInsets.bottom)];
+        [item setNeedsDisplay];
+        
+        index++;
+    }
+     */
+    
+    
+    // 适配iPhoneX
+    CGSize frameSize = self.frame.size;
+    CGFloat minimumContentHeight = [self minimumContentHeight];
+    
+    [[self backgroundView] setFrame:CGRectMake(0, 0, frameSize.width, 49)];
+    
+    [self setItemWidth:roundf((frameSize.width - [self contentEdgeInsets].left -
+                               [self contentEdgeInsets].right) / [[self items] count])];
+    
+    NSInteger index = 0;
+    
+    // Layout items
+    
+    for (RDVTabBarItem *item in [self items])
+    {
+        CGFloat itemHeight = [item itemHeight];
+        
+        if (!itemHeight) {
+            itemHeight = 49;
+        }
+        
+        [item setFrame:CGRectMake(self.contentEdgeInsets.left + (index * self.itemWidth),
+                                  roundf(49 - itemHeight) - self.contentEdgeInsets.top,
                                   self.itemWidth, itemHeight - self.contentEdgeInsets.bottom)];
         [item setNeedsDisplay];
         

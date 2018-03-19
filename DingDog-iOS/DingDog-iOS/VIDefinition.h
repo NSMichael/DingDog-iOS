@@ -16,12 +16,24 @@
 #define kDevice_Is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define kDevice_IPHONE_X (kScreen_Width == 375.f && kScreen_Height == 812.f ? YES : NO)
+
 #define kScaleFrom_iPhone5_Desgin(_X_) (_X_ * (kScreen_Width/320))
 
 #define HEIGHT_BUTTON_BOTTOM    44 //界面底部按钮的高度
 #define HEIGHT_NAVIGATION_BAR   44
 // 状态栏高度
-#define HEIGHT_STATUSBAR     (IOS7_SDK_AVAILABLE?20:0)
+//#define HEIGHT_STATUSBAR     (IOS7_SDK_AVAILABLE?20:0)
+#define HEIGHT_STATUSBAR    (kDevice_IPHONE_X ? 44.f : 20.f)
+
+#define HEIGHT_TABBAR       (kDevice_IPHONE_X ? (49.f+34.f) : 49.f)
+
+// Tabbar safe bottom margin.
+#define  kTabbarSafeBottomMargin            (kDevice_IPHONE_X ? 34.f : 0.f)
+
+// Status bar & navigation bar height.
+#define  kStatusBarAndNavigationBarHeight   (kDevice_IPHONE_X ? 88.f : 64.f)
+
 // 显示主题内容界面高度
 #define kScreen_Height_Content  [UIScreen mainScreen].bounds.size.height - HEIGHT_NAVIGATION_BAR - HEIGHT_STATUSBAR
 

@@ -15,5 +15,7 @@
 
 @property (nonatomic, strong) RootTabViewController *rootVC;
 
+- (void)setupTabViewController;
+
 @end
 

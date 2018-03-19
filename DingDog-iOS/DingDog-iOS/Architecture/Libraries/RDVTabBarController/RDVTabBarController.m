@@ -198,7 +198,9 @@
         CGFloat tabBarHeight = CGRectGetHeight([[weakSelf tabBar] frame]);
         
         if (!tabBarHeight) {
-            tabBarHeight = 49;
+//            tabBarHeight = 49;
+            
+            tabBarHeight = kDevice_IPHONE_X ? 83 : 49;
         }
         
         if (!hidden) {

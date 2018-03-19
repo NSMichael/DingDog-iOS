@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "RootTabViewController.h"
+#import "AppDelegate.h"
 
 #define MAXLENGTH_11    11
 
@@ -158,6 +160,7 @@
     [_btnLogin setTitle:@"登录" forState:UIControlStateNormal];
     _btnLogin.backgroundColor = [UIColor colorWithHexString:@"0x007AFF"];
     _btnLogin.layer.cornerRadius = 20;
+    [_btnLogin addTarget:self action:@selector(onBtnLoginClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btnLogin];
     [self.btnLogin mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(200, 40));
@@ -270,6 +273,13 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)onBtnLoginClicked {
+    AppDelegate *app = APP;
+//    [app jpushConfigInitAndLogin];
+    
+    [APP setupTabViewController];
 }
 
 #pragma mark 文字的点击事件

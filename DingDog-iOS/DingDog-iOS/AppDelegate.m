@@ -63,8 +63,8 @@
 
 - (void)setupWelcomeViewController {
     
-    [self goToLoginVC];
-//    [self goToRootVC];
+//    [self goToLoginVC];
+    [self setupTabViewController];
 }
 
 - (void)goToLoginVC {
@@ -73,7 +73,7 @@
     [self.window setRootViewController:nav];
 }
 
-- (void)goToRootVC {
+- (void)setupTabViewController {
     self.rootVC = [[RootTabViewController alloc] init];
     self.rootVC.tabBar.translucent = YES;
     [self.window setRootViewController:self.rootVC];
