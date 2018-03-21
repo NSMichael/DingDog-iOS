@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A25EF2A20629A3000C72698 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2920629A3000C72698 /* TagModel.m */; };
+		1A25EF2E20629B6A00C72698 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2D20629B6A00C72698 /* TagListCell.m */; };
+		1A25EF312062A60900C72698 /* TagSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF302062A60900C72698 /* TagSearchViewController.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -350,6 +353,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A25EF2820629A3000C72698 /* TagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
+		1A25EF2920629A3000C72698 /* TagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
+		1A25EF2C20629B6A00C72698 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
+		1A25EF2D20629B6A00C72698 /* TagListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListCell.m; sourceTree = "<group>"; };
+		1A25EF2F2062A60900C72698 /* TagSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagSearchViewController.h; sourceTree = "<group>"; };
+		1A25EF302062A60900C72698 /* TagSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagSearchViewController.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1054,6 +1063,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A25EF27206299D500C72698 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A25EF2820629A3000C72698 /* TagModel.h */,
+				1A25EF2920629A3000C72698 /* TagModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A25EF2B20629B6A00C72698 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1A25EF2C20629B6A00C72698 /* TagListCell.h */,
+				1A25EF2D20629B6A00C72698 /* TagListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1179,6 +1206,10 @@
 			children = (
 				BB467D192057D37E00D18C97 /* Tab2_RootViewController.h */,
 				BB467D1A2057D37E00D18C97 /* Tab2_RootViewController.m */,
+				1A25EF2F2062A60900C72698 /* TagSearchViewController.h */,
+				1A25EF302062A60900C72698 /* TagSearchViewController.m */,
+				1A25EF27206299D500C72698 /* Models */,
+				1A25EF2B20629B6A00C72698 /* Cells */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -2492,6 +2523,7 @@
 				BB74D38F2058B98800F8A55B /* NSString+Common.m in Sources */,
 				BB74D35E2058B93900F8A55B /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				BB74D44A2058BA9200F8A55B /* YYCache.m in Sources */,
+				1A25EF2E20629B6A00C72698 /* TagListCell.m in Sources */,
 				BB74D3082058B8F900F8A55B /* ACPDownloadConstants.m in Sources */,
 				BB74D3732058B93900F8A55B /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				BB74D38E2058B98800F8A55B /* NSString+WBEncode.m in Sources */,
@@ -2514,6 +2546,7 @@
 				BB467E6A2057E14000D18C97 /* RACObjCRuntime.m in Sources */,
 				BB467D832057E06300D18C97 /* AFURLSessionManager.m in Sources */,
 				BB467EAC2057E14000D18C97 /* RACTuple.m in Sources */,
+				1A25EF312062A60900C72698 /* TagSearchViewController.m in Sources */,
 				BB467E882057E14000D18C97 /* RACScopedDisposable.m in Sources */,
 				BB467D4F2057DEE600D18C97 /* DDContextFilterLogFormatter.m in Sources */,
 				BB467E822057E14000D18C97 /* RACBacktrace.m in Sources */,
@@ -2567,6 +2600,7 @@
 				BB467EA82057E14000D18C97 /* RACCompoundDisposable.m in Sources */,
 				BB467E952057E14000D18C97 /* NSSet+RACSequenceAdditions.m in Sources */,
 				BB467E842057E14000D18C97 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
+				1A25EF2A20629A3000C72698 /* TagModel.m in Sources */,
 				BB74D3682058B93900F8A55B /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				BB467D812057E06300D18C97 /* AFHTTPSessionManager.m in Sources */,
 				BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */,

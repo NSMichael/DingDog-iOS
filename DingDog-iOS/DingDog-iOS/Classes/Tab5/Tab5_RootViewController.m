@@ -51,7 +51,7 @@
     if (!_headerView) {
         _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 72)];
         
-        _lblUserName = [[UILabel alloc] initWithFrame:CGRectMake(16, 25, kScreen_Width - 130, 22)];
+        _lblUserName = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, kScreen_Width - 130, 22)];
         _lblUserName.font = kFont20;
         _lblUserName.textColor = [UIColor colorWithHexString:@"0x000000"];
         [_headerView addSubview:_lblUserName];
