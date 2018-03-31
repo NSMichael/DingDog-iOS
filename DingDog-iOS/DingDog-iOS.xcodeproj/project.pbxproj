@@ -10,6 +10,15 @@
 		1A25EF2A20629A3000C72698 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2920629A3000C72698 /* TagModel.m */; };
 		1A25EF2E20629B6A00C72698 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2D20629B6A00C72698 /* TagListCell.m */; };
 		1A25EF312062A60900C72698 /* TagSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF302062A60900C72698 /* TagSearchViewController.m */; };
+		1A28FBA9206FCBAB00041943 /* MsgSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBA8206FCBAB00041943 /* MsgSearchViewController.m */; };
+		1A28FBB1206FCFC300041943 /* CustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB0206FCFC300041943 /* CustomerModel.m */; };
+		1A28FBB4206FD31B00041943 /* CustomerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB3206FD31B00041943 /* CustomerListCell.m */; };
+		1A28FBB7206FD49C00041943 /* CustomerSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */; };
+		1A28FBC1206FD7DA00041943 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBBB206FD7D900041943 /* .gitkeep */; };
+		1A28FBC2206FD7DA00041943 /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBBD206FD7D900041943 /* TTGTagCollectionView.m */; };
+		1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBBE206FD7D900041943 /* TTGTextTagCollectionView.m */; };
+		1A28FBC4206FD7DA00041943 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBC0206FD7D900041943 /* .gitkeep */; };
+		1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -359,6 +368,22 @@
 		1A25EF2D20629B6A00C72698 /* TagListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListCell.m; sourceTree = "<group>"; };
 		1A25EF2F2062A60900C72698 /* TagSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagSearchViewController.h; sourceTree = "<group>"; };
 		1A25EF302062A60900C72698 /* TagSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagSearchViewController.m; sourceTree = "<group>"; };
+		1A28FBA7206FCBAB00041943 /* MsgSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgSearchViewController.h; sourceTree = "<group>"; };
+		1A28FBA8206FCBAB00041943 /* MsgSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgSearchViewController.m; sourceTree = "<group>"; };
+		1A28FBAF206FCFC300041943 /* CustomerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerModel.h; sourceTree = "<group>"; };
+		1A28FBB0206FCFC300041943 /* CustomerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerModel.m; sourceTree = "<group>"; };
+		1A28FBB2206FD31B00041943 /* CustomerListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerListCell.h; sourceTree = "<group>"; };
+		1A28FBB3206FD31B00041943 /* CustomerListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerListCell.m; sourceTree = "<group>"; };
+		1A28FBB5206FD49C00041943 /* CustomerSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSearchViewController.h; sourceTree = "<group>"; };
+		1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerSearchViewController.m; sourceTree = "<group>"; };
+		1A28FBBA206FD7D900041943 /* TTGTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTagCollectionView.h; sourceTree = "<group>"; };
+		1A28FBBB206FD7D900041943 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		1A28FBBC206FD7D900041943 /* TTGTextTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTextTagCollectionView.h; sourceTree = "<group>"; };
+		1A28FBBD206FD7D900041943 /* TTGTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTagCollectionView.m; sourceTree = "<group>"; };
+		1A28FBBE206FD7D900041943 /* TTGTextTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTextTagCollectionView.m; sourceTree = "<group>"; };
+		1A28FBC0206FD7D900041943 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		1A28FBC7206FDE7900041943 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1081,6 +1106,62 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1A28FBAA206FCE9D00041943 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBAF206FCFC300041943 /* CustomerModel.h */,
+				1A28FBB0206FCFC300041943 /* CustomerModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A28FBAB206FCEAA00041943 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBB2206FD31B00041943 /* CustomerListCell.h */,
+				1A28FBB3206FD31B00041943 /* CustomerListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1A28FBB8206FD7D900041943 /* TTGTagCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBB9206FD7D900041943 /* Classes */,
+				1A28FBBF206FD7D900041943 /* Assets */,
+			);
+			path = TTGTagCollectionView;
+			sourceTree = "<group>";
+		};
+		1A28FBB9206FD7D900041943 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBBA206FD7D900041943 /* TTGTagCollectionView.h */,
+				1A28FBBB206FD7D900041943 /* .gitkeep */,
+				1A28FBBC206FD7D900041943 /* TTGTextTagCollectionView.h */,
+				1A28FBBD206FD7D900041943 /* TTGTagCollectionView.m */,
+				1A28FBBE206FD7D900041943 /* TTGTextTagCollectionView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1A28FBBF206FD7D900041943 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBC0206FD7D900041943 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1A28FBC5206FDE7900041943 /* PinYin */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */,
+				1A28FBC7206FDE7900041943 /* ChineseToPinyin.h */,
+			);
+			path = PinYin;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1267,8 @@
 			children = (
 				BB467D162057D36E00D18C97 /* Tab1_RootViewController.h */,
 				BB467D172057D36E00D18C97 /* Tab1_RootViewController.m */,
+				1A28FBA7206FCBAB00041943 /* MsgSearchViewController.h */,
+				1A28FBA8206FCBAB00041943 /* MsgSearchViewController.m */,
 				1A2A7C75205FF15600786EC0 /* Models */,
 				BB873C3A205FA84A0013C6D6 /* Cells */,
 			);
@@ -1219,6 +1302,10 @@
 			children = (
 				BB467D1C2057D38A00D18C97 /* Tab3_RootViewController.h */,
 				BB467D1D2057D38A00D18C97 /* Tab3_RootViewController.m */,
+				1A28FBB5206FD49C00041943 /* CustomerSearchViewController.h */,
+				1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */,
+				1A28FBAA206FCE9D00041943 /* Models */,
+				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -1235,6 +1322,8 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FBC5206FDE7900041943 /* PinYin */,
+				1A28FBB8206FD7D900041943 /* TTGTagCollectionView */,
 				BB873C3E205FB0020013C6D6 /* ODRefreshControl */,
 				BB74D509205923CC00F8A55B /* TTTAttributedLabel */,
 				BB74D4DF2058FA0F00F8A55B /* Masonry */,
@@ -2391,6 +2480,8 @@
 				BB467E532057E14000D18C97 /* README.md in Resources */,
 				BB74D4CE2058F77300F8A55B /* Info.plist in Resources */,
 				BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */,
+				1A28FBC1206FD7DA00041943 /* .gitkeep in Resources */,
+				1A28FBC4206FD7DA00041943 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2442,6 +2533,7 @@
 				BB74D3722058B93900F8A55B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				BB74D4682058BA9200F8A55B /* YYTextUtilities.m in Sources */,
 				BB467E9C2057E14000D18C97 /* RACDisposable.m in Sources */,
+				1A28FBB4206FD31B00041943 /* CustomerListCell.m in Sources */,
 				BB467E972057E14000D18C97 /* UIRefreshControl+RACCommandSupport.m in Sources */,
 				BB467E662057E14000D18C97 /* RACGroupedSignal.m in Sources */,
 				BB74D36F2058B93900F8A55B /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
@@ -2495,6 +2587,7 @@
 				BB467D532057DEE600D18C97 /* DDAbstractDatabaseLogger.m in Sources */,
 				BB467D8D2057E06300D18C97 /* UIImageView+AFNetworking.m in Sources */,
 				BB74D48C2058BA9200F8A55B /* YYCGUtilities.m in Sources */,
+				1A28FBB1206FCFC300041943 /* CustomerModel.m in Sources */,
 				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
 				BB74D4512058BA9200F8A55B /* YYImageCoder.m in Sources */,
 				BB74D30A2058B8F900F8A55B /* ACPDownloadView.m in Sources */,
@@ -2521,6 +2614,7 @@
 				BB74D4FE2058FA0F00F8A55B /* MASLayoutConstraint.m in Sources */,
 				BB74D5012058FA0F00F8A55B /* MASConstraint.m in Sources */,
 				BB74D38F2058B98800F8A55B /* NSString+Common.m in Sources */,
+				1A28FBA9206FCBAB00041943 /* MsgSearchViewController.m in Sources */,
 				BB74D35E2058B93900F8A55B /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				BB74D44A2058BA9200F8A55B /* YYCache.m in Sources */,
 				1A25EF2E20629B6A00C72698 /* TagListCell.m in Sources */,
@@ -2650,6 +2744,7 @@
 				BB467E5E2057E14000D18C97 /* UISwitch+RACSignalSupport.m in Sources */,
 				BB74D4732058BA9200F8A55B /* UIDevice+YYAdd.m in Sources */,
 				BB467D8B2057E06300D18C97 /* UIRefreshControl+AFNetworking.m in Sources */,
+				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
 				BB74D4942058BA9200F8A55B /* YYKeychain.m in Sources */,
 				BB467E632057E14000D18C97 /* UITextView+RACSignalSupport.m in Sources */,
 				BB74D4DC2058F9C300F8A55B /* UIScrollView+Empty.m in Sources */,
@@ -2684,6 +2779,7 @@
 				BB74D4782058BA9200F8A55B /* UIView+YYAdd.m in Sources */,
 				BB74D36A2058B93900F8A55B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				BB467E562057E14000D18C97 /* UIStepper+RACSignalSupport.m in Sources */,
+				1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */,
 				BB74D5002058FA0F00F8A55B /* View+MASAdditions.m in Sources */,
 				BB74D47E2058BA9200F8A55B /* NSArray+YYAdd.m in Sources */,
 				BB74D35C2058B93900F8A55B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
@@ -2697,10 +2793,12 @@
 				BB74D5032058FA0F00F8A55B /* MASViewAttribute.m in Sources */,
 				BB74D3922058B9CB00F8A55B /* NSData+WBEncode.m in Sources */,
 				BB74D47F2058BA9200F8A55B /* NSNumber+YYAdd.m in Sources */,
+				1A28FBC2206FD7DA00041943 /* TTGTagCollectionView.m in Sources */,
 				BB467EA62057E14000D18C97 /* RACEagerSequence.m in Sources */,
 				BB467E7D2057E14000D18C97 /* RACKVOChannel.m in Sources */,
 				BB467EAB2057E14000D18C97 /* RACImmediateScheduler.m in Sources */,
 				BB873C41205FB0030013C6D6 /* ODRefreshControl.m in Sources */,
+				1A28FBB7206FD49C00041943 /* CustomerSearchViewController.m in Sources */,
 				BB74D4532058BA9200F8A55B /* _YYWebImageSetter.m in Sources */,
 				BB467E7A2057E14000D18C97 /* RACErrorSignal.m in Sources */,
 				BB74D4872058BA9200F8A55B /* NSDate+YYAdd.m in Sources */,

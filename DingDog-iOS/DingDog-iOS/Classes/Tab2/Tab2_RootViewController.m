@@ -21,10 +21,6 @@
 @property (strong,nonatomic) NSMutableArray  *searchResults;  //搜索结果
 @property (strong,nonatomic) TagSearchViewController *resultVC; //搜索结果展示控制器
 
-//在新控制器里：
-//在获得搜索结果数据时，调用刷新页面的方法
-@property (nonatomic,strong) NSArray *results;
-
 @end
 
 @implementation Tab2_RootViewController
