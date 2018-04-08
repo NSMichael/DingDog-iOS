@@ -168,6 +168,55 @@
     
 }
 
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return   UITableViewCellEditingStyleDelete;
+}
+
+//先要设Cell可编辑
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+//进入编辑模式，按下出现的编辑按钮后
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WS(weakself);
+    [tableView setEditing:NO animated:YES];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"你确定解散该标签？" preferredStyle:UIAlertControllerStyleAlert];
+        
+        //        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            
+            TagModel *model = weakself.tagArray[indexPath.row];
+            [weakself.tagArray removeObject:model];
+            [weakself.mTableView reloadData];
+            
+        }]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+//修改编辑按钮文字
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"解散标签";
+}
+
+//设置进入编辑状态时，Cell不会缩进
+
+- (BOOL)tableView: (UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
 #pragma mark UISearchResultsUpdating
 // 每次更新搜索框里的文字，就会调用这个方法
 // Called when the search bar's text or scope has changed or when the search bar becomes first responder.
