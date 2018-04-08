@@ -63,8 +63,8 @@
 
 - (void)setupWelcomeViewController {
     
-//    [self goToLoginVC];
-    [self setupTabViewController];
+    [self goToLoginVC];
+//    [self setupTabViewController];
 }
 
 - (void)goToLoginVC {

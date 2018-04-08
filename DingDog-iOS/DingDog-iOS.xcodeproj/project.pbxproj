@@ -19,6 +19,9 @@
 		1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBBE206FD7D900041943 /* TTGTextTagCollectionView.m */; };
 		1A28FBC4206FD7DA00041943 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBC0206FD7D900041943 /* .gitkeep */; };
 		1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */; };
+		1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBCE207A56A300041943 /* GroupSendModel.m */; };
+		1A28FBD2207A57BE00041943 /* GroupSendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD1207A57BE00041943 /* GroupSendListCell.m */; };
+		1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -384,6 +387,12 @@
 		1A28FBC0206FD7D900041943 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
 		1A28FBC7206FDE7900041943 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
+		1A28FBCD207A56A300041943 /* GroupSendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendModel.h; sourceTree = "<group>"; };
+		1A28FBCE207A56A300041943 /* GroupSendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendModel.m; sourceTree = "<group>"; };
+		1A28FBD0207A57BE00041943 /* GroupSendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListCell.h; sourceTree = "<group>"; };
+		1A28FBD1207A57BE00041943 /* GroupSendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListCell.m; sourceTree = "<group>"; };
+		1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendSearchViewController.h; sourceTree = "<group>"; };
+		1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendSearchViewController.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1162,6 +1171,24 @@
 			path = PinYin;
 			sourceTree = "<group>";
 		};
+		1A28FBCB207A561900041943 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBCD207A56A300041943 /* GroupSendModel.h */,
+				1A28FBCE207A56A300041943 /* GroupSendModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A28FBCC207A561F00041943 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBD0207A57BE00041943 /* GroupSendListCell.h */,
+				1A28FBD1207A57BE00041943 /* GroupSendListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1315,6 +1342,10 @@
 			children = (
 				BB467D1F2057D39400D18C97 /* Tab4_RootViewController.h */,
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
+				1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */,
+				1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */,
+				1A28FBCB207A561900041943 /* Models */,
+				1A28FBCC207A561F00041943 /* Cells */,
 			);
 			path = Tab4;
 			sourceTree = "<group>";
@@ -2507,6 +2538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB74D4902058BA9200F8A55B /* YYThreadSafeDictionary.m in Sources */,
+				1A28FBD2207A57BE00041943 /* GroupSendListCell.m in Sources */,
 				BB467E692057E14000D18C97 /* RACChannel.m in Sources */,
 				BB74D4552058BA9200F8A55B /* UIImageView+YYWebImage.m in Sources */,
 				BB74D48B2058BA9200F8A55B /* NSObject+YYAddForKVO.m in Sources */,
@@ -2750,6 +2782,7 @@
 				BB74D4DC2058F9C300F8A55B /* UIScrollView+Empty.m in Sources */,
 				BB74D45D2058BA9200F8A55B /* YYTextMagnifier.m in Sources */,
 				BB467E6D2057E14000D18C97 /* RACEmptySequence.m in Sources */,
+				1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */,
 				BB467E7E2057E14000D18C97 /* NSObject+RACPropertySubscribing.m in Sources */,
 				BB74D35A2058B93900F8A55B /* DGActivityIndicatorView.m in Sources */,
 				BB74D37B2058B93900F8A55B /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -2773,6 +2806,7 @@
 				BB467CD22057CE0400D18C97 /* main.m in Sources */,
 				BB74D4592058BA9200F8A55B /* YYWebImageOperation.m in Sources */,
 				BB467D1B2057D37E00D18C97 /* Tab2_RootViewController.m in Sources */,
+				1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */,
 				BB74D3072058B8F900F8A55B /* ACPStaticImagesAlternative.m in Sources */,
 				BB467EBE2057E22A00D18C97 /* UIImage+Common.m in Sources */,
 				BB74D4992058BA9200F8A55B /* YYReachability.m in Sources */,
