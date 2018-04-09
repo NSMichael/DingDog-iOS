@@ -22,6 +22,18 @@
 		1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBCE207A56A300041943 /* GroupSendModel.m */; };
 		1A28FBD2207A57BE00041943 /* GroupSendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD1207A57BE00041943 /* GroupSendListCell.m */; };
 		1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */; };
+		1A28FBDC207BAB6900041943 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBD9207BAB6900041943 /* README.txt */; };
+		1A28FBDD207BAB6900041943 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FBDB207BAB6900041943 /* libWeChatSDK.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A28FBDF207BAFA200041943 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FBDE207BAFA200041943 /* libc++.tbd */; };
+		1A28FBEF207BB5AE00041943 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBE1207BB5AD00041943 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1A28FBF0207BB5AE00041943 /* NetworkAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBE2207BB5AD00041943 /* NetworkAPIClient.m */; };
+		1A28FBF1207BB5AE00041943 /* BaseCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBE4207BB5AD00041943 /* BaseCmd.m */; };
+		1A28FBF2207BB5AE00041943 /* NetworkAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBE5207BB5AD00041943 /* NetworkAPIManager.m */; };
+		1A28FBF4207BB5AE00041943 /* RMTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBEC207BB5AD00041943 /* RMTAPIClient.m */; };
+		1A28FC07207BC08C00041943 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FC06207BC08B00041943 /* CoreGraphics.framework */; };
+		1A28FC09207BC09E00041943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FC08207BC09D00041943 /* UIKit.framework */; };
+		1A28FC0B207BC36200041943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FC0A207BC36200041943 /* QuartzCore.framework */; };
+		1A28FC23207BC8EF00041943 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC22207BC8EF00041943 /* NSObject+Common.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -393,6 +405,27 @@
 		1A28FBD1207A57BE00041943 /* GroupSendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListCell.m; sourceTree = "<group>"; };
 		1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendSearchViewController.h; sourceTree = "<group>"; };
 		1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendSearchViewController.m; sourceTree = "<group>"; };
+		1A28FBD7207BAB6900041943 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		1A28FBD8207BAB6900041943 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		1A28FBD9207BAB6900041943 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		1A28FBDA207BAB6900041943 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		1A28FBDB207BAB6900041943 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		1A28FBDE207BAFA200041943 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1A28FBE1207BB5AD00041943 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1A28FBE2207BB5AD00041943 /* NetworkAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIClient.m; sourceTree = "<group>"; };
+		1A28FBE3207BB5AD00041943 /* RMTAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTAPIClient.h; sourceTree = "<group>"; };
+		1A28FBE4207BB5AD00041943 /* BaseCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCmd.m; sourceTree = "<group>"; };
+		1A28FBE5207BB5AD00041943 /* NetworkAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIManager.m; sourceTree = "<group>"; };
+		1A28FBE6207BB5AD00041943 /* NetworkAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIClient.h; sourceTree = "<group>"; };
+		1A28FBEB207BB5AD00041943 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1A28FBEC207BB5AD00041943 /* RMTAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTAPIClient.m; sourceTree = "<group>"; };
+		1A28FBED207BB5AD00041943 /* NetworkAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIManager.h; sourceTree = "<group>"; };
+		1A28FBEE207BB5AD00041943 /* BaseCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCmd.h; sourceTree = "<group>"; };
+		1A28FC06207BC08B00041943 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1A28FC08207BC09D00041943 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1A28FC0A207BC36200041943 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1A28FC21207BC8EE00041943 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
+		1A28FC22207BC8EF00041943 /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1076,6 +1109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A28FC0B207BC36200041943 /* QuartzCore.framework in Frameworks */,
+				1A28FC09207BC09E00041943 /* UIKit.framework in Frameworks */,
+				1A28FC07207BC08C00041943 /* CoreGraphics.framework in Frameworks */,
+				1A28FBDF207BAFA200041943 /* libc++.tbd in Frameworks */,
+				1A28FBDD207BAB6900041943 /* libWeChatSDK.a in Frameworks */,
 				BB74D50820591EA700F8A55B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1189,6 +1227,35 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1A28FBD6207BAB6900041943 /* WechtSDK1.8.2_NoPay */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBD7207BAB6900041943 /* WXApi.h */,
+				1A28FBD8207BAB6900041943 /* WXApiObject.h */,
+				1A28FBD9207BAB6900041943 /* README.txt */,
+				1A28FBDA207BAB6900041943 /* WechatAuthSDK.h */,
+				1A28FBDB207BAB6900041943 /* libWeChatSDK.a */,
+			);
+			path = WechtSDK1.8.2_NoPay;
+			sourceTree = "<group>";
+		};
+		1A28FBE0207BB5AD00041943 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FBED207BB5AD00041943 /* NetworkAPIManager.h */,
+				1A28FBE5207BB5AD00041943 /* NetworkAPIManager.m */,
+				1A28FBE3207BB5AD00041943 /* RMTAPIClient.h */,
+				1A28FBEC207BB5AD00041943 /* RMTAPIClient.m */,
+				1A28FBE6207BB5AD00041943 /* NetworkAPIClient.h */,
+				1A28FBE2207BB5AD00041943 /* NetworkAPIClient.m */,
+				1A28FBEE207BB5AD00041943 /* BaseCmd.h */,
+				1A28FBE4207BB5AD00041943 /* BaseCmd.m */,
+				1A28FBEB207BB5AD00041943 /* Reachability.h */,
+				1A28FBE1207BB5AD00041943 /* Reachability.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,6 +1336,7 @@
 		BB467CF62057D00100D18C97 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FBE0207BB5AD00041943 /* Network */,
 				BB74D2EE2058B83500F8A55B /* Utilities */,
 				BB467EAE2057E1DD00D18C97 /* Categorys */,
 				BB467D0B2057D30500D18C97 /* Libraries */,
@@ -1353,6 +1421,7 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FBD6207BAB6900041943 /* WechtSDK1.8.2_NoPay */,
 				1A28FBC5206FDE7900041943 /* PinYin */,
 				1A28FBB8206FD7D900041943 /* TTGTagCollectionView */,
 				BB873C3E205FB0020013C6D6 /* ODRefreshControl */,
@@ -1778,6 +1847,8 @@
 				BB74D3902058B9CB00F8A55B /* NSData+WBEncode.m */,
 				1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */,
 				1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */,
+				1A28FC21207BC8EE00041943 /* NSObject+Common.h */,
+				1A28FC22207BC8EF00041943 /* NSObject+Common.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -2367,6 +2438,10 @@
 		BB74D50620591E7F00F8A55B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FC0A207BC36200041943 /* QuartzCore.framework */,
+				1A28FC08207BC09D00041943 /* UIKit.framework */,
+				1A28FC06207BC08B00041943 /* CoreGraphics.framework */,
+				1A28FBDE207BAFA200041943 /* libc++.tbd */,
 				BB74D50720591E7F00F8A55B /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -2506,6 +2581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */,
+				1A28FBDC207BAB6900041943 /* README.txt in Resources */,
 				BB467E522057E14000D18C97 /* LICENSE.md in Resources */,
 				BB74D5042058FA0F00F8A55B /* Info.plist in Resources */,
 				BB467E532057E14000D18C97 /* README.md in Resources */,
@@ -2558,6 +2634,7 @@
 				BB74D3632058B93900F8A55B /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				BB467E6C2057E14000D18C97 /* RACUnarySequence.m in Sources */,
 				BB467E5B2057E14000D18C97 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
+				1A28FBF4207BB5AE00041943 /* RMTAPIClient.m in Sources */,
 				BB467EC12057E22A00D18C97 /* UIImage+Resize.m in Sources */,
 				BB467E902057E14000D18C97 /* NSString+RACSequenceAdditions.m in Sources */,
 				BB467E582057E14000D18C97 /* RACStringSequence.m in Sources */,
@@ -2616,6 +2693,7 @@
 				BB467D2F2057DE0600D18C97 /* iConsole.m in Sources */,
 				BB467D152057D31000D18C97 /* RDVTabBarItem.m in Sources */,
 				BB467E8A2057E14000D18C97 /* RACPassthroughSubscriber.m in Sources */,
+				1A28FBF1207BB5AE00041943 /* BaseCmd.m in Sources */,
 				BB467D532057DEE600D18C97 /* DDAbstractDatabaseLogger.m in Sources */,
 				BB467D8D2057E06300D18C97 /* UIImageView+AFNetworking.m in Sources */,
 				BB74D48C2058BA9200F8A55B /* YYCGUtilities.m in Sources */,
@@ -2635,6 +2713,7 @@
 				BB74D4702058BA9200F8A55B /* UITextField+YYAdd.m in Sources */,
 				BB467E6E2057E14000D18C97 /* RACDynamicSequence.m in Sources */,
 				BB74D3762058B93900F8A55B /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
+				1A28FC23207BC8EF00041943 /* NSObject+Common.m in Sources */,
 				BB74D35D2058B93900F8A55B /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */,
 				BB467D592057DFB600D18C97 /* SplashView.m in Sources */,
@@ -2661,6 +2740,7 @@
 				BB74D3972058BA1C00F8A55B /* GTMBase64.m in Sources */,
 				BB467D502057DEE600D18C97 /* DDDispatchQueueLogFormatter.m in Sources */,
 				BB467E9A2057E14000D18C97 /* UIControl+RACSignalSupport.m in Sources */,
+				1A28FBF0207BB5AE00041943 /* NetworkAPIClient.m in Sources */,
 				BB74D3702058B93900F8A55B /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				BB74D4C32058F77300F8A55B /* EXTRuntimeExtensions.m in Sources */,
 				BB74D48D2058BA9200F8A55B /* CALayer+YYAdd.m in Sources */,
@@ -2699,6 +2779,7 @@
 				BB74D37C2058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				BB467EA12057E14000D18C97 /* RACSubject.m in Sources */,
 				BB467E862057E14000D18C97 /* UIDatePicker+RACSignalSupport.m in Sources */,
+				1A28FBEF207BB5AE00041943 /* Reachability.m in Sources */,
 				BB74D48E2058BA9200F8A55B /* YYWeakProxy.m in Sources */,
 				BB74D3792058B93900F8A55B /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				BB467E5F2057E14000D18C97 /* RACTargetQueueScheduler.m in Sources */,
@@ -2795,6 +2876,7 @@
 				BB467E542057E14000D18C97 /* NSFileHandle+RACSupport.m in Sources */,
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
 				BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */,
+				1A28FBF2207BB5AE00041943 /* NetworkAPIManager.m in Sources */,
 				BB467E5C2057E14000D18C97 /* RACSignal.m in Sources */,
 				BB467E982057E14000D18C97 /* RACReturnSignal.m in Sources */,
 				BB74D3672058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
@@ -3020,11 +3102,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DingDog-iOS/Vendors/WechtSDK1.8.2_NoPay",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bulldogo.xibot.dbg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3036,11 +3124,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEQSU47H36;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jackma.DingDog-iOS";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DingDog-iOS/Vendors/WechtSDK1.8.2_NoPay",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bulldogo.xibot.dbg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

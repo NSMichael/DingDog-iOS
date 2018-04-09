@@ -269,10 +269,112 @@
         make.centerX.mas_equalTo(self.uvWeChat.mas_centerX);
         make.centerY.mas_equalTo(self.uvWeChat.mas_centerY);
     }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onWXTapped)];
+    [self.uvWeChat addGestureRecognizer:tap];
+    
+    //跳转到主界面
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wechatDidLoginNotification:) name:@"wechatDidLoginNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"wechatDidLoginNotification" object:nil];
+}
+
+- (void)wechatDidLoginNotification:(NSNotification *)notification {
+    NSString *code = [notification.userInfo objectForKey:@"code"];
+    [self getWechatAccessTokenWithCode:code];
+}
+
+- (void)getWechatAccessTokenWithCode:(NSString *)code
+{
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",
+                    kAPPSTORE_WECHAT_APPID, kAPPSTORE_WECHAT_SECRET,code];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                NSLog(@"%@",dic);
+                NSString *accessToken = dic[@"access_token"];
+                NSString *openId = dic[@"openid"];
+                
+                [self getWechatUserInfoWithAccessToken:accessToken openId:openId];
+            }
+        });
+    });
+}
+
+- (void)getWechatUserInfoWithAccessToken:(NSString *)accessToken openId:(NSString *)openId
+{
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@",accessToken,openId];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                NSLog(@"%@",dic);
+                
+                NSString *openId = [dic objectForKey:@"openid"];
+                NSString *unionid = [dic objectForKey:@"unionid"];
+                [self loginByWeChatWithOpenId:openId UnionId:unionid];
+            }
+        });
+        
+    });
+}
+
+- (void)loginByWeChatWithOpenId:(NSString *)openId UnionId:(NSString *)unionId {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:openId forKey:@""];
+    [params setObject:unionId forKey:@""];
+    [params setObject:@"iOS" forKey:@""];
+    
+    WS(weakSelf);
+    [NetworkAPIManager login_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                [APP setupTabViewController];
+            } failed:^(NSInteger errCode) {
+                
+            }];
+        }
+    }];
+}
+
+- (void)onWXTapped {
+    NSLog(@"%s",__func__);
+    
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc] init];
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
 }
 
 - (void)onBtnLoginClicked {

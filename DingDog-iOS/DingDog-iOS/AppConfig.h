@@ -10,7 +10,7 @@
 #import "DDTTYLogger.h"
 
 //--1：调试模式--
-#define DEBUG_VERSION           NO
+#define DEBUG_VERSION           YES
 #define TEST_MODE               NO  //发布时记得关闭这个状态
 #define SOCKET_ENABLE           YES
 
@@ -30,7 +30,7 @@
 #define kVersionBuild_zhaobu [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 
 //URL
-#define BASE_URL @"api.ddzhaobu.com/zml"              // 正式的生产服务器
+#define BASE_URL @"v1.api.bulldogo.com/"              // 正式的生产服务器
 //#define BASE_URL @"192.168.254.55/9tong-zml-app/"              // 魏慧
 //#define BASE_URL @"api1.ddzhaobu.com/zml"             // 找布云测试服务器
 //#define BASE_URL @"192.168.254.18:8081/9tong-zml-app"         // 测试服务器2
@@ -140,21 +140,8 @@ _Pragma("clang diagnostic pop")
 /// sns account
 ///=============================================
 
-#define kAPPSTORE_WECHAT_APPID      @"wxbdf6f8628baa0d60"
-#define kAPPSTORE_WECHAT_SECRET     @"11edc1ad64bb0b5d2828b7274cdd1f98"
-
-#define kAPPSTORE_QQ_APPID          @"1104591656"
-#define kAPPSTORE_QQ_APPKEY         @"wndFGdnvtSbwqZ2U"
-#define kAPPSTORE_SINA              @"3900021658"
-#define kAPPSTORE_SINA_SECRET       @"b7af36cc5f2d95f2a4dff30a19815e12"
-
-#define kINHOUSE_WECHAT_APPID       @"wx379e109480e29932"
-#define kINHOUSE_WECHAT_SECRET      @"b8a0cc42eb3aeb36cbfa36b1cf591375"
-
-#define kINHOUSE_QQ_APPID           @"1104768603"
-#define kINHOUSE_QQ_APPKEY          @"1q3r7vWby7hnRkVp"
-
-#define KINHOUSE_SINA               @"965736136"
+#define kAPPSTORE_WECHAT_APPID      @"wx545c6806dbb6bea8"
+#define kAPPSTORE_WECHAT_SECRET     @"86a52ba86585b2dc790586e5bf4e401b"
 
 
 #ifndef kWBSDKDemoAppSecret

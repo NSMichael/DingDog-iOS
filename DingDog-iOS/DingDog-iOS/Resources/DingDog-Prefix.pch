@@ -22,6 +22,8 @@
     #import "Mantle.h"
     #import "Masonry.h"
     #import "ODRefreshControl.h"
+    #import "NetworkAPIManager.h"
+    #import "NSObject+Common.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"
