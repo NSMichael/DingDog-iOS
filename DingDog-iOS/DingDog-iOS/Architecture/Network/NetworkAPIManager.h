@@ -18,4 +18,7 @@
 // 微信登录
 + (void)login_weChatWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
+// 获取图形验证码
++ (void)register_getCaptchaWithRefresh:(NSInteger)refresh andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 @end

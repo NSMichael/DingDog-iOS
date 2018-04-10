@@ -62,6 +62,9 @@ typedef NS_ENUM(NSUInteger, NavigationBarItemType) {
 - (void)setBackButton:(id)target action:(SEL)action;
 
 #pragma mark loading..
+
+- (void)showAlertViewControllerWithText:(NSString *)text;
+
 - (void)showLoadingLayer;
 
 - (void)hideLoadingLayer;

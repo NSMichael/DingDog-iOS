@@ -262,6 +262,14 @@
 
 
 #pragma mark loading..
+
+- (void)showAlertViewControllerWithText:(NSString *)text
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:text preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 - (void)showLoadingLayer{
     if(downloadView)
         return;

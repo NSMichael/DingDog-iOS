@@ -47,7 +47,7 @@
     
     else{
         //执行通用的处理逻辑
-        if(errCode==-1 && [[self.errorMsg lowercaseString] rangeOfString:@"token"].location != NSNotFound){
+        if(errCode==0 && [[self.errorMsg lowercaseString] rangeOfString:@"token"].location != NSNotFound){
             //token过期 暂不处理
             /*
             if ([MyAccountManager sharedManager].currentUser) {

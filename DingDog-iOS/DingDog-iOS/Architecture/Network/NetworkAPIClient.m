@@ -75,9 +75,9 @@
     
     if([aPath rangeOfString:@"?"].location == NSNotFound){
         //m=1:表示iOS客户端
-        aPath = [NSString stringWithFormat:@"%@",aPath];
+        aPath = [NSString stringWithFormat:@"%@?",aPath];
     }else{
-        aPath = [NSString stringWithFormat:@"%@",aPath];
+        aPath = [NSString stringWithFormat:@"%@?",aPath];
     }
     aPath = [aPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -93,10 +93,10 @@
         }
     }
     
-//    NSString *token = [[MyAccountManager sharedManager] getToken];
-//    if (token && ![token isEqualToString:@""]) {
-//        [parametersWithoutEmoji setObject:token forKey:@"token"];
-//    }
+    NSString *token = [[MyAccountManager sharedManager] getToken];
+    if (token && ![token isEqualToString:@""]) {
+        [parametersWithoutEmoji setObject:token forKey:@"token"];
+    }
     
     //添加版本号
     if(DEBUG_VERSION){

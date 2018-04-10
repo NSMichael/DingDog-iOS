@@ -9,6 +9,7 @@
 #import "NetworkAPIManager.h"
 #import "NetworkAPIClient.h"
 #import "RMTAPIClient.h"
+#import "GetCaptchaCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -72,6 +73,21 @@
             block(nil, error);
         } else {
             BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 获取图形验证码
++ (void)register_getCaptchaWithRefresh:(NSInteger)refresh andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@(refresh),@"refresh", nil];
+    
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"home/site/captcha" withParams:params withMethodType:Get andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[GetCaptchaCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];

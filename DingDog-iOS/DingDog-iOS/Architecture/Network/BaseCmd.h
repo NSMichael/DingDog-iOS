@@ -11,7 +11,7 @@
 // 用户相关以100000开头，产品相关以200000开头，订单相关以300000开头，店铺相关以400000开头
 typedef NS_ENUM(NSInteger, ERROR) {
     
-    ERRORCODE_SUCCESS = 0,
+    ERRORCODE_SUCCESS = 1,                  // 正常
     
     ERRORCODE_ForbiddenUser = -2,
     

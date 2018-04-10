@@ -34,6 +34,9 @@
 		1A28FC09207BC09E00041943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FC08207BC09D00041943 /* UIKit.framework */; };
 		1A28FC0B207BC36200041943 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FC0A207BC36200041943 /* QuartzCore.framework */; };
 		1A28FC23207BC8EF00041943 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC22207BC8EF00041943 /* NSObject+Common.m */; };
+		1A28FC27207CFC7D00041943 /* MyAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC26207CFC7D00041943 /* MyAccountManager.m */; };
+		1A28FC2B207D155000041943 /* GetCaptchaCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC2A207D155000041943 /* GetCaptchaCmd.m */; };
+		1A28FC2F207D189700041943 /* CaptchaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC2E207D189700041943 /* CaptchaModel.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -426,6 +429,12 @@
 		1A28FC0A207BC36200041943 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1A28FC21207BC8EE00041943 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
 		1A28FC22207BC8EF00041943 /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
+		1A28FC25207CFC7D00041943 /* MyAccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAccountManager.h; sourceTree = "<group>"; };
+		1A28FC26207CFC7D00041943 /* MyAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAccountManager.m; sourceTree = "<group>"; };
+		1A28FC29207D155000041943 /* GetCaptchaCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCaptchaCmd.h; sourceTree = "<group>"; };
+		1A28FC2A207D155000041943 /* GetCaptchaCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCaptchaCmd.m; sourceTree = "<group>"; };
+		1A28FC2D207D189700041943 /* CaptchaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaModel.h; sourceTree = "<group>"; };
+		1A28FC2E207D189700041943 /* CaptchaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaModel.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1256,6 +1265,33 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		1A28FC24207CFA3800041943 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FC25207CFC7D00041943 /* MyAccountManager.h */,
+				1A28FC26207CFC7D00041943 /* MyAccountManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1A28FC28207D151900041943 /* NetCmd */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FC29207D155000041943 /* GetCaptchaCmd.h */,
+				1A28FC2A207D155000041943 /* GetCaptchaCmd.m */,
+			);
+			path = NetCmd;
+			sourceTree = "<group>";
+		};
+		1A28FC2C207D187F00041943 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FC2D207D189700041943 /* CaptchaModel.h */,
+				1A28FC2E207D189700041943 /* CaptchaModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1347,6 +1383,7 @@
 		BB467CF72057D00A00D18C97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FC24207CFA3800041943 /* Manager */,
 				BB467D002057D25400D18C97 /* Common */,
 				BB467CF82057D00A00D18C97 /* Tab1 */,
 				BB467CFA2057D00A00D18C97 /* Tab2 */,
@@ -1449,6 +1486,8 @@
 		BB467D002057D25400D18C97 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FC28207D151900041943 /* NetCmd */,
+				1A28FC2C207D187F00041943 /* Model */,
 				BB467D562057DFAF00D18C97 /* Views */,
 				BB467D252057D47A00D18C97 /* Login */,
 				BB467D012057D28900D18C97 /* RootControllers */,
@@ -1461,10 +1500,10 @@
 			children = (
 				BB467D022057D28900D18C97 /* RootTabViewController.h */,
 				BB467D052057D28900D18C97 /* RootTabViewController.m */,
-				BB467D032057D28900D18C97 /* BaseViewController.m */,
-				BB467D042057D28900D18C97 /* BaseNavigationController.m */,
-				BB467D062057D28900D18C97 /* BaseNavigationController.h */,
 				BB467D072057D28900D18C97 /* BaseViewController.h */,
+				BB467D032057D28900D18C97 /* BaseViewController.m */,
+				BB467D062057D28900D18C97 /* BaseNavigationController.h */,
+				BB467D042057D28900D18C97 /* BaseNavigationController.m */,
 			);
 			path = RootControllers;
 			sourceTree = "<group>";
@@ -2800,6 +2839,7 @@
 				BB467E8C2057E14000D18C97 /* RACQueueScheduler.m in Sources */,
 				BB467E5A2057E14000D18C97 /* RACScheduler.m in Sources */,
 				BB74D4612058BA9200F8A55B /* YYTextLayout.m in Sources */,
+				1A28FC27207CFC7D00041943 /* MyAccountManager.m in Sources */,
 				BB74D2DB2058B70400F8A55B /* UIView+Toast.m in Sources */,
 				BB74D4492058BA9200F8A55B /* YYDiskCache.m in Sources */,
 				BB467E602057E14000D18C97 /* NSUserDefaults+RACSupport.m in Sources */,
@@ -2866,6 +2906,7 @@
 				1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */,
 				BB467E7E2057E14000D18C97 /* NSObject+RACPropertySubscribing.m in Sources */,
 				BB74D35A2058B93900F8A55B /* DGActivityIndicatorView.m in Sources */,
+				1A28FC2B207D155000041943 /* GetCaptchaCmd.m in Sources */,
 				BB74D37B2058B93900F8A55B /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				BB74D36C2058B93900F8A55B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				BB74D4582058BA9200F8A55B /* YYAnimatedImageView.m in Sources */,
@@ -2881,6 +2922,7 @@
 				BB467E982057E14000D18C97 /* RACReturnSignal.m in Sources */,
 				BB74D3672058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				BB74D46E2058BA9200F8A55B /* YYTextArchiver.m in Sources */,
+				1A28FC2F207D189700041943 /* CaptchaModel.m in Sources */,
 				BB467D872057E06300D18C97 /* AFNetworkReachabilityManager.m in Sources */,
 				BB467E852057E14000D18C97 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				BB467EA22057E14000D18C97 /* NSObject+RACKVOWrapper.m in Sources */,

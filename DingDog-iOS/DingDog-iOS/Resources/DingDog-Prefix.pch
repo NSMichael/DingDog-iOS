@@ -24,6 +24,7 @@
     #import "ODRefreshControl.h"
     #import "NetworkAPIManager.h"
     #import "NSObject+Common.h"
+    #import "AppDelegate.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"
@@ -38,5 +39,8 @@
     #import "EnumDefinition.h"
     #import "TTTAttributedLabel.h"
     #import "UITableViewCell+Height.h"
+    #import "NSString+Check.h"
+
+    #import "MyAccountManager.h"
 
 #endif /* DingDog_Prefix_pch */

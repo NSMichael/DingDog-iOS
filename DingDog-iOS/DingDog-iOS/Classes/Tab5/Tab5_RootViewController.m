@@ -7,6 +7,7 @@
 //
 
 #import "Tab5_RootViewController.h"
+#import "LoginViewController.h"
 
 @interface Tab5_RootViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -107,7 +108,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    if (indexPath.row == 0) {
+        // 使用帮助
+    } else if (indexPath.row == 1) {
+        // 意见反馈
+    } else if (indexPath.row == 2) {
+        // 清除缓存
+    } else {
+        // 退出登录
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:nav animated:YES completion:^{
+            // 清除缓存
+            [[MyAccountManager sharedManager] logoutAndClearBuffer];
+        }];
+        
+//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        HKLoginViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//        // Remove use info after presented to login view.
+//        [self presentViewController:loginViewController animated:YES completion:^{
+//            [HKUser userLogout];
+//        }];
+    }
 }
 
 @end

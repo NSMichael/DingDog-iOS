@@ -46,7 +46,7 @@
 #define BASE_URL_H5 @"http://api.ddzhaobu.com/zml/support/"                     // H5 生产环境
 
 //公网地址
-#define SERVER_PATH [NSString stringWithFormat:@"http://%@/", BASE_URL]
+#define SERVER_PATH [NSString stringWithFormat:@"http://%@", BASE_URL]
 
 //H5网站的基地址
 #define H5_BASE_PATH ([BASE_URL isEqualToString:@"192.168.254.18:8081/9tong-zml-app"] || [BASE_URL isEqualToString:@"58.247.112.82:9992/9tong-zml-app"]) ? @"http://192.168.254.18:8081/9tong-zml-wx" : @"http://api.ddzhaobu.com"

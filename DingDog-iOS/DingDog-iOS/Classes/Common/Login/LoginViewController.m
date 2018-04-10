@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RootTabViewController.h"
 #import "AppDelegate.h"
+#import "GetCaptchaCmd.h"
 
 #define MAXLENGTH_11    11
 
@@ -22,6 +23,13 @@
 @property (nonatomic, strong) UILabel *lblPhoneNumber;
 @property (nonatomic, strong) UITextField *txtPhoneNumber;
 
+@property (nonatomic, strong) UIImageView *imgPictureCodeLine;
+@property (nonatomic, strong) UIView *uvPictureCode;
+@property (nonatomic, strong) UILabel *lblPictureCode;
+@property (nonatomic, strong) UITextField *txtPictureCode;
+@property (nonatomic, strong) UIImageView *imgPictureCode;
+
+@property (nonatomic, strong) UIImageView *imgPasswordLine;
 @property (nonatomic, strong) UIView *uvPassword;
 @property (nonatomic, strong) UILabel *lblPassword;
 @property (nonatomic, strong) UITextField *txtPassword;
@@ -35,6 +43,9 @@
 @property (nonatomic, strong) UIView *uvSNS;
 @property (nonatomic, strong) UIView *uvWeChat;
 
+@property (nonatomic, strong) NSString *mobileStr, *passwordStr, *pictureCode;
+@property (nonatomic, assign) NSInteger refreshCount;
+
 @end
 
 @implementation LoginViewController
@@ -45,6 +56,7 @@
     self.title = @"登录";
     
     _loginType = LoginType_login;
+    _refreshCount = 1;
     
     _imgAvatar = [UIImageView new];
     _imgAvatar.image = [UIImage imageNamed:@"icon-img-app"];
@@ -82,11 +94,10 @@
     _txtPhoneNumber.keyboardType = UIKeyboardTypePhonePad;
     _txtPhoneNumber.font = kFont14;
     _txtPhoneNumber.placeholder = @"请输入手机号";
-    [_txtPhoneNumber addTarget:self action:@selector(textPhoneValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_txtPhoneNumber addTarget:self action:@selector(textPhoneValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPhoneNumber addSubview:_txtPhoneNumber];
     [self.txtPhoneNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.lblPhoneNumber.mas_right).offset(8);
-//        make.top.equalTo(self.uvPhoneNumber).offset(8);
         make.centerY.mas_equalTo(self.uvPhoneNumber.mas_centerY);
         make.height.mas_equalTo(18);
     }];
@@ -99,6 +110,58 @@
         make.left.and.right.equalTo(self.uvPhoneNumber);
         make.height.mas_offset(0.5);
     }];
+    
+    // 图形验证码
+    _uvPictureCode = [UIView new];
+    [self.view addSubview:_uvPictureCode];
+    [self.uvPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.uvPhoneNumber.mas_bottom).offset(14);
+        make.left.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view).offset(-20);
+        make.height.mas_equalTo(40);
+    }];
+    
+    _lblPictureCode = [UILabel new];
+    _lblPictureCode.font = kFont13;
+    _lblPictureCode.textColor = [UIColor colorWithHexString:@"0x8A8A8F"];
+    _lblPictureCode.text = @"图形码";
+    [self.uvPictureCode addSubview:_lblPictureCode];
+    [self.lblPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.uvPictureCode);
+        make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
+        make.height.mas_equalTo(18);
+    }];
+    
+    _txtPictureCode = [UITextField new];
+    _txtPictureCode.delegate = self;
+    _txtPictureCode.font = kFont14;
+    _txtPictureCode.placeholder = @"请输入图形验证码";
+    [_txtPictureCode addTarget:self action:@selector(textPictureCodeValueChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.uvPictureCode addSubview:_txtPictureCode];
+    [self.txtPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.lblPictureCode.mas_right).offset(8);
+        make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
+        make.height.mas_equalTo(18);
+    }];
+    
+    _imgPictureCode = [UIImageView new];
+    [self.uvPictureCode addSubview:_imgPictureCode];
+    [self.imgPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
+        make.right.equalTo(self.uvPictureCode.mas_right).offset(-13);
+        make.size.mas_equalTo(CGSizeMake(100, 32));
+    }];
+    
+    _imgPictureCodeLine = [UIImageView new];
+    _imgPictureCodeLine.image = [UIImage imageWithColor:[UIColor colorWithHexString:@"0xBCBCBC"]];
+    [self.uvPictureCode addSubview:_imgPictureCodeLine];
+    [self.imgPictureCodeLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.lblPictureCode.mas_bottom).offset(14);
+        make.left.and.right.equalTo(self.uvPictureCode);
+        make.height.mas_offset(0.5);
+    }];
+    
+    _uvPictureCode.hidden = YES;
     
     // 密码
     _uvPassword = [UIView new];
@@ -125,7 +188,7 @@
     _txtPassword.delegate = self;
     _txtPassword.font = kFont14;
     _txtPassword.placeholder = @"请输入密码";
-    [_txtPassword addTarget:self action:@selector(textPasswordValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_txtPassword addTarget:self action:@selector(textPasswordValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPassword addSubview:_txtPassword];
     [self.txtPassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.txtPhoneNumber.mas_left);
@@ -137,6 +200,7 @@
     [_btnVerCode.titleLabel setFont:kFont14];
     [_btnVerCode setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_btnVerCode setTitleColor:[UIColor colorWithHexString:@"0x007AFF"] forState:UIControlStateNormal];
+    [_btnVerCode addTarget:self action:@selector(onBtnVerCodeClick) forControlEvents:UIControlEventTouchUpInside];
     [self.uvPassword addSubview:_btnVerCode];
     [self.btnVerCode mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.uvPassword.mas_right).offset(-13);
@@ -145,10 +209,10 @@
     }];
     _btnVerCode.hidden = YES;
     
-    UIImageView *imgPasswordLine = [UIImageView new];
-    imgPasswordLine.image = [UIImage imageWithColor:[UIColor colorWithHexString:@"0xBCBCBC"]];
-    [self.uvPassword addSubview:imgPasswordLine];
-    [imgPasswordLine mas_makeConstraints:^(MASConstraintMaker *make) {
+    _imgPasswordLine = [UIImageView new];
+    _imgPasswordLine.image = [UIImage imageWithColor:[UIColor colorWithHexString:@"0xBCBCBC"]];
+    [self.uvPassword addSubview:_imgPasswordLine];
+    [self.imgPasswordLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.lblPassword.mas_bottom).offset(14);
         make.left.and.right.equalTo(self.uvPassword);
         make.height.mas_offset(0.5);
@@ -286,6 +350,192 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"wechatDidLoginNotification" object:nil];
 }
 
+// 获取验证码
+- (void)onBtnVerCodeClick {
+    
+}
+
+// 登录、注册
+- (void)onBtnLoginClicked {
+    
+    if (!self.mobileStr || [self.mobileStr isEqualToString:@""] || self.mobileStr.length != 11) {
+        [self showHudTipStr:@"手机号输入有误"];
+        return;
+    } else if (!self.passwordStr || [self.passwordStr isEqualToString:@""]) {
+        [self showHudTipStr:@"密码输入有误"];
+        return;
+    }
+    
+    if (_loginType == LoginType_register) {
+        if (![self.passwordStr checkPassword]) {
+            [self showHudTipStr:@"密码为6－32位数字或字母，请重新输入"];
+            return;
+        }
+    }
+}
+
+#pragma mark 网络相关
+
+- (void)getPictureCodeWithRefreshCount:(NSInteger)count {
+    
+    [NetworkAPIManager register_getCaptchaWithRefresh:count andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [self showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                if ([cmd isKindOfClass:[GetCaptchaCmd class]]) {
+                    GetCaptchaCmd *captchaCmd = (GetCaptchaCmd *)cmd;
+                    NSLog(@"123");
+                }
+            } failed:^(NSInteger errCode) {
+                
+            }];
+        }
+    }];
+}
+
+#pragma mark 文字的点击事件
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTransitInformation:(NSDictionary *)components {
+    NSLog(@"didSelectLinkWithTransitInformation :%@",components);
+    
+    if ([[components objectForKey:@"actionStr"] isEqualToString:@"现在注册"]) {
+        [self setupRegister];
+    } else {
+        [self setupLogin];
+    }
+}
+
+- (void)setupLogin {
+    
+    _uvPictureCode.hidden = YES;
+    [self.uvPassword mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.uvPhoneNumber.mas_bottom).offset(14);
+        //        make.left.equalTo(self.view).offset(20);
+        //        make.right.equalTo(self.view).offset(-20);
+        //        make.height.mas_equalTo(40);
+    }];
+    
+    _loginType = LoginType_login;
+    
+    _lblPassword.text = @"密 码";
+    
+    NSString *strTips = @"还没有账号？现在注册";
+    _attrLabel.text = strTips;
+    
+    //设置需要点击的文字的颜色大小
+    [_attrLabel setText:strTips afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+        //得到需要点击的文字的位置
+        NSRange selRange=[strTips rangeOfString:@"现在注册"];
+        //设置可点击文本的颜色
+        [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor colorWithHexString:@"0x007AFF"] CGColor] range:selRange];
+        return mutableAttributedString;
+    }];
+    
+    // 添加点击事件
+    NSRange selRange = [strTips rangeOfString:@"现在注册"];
+    [_attrLabel addLinkToTransitInformation:@{@"actionStr":@"现在注册"} withRange:selRange];
+    
+    self.title = @"登录";
+    
+    _btnVerCode.hidden = YES;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _uvSNS.alpha = 1;
+    }];
+}
+
+- (void)setupRegister {
+    
+    _uvPictureCode.hidden = NO;
+    
+    [self.uvPassword mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.uvPictureCode.mas_bottom).offset(14);
+        make.left.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view).offset(-20);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [self getPictureCodeWithRefreshCount:_refreshCount];
+    
+    _loginType = LoginType_register;
+    
+    _lblPassword.text = @"验证码";
+    
+    NSString *strTips = @"已有账号？现在登录";
+    _attrLabel.text = strTips;
+    
+    //设置需要点击的文字的颜色大小
+    [_attrLabel setText:strTips afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+        //得到需要点击的文字的位置
+        NSRange selRange=[strTips rangeOfString:@"现在登录"];
+        //设置可点击文本的颜色
+        [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor colorWithHexString:@"0x007AFF"] CGColor] range:selRange];
+        return mutableAttributedString;
+    }];
+    
+    //给  强者通常平静如水   添加点击事件
+    NSRange selRange = [strTips rangeOfString:@"现在登录"];
+    [_attrLabel addLinkToTransitInformation:@{@"actionStr":@"现在登录"} withRange:selRange];
+    
+    self.title = @"注册";
+    
+    _btnVerCode.hidden = NO;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _uvSNS.alpha = 0;
+    }];
+    
+}
+
+#pragma mark UITextField delegates
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (void)textPhoneValueChanged:(id)sender {
+    
+    NSString *text = self.txtPhoneNumber.text;
+    
+    if (text.length > MAXLENGTH_11) {
+        text = [self.txtPhoneNumber.text substringToIndex:MAXLENGTH_11];
+    }
+    
+    self.mobileStr = text;
+    
+    self.txtPhoneNumber.text = text;
+}
+
+- (void)textPictureCodeValueChanged:(id)sender {
+    NSString *text = self.txtPictureCode.text;
+    
+    self.pictureCode = text;
+    
+    self.txtPictureCode.text = text;
+}
+
+- (void)textPasswordValueChanged:(id)sender {
+    
+    NSString *text = self.txtPassword.text;
+    
+    self.passwordStr = text;
+    
+    self.txtPassword.text = text;
+}
+
+#pragma mark - 第三方登录
+
+- (void)onWXTapped {
+    NSLog(@"%s",__func__);
+    
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc] init];
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
+}
+
 - (void)wechatDidLoginNotification:(NSNotification *)notification {
     NSString *code = [notification.userInfo objectForKey:@"code"];
     [self getWechatAccessTokenWithCode:code];
@@ -348,9 +598,9 @@
 - (void)loginByWeChatWithOpenId:(NSString *)openId UnionId:(NSString *)unionId {
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setObject:openId forKey:@""];
-    [params setObject:unionId forKey:@""];
-    [params setObject:@"iOS" forKey:@""];
+    [params setObject:openId forKey:@"openid"];
+    [params setObject:unionId forKey:@"unionid"];
+    [params setObject:@"iOS" forKey:@"platform"];
     
     WS(weakSelf);
     [NetworkAPIManager login_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
@@ -360,118 +610,20 @@
             [cmd errorCheckSuccess:^{
                 [APP setupTabViewController];
             } failed:^(NSInteger errCode) {
-                
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    //                            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        [APP setupTabViewController];
+                    }]];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                }
             }];
         }
     }];
-}
-
-- (void)onWXTapped {
-    NSLog(@"%s",__func__);
-    
-    //构造SendAuthReq结构体
-    SendAuthReq* req =[[SendAuthReq alloc] init];
-    req.scope = @"snsapi_userinfo" ;
-    req.state = @"123" ;
-    //第三方向微信终端发送一个SendAuthReq消息结构
-    [WXApi sendReq:req];
-}
-
-- (void)onBtnLoginClicked {
-    AppDelegate *app = APP;
-//    [app jpushConfigInitAndLogin];
-    
-    [APP setupTabViewController];
-}
-
-#pragma mark 文字的点击事件
-- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTransitInformation:(NSDictionary *)components {
-    NSLog(@"didSelectLinkWithTransitInformation :%@",components);
-    
-    if ([[components objectForKey:@"actionStr"] isEqualToString:@"现在注册"]) {
-        [self setupRegister];
-    } else {
-        [self setupLogin];
-    }
-}
-
-- (void)setupLogin {
-    NSString *strTips = @"还没有账号？现在注册";
-    _attrLabel.text = strTips;
-    
-    //设置需要点击的文字的颜色大小
-    [_attrLabel setText:strTips afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
-        //得到需要点击的文字的位置
-        NSRange selRange=[strTips rangeOfString:@"现在注册"];
-        //设置可点击文本的颜色
-        [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor colorWithHexString:@"0x007AFF"] CGColor] range:selRange];
-        return mutableAttributedString;
-    }];
-    
-    // 添加点击事件
-    NSRange selRange = [strTips rangeOfString:@"现在注册"];
-    [_attrLabel addLinkToTransitInformation:@{@"actionStr":@"现在注册"} withRange:selRange];
-    
-    self.title = @"登录";
-    
-    _btnVerCode.hidden = YES;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        _uvSNS.alpha = 1;
-    }];
-}
-
-- (void)setupRegister {
-    
-    NSString *strTips = @"已有账号？现在登录";
-    _attrLabel.text = strTips;
-    
-    //设置需要点击的文字的颜色大小
-    [_attrLabel setText:strTips afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
-        //得到需要点击的文字的位置
-        NSRange selRange=[strTips rangeOfString:@"现在登录"];
-        //设置可点击文本的颜色
-        [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor colorWithHexString:@"0x007AFF"] CGColor] range:selRange];
-        return mutableAttributedString;
-    }];
-    
-    //给  强者通常平静如水   添加点击事件
-    NSRange selRange = [strTips rangeOfString:@"现在登录"];
-    [_attrLabel addLinkToTransitInformation:@{@"actionStr":@"现在登录"} withRange:selRange];
-    
-    self.title = @"注册";
-    
-    _btnVerCode.hidden = NO;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        _uvSNS.alpha = 0;
-    }];
-    
-//    _uvSNS.hidden = YES;
-}
-
-#pragma mark UITextField delegates
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-
-- (void)textPhoneValueChanged:(id)sender {
-    
-    NSString *text = self.txtPhoneNumber.text;
-    
-    if (text.length > MAXLENGTH_11) {
-        text = [self.txtPhoneNumber.text substringToIndex:MAXLENGTH_11];
-    }
-}
-
-- (void)textPasswordValueChanged:(id)sender {
-    
-    NSString *text = self.txtPhoneNumber.text;
-    
-    if (text.length > MAXLENGTH_11) {
-        text = [self.txtPhoneNumber.text substringToIndex:MAXLENGTH_11];
-    }
 }
 
 @end
