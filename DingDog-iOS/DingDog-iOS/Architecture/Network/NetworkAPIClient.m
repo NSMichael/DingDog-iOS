@@ -24,6 +24,8 @@
         
         [_sharedClient.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/html",@"application/octet-stream",@"text/javascript",@"text/plain", nil]];
         
+        _sharedClient.requestSerializer.HTTPShouldHandleCookies = YES;
+        
         // 设置超时时间
         [_sharedClient.requestSerializer willChangeValueForKey:@"timeoutInterval"];
         _sharedClient.requestSerializer.timeoutInterval = 20.0f;
@@ -98,6 +100,11 @@
         [parametersWithoutEmoji setObject:token forKey:@"token"];
     }
     
+    NSString *cookie = [[MyAccountManager sharedManager] getCookie];
+    if (cookie && ![cookie isEqualToString:@""]) {
+        [self.requestSerializer setValue:cookie forHTTPHeaderField:@"Cookie"];
+    }
+    
     //添加版本号
     if(DEBUG_VERSION){
         //打印请求内容，使用GET方式打印，便于在浏览器中调试或发给server端同学调试
@@ -120,6 +127,18 @@
                         SLOG(@"\n");
                         SLOG(@"\n>>>result: %@\n", responseObject);
                     }
+                    
+                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+                    SLOG(@"\n");
+                    SLOG(@"====currentRequest====%@", task.currentRequest.allHTTPHeaderFields);
+                    SLOG(@"\n");
+                    SLOG(@"====task.response====%@", response.allHeaderFields[@"Set-cookie"]);
+                    
+                    NSString *cookie = [[MyAccountManager sharedManager] getCookie];
+                    if (!cookie || cookie.length == 0) {
+                        [[MyAccountManager sharedManager] saveCookie:response.allHeaderFields[@"Set-cookie"]];
+                    }
+                    
                     block(responseObject, nil);
                 } failure:^(NSURLSessionDataTask *task, NSError *error) {
                     SLOG(@"\n>>>Error: %@\n", error);
@@ -137,6 +156,18 @@
                         SLOG(@"\n");
                         SLOG(@"\n>>>result: %@\n", responseObject);
                     }
+                    
+                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+                    SLOG(@"\n");
+                    SLOG(@"====currentRequest====%@", task.currentRequest.allHTTPHeaderFields);
+                    SLOG(@"\n");
+                    SLOG(@"====task.response====%@", response.allHeaderFields[@"Set-cookie"]);
+                    
+                    NSString *cookie = [[MyAccountManager sharedManager] getCookie];
+                    if (!cookie || cookie.length == 0) {
+                        [[MyAccountManager sharedManager] saveCookie:response.allHeaderFields[@"Set-cookie"]];
+                    }
+                    
                     block(responseObject, nil);
                 } failure:^(NSURLSessionDataTask *task, NSError *error) {
                     SLOG(@"\n>>>Error: %@\n", error);

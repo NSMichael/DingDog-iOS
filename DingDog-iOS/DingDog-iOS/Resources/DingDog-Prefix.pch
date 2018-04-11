@@ -25,6 +25,7 @@
     #import "NetworkAPIManager.h"
     #import "NSObject+Common.h"
     #import "AppDelegate.h"
+    #import "UIImageView+WebCache.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"

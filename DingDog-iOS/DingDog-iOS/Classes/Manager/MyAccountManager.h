@@ -12,6 +12,10 @@
 
 + (MyAccountManager *)sharedManager;
 
+- (void)saveCookie:(NSString *)cookie;
+
+- (NSString *)getCookie;
+
 // 保存登录成功返回的Token，后续所有需要验证cookie的接口都必须传入此参数token
 - (void)saveToken:(NSString *)token;
 

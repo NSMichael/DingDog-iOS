@@ -10,6 +10,8 @@
 
 #define COOKIE_TOKEN @"Cookie_Token"
 
+#define KEY_Cookie   @"KEY_Cookie"
+
 @implementation MyAccountManager
 
 + (MyAccountManager *)sharedManager {
@@ -19,6 +21,20 @@
         sharedManager = [[MyAccountManager alloc] init];
     });
     return sharedManager;
+}
+
+- (void)saveCookie:(NSString *)cookie {
+    if (cookie && ![cookie isEqualToString:@""]) {
+        [USER setObject:cookie forKey:KEY_Cookie];
+        [USER synchronize];
+    } else {
+        [USER removeObjectForKey:KEY_Cookie];
+        [USER synchronize];
+    }
+}
+
+- (NSString *)getCookie {
+    return [USER objectForKey:KEY_Cookie];
 }
 
 // 保存登录成功返回的Token，后续所有需要验证cookie的接口都必须传入此参数token

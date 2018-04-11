@@ -93,6 +93,22 @@
     }];
 }
 
+// 获取短信验证码
++ (void)register_getSMSWithMobile:(NSString *)mobile Captcha:(NSString *)captcha andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   mobile,@"mobile", captcha, @"captcha", nil];
+    
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"home/site/sms" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 @end
 
 

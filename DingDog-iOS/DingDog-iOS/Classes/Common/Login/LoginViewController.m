@@ -148,7 +148,7 @@
     [self.uvPictureCode addSubview:_imgPictureCode];
     [self.imgPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
-        make.right.equalTo(self.uvPictureCode.mas_right).offset(-13);
+        make.right.equalTo(self.uvPictureCode.mas_right).offset(0);
         make.size.mas_equalTo(CGSizeMake(100, 32));
     }];
     
@@ -160,6 +160,9 @@
         make.left.and.right.equalTo(self.uvPictureCode);
         make.height.mas_offset(0.5);
     }];
+    
+    UITapGestureRecognizer *tapPicCode = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onPictureCodeTapped)];
+    [self.uvPictureCode addGestureRecognizer:tapPicCode];
     
     _uvPictureCode.hidden = YES;
     
@@ -176,7 +179,7 @@
     _lblPassword = [UILabel new];
     _lblPassword.font = kFont13;
     _lblPassword.textColor = [UIColor colorWithHexString:@"0x8A8A8F"];
-    _lblPassword.text = @"密 码";
+    _lblPassword.text = @"验证码";
     [self.uvPassword addSubview:_lblPassword];
     [self.lblPassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.uvPassword);
@@ -187,7 +190,7 @@
     _txtPassword = [UITextField new];
     _txtPassword.delegate = self;
     _txtPassword.font = kFont14;
-    _txtPassword.placeholder = @"请输入密码";
+    _txtPassword.placeholder = @"请输入验证码";
     [_txtPassword addTarget:self action:@selector(textPasswordValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPassword addSubview:_txtPassword];
     [self.txtPassword mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -207,7 +210,7 @@
         make.centerY.mas_equalTo(self.uvPassword.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(75, 20));
     }];
-    _btnVerCode.hidden = YES;
+//    _btnVerCode.hidden = YES;
     
     _imgPasswordLine = [UIImageView new];
     _imgPasswordLine.image = [UIImage imageWithColor:[UIColor colorWithHexString:@"0xBCBCBC"]];
@@ -341,6 +344,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wechatDidLoginNotification:) name:@"wechatDidLoginNotification" object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self getPictureCodeWithRefreshCount:_refreshCount];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -353,6 +362,45 @@
 // 获取验证码
 - (void)onBtnVerCodeClick {
     
+    if (!self.mobileStr || [self.mobileStr isEqualToString:@""] || self.mobileStr.length != 11) {
+        [self showHudTipStr:@"手机号输入有误"];
+        return;
+    }
+    
+    if (self.pictureCode.length == 0) {
+        _refreshCount += 1;
+        _uvPictureCode.hidden = NO;
+        
+        [self.uvPassword mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.uvPictureCode.mas_bottom).offset(14);
+            make.left.equalTo(self.view).offset(20);
+            make.right.equalTo(self.view).offset(-20);
+            make.height.mas_equalTo(40);
+        }];
+        
+        [self getPictureCodeWithRefreshCount:_refreshCount];
+    } else {
+        [NetworkAPIManager register_getSMSWithMobile:self.mobileStr Captcha:self.pictureCode andBlock:^(BaseCmd *cmd, NSError *error) {
+            if (error) {
+                [self showHudTipStr:TIP_NETWORKERROR];
+            } else {
+                [cmd errorCheckSuccess:^{
+                    
+                } failed:^(NSInteger errCode) {
+                    if (errCode == 0) {
+                        NSString *msgStr = cmd.message;
+                        [self showHudTipStr:msgStr];
+                        //                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
+                        //
+                        //                    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        //                        [APP setupTabViewController];
+                        //                    }]];
+                        //                    [self presentViewController:alertController animated:YES completion:nil];
+                    }
+                }];
+            }
+        }];
+    }
 }
 
 // 登录、注册
@@ -361,17 +409,25 @@
     if (!self.mobileStr || [self.mobileStr isEqualToString:@""] || self.mobileStr.length != 11) {
         [self showHudTipStr:@"手机号输入有误"];
         return;
-    } else if (!self.passwordStr || [self.passwordStr isEqualToString:@""]) {
-        [self showHudTipStr:@"密码输入有误"];
-        return;
     }
     
     if (_loginType == LoginType_register) {
-        if (![self.passwordStr checkPassword]) {
-            [self showHudTipStr:@"密码为6－32位数字或字母，请重新输入"];
+        
+        if (!self.pictureCode || [self.pictureCode isEqualToString:@""]) {
+            [self showHudTipStr:@"请输入图形验证码"];
             return;
         }
     }
+    
+    if (!self.passwordStr || [self.passwordStr isEqualToString:@""]) {
+        [self showHudTipStr:@"请输入验证码"];
+        return;
+    }
+}
+
+- (void)onPictureCodeTapped {
+    _refreshCount += 1;
+    [self getPictureCodeWithRefreshCount:_refreshCount];
 }
 
 #pragma mark 网络相关
@@ -385,7 +441,7 @@
             [cmd errorCheckSuccess:^{
                 if ([cmd isKindOfClass:[GetCaptchaCmd class]]) {
                     GetCaptchaCmd *captchaCmd = (GetCaptchaCmd *)cmd;
-                    NSLog(@"123");
+                    [_imgPictureCode sd_setImageWithURL:[NSURL URLWithString:captchaCmd.urlPic] placeholderImage:nil];
                 }
             } failed:^(NSInteger errCode) {
                 
@@ -407,17 +463,15 @@
 
 - (void)setupLogin {
     
+    _pictureCode = @"";
     _uvPictureCode.hidden = YES;
     [self.uvPassword mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.uvPhoneNumber.mas_bottom).offset(14);
-        //        make.left.equalTo(self.view).offset(20);
-        //        make.right.equalTo(self.view).offset(-20);
-        //        make.height.mas_equalTo(40);
     }];
     
     _loginType = LoginType_login;
     
-    _lblPassword.text = @"密 码";
+    _lblPassword.text = @"验证码";
     
     NSString *strTips = @"还没有账号？现在注册";
     _attrLabel.text = strTips;
@@ -437,7 +491,7 @@
     
     self.title = @"登录";
     
-    _btnVerCode.hidden = YES;
+//    _btnVerCode.hidden = YES;
     
     [UIView animateWithDuration:0.3 animations:^{
         _uvSNS.alpha = 1;
@@ -445,17 +499,6 @@
 }
 
 - (void)setupRegister {
-    
-    _uvPictureCode.hidden = NO;
-    
-    [self.uvPassword mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.uvPictureCode.mas_bottom).offset(14);
-        make.left.equalTo(self.view).offset(20);
-        make.right.equalTo(self.view).offset(-20);
-        make.height.mas_equalTo(40);
-    }];
-    
-    [self getPictureCodeWithRefreshCount:_refreshCount];
     
     _loginType = LoginType_register;
     
@@ -479,7 +522,7 @@
     
     self.title = @"注册";
     
-    _btnVerCode.hidden = NO;
+//    _btnVerCode.hidden = NO;
     
     [UIView animateWithDuration:0.3 animations:^{
         _uvSNS.alpha = 0;
