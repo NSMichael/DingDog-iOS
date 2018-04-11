@@ -11,6 +11,9 @@
 
 @interface GetCaptchaCmd : BaseCmd<MTLJSONSerializing>
 
-@property (nonatomic, strong) CaptchaModel *capthaModel;
+@property (nonatomic, strong) NSString *urlPic;
+@property (nonatomic, strong) NSString *codePic;
+
+//@property (nonatomic, strong) CaptchaModel *capthaModel;
 
 @end

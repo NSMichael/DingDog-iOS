@@ -11,12 +11,16 @@
 @implementation GetCaptchaCmd
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey{
-    return @{@"capthaModel": @"data"};
+    return @{@"codePic": @"code", @"urlPic": @"url"};
 }
 
-+ (NSValueTransformer *)capthaModelJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:CaptchaModel.class];
-}
+//+ (NSDictionary *)JSONKeyPathsByPropertyKey{
+//    return @{@"capthaModel": @"data"};
+//}
+
+//+ (NSValueTransformer *)capthaModelJSONTransformer {
+//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:CaptchaModel.class];
+//}
 
 //+ (NSValueTransformer *)capthaModelJSONTransformer {
 //    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[CaptchaModel class]];
