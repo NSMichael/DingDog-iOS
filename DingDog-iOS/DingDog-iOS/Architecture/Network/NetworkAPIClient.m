@@ -136,7 +136,8 @@
                     
                     NSString *cookie = [[MyAccountManager sharedManager] getCookie];
                     if (!cookie || cookie.length == 0) {
-                        [[MyAccountManager sharedManager] saveCookie:response.allHeaderFields[@"Set-cookie"]];
+                        NSString* dataCookie = [NSString stringWithFormat:@"%@",[[response.allHeaderFields[@"Set-Cookie"]componentsSeparatedByString:@";"]objectAtIndex:0]];
+                        [[MyAccountManager sharedManager] saveCookie:dataCookie];
                     }
                     
                     block(responseObject, nil);
