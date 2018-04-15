@@ -36,7 +36,6 @@
 		1A28FC23207BC8EF00041943 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC22207BC8EF00041943 /* NSObject+Common.m */; };
 		1A28FC27207CFC7D00041943 /* MyAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC26207CFC7D00041943 /* MyAccountManager.m */; };
 		1A28FC2B207D155000041943 /* GetCaptchaCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC2A207D155000041943 /* GetCaptchaCmd.m */; };
-		1A28FC2F207D189700041943 /* CaptchaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC2E207D189700041943 /* CaptchaModel.m */; };
 		1A28FC52207E492300041943 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC31207E492200041943 /* UIImage+WebP.m */; };
 		1A28FC53207E492300041943 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC32207E492200041943 /* MKAnnotationView+WebCache.m */; };
 		1A28FC54207E492300041943 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC35207E492200041943 /* SDWebImageManager.m */; };
@@ -53,6 +52,14 @@
 		1A28FC5F207E492300041943 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC49207E492200041943 /* UIImageView+WebCache.m */; };
 		1A28FC60207E492300041943 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC4C207E492200041943 /* UIView+WebCacheOperation.m */; };
 		1A28FC61207E492300041943 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC50207E492200041943 /* UIButton+WebCache.m */; };
+		1A28FC6420831F8100041943 /* UserCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC6320831F8100041943 /* UserCmd.m */; };
+		1A28FC672083200300041943 /* ConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC662083200300041943 /* ConfigModel.m */; };
+		1A28FC6A208397B600041943 /* NSDictionary+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC68208397B400041943 /* NSDictionary+Check.m */; };
+		1A28FC6D20839CC400041943 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC6C20839CC400041943 /* AppManager.m */; };
+		1A28FC7020839FE400041943 /* UploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC6F20839FE400041943 /* UploadManager.m */; };
+		1A28FC732083A8BE00041943 /* Step1GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */; };
+		1A28FC762083A8D300041943 /* Step2GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */; };
+		1A28FC792083A8E400041943 /* Step3GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -449,8 +456,6 @@
 		1A28FC26207CFC7D00041943 /* MyAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAccountManager.m; sourceTree = "<group>"; };
 		1A28FC29207D155000041943 /* GetCaptchaCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCaptchaCmd.h; sourceTree = "<group>"; };
 		1A28FC2A207D155000041943 /* GetCaptchaCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCaptchaCmd.m; sourceTree = "<group>"; };
-		1A28FC2D207D189700041943 /* CaptchaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaModel.h; sourceTree = "<group>"; };
-		1A28FC2E207D189700041943 /* CaptchaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaModel.m; sourceTree = "<group>"; };
 		1A28FC31207E492200041943 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		1A28FC32207E492200041943 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		1A28FC33207E492200041943 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
@@ -484,6 +489,22 @@
 		1A28FC4F207E492200041943 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		1A28FC50207E492200041943 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		1A28FC51207E492200041943 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		1A28FC6220831F8100041943 /* UserCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCmd.h; sourceTree = "<group>"; };
+		1A28FC6320831F8100041943 /* UserCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCmd.m; sourceTree = "<group>"; };
+		1A28FC652083200300041943 /* ConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigModel.h; sourceTree = "<group>"; };
+		1A28FC662083200300041943 /* ConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigModel.m; sourceTree = "<group>"; };
+		1A28FC68208397B400041943 /* NSDictionary+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Check.m"; sourceTree = "<group>"; };
+		1A28FC69208397B500041943 /* NSDictionary+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Check.h"; sourceTree = "<group>"; };
+		1A28FC6B20839CC400041943 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		1A28FC6C20839CC400041943 /* AppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		1A28FC6E20839FE400041943 /* UploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadManager.h; sourceTree = "<group>"; };
+		1A28FC6F20839FE400041943 /* UploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadManager.m; sourceTree = "<group>"; };
+		1A28FC712083A8BE00041943 /* Step1GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step1GroupSendViewController.h; sourceTree = "<group>"; };
+		1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step1GroupSendViewController.m; sourceTree = "<group>"; };
+		1A28FC742083A8D300041943 /* Step2GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step2GroupSendViewController.h; sourceTree = "<group>"; };
+		1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step2GroupSendViewController.m; sourceTree = "<group>"; };
+		1A28FC772083A8E400041943 /* Step3GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step3GroupSendViewController.h; sourceTree = "<group>"; };
+		1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step3GroupSendViewController.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1317,8 +1338,12 @@
 		1A28FC24207CFA3800041943 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FC6B20839CC400041943 /* AppManager.h */,
+				1A28FC6C20839CC400041943 /* AppManager.m */,
 				1A28FC25207CFC7D00041943 /* MyAccountManager.h */,
 				1A28FC26207CFC7D00041943 /* MyAccountManager.m */,
+				1A28FC6E20839FE400041943 /* UploadManager.h */,
+				1A28FC6F20839FE400041943 /* UploadManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1328,6 +1353,8 @@
 			children = (
 				1A28FC29207D155000041943 /* GetCaptchaCmd.h */,
 				1A28FC2A207D155000041943 /* GetCaptchaCmd.m */,
+				1A28FC6220831F8100041943 /* UserCmd.h */,
+				1A28FC6320831F8100041943 /* UserCmd.m */,
 			);
 			path = NetCmd;
 			sourceTree = "<group>";
@@ -1335,8 +1362,8 @@
 		1A28FC2C207D187F00041943 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A28FC2D207D189700041943 /* CaptchaModel.h */,
-				1A28FC2E207D189700041943 /* CaptchaModel.m */,
+				1A28FC652083200300041943 /* ConfigModel.h */,
+				1A28FC662083200300041943 /* ConfigModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1538,6 +1565,12 @@
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
 				1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */,
 				1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */,
+				1A28FC712083A8BE00041943 /* Step1GroupSendViewController.h */,
+				1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */,
+				1A28FC742083A8D300041943 /* Step2GroupSendViewController.h */,
+				1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */,
+				1A28FC772083A8E400041943 /* Step3GroupSendViewController.h */,
+				1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */,
 				1A28FBCB207A561900041943 /* Models */,
 				1A28FBCC207A561F00041943 /* Cells */,
 			);
@@ -1978,6 +2011,8 @@
 				1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */,
 				1A28FC21207BC8EE00041943 /* NSObject+Common.h */,
 				1A28FC22207BC8EF00041943 /* NSObject+Common.m */,
+				1A28FC69208397B500041943 /* NSDictionary+Check.h */,
+				1A28FC68208397B400041943 /* NSDictionary+Check.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -2811,6 +2846,7 @@
 				BB467D8F2057E06300D18C97 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BB467E682057E14000D18C97 /* RACEXTRuntimeExtensions.m in Sources */,
 				BB74D4912058BA9200F8A55B /* YYSentinel.m in Sources */,
+				1A28FC672083200300041943 /* ConfigModel.m in Sources */,
 				1A28FC61207E492300041943 /* UIButton+WebCache.m in Sources */,
 				BB467E5D2057E14000D18C97 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				BB467E7B2057E14000D18C97 /* RACArraySequence.m in Sources */,
@@ -2905,8 +2941,10 @@
 				BB467EA32057E14000D18C97 /* NSObject+RACSelectorSignal.m in Sources */,
 				BB467E672057E14000D18C97 /* RACTupleSequence.m in Sources */,
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
+				1A28FC732083A8BE00041943 /* Step1GroupSendViewController.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
 				BB467E812057E14000D18C97 /* RACMulticastConnection.m in Sources */,
+				1A28FC7020839FE400041943 /* UploadManager.m in Sources */,
 				BB467D4E2057DEE600D18C97 /* CLIColor.m in Sources */,
 				BB74D3712058B93900F8A55B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				BB74D4662058BA9200F8A55B /* YYLabel.m in Sources */,
@@ -2915,10 +2953,12 @@
 				BB467D142057D31000D18C97 /* RDVTabBarController.m in Sources */,
 				BB74D4772058BA9200F8A55B /* UIScreen+YYAdd.m in Sources */,
 				BB74D4FA2058FA0F00F8A55B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1A28FC6D20839CC400041943 /* AppManager.m in Sources */,
 				BB467D842057E06300D18C97 /* AFHTTPRequestOperationManager.m in Sources */,
 				BB74D4972058BA9200F8A55B /* YYTimer.m in Sources */,
 				BB74D37C2058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				BB467EA12057E14000D18C97 /* RACSubject.m in Sources */,
+				1A28FC792083A8E400041943 /* Step3GroupSendViewController.m in Sources */,
 				BB467E862057E14000D18C97 /* UIDatePicker+RACSignalSupport.m in Sources */,
 				1A28FBEF207BB5AE00041943 /* Reachability.m in Sources */,
 				BB74D48E2058BA9200F8A55B /* YYWeakProxy.m in Sources */,
@@ -2935,6 +2975,7 @@
 				BB74D4542058BA9200F8A55B /* UIButton+YYWebImage.m in Sources */,
 				BB467E922057E14000D18C97 /* RACValueTransformer.m in Sources */,
 				BB467D132057D31000D18C97 /* RDVTabBar.m in Sources */,
+				1A28FC762083A8D300041943 /* Step2GroupSendViewController.m in Sources */,
 				BB74D38C2058B98800F8A55B /* NSString+Check.m in Sources */,
 				BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */,
 				BB467E7F2057E14000D18C97 /* RACBehaviorSubject.m in Sources */,
@@ -2962,6 +3003,7 @@
 				BB467E772057E14000D18C97 /* RACReplaySubject.m in Sources */,
 				BB467D852057E06300D18C97 /* AFURLRequestSerialization.m in Sources */,
 				BB74D47B2058BA9200F8A55B /* UIImage+YYAdd.m in Sources */,
+				1A28FC6A208397B600041943 /* NSDictionary+Check.m in Sources */,
 				BB467D802057E06300D18C97 /* AFURLResponseSerialization.m in Sources */,
 				BB74D4562058BA9200F8A55B /* MKAnnotationView+YYWebImage.m in Sources */,
 				BB74D3622058B93900F8A55B /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
@@ -3021,11 +3063,11 @@
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
 				BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */,
 				1A28FBF2207BB5AE00041943 /* NetworkAPIManager.m in Sources */,
+				1A28FC6420831F8100041943 /* UserCmd.m in Sources */,
 				BB467E5C2057E14000D18C97 /* RACSignal.m in Sources */,
 				BB467E982057E14000D18C97 /* RACReturnSignal.m in Sources */,
 				BB74D3672058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				BB74D46E2058BA9200F8A55B /* YYTextArchiver.m in Sources */,
-				1A28FC2F207D189700041943 /* CaptchaModel.m in Sources */,
 				BB467D872057E06300D18C97 /* AFNetworkReachabilityManager.m in Sources */,
 				BB467E852057E14000D18C97 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				BB467EA22057E14000D18C97 /* NSObject+RACKVOWrapper.m in Sources */,
@@ -3252,7 +3294,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3274,7 +3316,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

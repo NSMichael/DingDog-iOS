@@ -25,7 +25,7 @@
 }
 
 //检查错误，执行通用的处理逻辑
-- (void)errorCheckSuccess:(void(^)())success failed:(void(^)(NSInteger errCode))failed{
+- (void)errorCheckSuccess:(void(^)(void))success failed:(void(^)(NSInteger errCode))failed{
     
     NSInteger errCode = [self.code integerValue];
     

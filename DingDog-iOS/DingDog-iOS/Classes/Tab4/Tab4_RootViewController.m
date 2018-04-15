@@ -10,6 +10,8 @@
 #import "GroupSendListCell.h"
 #import "GroupSendModel.h"
 #import "GroupSendSearchViewController.h"
+#import "Step1GroupSendViewController.h"
+#import "BaseNavigationController.h"
 
 @interface Tab4_RootViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
@@ -30,6 +32,7 @@
     
     self.title = @"群发";
     
+    /*
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -39,10 +42,26 @@
     
     [self configTestData];
     [self configSearch];
+    
+    [self setRightBarWithBtn:@"新建" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
+     */
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    Step1GroupSendViewController *vc = [[Step1GroupSendViewController alloc] init];
+    BaseNavigationController *nav_vc = [[BaseNavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav_vc animated:YES completion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)onRightBarButtonClicked:(id)sender {
+    
 }
 
 - (NSMutableArray *)groupSendArray {

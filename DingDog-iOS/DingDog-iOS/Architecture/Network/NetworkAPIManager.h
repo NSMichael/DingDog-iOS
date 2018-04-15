@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseCmd.h"
+#import "GetCaptchaCmd.h"
+#import "UserCmd.h"
 
 @interface NetworkAPIManager : NSObject
 
@@ -23,5 +25,15 @@
 
 // 获取短信验证码
 + (void)register_getSMSWithMobile:(NSString *)mobile Captcha:(NSString *)captcha andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
+// 快速登录
++ (void)site_fastloginWithParams:(id)params andBlock:(void (^)(UserCmd *cmd, NSError *error))block;
+
+#pragma mark - 资源
+/**
+ 从档口server获取token,然后在上传图片时发送给七牛的server
+ qiniu/getUpToken.do
+ */
++ (void)common_getUpToken:(void(^)(BaseCmd *cmd,NSError *error))block;
 
 @end

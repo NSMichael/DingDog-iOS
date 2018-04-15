@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserCmd.h"
 
 @interface MyAccountManager : NSObject
+
+@property (nonatomic, strong) UserCmd *currentUser;
 
 + (MyAccountManager *)sharedManager;
 
@@ -20,6 +23,9 @@
 - (void)saveToken:(NSString *)token;
 
 - (NSString *)getToken;
+
+// 保存用户profile
+- (void)saveUserProfile:(UserCmd *)user;
 
 #pragma mark - logout
 - (void)logoutAndClearBuffer;

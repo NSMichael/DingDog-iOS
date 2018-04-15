@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CaptchaModel.h"
 
 @interface GetCaptchaCmd : BaseCmd<MTLJSONSerializing>
 

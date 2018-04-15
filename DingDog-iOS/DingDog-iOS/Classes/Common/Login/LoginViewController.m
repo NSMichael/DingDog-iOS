@@ -10,6 +10,7 @@
 #import "RootTabViewController.h"
 #import "AppDelegate.h"
 #import "GetCaptchaCmd.h"
+#import "UserCmd.h"
 
 #define MAXLENGTH_11    11
 
@@ -385,7 +386,7 @@
                 [self showHudTipStr:TIP_NETWORKERROR];
             } else {
                 [cmd errorCheckSuccess:^{
-                    
+                    [self showHudTipStr:@"验证码已发送，请注意查收!"];
                 } failed:^(NSInteger errCode) {
                     if (errCode == 0) {
                         NSString *msgStr = cmd.message;
@@ -412,7 +413,6 @@
     }
     
     if (_loginType == LoginType_register) {
-        
         if (!self.pictureCode || [self.pictureCode isEqualToString:@""]) {
             [self showHudTipStr:@"请输入图形验证码"];
             return;
@@ -423,6 +423,39 @@
         [self showHudTipStr:@"请输入验证码"];
         return;
     }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.mobileStr forKey:@"mobile"];
+    [params setObject:self.passwordStr forKey:@"vcode"];
+    [params setObject:@"iOS" forKey:@"platform"];
+    
+    [NetworkAPIManager site_fastloginWithParams:params andBlock:^(UserCmd *cmd, NSError *error) {
+        if (error) {
+            [self showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                if ([cmd isKindOfClass:[UserCmd class]]) {
+                    UserCmd *userCmd = (UserCmd *)cmd;
+                    NSLog(@"%@", userCmd);
+                    
+                    [[MyAccountManager sharedManager] saveUserProfile:userCmd];
+                    [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
+                    
+                    if (userCmd.token.length > 0) {
+                        [[MyAccountManager sharedManager] saveToken:userCmd.token];
+                    }
+                    
+                    [APP setupTabViewController];
+                }
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [self showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
+    
 }
 
 - (void)onPictureCodeTapped {

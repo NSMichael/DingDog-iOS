@@ -9,8 +9,8 @@
 #import "MyAccountManager.h"
 
 #define COOKIE_TOKEN @"Cookie_Token"
-
 #define KEY_Cookie   @"KEY_Cookie"
+#define kUserDict   @"user_dict"
 
 @implementation MyAccountManager
 
@@ -21,6 +21,26 @@
         sharedManager = [[MyAccountManager alloc] init];
     });
     return sharedManager;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self loadMyAccountInfoFromBuffer];
+    }
+    return self;
+}
+
+- (void)loadMyAccountInfoFromBuffer {
+    NSError *error = nil;
+    NSDictionary *json = [USER objectForKey:kUserDict];
+    if (json) {
+        self.currentUser = [MTLJSONAdapter modelOfClass:[UserCmd class] fromJSONDictionary:json error:&error];
+        NSLog(@"%@", _currentUser);
+        if (error) {
+            NSAssert(0, [error localizedDescription]);
+        }
+    }
 }
 
 - (void)saveCookie:(NSString *)cookie {
@@ -51,6 +71,17 @@
 - (NSString *)getToken {
     return [USER objectForKey:COOKIE_TOKEN];
 }
+
+// 保存用户profile
+- (void)saveUserProfile:(UserCmd *)user {
+    if(user){
+        self.currentUser = user;
+        NSDictionary *json = [[MTLJSONAdapter JSONDictionaryFromModel:user error:nil] removeEmptyValue];
+        [USER setObject:json forKey:kUserDict];
+        [USER synchronize];
+    }
+}
+
 
 #pragma mark - logout
 - (void)logoutAndClearBuffer {

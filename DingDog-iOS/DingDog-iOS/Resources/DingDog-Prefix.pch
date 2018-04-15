@@ -41,6 +41,7 @@
     #import "TTTAttributedLabel.h"
     #import "UITableViewCell+Height.h"
     #import "NSString+Check.h"
+    #import "NSDictionary+Check.h"
 
     #import "MyAccountManager.h"
 

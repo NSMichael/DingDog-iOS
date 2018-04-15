@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RootTabViewController.h"
 #import "WXApi.h"
+#import "AppManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,strong) AppManager *appManager;
 
 @property (nonatomic, strong) RootTabViewController *rootVC;
 

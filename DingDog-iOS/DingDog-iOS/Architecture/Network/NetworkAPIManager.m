@@ -9,7 +9,6 @@
 #import "NetworkAPIManager.h"
 #import "NetworkAPIClient.h"
 #import "RMTAPIClient.h"
-#import "GetCaptchaCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -101,6 +100,34 @@
     // captcha, @"captcha",
     
     [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"home/site/sms" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 快速登录
++ (void)site_fastloginWithParams:(id)params andBlock:(void (^)(UserCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"home/site/fastlogin" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            UserCmd *cmd = [NetworkAPIManager modelOfClass:[UserCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+#pragma mark - 资源
+/**
+ 从档口server获取token,然后在上传图片时发送给七牛的server
+ qiniu/getUpToken.do
+ */
++ (void)common_getUpToken:(void(^)(BaseCmd *cmd,NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"message/setting/qiniu" withParams:nil withMethodType:Post andBlock:^(id data, NSError *error) {
         if (error) {
             block(nil, error);
         } else {

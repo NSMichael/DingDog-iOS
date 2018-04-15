@@ -12,6 +12,7 @@
 #import "iConsole.h"
 #import "SplashView.h"
 #import "LoginViewController.h"
+#import "MyAccountManager.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +32,8 @@
     
     [self.window makeKeyAndVisible];
     
+    self.appManager = [AppManager GetInstance];
+    
     SplashView *splashView = [SplashView splashView];
     
     @weakify(self);
@@ -44,6 +47,8 @@
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
         
         [WXApi registerApp:kAPPSTORE_WECHAT_APPID];
+        
+        [self.appManager startUp];
         
         //设置导航条样式
         [self customizeInterface];
@@ -65,8 +70,15 @@
 
 - (void)setupWelcomeViewController {
     
-    [self goToLoginVC];
-//    [self setupTabViewController];
+//    UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+//
+//    if (userCmd) {
+//        [self setupTabViewController];
+//    } else {
+//        [self goToLoginVC];
+//    }
+    
+    [self setupTabViewController];
 }
 
 - (void)goToLoginVC {
