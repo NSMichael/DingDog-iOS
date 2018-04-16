@@ -103,7 +103,7 @@ static UploadManager *instance;
         
     }
     
-    NSString *filePaht = [self getImagePath:img];
+    NSString *filePath = [self getImagePath:img];
     
     QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
         NSLog(@"percent == %.2f", percent);
@@ -115,16 +115,33 @@ static UploadManager *instance;
     NSData *imgData = [ImageTools GetJpegBytesFromImage:image jpegQulity:0.6];
     
     __weak __typeof(self) weakself = self;
-    [weakself.upManager putData:imgData key:nil token:weakself.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+    
+    [weakself.upManager putFile:filePath key:nil token:self.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         NSLog(@"info ===== %@", info);
         NSLog(@"resp ===== %@", resp);
         
-        if (info.error) {
-            block(key, info.error);
-        } else {
+        if(info.ok)
+        {
             block(key, nil);
+            NSLog(@"请求成功");
+        }
+        else{
+            block(key, info.error);
+            NSLog(@"失败");
+            //如果失败，这里可以把info信息上报自己的服务器，便于后面分析上传错误原因
         }
     } option:uploadOption];
+    
+//    [weakself.upManager putData:imgData key:nil token:weakself.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+//        NSLog(@"info ===== %@", info);
+//        NSLog(@"resp ===== %@", resp);
+//
+//        if (info.error) {
+//            block(key, info.error);
+//        } else {
+//            block(key, nil);
+//        }
+//    } option:uploadOption];
     
     
 //    [weakself.upManager putFile:filePaht key:nil token:self.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {

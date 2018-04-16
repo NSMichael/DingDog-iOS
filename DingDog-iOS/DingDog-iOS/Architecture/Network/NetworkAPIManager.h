@@ -44,4 +44,9 @@
  */
 + (void)common_getResKey:(NSNumber*)type block:(void(^)(BaseCmd *cmd,NSError *error))block;
 
+#pragma mark - 标签
+
+// 标签列表
++ (void)customer_tagList:(void(^)(BaseCmd *cmd,NSError *error))block;
+
 @end

@@ -39,10 +39,32 @@
     
     [self configTestData];
     [self configSearch];
+    
+    [self getCustomerTagList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Network
+
+- (void)getCustomerTagList {
+    WS(weakSelf);
+    [NetworkAPIManager customer_tagList:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [self showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [self showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 - (NSMutableArray *)tagArray {

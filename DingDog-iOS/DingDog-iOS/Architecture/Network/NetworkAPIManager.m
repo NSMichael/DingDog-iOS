@@ -158,6 +158,20 @@
     }];
 }
 
+#pragma mark - 标签
+
+// 标签列表
++ (void)customer_tagList:(void(^)(BaseCmd *cmd,NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/tag/list" withParams:nil withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 @end
 
 

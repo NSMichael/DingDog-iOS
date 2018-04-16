@@ -40,14 +40,22 @@
         return NO;
     }
     
-    if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
-        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        if (AVAuthorizationStatusDenied == authStatus ||
-            AVAuthorizationStatusRestricted == authStatus) {
-            [self showSettingAlertStr:@"请在iPhone的“设置->隐私->相机”中打开本应用的访问权限"];
-            return NO;
-        }
+    AVAuthorizationStatus videoStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (videoStatus == AVAuthorizationStatusRestricted || videoStatus == AVAuthorizationStatusDenied)
+    {
+        // 没有权限
+        [self showSettingAlertStr:@"请在iPhone的“设置->隐私->相机”中打开本应用的访问权限"];
+        return NO;
     }
+    
+//    if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
+//        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+//        if (AVAuthorizationStatusDenied == authStatus ||
+//            AVAuthorizationStatusRestricted == authStatus) {
+//            [self showSettingAlertStr:@"请在iPhone的“设置->隐私->相机”中打开本应用的访问权限"];
+//            return NO;
+//        }
+//    }
     
     return YES;
 }
