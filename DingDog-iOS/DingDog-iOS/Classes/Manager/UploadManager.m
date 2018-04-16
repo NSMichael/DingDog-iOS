@@ -7,6 +7,7 @@
 //
 
 #import "UploadManager.h"
+#import "UploadTokenCmd.h"
 
 static UploadManager *instance;
 
@@ -51,11 +52,17 @@ static UploadManager *instance;
             block(nil,error);
         }else{
             [cmd errorCheckSuccess:^{
-                weakself.token = cmd.msgData;
-                [USER setObject:weakself.token forKey:@"AppResToken"];
-                [USER synchronize];
                 
-                block(cmd.msgData,nil);
+                if ([cmd isKindOfClass:[UploadTokenCmd class]]) {
+                    UploadTokenCmd *uploadCmd = (UploadTokenCmd *)cmd;
+                    
+                    weakself.token = uploadCmd.upload_Token;
+                    [USER setObject:weakself.token forKey:@"AppResToken"];
+                    [USER synchronize];
+                    
+                    block(uploadCmd.upload_Token,nil);
+                }
+                
             } failed:^(NSInteger errCode) {
                 block(nil,[NSError errorWithDomain:@"" code:errCode userInfo:nil]);
             }];

@@ -70,15 +70,15 @@
 
 - (void)setupWelcomeViewController {
     
-//    UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
-//
-//    if (userCmd) {
-//        [self setupTabViewController];
-//    } else {
-//        [self goToLoginVC];
-//    }
+    UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+
+    if (userCmd) {
+        [self setupTabViewController];
+    } else {
+        [self goToLoginVC];
+    }
     
-    [self setupTabViewController];
+//    [self setupTabViewController];
 }
 
 - (void)goToLoginVC {

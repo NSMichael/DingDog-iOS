@@ -438,12 +438,12 @@
                     UserCmd *userCmd = (UserCmd *)cmd;
                     NSLog(@"%@", userCmd);
                     
-                    [[MyAccountManager sharedManager] saveUserProfile:userCmd];
-                    [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
-                    
                     if (userCmd.token.length > 0) {
                         [[MyAccountManager sharedManager] saveToken:userCmd.token];
                     }
+                    
+                    [[MyAccountManager sharedManager] saveUserProfile:userCmd];
+                    [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
                     
                     [APP setupTabViewController];
                 }

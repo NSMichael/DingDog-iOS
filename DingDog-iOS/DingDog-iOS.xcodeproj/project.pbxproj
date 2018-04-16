@@ -20,8 +20,6 @@
 		1A28FBC4206FD7DA00041943 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBC0206FD7D900041943 /* .gitkeep */; };
 		1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBC6206FDE7900041943 /* ChineseToPinyin.m */; };
 		1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBCE207A56A300041943 /* GroupSendModel.m */; };
-		1A28FBD2207A57BE00041943 /* GroupSendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD1207A57BE00041943 /* GroupSendListCell.m */; };
-		1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */; };
 		1A28FBDC207BAB6900041943 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBD9207BAB6900041943 /* README.txt */; };
 		1A28FBDD207BAB6900041943 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FBDB207BAB6900041943 /* libWeChatSDK.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		1A28FBDF207BAFA200041943 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FBDE207BAFA200041943 /* libc++.tbd */; };
@@ -57,9 +55,6 @@
 		1A28FC6A208397B600041943 /* NSDictionary+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC68208397B400041943 /* NSDictionary+Check.m */; };
 		1A28FC6D20839CC400041943 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC6C20839CC400041943 /* AppManager.m */; };
 		1A28FC7020839FE400041943 /* UploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC6F20839FE400041943 /* UploadManager.m */; };
-		1A28FC732083A8BE00041943 /* Step1GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */; };
-		1A28FC762083A8D300041943 /* Step2GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */; };
-		1A28FC792083A8E400041943 /* Step3GroupSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -381,6 +376,13 @@
 		BB74D5042058FA0F00F8A55B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB74D4F92058FA0F00F8A55B /* Info.plist */; };
 		BB74D50820591EA700F8A55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB74D50720591E7F00F8A55B /* Foundation.framework */; };
 		BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */; };
+		BB86F7202084405E00DABEAC /* GroupSendCustomerSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */; };
+		BB86F7232084429100DABEAC /* GroupSendConditionSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */; };
+		BB86F726208442B200DABEAC /* GroupSendSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */; };
+		BB86F729208453D500DABEAC /* UploadTokenCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F728208453D500DABEAC /* UploadTokenCmd.m */; };
+		BB86F72D20845B8300DABEAC /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F72C20845B8300DABEAC /* SZTextView.m */; };
+		BB86F73020847C4700DABEAC /* DeviceAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F72F20847C4700DABEAC /* DeviceAuthHelper.m */; };
+		BB86F7322084811100DABEAC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB86F7312084811100DABEAC /* Photos.framework */; };
 		BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873C3C205FA94D0013C6D6 /* MessageListCell.m */; };
 		BB873C41205FB0030013C6D6 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BB873C40205FB0020013C6D6 /* ODRefreshControl.m */; };
 /* End PBXBuildFile section */
@@ -427,10 +429,6 @@
 		1A28FBC7206FDE7900041943 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
 		1A28FBCD207A56A300041943 /* GroupSendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendModel.h; sourceTree = "<group>"; };
 		1A28FBCE207A56A300041943 /* GroupSendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendModel.m; sourceTree = "<group>"; };
-		1A28FBD0207A57BE00041943 /* GroupSendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListCell.h; sourceTree = "<group>"; };
-		1A28FBD1207A57BE00041943 /* GroupSendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListCell.m; sourceTree = "<group>"; };
-		1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendSearchViewController.h; sourceTree = "<group>"; };
-		1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendSearchViewController.m; sourceTree = "<group>"; };
 		1A28FBD7207BAB6900041943 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		1A28FBD8207BAB6900041943 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		1A28FBD9207BAB6900041943 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -499,12 +497,6 @@
 		1A28FC6C20839CC400041943 /* AppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		1A28FC6E20839FE400041943 /* UploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadManager.h; sourceTree = "<group>"; };
 		1A28FC6F20839FE400041943 /* UploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadManager.m; sourceTree = "<group>"; };
-		1A28FC712083A8BE00041943 /* Step1GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step1GroupSendViewController.h; sourceTree = "<group>"; };
-		1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step1GroupSendViewController.m; sourceTree = "<group>"; };
-		1A28FC742083A8D300041943 /* Step2GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step2GroupSendViewController.h; sourceTree = "<group>"; };
-		1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step2GroupSendViewController.m; sourceTree = "<group>"; };
-		1A28FC772083A8E400041943 /* Step3GroupSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Step3GroupSendViewController.h; sourceTree = "<group>"; };
-		1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Step3GroupSendViewController.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1177,6 +1169,20 @@
 		BB74D50720591E7F00F8A55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB74D50A205923CC00F8A55B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		BB86F71E2084405E00DABEAC /* GroupSendCustomerSelectedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendCustomerSelectedVC.h; sourceTree = "<group>"; };
+		BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendCustomerSelectedVC.m; sourceTree = "<group>"; };
+		BB86F7212084429100DABEAC /* GroupSendConditionSelectedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendConditionSelectedVC.h; sourceTree = "<group>"; };
+		BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendConditionSelectedVC.m; sourceTree = "<group>"; };
+		BB86F724208442B200DABEAC /* GroupSendSuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendSuccessVC.h; sourceTree = "<group>"; };
+		BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendSuccessVC.m; sourceTree = "<group>"; };
+		BB86F727208453D500DABEAC /* UploadTokenCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadTokenCmd.h; sourceTree = "<group>"; };
+		BB86F728208453D500DABEAC /* UploadTokenCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadTokenCmd.m; sourceTree = "<group>"; };
+		BB86F72B20845B8300DABEAC /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
+		BB86F72C20845B8300DABEAC /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
+		BB86F72E20847C4600DABEAC /* DeviceAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAuthHelper.h; sourceTree = "<group>"; };
+		BB86F72F20847C4700DABEAC /* DeviceAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAuthHelper.m; sourceTree = "<group>"; };
+		BB86F7312084811100DABEAC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		BB86F733208482D600DABEAC /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		BB873C3B205FA94D0013C6D6 /* MessageListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
 		BB873C3C205FA94D0013C6D6 /* MessageListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
 		BB873C3F205FB0020013C6D6 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
@@ -1188,6 +1194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB86F7322084811100DABEAC /* Photos.framework in Frameworks */,
 				1A28FC0B207BC36200041943 /* QuartzCore.framework in Frameworks */,
 				1A28FC09207BC09E00041943 /* UIKit.framework in Frameworks */,
 				1A28FC07207BC08C00041943 /* CoreGraphics.framework in Frameworks */,
@@ -1300,8 +1307,6 @@
 		1A28FBCC207A561F00041943 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1A28FBD0207A57BE00041943 /* GroupSendListCell.h */,
-				1A28FBD1207A57BE00041943 /* GroupSendListCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1355,6 +1360,8 @@
 				1A28FC2A207D155000041943 /* GetCaptchaCmd.m */,
 				1A28FC6220831F8100041943 /* UserCmd.h */,
 				1A28FC6320831F8100041943 /* UserCmd.m */,
+				BB86F727208453D500DABEAC /* UploadTokenCmd.h */,
+				BB86F728208453D500DABEAC /* UploadTokenCmd.m */,
 			);
 			path = NetCmd;
 			sourceTree = "<group>";
@@ -1563,14 +1570,12 @@
 			children = (
 				BB467D1F2057D39400D18C97 /* Tab4_RootViewController.h */,
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
-				1A28FBD3207A5F2100041943 /* GroupSendSearchViewController.h */,
-				1A28FBD4207A5F2100041943 /* GroupSendSearchViewController.m */,
-				1A28FC712083A8BE00041943 /* Step1GroupSendViewController.h */,
-				1A28FC722083A8BE00041943 /* Step1GroupSendViewController.m */,
-				1A28FC742083A8D300041943 /* Step2GroupSendViewController.h */,
-				1A28FC752083A8D300041943 /* Step2GroupSendViewController.m */,
-				1A28FC772083A8E400041943 /* Step3GroupSendViewController.h */,
-				1A28FC782083A8E400041943 /* Step3GroupSendViewController.m */,
+				BB86F71E2084405E00DABEAC /* GroupSendCustomerSelectedVC.h */,
+				BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */,
+				BB86F7212084429100DABEAC /* GroupSendConditionSelectedVC.h */,
+				BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */,
+				BB86F724208442B200DABEAC /* GroupSendSuccessVC.h */,
+				BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */,
 				1A28FBCB207A561900041943 /* Models */,
 				1A28FBCC207A561F00041943 /* Cells */,
 			);
@@ -1580,6 +1585,7 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BB86F72A20845B8300DABEAC /* SZTextView */,
 				1A28FC30207E492200041943 /* SDWebImage */,
 				1A28FBD6207BAB6900041943 /* WechtSDK1.8.2_NoPay */,
 				1A28FBC5206FDE7900041943 /* PinYin */,
@@ -2077,6 +2083,8 @@
 		BB74D2EE2058B83500F8A55B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BB86F72E20847C4600DABEAC /* DeviceAuthHelper.h */,
+				BB86F72F20847C4700DABEAC /* DeviceAuthHelper.m */,
 				BB74D2EF2058B83500F8A55B /* SysInfo.h */,
 				BB74D2F02058B83500F8A55B /* SysTools.m */,
 				BB74D2F12058B83500F8A55B /* SysTools.h */,
@@ -2602,6 +2610,8 @@
 		BB74D50620591E7F00F8A55B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB86F733208482D600DABEAC /* PhotosUI.framework */,
+				BB86F7312084811100DABEAC /* Photos.framework */,
 				1A28FC0A207BC36200041943 /* QuartzCore.framework */,
 				1A28FC08207BC09D00041943 /* UIKit.framework */,
 				1A28FC06207BC08B00041943 /* CoreGraphics.framework */,
@@ -2618,6 +2628,15 @@
 				BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */,
 			);
 			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		BB86F72A20845B8300DABEAC /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				BB86F72B20845B8300DABEAC /* SZTextView.h */,
+				BB86F72C20845B8300DABEAC /* SZTextView.m */,
+			);
+			path = SZTextView;
 			sourceTree = "<group>";
 		};
 		BB873C3A205FA84A0013C6D6 /* Cells */ = {
@@ -2778,7 +2797,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB74D4902058BA9200F8A55B /* YYThreadSafeDictionary.m in Sources */,
-				1A28FBD2207A57BE00041943 /* GroupSendListCell.m in Sources */,
 				BB467E692057E14000D18C97 /* RACChannel.m in Sources */,
 				BB74D4552058BA9200F8A55B /* UIImageView+YYWebImage.m in Sources */,
 				BB74D48B2058BA9200F8A55B /* NSObject+YYAddForKVO.m in Sources */,
@@ -2790,6 +2808,7 @@
 				BB74D4602058BA9200F8A55B /* YYTextInput.m in Sources */,
 				BB467D542057DEE600D18C97 /* DDFileLogger.m in Sources */,
 				BB467D4C2057DEE600D18C97 /* DDTTYLogger.m in Sources */,
+				BB86F729208453D500DABEAC /* UploadTokenCmd.m in Sources */,
 				BB467D212057D39400D18C97 /* Tab4_RootViewController.m in Sources */,
 				BB74D3662058B93900F8A55B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				1A28FC5B207E492300041943 /* SDWebImagePrefetcher.m in Sources */,
@@ -2816,6 +2835,7 @@
 				BB74D36F2058B93900F8A55B /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				BB467D822057E06300D18C97 /* AFURLConnectionOperation.m in Sources */,
 				BB467EA92057E14000D18C97 /* RACCommand.m in Sources */,
+				BB86F7232084429100DABEAC /* GroupSendConditionSelectedVC.m in Sources */,
 				BB467E962057E14000D18C97 /* RACTestScheduler.m in Sources */,
 				BB74D45A2058BA9200F8A55B /* NSObject+YYModel.m in Sources */,
 				BB74D4692058BA9200F8A55B /* NSParagraphStyle+YYText.m in Sources */,
@@ -2856,6 +2876,7 @@
 				BB74D4892058BA9200F8A55B /* NSNotificationCenter+YYAdd.m in Sources */,
 				BB74D4CC2058F77300F8A55B /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				BB74D5022058FA0F00F8A55B /* MASViewConstraint.m in Sources */,
+				BB86F726208442B200DABEAC /* GroupSendSuccessVC.m in Sources */,
 				BB74D4652058BA9200F8A55B /* YYTextDebugOption.m in Sources */,
 				BB467E9D2057E14000D18C97 /* UIButton+RACCommandSupport.m in Sources */,
 				BB467D1E2057D38A00D18C97 /* Tab3_RootViewController.m in Sources */,
@@ -2865,6 +2886,7 @@
 				BB467EA42057E14000D18C97 /* RACSubscriber.m in Sources */,
 				BB467D2F2057DE0600D18C97 /* iConsole.m in Sources */,
 				BB467D152057D31000D18C97 /* RDVTabBarItem.m in Sources */,
+				BB86F72D20845B8300DABEAC /* SZTextView.m in Sources */,
 				BB467E8A2057E14000D18C97 /* RACPassthroughSubscriber.m in Sources */,
 				1A28FBF1207BB5AE00041943 /* BaseCmd.m in Sources */,
 				BB467D532057DEE600D18C97 /* DDAbstractDatabaseLogger.m in Sources */,
@@ -2941,7 +2963,6 @@
 				BB467EA32057E14000D18C97 /* NSObject+RACSelectorSignal.m in Sources */,
 				BB467E672057E14000D18C97 /* RACTupleSequence.m in Sources */,
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
-				1A28FC732083A8BE00041943 /* Step1GroupSendViewController.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
 				BB467E812057E14000D18C97 /* RACMulticastConnection.m in Sources */,
 				1A28FC7020839FE400041943 /* UploadManager.m in Sources */,
@@ -2958,7 +2979,6 @@
 				BB74D4972058BA9200F8A55B /* YYTimer.m in Sources */,
 				BB74D37C2058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				BB467EA12057E14000D18C97 /* RACSubject.m in Sources */,
-				1A28FC792083A8E400041943 /* Step3GroupSendViewController.m in Sources */,
 				BB467E862057E14000D18C97 /* UIDatePicker+RACSignalSupport.m in Sources */,
 				1A28FBEF207BB5AE00041943 /* Reachability.m in Sources */,
 				BB74D48E2058BA9200F8A55B /* YYWeakProxy.m in Sources */,
@@ -2975,7 +2995,6 @@
 				BB74D4542058BA9200F8A55B /* UIButton+YYWebImage.m in Sources */,
 				BB467E922057E14000D18C97 /* RACValueTransformer.m in Sources */,
 				BB467D132057D31000D18C97 /* RDVTabBar.m in Sources */,
-				1A28FC762083A8D300041943 /* Step2GroupSendViewController.m in Sources */,
 				BB74D38C2058B98800F8A55B /* NSString+Check.m in Sources */,
 				BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */,
 				BB467E7F2057E14000D18C97 /* RACBehaviorSubject.m in Sources */,
@@ -3048,7 +3067,6 @@
 				BB74D4DC2058F9C300F8A55B /* UIScrollView+Empty.m in Sources */,
 				BB74D45D2058BA9200F8A55B /* YYTextMagnifier.m in Sources */,
 				BB467E6D2057E14000D18C97 /* RACEmptySequence.m in Sources */,
-				1A28FBD5207A5F2100041943 /* GroupSendSearchViewController.m in Sources */,
 				BB467E7E2057E14000D18C97 /* NSObject+RACPropertySubscribing.m in Sources */,
 				BB74D35A2058B93900F8A55B /* DGActivityIndicatorView.m in Sources */,
 				1A28FC2B207D155000041943 /* GetCaptchaCmd.m in Sources */,
@@ -3086,6 +3104,7 @@
 				1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */,
 				BB74D5002058FA0F00F8A55B /* View+MASAdditions.m in Sources */,
 				BB74D47E2058BA9200F8A55B /* NSArray+YYAdd.m in Sources */,
+				BB86F7202084405E00DABEAC /* GroupSendCustomerSelectedVC.m in Sources */,
 				BB74D35C2058B93900F8A55B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				BB467D8C2057E06300D18C97 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BB74D4CB2058F77300F8A55B /* NSDictionary+MTLJSONKeyPath.m in Sources */,
@@ -3120,6 +3139,7 @@
 				BB74D4CF2058F77300F8A55B /* MTLReflection.m in Sources */,
 				BB74D4922058BA9200F8A55B /* YYTransaction.m in Sources */,
 				BB467E992057E14000D18C97 /* UISlider+RACSignalSupport.m in Sources */,
+				BB86F73020847C4700DABEAC /* DeviceAuthHelper.m in Sources */,
 				BB74D4C72058F77300F8A55B /* MTLModel.m in Sources */,
 				BB74D46A2058BA9200F8A55B /* YYTextParser.m in Sources */,
 				BB74D3102058B90D00F8A55B /* CustomBadge.m in Sources */,
@@ -3294,7 +3314,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3316,7 +3336,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

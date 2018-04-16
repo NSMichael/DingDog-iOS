@@ -1,25 +1,27 @@
 //
-//  Step2GroupSendViewController.m
+//  GroupSendCustomerSelectedVC.m
 //  DingDog-iOS
 //
-//  Created by james on 18/06/07.
+//  Created by 耿功发 on 2018/4/16.
 //  Copyright © 2018年 耿功发. All rights reserved.
 //
 
-#import "Step2GroupSendViewController.h"
-#import "Step3GroupSendViewController.h"
+#import "GroupSendCustomerSelectedVC.h"
+#import "GroupSendSuccessVC.h"
 
-@interface Step2GroupSendViewController ()
+@interface GroupSendCustomerSelectedVC ()
 
 @end
 
-@implementation Step2GroupSendViewController
+@implementation GroupSendCustomerSelectedVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = @"群发";
     
+    self.rdv_tabBarController.tabBarHidden = YES;
+        
     [self setRightBarWithBtn:@"下一步" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
 }
 
@@ -28,7 +30,8 @@
 }
 
 - (void)onRightBarButtonClicked:(id)sender {
-    Step3GroupSendViewController *vc = [[Step3GroupSendViewController alloc] init];
+    GroupSendSuccessVC *vc = [[GroupSendSuccessVC alloc] init];
     [self pushViewController:vc animated:YES];
 }
+
 @end

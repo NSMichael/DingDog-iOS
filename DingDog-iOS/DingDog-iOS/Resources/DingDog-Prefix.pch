@@ -14,6 +14,7 @@
 
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <Photos/PHPhotoLibrary.h>
 
     #import "AFNetworking.h"
     #import "AFNetworkActivityIndicatorManager.h"
@@ -26,6 +27,7 @@
     #import "NSObject+Common.h"
     #import "AppDelegate.h"
     #import "UIImageView+WebCache.h"
+    #import "DeviceAuthHelper.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"
