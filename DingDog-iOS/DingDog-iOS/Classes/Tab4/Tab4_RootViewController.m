@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UIView *uvTextFieldName;
 @property (nonatomic, strong) UITextField *textFieldName;
 
-@property (nonatomic, strong) NSString *nameStr, *contentStr;
+@property (nonatomic, strong) NSString *nameStr, *contentStr, *imageKeyStr;
 
 @property (nonatomic, strong) SZTextView *szTextView;
 
@@ -152,6 +152,49 @@
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    [self showLoadingView];
+    
+    UIImage *userIconImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (userIconImage.size.width > IMG_WIDTH_PERFECT) {
+        CGFloat resizeRatio = IMG_WIDTH_PERFECT / userIconImage.size.width;
+        CGSize newSize = CGSizeMake(IMG_WIDTH_PERFECT, resizeRatio * userIconImage.size.height);
+        userIconImage = [userIconImage resizeImageWithNewSize:newSize];
+    }
+    
+    // 保存原图片到相册中
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(userIconImage, self, nil, NULL);
+    }
+    
+    WS(weakSelf)
+    [[UploadManager GetInstance] uploadImgWithRestype:RES_IMG_GroupSend img:userIconImage block:^(NSString *keystr, NSError *error) {
+        
+        [weakSelf hideLoadingView];
+        
+        if (error) {
+            if ([error code] == ERRORCODE_ForbiddenUser) {
+                [weakSelf showStatusBarErrorWithString:[error domain]];
+            } else {
+                [weakSelf showStatusBarErrorWithString:TIP_NETWORKERROR];
+            }
+            
+        } else {
+            
+            [self showHudTipStr:@"图片上传成功"];
+            self.imageKeyStr = keystr;
+        }
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark UITextField delegates

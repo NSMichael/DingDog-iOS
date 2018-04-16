@@ -28,6 +28,8 @@
     #import "AppDelegate.h"
     #import "UIImageView+WebCache.h"
     #import "DeviceAuthHelper.h"
+    #import "ImageTools.h"
+    #import "UIImage+Resize.h"
 
     #import "UIColor+expanded.h"
     #import "UIImage-Extensions.h"

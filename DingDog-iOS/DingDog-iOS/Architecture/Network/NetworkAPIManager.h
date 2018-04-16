@@ -36,4 +36,12 @@
  */
 + (void)common_getUpToken:(void(^)(BaseCmd *cmd,NSError *error))block;
 
+/**
+ 七牛上传图片/语音获取key
+ 盯盘狗——七牛上传图片获取key
+ 参数type说明：
+ common/getResKey.do
+ */
++ (void)common_getResKey:(NSNumber*)type block:(void(^)(BaseCmd *cmd,NSError *error))block;
+
 @end

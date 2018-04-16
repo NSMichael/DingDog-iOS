@@ -138,6 +138,26 @@
     }];
 }
 
+/**
+ 七牛上传图片/语音获取key
+ 盯盘狗——七牛上传图片获取key
+ 参数type说明：
+ common/getResKey.do
+ */
++ (void)common_getResKey:(NSNumber*)type block:(void(^)(BaseCmd *cmd,NSError *error))block {
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:type,@"type", nil];
+    
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"common/getResKey.do" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            //data中的值就是 key,形如："data":"buy_pic/79/185844be99181a34"
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[UploadTokenCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 @end
 
 
