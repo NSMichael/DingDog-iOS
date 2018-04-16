@@ -103,7 +103,74 @@ static UploadManager *instance;
         
     }
     
+    NSString *filePaht = [self getImagePath:img];
+    
+    QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
+        NSLog(@"percent == %.2f", percent);
+    }
+                                                                 params:nil
+                                                               checkCrc:NO
+                                                     cancellationSignal:nil];
+    
+    NSData *imgData = [ImageTools GetJpegBytesFromImage:image jpegQulity:0.6];
+    
     __weak __typeof(self) weakself = self;
+    [weakself.upManager putData:imgData key:nil token:weakself.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        NSLog(@"info ===== %@", info);
+        NSLog(@"resp ===== %@", resp);
+        
+        if (info.error) {
+            block(key, info.error);
+        } else {
+            block(key, nil);
+        }
+    } option:uploadOption];
+    
+    
+//    [weakself.upManager putFile:filePaht key:nil token:self.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+//        NSLog(@"info ===== %@", info);
+//        NSLog(@"resp ===== %@", resp);
+//
+//        if (info.error) {
+//            block(key, info.error);
+//        } else {
+//            block(key, nil);
+//        }
+//    } option:uploadOption];
+    
+    /*
+    NSData *imgData = [ImageTools GetJpegBytesFromImage:image jpegQulity:0.6];
+    [weakself.upManager putData:imgData key:nil token:weakself.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        NSLog(@"info ===== %@", info);
+        NSLog(@"resp ===== %@", resp);
+        
+        if (info.error) {
+            block(key, info.error);
+        } else {
+            block(key, nil);
+        }
+        
+    } option:nil];
+     */
+    
+    /*
+    [weakself.upManager putData:imgData key:keyStr token:weakself.token
+                       complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                           SLOG("%@", info);
+                           SLOG(@"%@", resp);
+                           if(info.error){
+                               //默认认为是restoken不正确，自动去刷新一下resToken，界面中显示网络故障即可
+                               [weakself getResTokenFromServer:^(NSString *token, NSError *error) {
+                                   
+                               }];
+                               block(keyStr,info.error);
+                           }else{
+                               block(keyStr,nil);
+                           }
+                       } option:nil];
+     */
+    
+    /*
     [self getResKeyFromServer:@(resType) block:^(NSString *keyStr, NSError *error) {
         if(error){
             block(nil,error);
@@ -125,7 +192,35 @@ static UploadManager *instance;
                                } option:nil];
         }
     }];
+     */
     
+}
+
+//照片获取本地路径转换
+- (NSString *)getImagePath:(UIImage *)Image {
+    NSString *filePath = nil;
+    NSData *data = nil;
+    if (UIImagePNGRepresentation(Image) == nil) {
+        data = UIImageJPEGRepresentation(Image, 1.0);
+    } else {
+        data = UIImagePNGRepresentation(Image);
+    }
+    
+    //图片保存的路径
+    //这里将图片放在沙盒的documents文件夹中
+    NSString *DocumentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    
+    //文件管理器
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //把刚刚图片转换的data对象拷贝至沙盒中
+    [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *ImagePath = [[NSString alloc] initWithFormat:@"/theFirstImage.png"];
+    [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:ImagePath] contents:data attributes:nil];
+    
+    //得到选择后沙盒中图片的完整路径
+    filePath = [[NSString alloc] initWithFormat:@"%@%@", DocumentsPath, ImagePath];
+    return filePath;
 }
 
 - (void)getResKeyFromServer:(NSNumber*)resType

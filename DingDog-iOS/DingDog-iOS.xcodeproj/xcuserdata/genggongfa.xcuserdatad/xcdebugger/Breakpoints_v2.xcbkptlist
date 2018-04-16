@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Tab4/Tab4_RootViewController.m"
-            timestampString = "545560492.3583601"
+            timestampString = "545569170.29036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -26,29 +26,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Manager/UploadManager.m"
-            timestampString = "545560501.53529"
+            timestampString = "545569467.798667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-uploadImgWithRestype:img:block:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DingDog-iOS/Classes/Manager/UploadManager.m"
-            timestampString = "545561537.658519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-uploadImgWithRestype:img:block:"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UploadManager uploadImgWithRestype:img:block:]"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
+                  timestampString = "545569468.044966"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "560">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[UploadManager uploadImgWithRestype:img:block:]_block_invoke_2"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
+                  timestampString = "545569468.047577"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
