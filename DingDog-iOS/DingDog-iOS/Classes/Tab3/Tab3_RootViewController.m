@@ -9,13 +9,15 @@
 #import "Tab3_RootViewController.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
-#import "CustomerSearchViewController.h"
 #import "ChineseToPinyin.h"
 
 @interface Tab3_RootViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 {
     NSArray *mAllSectionArray;
     NSArray *mSectionTitles;
+    
+    NSArray *mAllSectionArraySearch;
+    NSArray *mSectionTitlesSearch;
 }
 
 @property (nonatomic, strong) ODRefreshControl *mRefreshControl;
@@ -24,7 +26,6 @@
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (strong,nonatomic) NSMutableArray  *searchResults;  //搜索结果
-@property (strong,nonatomic) CustomerSearchViewController *resultVC; //搜索结果展示控制器
 
 @end
 
@@ -166,12 +167,22 @@
         [allSectionsArray addObject:subSectionArray];
     }
     
-    for (CustomerModel *model in _customerArray) {
-        NSString *firstLetter = [ChineseToPinyin pinyinFromChineseString:model.name];
-        NSInteger section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
-        
-        NSMutableArray *array = [allSectionsArray objectAtIndex:section];
-        [array addObject:model];
+    if (self.searchController.active) {
+        for (CustomerModel *model in _searchResults) {
+            NSString *firstLetter = [ChineseToPinyin pinyinFromChineseString:model.name];
+            NSInteger section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
+            
+            NSMutableArray *array = [allSectionsArray objectAtIndex:section];
+            [array addObject:model];
+        }
+    } else {
+        for (CustomerModel *model in _customerArray) {
+            NSString *firstLetter = [ChineseToPinyin pinyinFromChineseString:model.name];
+            NSInteger section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
+            
+            NSMutableArray *array = [allSectionsArray objectAtIndex:section];
+            [array addObject:model];
+        }
     }
     
     //过滤掉空的
@@ -182,12 +193,18 @@
             [deleteIndexSet addIndex:index];
         }
     }
+    
     [allSectionsArray removeObjectsAtIndexes:deleteIndexSet];
     NSMutableArray *mTitles = [sectionTitles mutableCopy];
     [mTitles removeObjectsAtIndexes:deleteIndexSet];
     
-    mSectionTitles = [mTitles copy];
-    mAllSectionArray = [allSectionsArray copy];
+    if (self.searchController.active) {
+        mSectionTitlesSearch = [mTitles copy];
+        mAllSectionArraySearch = [allSectionsArray copy];
+    } else {
+        mSectionTitles = [mTitles copy];
+        mAllSectionArray = [allSectionsArray copy];
+    }
     [self.mTableView reloadData];
 }
 
@@ -212,8 +229,7 @@
 - (void)configSearch {
     //UISearchController
     //创建显示搜索结果控制器
-    _resultVC = [[CustomerSearchViewController alloc] init];
-    _searchController = [[UISearchController alloc] initWithSearchResultsController:_resultVC];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchResultsUpdater = self;
     _searchController.delegate = self;
     
@@ -235,25 +251,43 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return mSectionTitles;
+    if (self.searchController.active) {
+        return mSectionTitlesSearch;
+    } else {
+        return mSectionTitles;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [mAllSectionArray count];
+    if (self.searchController.active) {
+        return [mAllSectionArraySearch count];
+    } else {
+        return [mAllSectionArray count];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [mAllSectionArray[section] count];
+    if (self.searchController.active) {
+        return [mAllSectionArraySearch[section] count];
+    } else {
+        return [mAllSectionArray[section] count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CustomerListCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomerListCellIdentifier forIndexPath:indexPath];
     
-    NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
-    CustomerModel *model = subsections[indexPath.row];
-    [cell configCellDataWithCustomerModel:model];
+    if (self.searchController.active) {
+        NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        [cell configCellDataWithCustomerModel:model];
+    } else {
+        NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        [cell configCellDataWithCustomerModel:model];
+    }
     
     return cell;
 }
@@ -266,9 +300,15 @@
             cell = [[CustomerListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CustomerListCellIdentifier];
         }
     });
-    NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
-    CustomerModel *model = subsections[indexPath.row];
-    [cell configCellDataWithCustomerModel:model];
+    if (self.searchController.active) {
+        NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        [cell configCellDataWithCustomerModel:model];
+    } else {
+        NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        [cell configCellDataWithCustomerModel:model];
+    }
     return [cell calculateCellHeightInAutolayoutMode:cell tableView:tableView];
 }
 
@@ -278,7 +318,12 @@
     [contentView setBackgroundColor:[UIColor colorWithHexString:@"0xF3F3F3"]];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 4, 100, 22)];
     label.textColor = [UIColor blackColor];
-    [label setText:[mSectionTitles objectAtIndex:section]];
+    
+    if (self.searchController.active) {
+        [label setText:[mSectionTitlesSearch objectAtIndex:section]];
+    } else {
+        [label setText:[mSectionTitles objectAtIndex:section]];
+    }
     [contentView addSubview:label];
     return contentView;
 }
@@ -291,6 +336,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (self.searchController.active) {
+//        NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
+    } else {
+//        NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
+    }
 }
 
 #pragma mark UISearchResultsUpdating
@@ -332,9 +382,9 @@
         _searchResults = [NSMutableArray arrayWithArray:_customerArray];
     }
     
-    //显示搜索结果
-    //在新控制器调用刷新页面的方法
-    self.resultVC.results = _searchResults;
+    [self generateSectionTitleIndex];
+    
+    [self.mTableView reloadData];
 }
 
 @end

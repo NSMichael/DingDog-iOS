@@ -80,7 +80,7 @@ NSString * const TagListCellIdentifier = @"TagListCellIdentifier";
     
     self.imgAvatar.image = [UIImage imageNamed:@"icon-img-app"];
     
-    self.lblName.text = model.tagName;
+    self.lblName.text = [NSString stringWithFormat:@"%@(%@人)", model.tagName, model.memberTotal];
 }
 
 @end

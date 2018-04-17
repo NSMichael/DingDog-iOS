@@ -9,7 +9,7 @@
 #import "Tab2_RootViewController.h"
 #import "TagListCell.h"
 #import "TagModel.h"
-#import "TagSearchViewController.h"
+#import "TagListCmd.h"
 
 @interface Tab2_RootViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
@@ -19,7 +19,6 @@
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (strong,nonatomic) NSMutableArray  *searchResults;  //搜索结果
-@property (strong,nonatomic) TagSearchViewController *resultVC; //搜索结果展示控制器
 
 @end
 
@@ -35,9 +34,8 @@
     }];
     
     _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCoinMarketList) forControlEvents:UIControlEventValueChanged];
+    [_mRefreshControl addTarget:self action:@selector(getCustomerTagList) forControlEvents:UIControlEventValueChanged];
     
-    [self configTestData];
     [self configSearch];
     
     [self getCustomerTagList];
@@ -52,10 +50,17 @@
 - (void)getCustomerTagList {
     WS(weakSelf);
     [NetworkAPIManager customer_tagList:^(BaseCmd *cmd, NSError *error) {
+        [weakSelf.mRefreshControl endRefreshing];
         if (error) {
             [self showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
+                
+                if ([cmd isKindOfClass:[TagListCmd class]]) {
+                    TagListCmd *tagCmd = (TagListCmd *)cmd;
+                    _tagArray = [NSMutableArray arrayWithArray:tagCmd.itemArray];
+                    [weakSelf.mTableView reloadData];
+                }
                 
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
@@ -72,35 +77,6 @@
         _tagArray = [NSMutableArray array];
     }
     return _tagArray;
-}
-
-- (void)configTestData {
-    TagModel *model1 = [TagModel new];
-    model1.tagName = @"#City:上海";
-    [self.tagArray addObject:model1];
-    
-    TagModel *model2 = [TagModel new];
-    model2.tagName = @"#City:活跃用户";
-    [self.tagArray addObject:model2];
-    
-    TagModel *model3 = [TagModel new];
-    model3.tagName = @"#City:北京";
-    [self.tagArray addObject:model3];
-    
-    TagModel *model4 = [TagModel new];
-    model4.tagName = @"#Age:40";
-    [self.tagArray addObject:model4];
-    
-    [self.mTableView reloadData];
-}
-
-- (void)getCoinMarketList {
-    [self.mRefreshControl endRefreshing];
-    TagModel *model = [TagModel new];
-    model.tagName = @"#City:南京";
-    [self.tagArray addObject:model];
-    
-    [self.mTableView reloadData];
 }
 
 - (UITableView *)mTableView {
@@ -123,10 +99,11 @@
 - (void)configSearch {
     //UISearchController
     //创建显示搜索结果控制器
-    _resultVC = [[TagSearchViewController alloc] init];
-    _searchController = [[UISearchController alloc] initWithSearchResultsController:_resultVC];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchResultsUpdater = self;
     _searchController.delegate = self;
+    // 因为在当前控制器展示结果, 所以不需要这个透明视图
+    _searchController.dimsBackgroundDuringPresentation = NO;
     
     _searchController.searchBar.placeholder = @"Search";
     _searchController.hidesNavigationBarDuringPresentation = YES; //搜索时隐藏导航栏
@@ -278,9 +255,11 @@
         _searchResults = [NSMutableArray arrayWithArray:_tagArray];
     }
     
+    [self.mTableView reloadData];
+    
     //显示搜索结果
     //在新控制器调用刷新页面的方法
-    self.resultVC.results = _searchResults;
+//    self.resultVC.results = _searchResults;
 }
 
 @end

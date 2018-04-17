@@ -98,7 +98,7 @@
     NSString *token = [[MyAccountManager sharedManager] getToken];
     if (token && ![token isEqualToString:@""]) {
 //        [parametersWithoutEmoji setObject:token forKey:@"token"];
-        [self.requestSerializer setValue:token forHTTPHeaderField:@"X_AUTH_TOKEN"];
+        [self.requestSerializer setValue:token forHTTPHeaderField:@"X-AUTH-TOKEN"];
     }
     
     NSString *cookie = [[MyAccountManager sharedManager] getCookie];

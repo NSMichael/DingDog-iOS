@@ -10,6 +10,7 @@
 #import "NetworkAPIClient.h"
 #import "RMTAPIClient.h"
 #import "UploadTokenCmd.h"
+#import "TagListCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -166,7 +167,7 @@
         if (error) {
             block(nil, error);
         } else {
-            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[TagListCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];

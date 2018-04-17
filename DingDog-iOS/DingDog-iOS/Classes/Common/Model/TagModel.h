@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TagModel : NSObject
+@interface TagModel : MTLModel <MTLJSONSerializing>
 
+@property (nonatomic, strong) NSString *tagId;
 @property (nonatomic, strong) NSString *tagName;
+@property (nonatomic, strong) NSString *tagIcon;
+@property (nonatomic, strong) NSString *memberTotal;
 
 @end

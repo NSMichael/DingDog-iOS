@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A25EF2A20629A3000C72698 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2920629A3000C72698 /* TagModel.m */; };
 		1A25EF2E20629B6A00C72698 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF2D20629B6A00C72698 /* TagListCell.m */; };
-		1A25EF312062A60900C72698 /* TagSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A25EF302062A60900C72698 /* TagSearchViewController.m */; };
 		1A28FBA9206FCBAB00041943 /* MsgSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBA8206FCBAB00041943 /* MsgSearchViewController.m */; };
 		1A28FBB1206FCFC300041943 /* CustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB0206FCFC300041943 /* CustomerModel.m */; };
 		1A28FBB4206FD31B00041943 /* CustomerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB3206FD31B00041943 /* CustomerListCell.m */; };
-		1A28FBB7206FD49C00041943 /* CustomerSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */; };
 		1A28FBC1206FD7DA00041943 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FBBB206FD7D900041943 /* .gitkeep */; };
 		1A28FBC2206FD7DA00041943 /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBBD206FD7D900041943 /* TTGTagCollectionView.m */; };
 		1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FBBE206FD7D900041943 /* TTGTextTagCollectionView.m */; };
@@ -97,6 +94,8 @@
 		1A28FD092084F7E800041943 /* QNSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FCED2084F7E700041943 /* QNSessionManager.m */; };
 		1A28FD0A2084F7E800041943 /* QNFileRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FCF02084F7E700041943 /* QNFileRecorder.m */; };
 		1A28FD0B2084F7E800041943 /* QNPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FCF62084F7E700041943 /* QNPipeline.m */; };
+		1A28FD0E208641D200041943 /* TagListCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD0D208641D200041943 /* TagListCmd.m */; };
+		1A28FD142086441D00041943 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD122086441C00041943 /* TagModel.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -450,20 +449,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A25EF2820629A3000C72698 /* TagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
-		1A25EF2920629A3000C72698 /* TagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		1A25EF2C20629B6A00C72698 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
 		1A25EF2D20629B6A00C72698 /* TagListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListCell.m; sourceTree = "<group>"; };
-		1A25EF2F2062A60900C72698 /* TagSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagSearchViewController.h; sourceTree = "<group>"; };
-		1A25EF302062A60900C72698 /* TagSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagSearchViewController.m; sourceTree = "<group>"; };
 		1A28FBA7206FCBAB00041943 /* MsgSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgSearchViewController.h; sourceTree = "<group>"; };
 		1A28FBA8206FCBAB00041943 /* MsgSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgSearchViewController.m; sourceTree = "<group>"; };
 		1A28FBAF206FCFC300041943 /* CustomerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerModel.h; sourceTree = "<group>"; };
 		1A28FBB0206FCFC300041943 /* CustomerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerModel.m; sourceTree = "<group>"; };
 		1A28FBB2206FD31B00041943 /* CustomerListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerListCell.h; sourceTree = "<group>"; };
 		1A28FBB3206FD31B00041943 /* CustomerListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerListCell.m; sourceTree = "<group>"; };
-		1A28FBB5206FD49C00041943 /* CustomerSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerSearchViewController.h; sourceTree = "<group>"; };
-		1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerSearchViewController.m; sourceTree = "<group>"; };
 		1A28FBBA206FD7D900041943 /* TTGTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTagCollectionView.h; sourceTree = "<group>"; };
 		1A28FBBB206FD7D900041943 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		1A28FBBC206FD7D900041943 /* TTGTextTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGTextTagCollectionView.h; sourceTree = "<group>"; };
@@ -633,6 +626,10 @@
 		1A28FCF32084F7E700041943 /* QiniuSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuSDK.h; sourceTree = "<group>"; };
 		1A28FCF52084F7E700041943 /* QNPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNPipeline.h; sourceTree = "<group>"; };
 		1A28FCF62084F7E700041943 /* QNPipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNPipeline.m; sourceTree = "<group>"; };
+		1A28FD0C208641D200041943 /* TagListCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListCmd.h; sourceTree = "<group>"; };
+		1A28FD0D208641D200041943 /* TagListCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListCmd.m; sourceTree = "<group>"; };
+		1A28FD122086441C00041943 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
+		1A28FD132086441C00041943 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1364,15 +1361,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A25EF27206299D500C72698 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1A25EF2820629A3000C72698 /* TagModel.h */,
-				1A25EF2920629A3000C72698 /* TagModel.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		1A25EF2B20629B6A00C72698 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1505,6 +1493,8 @@
 				1A28FC6320831F8100041943 /* UserCmd.m */,
 				BB86F727208453D500DABEAC /* UploadTokenCmd.h */,
 				BB86F728208453D500DABEAC /* UploadTokenCmd.m */,
+				1A28FD0C208641D200041943 /* TagListCmd.h */,
+				1A28FD0D208641D200041943 /* TagListCmd.m */,
 			);
 			path = NetCmd;
 			sourceTree = "<group>";
@@ -1514,6 +1504,8 @@
 			children = (
 				1A28FC652083200300041943 /* ConfigModel.h */,
 				1A28FC662083200300041943 /* ConfigModel.m */,
+				1A28FD132086441C00041943 /* TagModel.h */,
+				1A28FD122086441C00041943 /* TagModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1872,9 +1864,6 @@
 			children = (
 				BB467D192057D37E00D18C97 /* Tab2_RootViewController.h */,
 				BB467D1A2057D37E00D18C97 /* Tab2_RootViewController.m */,
-				1A25EF2F2062A60900C72698 /* TagSearchViewController.h */,
-				1A25EF302062A60900C72698 /* TagSearchViewController.m */,
-				1A25EF27206299D500C72698 /* Models */,
 				1A25EF2B20629B6A00C72698 /* Cells */,
 			);
 			path = Tab2;
@@ -1885,8 +1874,6 @@
 			children = (
 				BB467D1C2057D38A00D18C97 /* Tab3_RootViewController.h */,
 				BB467D1D2057D38A00D18C97 /* Tab3_RootViewController.m */,
-				1A28FBB5206FD49C00041943 /* CustomerSearchViewController.h */,
-				1A28FBB6206FD49C00041943 /* CustomerSearchViewController.m */,
 				1A28FBAA206FCE9D00041943 /* Models */,
 				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
@@ -3311,7 +3298,6 @@
 				BB467E6A2057E14000D18C97 /* RACObjCRuntime.m in Sources */,
 				BB467D832057E06300D18C97 /* AFURLSessionManager.m in Sources */,
 				BB467EAC2057E14000D18C97 /* RACTuple.m in Sources */,
-				1A25EF312062A60900C72698 /* TagSearchViewController.m in Sources */,
 				BB467E882057E14000D18C97 /* RACScopedDisposable.m in Sources */,
 				BB467D4F2057DEE600D18C97 /* DDContextFilterLogFormatter.m in Sources */,
 				BB467E822057E14000D18C97 /* RACBacktrace.m in Sources */,
@@ -3325,6 +3311,7 @@
 				BB467E672057E14000D18C97 /* RACTupleSequence.m in Sources */,
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
+				1A28FD142086441D00041943 /* TagModel.m in Sources */,
 				BB467E812057E14000D18C97 /* RACMulticastConnection.m in Sources */,
 				1A28FC7020839FE400041943 /* UploadManager.m in Sources */,
 				BB467D4E2057DEE600D18C97 /* CLIColor.m in Sources */,
@@ -3375,7 +3362,6 @@
 				BB467EA82057E14000D18C97 /* RACCompoundDisposable.m in Sources */,
 				BB467E952057E14000D18C97 /* NSSet+RACSequenceAdditions.m in Sources */,
 				BB467E842057E14000D18C97 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
-				1A25EF2A20629A3000C72698 /* TagModel.m in Sources */,
 				BB74D3682058B93900F8A55B /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				BB467D812057E06300D18C97 /* AFHTTPSessionManager.m in Sources */,
 				BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */,
@@ -3499,10 +3485,10 @@
 				BB467E7D2057E14000D18C97 /* RACKVOChannel.m in Sources */,
 				BB467EAB2057E14000D18C97 /* RACImmediateScheduler.m in Sources */,
 				BB873C41205FB0030013C6D6 /* ODRefreshControl.m in Sources */,
-				1A28FBB7206FD49C00041943 /* CustomerSearchViewController.m in Sources */,
 				BB74D4532058BA9200F8A55B /* _YYWebImageSetter.m in Sources */,
 				BB467E7A2057E14000D18C97 /* RACErrorSignal.m in Sources */,
 				BB74D4872058BA9200F8A55B /* NSDate+YYAdd.m in Sources */,
+				1A28FD0E208641D200041943 /* TagListCmd.m in Sources */,
 				1A28FC53207E492300041943 /* MKAnnotationView+WebCache.m in Sources */,
 				BB74D4642058BA9200F8A55B /* YYTextKeyboardManager.m in Sources */,
 				BB74D4982058BA9200F8A55B /* YYThreadSafeArray.m in Sources */,
