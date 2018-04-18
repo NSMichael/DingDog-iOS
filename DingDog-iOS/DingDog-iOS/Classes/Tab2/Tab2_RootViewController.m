@@ -10,6 +10,7 @@
 #import "TagListCell.h"
 #import "TagModel.h"
 #import "TagListCmd.h"
+#import "TagCustomerSelectedVC.h"
 
 @interface Tab2_RootViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
@@ -29,6 +30,8 @@
     
     self.title = @"标签";
     
+    [self setRightBarWithBtn:@"新建" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
+    
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -41,8 +44,22 @@
     [self getCustomerTagList];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.rdv_tabBarController.tabBarHidden = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - click event
+
+- (void)onRightBarButtonClicked:(id)sender {
+    TagCustomerSelectedVC *vc = [[TagCustomerSelectedVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Network
@@ -102,17 +119,20 @@
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchResultsUpdater = self;
     _searchController.delegate = self;
+    
     // 因为在当前控制器展示结果, 所以不需要这个透明视图
-    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.dimsBackgroundDuringPresentation = false;
+    _searchController.hidesNavigationBarDuringPresentation = false;
+    [_searchController.searchBar sizeToFit];
     
     _searchController.searchBar.placeholder = @"Search";
-    _searchController.hidesNavigationBarDuringPresentation = YES; //搜索时隐藏导航栏
     _searchController.searchBar.delegate = self;
     _searchController.searchBar.frame = CGRectMake(0, 0, kScreenWidth, 60);
     self.mTableView.tableHeaderView = _searchController.searchBar;
     
     //解决：退出时搜索框依然存在的问题
     self.definesPresentationContext = YES;
+    self.extendedLayoutIncludesOpaqueBars = YES;
 }
 
 #pragma mark - UITableView data source

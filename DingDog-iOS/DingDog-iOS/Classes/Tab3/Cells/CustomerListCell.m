@@ -21,10 +21,23 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
 
 @implementation CustomerListCell
 
+- (UIButton *)btnRadio {
+    if (!_btnRadio) {
+        _btnRadio = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.contentView addSubview:_btnRadio];
+        
+        [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed-g"] forState:UIControlStateNormal];
+    }
+    return _btnRadio;
+}
+
 - (UIImageView *)imgAvatar {
     if (!_imgAvatar) {
         _imgAvatar = [UIImageView new];
         [self.contentView addSubview:_imgAvatar];
+        
+        _imgAvatar.layer.cornerRadius = 24;
+        _imgAvatar.layer.masksToBounds = YES;
     }
     return _imgAvatar;
 }
@@ -55,6 +68,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
         _tagView.defaultConfig.tagBackgroundColor = [UIColor clearColor];
         _tagView.defaultConfig.tagBorderColor = [UIColor clearColor];
         _tagView.defaultConfig.tagShadowColor = [UIColor clearColor];
+        _tagView.enableTagSelection = NO;
         
     }
     return _tagView;
@@ -80,7 +94,6 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
     
     [self.imgAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.equalTo(self.contentView).offset(12);
-//        make.bottom.mas_equalTo(self.contentView).offset(-12);
         make.size.mas_equalTo(CGSizeMake(48, 48));
     }];
     
@@ -97,28 +110,49 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
         make.bottom.mas_equalTo(self.contentView).offset(-12);
     }];
     
+    [self.btnRadio mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(-15);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.size.mas_equalTo(CGSizeMake(24, 24));
+    }];
+    
 }
 
-- (void)configCellDataWithCustomerModel:(CustomerModel *)model {
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model ShowSelected:(BOOL)isShow {
+    
     if (!model) {
         return;
     }
     
-    self.imgAvatar.image = [UIImage imageNamed:@"icon-img-app"];
-    self.lblName.text = model.name;
-    
-    NSArray *arr = model.tagArray;
-    NSMutableArray *tagArr = [NSMutableArray array];
-    for (int i = 0; i < arr.count; i++) {
-        TagModel *tagModel = arr[i];
-        [tagArr addObject:tagModel.tagName];
+    if (isShow) {
+        self.btnRadio.hidden = NO;
+    } else {
+        self.btnRadio.hidden = YES;
     }
     
-    [_tagView removeAllTags];
-    [_tagView addTags:tagArr];
+    [self.imgAvatar sd_setImageWithURL:[NSURL URLWithString:model.headimgurl] placeholderImage:nil];
+    self.lblName.text = model.nickname;
     
-    // Use manual height, update preferredMaxLayoutWidth
-    _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
+    NSArray *arr = model.tagArray;
+    
+    if (arr.count > 0) {
+        NSMutableArray *tagArr = [NSMutableArray array];
+        for (int i = 0; i < arr.count; i++) {
+            NSString *tagStr = arr[i];
+            [tagArr addObject:tagStr];
+        }
+        
+        [_tagView removeAllTags];
+        [_tagView addTags:tagArr];
+        
+        // Use manual height, update preferredMaxLayoutWidth
+        _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
+    } else {
+        [self.imgAvatar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+    }
+    
 }
 
 @end

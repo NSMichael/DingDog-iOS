@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DingDog-iOS/Classes/Tab4/Tab4_RootViewController.m"
-            timestampString = "545569170.29036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Manager/UploadManager.m"
             timestampString = "545569467.798667"
             startingColumnNumber = "9223372036854775807"
@@ -42,12 +26,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
-                  timestampString = "545569468.044966"
+                  timestampString = "545733493.032082"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "560">
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "581">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +41,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
-                  timestampString = "545569468.047577"
+                  timestampString = "545733493.035722"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "113">
                </Location>
             </Locations>
          </BreakpointContent>

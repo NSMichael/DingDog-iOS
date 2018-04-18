@@ -91,7 +91,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 
 // 主旋律色调
 // 以前的主题测是0xf99934 2016.03.15 修改成0xFF871F
-#define kColorTheme                 [UIColor colorWithHexString:@"0xFF871F" andAlpha:1.]
+#define kColorTheme                 [UIColor colorWithHexString:@"0x1E90FF" andAlpha:1.]
 #define kColorTheme_Selected        [UIColor colorWithHexString:@"0xfca447" andAlpha:1.]
 // 主旋律的灰色，用于分割线之类的地方
 #define kColorTheme_lightGray       [UIColor colorWithRed:210/255. green:210/255. blue:210/255. alpha:1.0]
@@ -129,7 +129,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define kColorGray                  [UIColor colorWithHexString:@"0x888888"]
 
 // 链接颜色
-#define kLinkAttributes     @{(__bridge NSString *)kCTUnderlineStyleAttributeName : [NSNumber numberWithBool:NO],(NSString *)kCTForegroundColorAttributeName : (__bridge id)[UIColor colorWithHexString:@"0xFF871F"].CGColor}
+#define kLinkAttributes     @{(__bridge NSString *)kCTUnderlineStyleAttributeName : [NSNumber numberWithBool:NO],(NSString *)kCTForegroundColorAttributeName : (__bridge id)[UIColor colorWithHexString:@"0x1E90FF"].CGColor}
 #define kLinkAttributesActive       @{(NSString *)kCTUnderlineStyleAttributeName : [NSNumber numberWithBool:NO],(NSString *)kCTForegroundColorAttributeName : (__bridge id)[kColorWithRGB(200, 100, 30) CGColor]}
 
 // 图像

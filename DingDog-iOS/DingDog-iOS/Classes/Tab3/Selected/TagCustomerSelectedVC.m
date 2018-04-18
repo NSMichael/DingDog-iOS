@@ -1,18 +1,18 @@
 //
-//  Tab3_RootViewController.m
+//  TagCustomerSelectedVC.m
 //  DingDog-iOS
 //
-//  Created by 耿功发 on 2018/3/13.
+//  Created by 耿功发 on 2018/4/18.
 //  Copyright © 2018年 耿功发. All rights reserved.
 //
 
-#import "Tab3_RootViewController.h"
+#import "TagCustomerSelectedVC.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
 #import "ChineseToPinyin.h"
 #import "CustomerListCmd.h"
 
-@interface Tab3_RootViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
+@interface TagCustomerSelectedVC () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 {
     NSArray *mAllSectionArray;
     NSArray *mSectionTitles;
@@ -30,13 +30,13 @@
 
 @end
 
-@implementation Tab3_RootViewController
+@implementation TagCustomerSelectedVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.title = @"客户";
     
+    self.rdv_tabBarController.tabBar.hidden = YES;
+
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -176,7 +176,6 @@
     //解决：退出时搜索框依然存在的问题
     self.definesPresentationContext = YES;
     self.extendedLayoutIncludesOpaqueBars = YES;
-    
 }
 
 #pragma mark - UITableView data source
@@ -218,11 +217,11 @@
     if (self.searchController.active) {
         NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
     } else {
         NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
     }
     
     return cell;
@@ -239,11 +238,11 @@
     if (self.searchController.active) {
         NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
     } else {
         NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
     }
     return [cell calculateCellHeightInAutolayoutMode:cell tableView:tableView];
 }
@@ -273,9 +272,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (self.searchController.active) {
-//        NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
+        //        NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
     } else {
-//        NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
+        //        NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
     }
 }
 

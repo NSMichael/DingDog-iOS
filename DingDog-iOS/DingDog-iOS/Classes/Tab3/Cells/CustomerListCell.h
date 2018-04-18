@@ -13,6 +13,8 @@ extern NSString * const CustomerListCellIdentifier;
 
 @interface CustomerListCell : UITableViewCell
 
-- (void)configCellDataWithCustomerModel:(CustomerModel *)model;
+@property (nonatomic, strong) UIButton *btnRadio;
+
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model ShowSelected:(BOOL)isShow;
 
 @end

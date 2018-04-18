@@ -49,4 +49,9 @@
 // 标签列表
 + (void)customer_tagList:(void(^)(BaseCmd *cmd,NSError *error))block;
 
+#pragma mark - 客户
+
+// 客户列表
++ (void)customer_List:(void(^)(BaseCmd *cmd,NSError *error))block;
+
 @end

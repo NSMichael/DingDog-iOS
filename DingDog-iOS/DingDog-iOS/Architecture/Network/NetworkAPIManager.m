@@ -11,6 +11,7 @@
 #import "RMTAPIClient.h"
 #import "UploadTokenCmd.h"
 #import "TagListCmd.h"
+#import "CustomerListCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -168,6 +169,20 @@
             block(nil, error);
         } else {
             BaseCmd *cmd = [NetworkAPIManager modelOfClass:[TagListCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+#pragma mark - 客户
+
+// 客户列表
++ (void)customer_List:(void(^)(BaseCmd *cmd,NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/list" withParams:nil withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[CustomerListCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];

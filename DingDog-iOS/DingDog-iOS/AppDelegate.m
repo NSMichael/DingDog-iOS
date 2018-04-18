@@ -98,9 +98,9 @@
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     NSDictionary *textAttributes = nil;
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        [navigationBarAppearance setTintColor:[UIColor colorWithHexString:@"0xFF871F"]];//返回按钮的箭头颜色
-        [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"0xFF871F"]];//设置UITextField的光标颜色
-        [[UITextView appearance] setTintColor:[UIColor colorWithHexString:@"0xFF871F"]];//设置UITextView的光标颜色
+        [navigationBarAppearance setTintColor:[UIColor colorWithHexString:@"0x1E90FF"]];//返回按钮的箭头颜色
+        [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"0x1E90FF"]];//设置UITextField的光标颜色
+        [[UITextView appearance] setTintColor:[UIColor colorWithHexString:@"0x1E90FF"]];//设置UITextView的光标颜色
         [[UISearchBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"0xe5e5e5"]] forBarPosition:0 barMetrics:UIBarMetricsDefault];
         
         textAttributes = @{

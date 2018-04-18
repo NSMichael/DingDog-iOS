@@ -154,7 +154,7 @@
         } else {
             titleAttributes = @{
                                               NSFontAttributeName: kFontB16,
-                                              NSForegroundColorAttributeName: kColorWithRGB(254, 114, 45)
+                                              NSForegroundColorAttributeName: kColorWithRGB(30, 144, 255)
                                               };
         }
         
@@ -172,9 +172,9 @@
     if ([title isEqualToString:@"更多"]) {
         [button setTitleColor:kColorWhite forState:UIControlStateNormal];
     } else {
-        [button setTitleColor:[UIColor colorWithHexString:@"0xFF871F"] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithHexString:@"0x1E90FF"] forState:UIControlStateNormal];
     }
-    [button setTitleColor:kColorWithRGBA(254, 114, 45, 0.2) forState:UIControlStateHighlighted];
+    [button setTitleColor:kColorWithRGBA(30, 144, 255, 0.2) forState:UIControlStateHighlighted];
     [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
     [button setTitle:title forState:UIControlStateNormal];
@@ -341,10 +341,10 @@
     if ([text isEqualToString:@"更多"]) {
         [aButton setTitleColor:kColorWhite forState:UIControlStateNormal];
     } else {
-        [aButton setTitleColor:[UIColor colorWithHexString:@"0xFF871F"] forState:UIControlStateNormal];
+        [aButton setTitleColor:[UIColor colorWithHexString:@"0x1E90FF"] forState:UIControlStateNormal];
     }
     
-    [aButton setTitleColor:kColorWithRGBA(254, 114, 45, 0.2) forState:UIControlStateHighlighted];
+    [aButton setTitleColor:kColorWithRGBA(30, 144, 255, 0.2) forState:UIControlStateHighlighted];
     [aButton.titleLabel setFont:kFontB16];
     [aButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     
