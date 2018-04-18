@@ -11,6 +11,7 @@
 #import "CustomerListCell.h"
 #import "ChineseToPinyin.h"
 #import "CustomerListCmd.h"
+#import "CreateTagViewController.h"
 
 @interface TagCustomerSelectedVC () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 {
@@ -28,6 +29,12 @@
 @property (nonatomic, strong) UISearchController *searchController;
 @property (strong,nonatomic) NSMutableArray  *searchResults;  //搜索结果
 
+@property (nonatomic, strong) UIView *uvTitleView;
+@property (nonatomic, strong) UILabel *lblTitleAdd;
+@property (nonatomic, strong) UILabel *lblTitleCount;
+
+@property (nonatomic, strong) NSMutableArray *selectedArray;
+
 @end
 
 @implementation TagCustomerSelectedVC
@@ -36,20 +43,76 @@
     [super viewDidLoad];
     
     self.rdv_tabBarController.tabBar.hidden = YES;
+    
+    [self setRightBarWithBtn:@"确定" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
 
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCustomerList) forControlEvents:UIControlEventValueChanged];
+//    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
+//    [_mRefreshControl addTarget:self action:@selector(getCustomerList) forControlEvents:UIControlEventValueChanged];
     
     [self configSearch];
     [self getCustomerList];
+    [self customerNavigationItemTitleView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createTagSuccess) name:kNotification_createTagSuccess object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)createTagSuccess {
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (void)customerNavigationItemTitleView {
+    
+    _uvTitleView = [UIView new];
+    _uvTitleView.frame = CGRectMake(kScreen_Width/3, 0, 120, 44);
+    
+    _lblTitleAdd = [UILabel new];
+    _lblTitleAdd.font = kFont14;
+    _lblTitleAdd.text = @"新增";
+    _lblTitleAdd.textColor = [UIColor blackColor];
+    _lblTitleAdd.textAlignment = NSTextAlignmentCenter;
+    _lblTitleAdd.frame = CGRectMake(30, 10, 60, 14);
+    [self.uvTitleView addSubview:_lblTitleAdd];
+    
+    _lblTitleCount = [UILabel new];
+    _lblTitleCount.font = kFont10;
+    _lblTitleCount.textColor = [UIColor blackColor];
+    _lblTitleCount.textAlignment = NSTextAlignmentCenter;
+    _lblTitleCount.frame = CGRectMake(30, 26, 60, 14);
+    [self.uvTitleView addSubview:_lblTitleCount];
+    
+    self.navigationItem.titleView = self.uvTitleView;
+}
+
+#pragma mark - click event
+
+- (void)onRightBarButtonClicked:(id)sender {
+    if (self.selectedArray.count == 0) {
+        [self showAlertViewControllerWithText:@"请至少选择1人"];
+        return;
+    }
+    
+    CreateTagViewController *vc = [[CreateTagViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (NSMutableArray *)selectedArray {
+    if (!_selectedArray) {
+        _selectedArray = [NSMutableArray array];
+    }
+    return _selectedArray;
 }
 
 - (NSMutableArray *)customerArray {
@@ -272,10 +335,33 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (self.searchController.active) {
-        //        NSLog(@"选择了搜索结果中的%@", [self.results objectAtIndex:indexPath.row]);
+        NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        
+        if (model.isSelected) {
+            model.isSelected = NO;
+            [self.selectedArray removeObject:model];
+        } else {
+            model.isSelected = YES;
+            [self.selectedArray addObject:model];
+        }
+        
+        [self.mTableView reloadSection:indexPath.section withRowAnimation:UITableViewRowAnimationNone];
     } else {
-        //        NSLog(@"选择了列表中的%@", [self.datas objectAtIndex:indexPath.row]);
+        NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
+        CustomerModel *model = subsections[indexPath.row];
+        
+        if (model.isSelected) {
+            model.isSelected = NO;
+            [self.selectedArray removeObject:model];
+        } else {
+            model.isSelected = YES;
+            [self.selectedArray addObject:model];
+        }
+        [self.mTableView reloadSection:indexPath.section withRowAnimation:UITableViewRowAnimationNone];
     }
+    
+    self.lblTitleCount.text = [NSString stringWithFormat:@"已勾选%ld人", _selectedArray.count];
 }
 
 #pragma mark UISearchResultsUpdating

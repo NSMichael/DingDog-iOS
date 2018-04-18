@@ -25,6 +25,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
     if (!_btnRadio) {
         _btnRadio = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.contentView addSubview:_btnRadio];
+        _btnRadio.userInteractionEnabled = NO;
         
         [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed-g"] forState:UIControlStateNormal];
     }
@@ -68,6 +69,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
         _tagView.defaultConfig.tagBackgroundColor = [UIColor clearColor];
         _tagView.defaultConfig.tagBorderColor = [UIColor clearColor];
         _tagView.defaultConfig.tagShadowColor = [UIColor clearColor];
+        _tagView.userInteractionEnabled = NO;
         _tagView.enableTagSelection = NO;
         
     }
@@ -77,6 +79,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupConstraints];
     }
     return self;
@@ -126,6 +129,13 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
     
     if (isShow) {
         self.btnRadio.hidden = NO;
+        
+        if (model.isSelected) {
+            [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed"] forState:UIControlStateNormal];
+        } else {
+            [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed-g"] forState:UIControlStateNormal];
+        }
+        
     } else {
         self.btnRadio.hidden = YES;
     }
@@ -141,13 +151,15 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
             NSString *tagStr = arr[i];
             [tagArr addObject:tagStr];
         }
-        
         [_tagView removeAllTags];
         [_tagView addTags:tagArr];
         
         // Use manual height, update preferredMaxLayoutWidth
         _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
     } else {
+        
+        [_tagView removeAllTags];
+        
         [self.imgAvatar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(self.contentView).offset(-12);
         }];

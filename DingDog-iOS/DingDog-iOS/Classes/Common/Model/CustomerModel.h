@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSString *province;
 @property (nonatomic, strong) NSString *headimgurl;
 
+@property (nonatomic, assign) BOOL isSelected;
+
 @property (nonatomic, strong) NSArray *tagArray;
 
 @end

@@ -74,6 +74,7 @@
 		1A28FCC02084F60500041943 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A28FCBF2084F60400041943 /* MobileCoreServices.framework */; };
 		1A28FD0E208641D200041943 /* TagListCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD0D208641D200041943 /* TagListCmd.m */; };
 		1A28FD142086441D00041943 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD122086441C00041943 /* TagModel.m */; };
+		1A28FD1820878DE600041943 /* CreateTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD1720878DE600041943 /* CreateTagViewController.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -582,6 +583,8 @@
 		1A28FD0D208641D200041943 /* TagListCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListCmd.m; sourceTree = "<group>"; };
 		1A28FD122086441C00041943 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		1A28FD132086441C00041943 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
+		1A28FD1620878DE600041943 /* CreateTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTagViewController.h; sourceTree = "<group>"; };
+		1A28FD1720878DE600041943 /* CreateTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTagViewController.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1640,6 +1643,15 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		1A28FD1520878DCF00041943 /* CreateTag */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FD1620878DE600041943 /* CreateTagViewController.h */,
+				1A28FD1720878DE600041943 /* CreateTagViewController.m */,
+			);
+			path = CreateTag;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1780,6 +1792,7 @@
 				BB467D1C2057D38A00D18C97 /* Tab3_RootViewController.h */,
 				BB467D1D2057D38A00D18C97 /* Tab3_RootViewController.m */,
 				BB4B9A1E20874F26004FF037 /* Selected */,
+				1A28FD1520878DCF00041943 /* CreateTag */,
 				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
 			path = Tab3;
@@ -3174,6 +3187,7 @@
 				BB86F7232084429100DABEAC /* GroupSendConditionSelectedVC.m in Sources */,
 				BB467E962057E14000D18C97 /* RACTestScheduler.m in Sources */,
 				BB74D45A2058BA9200F8A55B /* NSObject+YYModel.m in Sources */,
+				1A28FD1820878DE600041943 /* CreateTagViewController.m in Sources */,
 				BB74D4692058BA9200F8A55B /* NSParagraphStyle+YYText.m in Sources */,
 				BB467EAA2057E14000D18C97 /* RACEmptySignal.m in Sources */,
 				BB467E732057E14000D18C97 /* RACKVOTrampoline.m in Sources */,
@@ -3688,7 +3702,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3710,7 +3724,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
