@@ -75,6 +75,9 @@
 		1A28FD0E208641D200041943 /* TagListCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD0D208641D200041943 /* TagListCmd.m */; };
 		1A28FD142086441D00041943 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD122086441C00041943 /* TagModel.m */; };
 		1A28FD1820878DE600041943 /* CreateTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD1720878DE600041943 /* CreateTagViewController.m */; };
+		1A28FD1B2088D64500041943 /* TagCustomerListViewControlller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD1A2088D64500041943 /* TagCustomerListViewControlller.m */; };
+		1A28FD1F2088DE1900041943 /* CustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD1E2088DE1900041943 /* CustomerDetailViewController.m */; };
+		1A28FD222088E4F800041943 /* UserTagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD212088E4F800041943 /* UserTagListCell.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -585,6 +588,12 @@
 		1A28FD132086441C00041943 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		1A28FD1620878DE600041943 /* CreateTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTagViewController.h; sourceTree = "<group>"; };
 		1A28FD1720878DE600041943 /* CreateTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTagViewController.m; sourceTree = "<group>"; };
+		1A28FD192088D64500041943 /* TagCustomerListViewControlller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCustomerListViewControlller.h; sourceTree = "<group>"; };
+		1A28FD1A2088D64500041943 /* TagCustomerListViewControlller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCustomerListViewControlller.m; sourceTree = "<group>"; };
+		1A28FD1D2088DE1800041943 /* CustomerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerDetailViewController.h; sourceTree = "<group>"; };
+		1A28FD1E2088DE1900041943 /* CustomerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerDetailViewController.m; sourceTree = "<group>"; };
+		1A28FD202088E4F800041943 /* UserTagListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTagListCell.h; sourceTree = "<group>"; };
+		1A28FD212088E4F800041943 /* UserTagListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTagListCell.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1384,6 +1393,8 @@
 			children = (
 				1A28FBB2206FD31B00041943 /* CustomerListCell.h */,
 				1A28FBB3206FD31B00041943 /* CustomerListCell.m */,
+				1A28FD202088E4F800041943 /* UserTagListCell.h */,
+				1A28FD212088E4F800041943 /* UserTagListCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1652,6 +1663,15 @@
 			path = CreateTag;
 			sourceTree = "<group>";
 		};
+		1A28FD1C2088DDFF00041943 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FD1D2088DE1800041943 /* CustomerDetailViewController.h */,
+				1A28FD1E2088DE1900041943 /* CustomerDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1781,6 +1801,8 @@
 			children = (
 				BB467D192057D37E00D18C97 /* Tab2_RootViewController.h */,
 				BB467D1A2057D37E00D18C97 /* Tab2_RootViewController.m */,
+				1A28FD192088D64500041943 /* TagCustomerListViewControlller.h */,
+				1A28FD1A2088D64500041943 /* TagCustomerListViewControlller.m */,
 				1A25EF2B20629B6A00C72698 /* Cells */,
 			);
 			path = Tab2;
@@ -1793,6 +1815,7 @@
 				BB467D1D2057D38A00D18C97 /* Tab3_RootViewController.m */,
 				BB4B9A1E20874F26004FF037 /* Selected */,
 				1A28FD1520878DCF00041943 /* CreateTag */,
+				1A28FD1C2088DDFF00041943 /* Detail */,
 				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
 			path = Tab3;
@@ -3189,9 +3212,12 @@
 				BB74D45A2058BA9200F8A55B /* NSObject+YYModel.m in Sources */,
 				1A28FD1820878DE600041943 /* CreateTagViewController.m in Sources */,
 				BB74D4692058BA9200F8A55B /* NSParagraphStyle+YYText.m in Sources */,
+				1A28FD1B2088D64500041943 /* TagCustomerListViewControlller.m in Sources */,
 				BB467EAA2057E14000D18C97 /* RACEmptySignal.m in Sources */,
 				BB467E732057E14000D18C97 /* RACKVOTrampoline.m in Sources */,
 				BB74D47A2058BA9200F8A55B /* UIGestureRecognizer+YYAdd.m in Sources */,
+				1A28FD222088E4F800041943 /* UserTagListCell.m in Sources */,
+				1A28FD1F2088DE1900041943 /* CustomerDetailViewController.m in Sources */,
 				BB74D4762058BA9200F8A55B /* UIScrollView+YYAdd.m in Sources */,
 				BB467E9F2057E14000D18C97 /* RACSerialDisposable.m in Sources */,
 				BB74D4832058BA9200F8A55B /* NSThread+YYAdd.m in Sources */,
@@ -3702,7 +3728,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3724,7 +3750,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

@@ -11,6 +11,7 @@
 #import "TagModel.h"
 #import "TagListCmd.h"
 #import "TagCustomerSelectedVC.h"
+#import "TagCustomerListViewControlller.h"
 
 @interface Tab2_RootViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
@@ -195,6 +196,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (self.searchController.active) {
+        TagModel *model = self.searchResults[indexPath.row];
+        TagCustomerListViewControlller *vc = [[TagCustomerListViewControlller alloc] initWithTagModel:model];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        TagModel *model = self.tagArray[indexPath.row];
+        TagCustomerListViewControlller *vc = [[TagCustomerListViewControlller alloc] initWithTagModel:model];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -223,7 +233,7 @@
             
             TagModel *model = weakself.tagArray[indexPath.row];
             
-            [NetworkAPIManager customer_tagRemoveWithParams:@{model.tagId : @"tagid"} andBlock:^(BaseCmd *cmd, NSError *error) {
+            [NetworkAPIManager customer_tagRemoveWithParams:@{@"tagid":model.tagId} andBlock:^(BaseCmd *cmd, NSError *error) {
                 if (error) {
                     [self showHudTipStr:TIP_NETWORKERROR];
                 } else {

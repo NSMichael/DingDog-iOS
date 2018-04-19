@@ -108,7 +108,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
     
     [self.tagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.lblName.mas_bottom).offset(3);
-        make.left.equalTo(self.imgAvatar.mas_right).offset(12);
+        make.left.equalTo(self.imgAvatar.mas_right).offset(4);
         make.right.equalTo(self.contentView).offset(-30);
         make.bottom.mas_equalTo(self.contentView).offset(-12);
     }];

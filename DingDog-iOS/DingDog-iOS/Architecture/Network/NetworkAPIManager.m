@@ -198,6 +198,18 @@
     }];
 }
 
+// 指定标签下的用户列表
++ (void)customer_tagUsersWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/tag/users" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[CustomerListCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 #pragma mark - 客户
 
 // 客户列表

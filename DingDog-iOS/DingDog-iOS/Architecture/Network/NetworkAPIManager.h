@@ -55,6 +55,9 @@
 // 删除标签
 + (void)customer_tagRemoveWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
+// 指定标签下的用户列表
++ (void)customer_tagUsersWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 #pragma mark - 客户
 
 // 客户列表

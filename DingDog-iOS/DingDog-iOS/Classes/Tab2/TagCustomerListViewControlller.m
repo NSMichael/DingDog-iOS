@@ -1,19 +1,18 @@
 //
-//  Tab3_RootViewController.m
+//  TagCustomerListViewControlller.m
 //  DingDog-iOS
 //
-//  Created by 耿功发 on 2018/3/13.
+//  Created by james on 18/06/07.
 //  Copyright © 2018年 耿功发. All rights reserved.
 //
 
-#import "Tab3_RootViewController.h"
+#import "TagCustomerListViewControlller.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
 #import "ChineseToPinyin.h"
 #import "CustomerListCmd.h"
-#import "CustomerDetailViewController.h"
 
-@interface Tab3_RootViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
+@interface TagCustomerListViewControlller () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 {
     NSArray *mAllSectionArray;
     NSArray *mSectionTitles;
@@ -29,34 +28,73 @@
 @property (nonatomic, strong) UISearchController *searchController;
 @property (strong,nonatomic) NSMutableArray  *searchResults;  //搜索结果
 
+@property (nonatomic, strong) UIView *uvTitleView;
+@property (nonatomic, strong) UILabel *lblTitleTagName;
+@property (nonatomic, strong) UILabel *lblTitleTagCount;
+
+@property (nonatomic, strong) TagModel *tagModel;
+
 @end
 
-@implementation Tab3_RootViewController
+@implementation TagCustomerListViewControlller
+
+- (instancetype)initWithTagModel:(TagModel *)model {
+    self = [super init];
+    if (self) {
+        _tagModel = model;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.title = @"客户";
+    
+    self.rdv_tabBarController.tabBar.hidden = YES;
+    
+//    [self setRightBarWithBtn:@"确定" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
     
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCustomerList) forControlEvents:UIControlEventValueChanged];
-    
     [self configSearch];
-    [self getCustomerList];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.rdv_tabBarController.tabBarHidden = NO;
+    [self getTagUsersList];
+    [self customerNavigationItemTitleView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)customerNavigationItemTitleView {
+    
+    _uvTitleView = [UIView new];
+    _uvTitleView.frame = CGRectMake(kScreen_Width/3, 0, 120, 44);
+    
+    _lblTitleTagName = [UILabel new];
+    _lblTitleTagName.font = kFont14;
+    _lblTitleTagName.textColor = [UIColor blackColor];
+    _lblTitleTagName.textAlignment = NSTextAlignmentCenter;
+    _lblTitleTagName.frame = CGRectMake(30, 10, 60, 14);
+    [self.uvTitleView addSubview:_lblTitleTagName];
+    _lblTitleTagName.text = _tagModel.tagName ? : @"";
+    
+    _lblTitleTagCount = [UILabel new];
+    _lblTitleTagCount.font = kFont10;
+    _lblTitleTagCount.textColor = [UIColor blackColor];
+    _lblTitleTagCount.textAlignment = NSTextAlignmentCenter;
+    _lblTitleTagCount.frame = CGRectMake(30, 26, 60, 14);
+    [self.uvTitleView addSubview:_lblTitleTagCount];
+    
+    _lblTitleTagCount.text = [NSString stringWithFormat:@"(%@人)", _tagModel.memberTotal];
+    
+    self.navigationItem.titleView = self.uvTitleView;
+}
+
+#pragma mark - click event
+
+- (void)onRightBarButtonClicked:(id)sender {
+    
 }
 
 - (NSMutableArray *)customerArray {
@@ -66,10 +104,9 @@
     return _customerArray;
 }
 
-- (void)getCustomerList {
+- (void)getTagUsersList {
     WS(weakSelf);
-    [NetworkAPIManager customer_List:^(BaseCmd *cmd, NSError *error) {
-        [weakSelf.mRefreshControl endRefreshing];
+    [NetworkAPIManager customer_tagUsersWithParams:@{@"tagid": _tagModel.tagId} andBlock:^(BaseCmd *cmd, NSError *error) {
         if (error) {
             [self showHudTipStr:TIP_NETWORKERROR];
         } else {
@@ -183,7 +220,6 @@
     //解决：退出时搜索框依然存在的问题
     self.definesPresentationContext = YES;
     self.extendedLayoutIncludesOpaqueBars = YES;
-    
 }
 
 #pragma mark - UITableView data source
@@ -279,17 +315,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (self.searchController.active) {
-        NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
-        CustomerModel *model = subsections[indexPath.row];
-        CustomerDetailViewController *vc = [[CustomerDetailViewController alloc] initWithCustomerModel:model];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
-        NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
-        CustomerModel *model = subsections[indexPath.row];
-        CustomerDetailViewController *vc = [[CustomerDetailViewController alloc] initWithCustomerModel:model];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
 }
 
 #pragma mark UISearchResultsUpdating
