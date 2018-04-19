@@ -104,6 +104,7 @@
     }
     
     CreateTagViewController *vc = [[CreateTagViewController alloc] init];
+    vc.selectedArray = _selectedArray;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }

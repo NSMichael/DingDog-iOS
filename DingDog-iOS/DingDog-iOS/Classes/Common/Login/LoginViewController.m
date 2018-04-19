@@ -85,22 +85,25 @@
     [self.uvPhoneNumber addSubview:_lblPhoneNumber];
     [self.lblPhoneNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.uvPhoneNumber);
-//        make.top.equalTo(self.uvPhoneNumber).offset(8);
         make.centerY.mas_equalTo(self.uvPhoneNumber.mas_centerY);
+        make.width.mas_equalTo(50);
         make.height.mas_equalTo(18);
     }];
     
     _txtPhoneNumber = [UITextField new];
     _txtPhoneNumber.delegate = self;
     _txtPhoneNumber.keyboardType = UIKeyboardTypePhonePad;
-    _txtPhoneNumber.font = kFont14;
+    _txtPhoneNumber.font = kFont13;
     _txtPhoneNumber.placeholder = @"请输入手机号";
+    _txtPhoneNumber.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    _txtPhoneNumber.textAlignment = NSTextAlignmentLeft;
     [_txtPhoneNumber addTarget:self action:@selector(textPhoneValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPhoneNumber addSubview:_txtPhoneNumber];
     [self.txtPhoneNumber mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.uvPhoneNumber);
         make.left.equalTo(self.lblPhoneNumber.mas_right).offset(8);
-        make.centerY.mas_equalTo(self.uvPhoneNumber.mas_centerY);
-        make.height.mas_equalTo(18);
+        make.right.equalTo(self.uvPhoneNumber.mas_right);
+        make.height.mas_equalTo(40);
     }];
     
     UIImageView *imgPhoneLine = [UIImageView new];
@@ -130,19 +133,23 @@
     [self.lblPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.uvPictureCode);
         make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
+        make.width.mas_equalTo(50);
         make.height.mas_equalTo(18);
     }];
     
     _txtPictureCode = [UITextField new];
     _txtPictureCode.delegate = self;
-    _txtPictureCode.font = kFont14;
+    _txtPictureCode.font = kFont13;
     _txtPictureCode.placeholder = @"请输入图形验证码";
+    _txtPictureCode.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    _txtPictureCode.textAlignment = NSTextAlignmentLeft;
     [_txtPictureCode addTarget:self action:@selector(textPictureCodeValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPictureCode addSubview:_txtPictureCode];
     [self.txtPictureCode mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.uvPictureCode);
         make.left.equalTo(self.lblPictureCode.mas_right).offset(8);
-        make.centerY.mas_equalTo(self.uvPictureCode.mas_centerY);
-        make.height.mas_equalTo(18);
+        make.right.equalTo(self.uvPictureCode.mas_right);
+        make.height.mas_equalTo(40);
     }];
     
     _imgPictureCode = [UIImageView new];
@@ -185,19 +192,23 @@
     [self.lblPassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.uvPassword);
         make.centerY.mas_equalTo(self.uvPassword.mas_centerY);
+        make.width.mas_equalTo(50);
         make.height.mas_equalTo(18);
     }];
     
     _txtPassword = [UITextField new];
     _txtPassword.delegate = self;
-    _txtPassword.font = kFont14;
+    _txtPassword.font = kFont13;
     _txtPassword.placeholder = @"请输入验证码";
+    _txtPassword.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    _txtPassword.textAlignment = NSTextAlignmentLeft;
     [_txtPassword addTarget:self action:@selector(textPasswordValueChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.uvPassword addSubview:_txtPassword];
     [self.txtPassword mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.txtPhoneNumber.mas_left);
-        make.centerY.mas_equalTo(self.uvPassword.mas_centerY);
-        make.height.mas_equalTo(18);
+        make.top.equalTo(self.uvPassword);
+        make.left.equalTo(self.lblPassword.mas_right).offset(8);
+        make.right.equalTo(self.uvPassword.mas_right);
+        make.height.mas_equalTo(40);
     }];
     
     _btnVerCode = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -406,6 +417,8 @@
 
 // 登录、注册
 - (void)onBtnLoginClicked {
+    
+    [self.view endEditing:YES];
     
     if (!self.mobileStr || [self.mobileStr isEqualToString:@""] || self.mobileStr.length != 11) {
         [self showHudTipStr:@"手机号输入有误"];

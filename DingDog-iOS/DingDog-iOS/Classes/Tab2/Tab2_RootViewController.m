@@ -42,6 +42,8 @@
     [self configSearch];
     
     [self getCustomerTagList];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createTagSuccess) name:kNotification_createTagSuccess object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,6 +54,14 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)createTagSuccess {
+    [self getCustomerTagList];
 }
 
 #pragma mark - click event
@@ -209,13 +219,30 @@
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"你确定解散该标签？" preferredStyle:UIAlertControllerStyleAlert];
         
-        //        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-        
         [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             
             TagModel *model = weakself.tagArray[indexPath.row];
-            [weakself.tagArray removeObject:model];
-            [weakself.mTableView reloadData];
+            
+            [NetworkAPIManager customer_tagRemoveWithParams:@{model.tagId : @"tagid"} andBlock:^(BaseCmd *cmd, NSError *error) {
+                if (error) {
+                    [self showHudTipStr:TIP_NETWORKERROR];
+                } else {
+                    [cmd errorCheckSuccess:^{
+                        
+                        NSString *msgStr = cmd.message;
+                        [self showHudTipStr:msgStr];
+                        
+                        [weakself.tagArray removeObject:model];
+                        [weakself.mTableView reloadData];
+                        
+                    } failed:^(NSInteger errCode) {
+                        if (errCode == 0) {
+                            NSString *msgStr = cmd.message;
+                            [self showHudTipStr:msgStr];
+                        }
+                    }];
+                }
+            }];
             
         }]];
         [self presentViewController:alertController animated:YES completion:nil];

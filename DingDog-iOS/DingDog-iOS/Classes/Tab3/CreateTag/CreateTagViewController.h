@@ -10,4 +10,6 @@
 
 @interface CreateTagViewController : BaseViewController
 
+@property (nonatomic, strong) NSMutableArray *selectedArray;
+
 @end

@@ -49,6 +49,12 @@
 // 标签列表
 + (void)customer_tagList:(void(^)(BaseCmd *cmd,NSError *error))block;
 
+// 添加标签
++ (void)customer_tagCreateWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
+// 删除标签
++ (void)customer_tagRemoveWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 #pragma mark - 客户
 
 // 客户列表

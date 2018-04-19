@@ -174,6 +174,30 @@
     }];
 }
 
+// 添加标签
++ (void)customer_tagCreateWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/tag/create" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 删除标签
++ (void)customer_tagRemoveWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/tag/remove" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 #pragma mark - 客户
 
 // 客户列表

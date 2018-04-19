@@ -85,10 +85,9 @@
 
 #pragma mark - logout
 - (void)logoutAndClearBuffer {
-//    [USER removeObjectForKey:kUserDict];
+    [USER removeObjectForKey:kUserDict];
     [USER removeObjectForKey:@"Cookie_Token"];
-//    self.currentStore = nil;
-//    self.currentUser = nil;
+    self.currentUser = nil;
 }
 
 @end
