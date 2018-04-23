@@ -146,6 +146,7 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
     NSArray *arr = model.tagArray;
     
     if (arr.count > 0) {
+        
         NSMutableArray *tagArr = [NSMutableArray array];
         for (int i = 0; i < arr.count; i++) {
             NSString *tagStr = arr[i];
@@ -156,11 +157,26 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
         
         // Use manual height, update preferredMaxLayoutWidth
         _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
+        
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
+        }];
+        
+        [self.tagView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.lblName.mas_bottom).offset(3);
+            make.left.equalTo(self.imgAvatar.mas_right).offset(4);
+            make.right.equalTo(self.contentView).offset(-30);
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+        
     } else {
         
         [_tagView removeAllTags];
         
-        [self.imgAvatar mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
             make.bottom.mas_equalTo(self.contentView).offset(-12);
         }];
     }
