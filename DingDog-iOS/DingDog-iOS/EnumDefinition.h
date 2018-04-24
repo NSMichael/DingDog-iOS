@@ -14,4 +14,9 @@ typedef NS_ENUM(NSInteger, LoginType) {
     LoginType_register,             // 注册
 };
 
+typedef NS_ENUM(NSInteger, EditInfoType) {
+    EditInfoType_City = 0,          // 修改城市
+    EditInfoType_Phone,             // 修改手机号
+};
+
 #endif /* EnumDefinition_h */

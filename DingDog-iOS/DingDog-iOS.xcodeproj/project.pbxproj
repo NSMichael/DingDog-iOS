@@ -225,6 +225,7 @@
 		BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467EBA2057E22900D18C97 /* UIImage+Alpha.m */; };
 		BB467EC02057E22A00D18C97 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467EBB2057E22900D18C97 /* UIImage+RoundedCorner.m */; };
 		BB467EC12057E22A00D18C97 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467EBC2057E22900D18C97 /* UIImage+Resize.m */; };
+		BB4AE521208F1F9900ACCF39 /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4AE520208F1F9900ACCF39 /* EditInfoViewController.m */; };
 		BB4B9A0020872F5A004FF037 /* QNUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B99CF20872F5A004FF037 /* QNUploadManager.m */; };
 		BB4B9A0120872F5A004FF037 /* QNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B99D020872F5A004FF037 /* QNConfiguration.m */; };
 		BB4B9A0220872F5A004FF037 /* QNResumeUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B99D220872F5A004FF037 /* QNResumeUpload.m */; };
@@ -905,6 +906,8 @@
 		BB467EBA2057E22900D18C97 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		BB467EBB2057E22900D18C97 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		BB467EBC2057E22900D18C97 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		BB4AE51F208F1F9900ACCF39 /* EditInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
+		BB4AE520208F1F9900ACCF39 /* EditInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
 		BB4B99CC20872F5A004FF037 /* QNResumeUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResumeUpload.h; sourceTree = "<group>"; };
 		BB4B99CD20872F5A004FF037 /* QNUploadOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNUploadOption.h; sourceTree = "<group>"; };
 		BB4B99CE20872F5A004FF037 /* QNFormUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNFormUpload.h; sourceTree = "<group>"; };
@@ -1816,6 +1819,7 @@
 				BB4B9A1E20874F26004FF037 /* Selected */,
 				1A28FD1520878DCF00041943 /* CreateTag */,
 				1A28FD1C2088DDFF00041943 /* Detail */,
+				BB4AE51E208F1F8800ACCF39 /* Edit */,
 				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
 			path = Tab3;
@@ -2296,6 +2300,15 @@
 				BB467EBC2057E22900D18C97 /* UIImage+Resize.m */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		BB4AE51E208F1F8800ACCF39 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				BB4AE51F208F1F9900ACCF39 /* EditInfoViewController.h */,
+				BB4AE520208F1F9900ACCF39 /* EditInfoViewController.m */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		BB4B99CA20872F5A004FF037 /* QiniuSDK */ = {
@@ -3407,6 +3420,7 @@
 				BB74D46C2058BA9200F8A55B /* UIPasteboard+YYText.m in Sources */,
 				BB467EA82057E14000D18C97 /* RACCompoundDisposable.m in Sources */,
 				BB467E952057E14000D18C97 /* NSSet+RACSequenceAdditions.m in Sources */,
+				BB4AE521208F1F9900ACCF39 /* EditInfoViewController.m in Sources */,
 				BB467E842057E14000D18C97 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
 				BB74D3682058B93900F8A55B /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				BB467D812057E06300D18C97 /* AFHTTPSessionManager.m in Sources */,
@@ -3728,7 +3742,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3750,7 +3764,7 @@
 				DEVELOPMENT_TEAM = YEQSU47H36;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
