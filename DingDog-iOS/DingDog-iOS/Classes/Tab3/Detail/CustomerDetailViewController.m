@@ -166,11 +166,11 @@
     if (indexPath.row == 0) {
 
     } else if (indexPath.row == 1) {
-        EditInfoViewController *vc = [[EditInfoViewController alloc] init];
+        EditInfoViewController *vc = [[EditInfoViewController alloc] initWithModel:_customerModel EditInfoType:EditInfoType_City];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:nav animated:YES completion:nil];
     } else if (indexPath.row == 2) {
-        EditInfoViewController *vc = [[EditInfoViewController alloc] init];
+        EditInfoViewController *vc = [[EditInfoViewController alloc] initWithModel:_customerModel EditInfoType:EditInfoType_Phone];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:nav animated:YES completion:nil];
     }

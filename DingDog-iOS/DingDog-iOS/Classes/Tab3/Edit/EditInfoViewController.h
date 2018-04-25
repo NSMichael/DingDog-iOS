@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "CustomerModel.h"
 
 @interface EditInfoViewController : BaseViewController
+
+- (instancetype)initWithModel:(CustomerModel *)model EditInfoType:(EditInfoType)type;
 
 @end

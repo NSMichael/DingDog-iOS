@@ -17,10 +17,20 @@
 @property (nonatomic, strong) NSString *valueStr;
 
 @property (nonatomic, assign) EditInfoType editType;
+@property (nonatomic, strong) CustomerModel *customerModel;
 
 @end
 
 @implementation EditInfoViewController
+
+- (instancetype)initWithModel:(CustomerModel *)model EditInfoType:(EditInfoType)type {
+    self = [super init];
+    if (self) {
+        _customerModel = model;
+        _editType = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +39,6 @@
     [self setRightBarWithBtn:@"完成" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
     
     _lblTag = [UILabel new];
-    _lblTag.text = @"标签";
     _lblTag.font = kFont14;
     _lblTag.textColor = [UIColor lightGrayColor];
     [self.view addSubview:_lblTag];
@@ -42,7 +51,6 @@
     _textFieldTagName = [UITextField new];
     _textFieldTagName.delegate = self;
     _textFieldTagName.font = kFont13;
-    _textFieldTagName.placeholder = @"请输入标签名称";
     _textFieldTagName.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textFieldTagName.textAlignment = NSTextAlignmentLeft;
     [_textFieldTagName addTarget:self action:@selector(textTagNameValueChanged:) forControlEvents:UIControlEventEditingChanged];
@@ -63,6 +71,20 @@
         make.right.equalTo(self.view).offset(-15);
         make.height.mas_offset(0.5);
     }];
+    
+    if (_editType == EditInfoType_City) {
+        self.title = @"修改城市";
+        _lblTag.text = @"城市";
+        _textFieldTagName.placeholder = @"请输入城市名称";
+        _textFieldTagName.keyboardType = UIKeyboardTypeDefault;
+        _textFieldTagName.text = _customerModel.province;
+    } else {
+        self.title = @"修改电话";
+        _lblTag.text = @"电话";
+        _textFieldTagName.placeholder = @"请输入电话号码";
+        _textFieldTagName.keyboardType = UIKeyboardTypePhonePad;
+        _textFieldTagName.text = _customerModel.memo;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
