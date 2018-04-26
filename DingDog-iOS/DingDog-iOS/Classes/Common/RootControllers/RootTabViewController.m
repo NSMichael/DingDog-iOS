@@ -73,14 +73,14 @@
 
 - (void)customizeTabBarForController {
     UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
-    NSArray *tabBarItemImages = @[@"zhaobu",@"qiangdan", @"tonghang",@"store", @"me"];
+    NSArray *tabBarItemImages = @[@"icon-1",@"icon-2", @"icon-3",@"icon-4", @"icon-5"];
     NSArray *tabBarItemTitles = @[@"消息", @"标签",@"客户",@"群发",  @"我"];
     
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[self tabBar] items]) {
         [item setBackgroundSelectedImage:backgroundImage withUnselectedImage:backgroundImage];
-        UIImage *selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected", tabBarItemImages[index]]];
-        UIImage *unselectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_unselected", tabBarItemImages[index]]];
+        UIImage *selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@-a", tabBarItemImages[index]]];
+        UIImage *unselectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@-n", tabBarItemImages[index]]];
         [item setFinishedSelectedImage:selectedImage withFinishedUnselectedImage:unselectedImage];
         [item setTitle:[NSString stringWithFormat:@"%@", tabBarItemTitles[index]]];
         index++;

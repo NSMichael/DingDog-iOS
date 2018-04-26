@@ -135,7 +135,9 @@
         titleAttributes = [self unselectedTitleAttributes];
     }
     
-    imageSize = [image size];
+//    imageSize = [image size];
+    
+    imageSize = CGSizeMake(35, 35);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
@@ -169,7 +171,7 @@
             
             [_title drawInRect:CGRectMake(roundf(frameSize.width / 2 - titleSize.width / 2) +
                                           _titlePositionAdjustment.horizontal,
-                                          imageStartingY + imageSize.height + _titlePositionAdjustment.vertical + 2,
+                                          imageStartingY + imageSize.height + _titlePositionAdjustment.vertical - 3,
                                           titleSize.width, titleSize.height)
                 withAttributes:titleAttributes];
         } else {

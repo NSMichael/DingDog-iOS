@@ -26,12 +26,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
-                  timestampString = "546251654.221139"
+                  timestampString = "546409944.3847311"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
                   endingLineNumber = "119"
-                  offsetFromSymbolStart = "581">
+                  offsetFromSymbolStart = "560">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,27 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
-                  timestampString = "546251654.223531"
+                  timestampString = "546409944.387815"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
                   endingLineNumber = "120"
-                  offsetFromSymbolStart = "113">
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.102"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Manager/UploadManager.m"
+                  timestampString = "546409944.3898751"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
