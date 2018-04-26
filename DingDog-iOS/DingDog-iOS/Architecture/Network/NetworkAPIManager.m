@@ -224,6 +224,18 @@
     }];
 }
 
+// 更新客户信息
++ (void)customer_profileUpdateWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/customer/profile/update" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 @end
 
 

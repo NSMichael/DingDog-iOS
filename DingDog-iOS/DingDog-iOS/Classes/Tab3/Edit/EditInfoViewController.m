@@ -114,8 +114,46 @@
     
     [self.textFieldTagName resignFirstResponder];
     
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_customerModel.member_id forKey:@"userid"];
     
+    NSArray *tagArray = _customerModel.tagArray;
+    if (tagArray.count > 0) {
+        NSMutableString *muStr = [NSMutableString string];
+        for (int i = 0; i < tagArray.count; i++) {
+            [muStr appendString:tagArray[i]];
+            if (i < (tagArray.count - 1)) {
+                [muStr appendString:@","];
+            }
+        }
+        [params setObject:muStr forKey:@"tags"];
+    } else {
+        [params setObject:@"" forKey:@"tags"];
+    }
     
+    if (_editType == EditInfoType_City) {
+        [params setObject:self.valueStr forKey:@"province"];
+        [params setObject:_customerModel.memo forKey:@"memo"];
+    } else {
+        [params setObject:_customerModel.province forKey:@"province"];
+        [params setObject:self.valueStr forKey:@"memo"];
+    }
+    
+    WS(weakSelf);
+    [NetworkAPIManager customer_profileUpdateWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                [weakSelf showHudTipStr:@"修改成功"];
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 @end

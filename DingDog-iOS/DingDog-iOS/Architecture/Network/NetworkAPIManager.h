@@ -63,4 +63,7 @@
 // 客户列表
 + (void)customer_List:(void(^)(BaseCmd *cmd,NSError *error))block;
 
+// 更新客户信息
++ (void)customer_profileUpdateWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 @end

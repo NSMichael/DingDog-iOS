@@ -112,7 +112,7 @@
         
         cell.detailTextLabel.font = kFont14;
         cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
-        cell.detailTextLabel.text = @"广东深圳";
+        cell.detailTextLabel.text = _customerModel.province ? : @"";
         
         return cell;
     } else if (indexPath.row == 2) {
@@ -125,7 +125,7 @@
         
         cell.detailTextLabel.font = kFont14;
         cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
-        cell.detailTextLabel.text = @"15788360039";
+        cell.detailTextLabel.text = _customerModel.memo ? : @"";
         
         return cell;
     }
