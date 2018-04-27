@@ -82,7 +82,7 @@
     [NetworkAPIManager customer_tagList:^(BaseCmd *cmd, NSError *error) {
         [weakSelf.mTableView.headRefreshControl endRefreshing];
         if (error) {
-            [self showHudTipStr:TIP_NETWORKERROR];
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
                 
@@ -95,7 +95,7 @@
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;
-                    [self showHudTipStr:msgStr];
+                    [weakSelf showHudTipStr:msgStr];
                 }
             }];
         }

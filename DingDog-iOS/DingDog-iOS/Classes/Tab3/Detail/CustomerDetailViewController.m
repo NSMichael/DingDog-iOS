@@ -9,6 +9,7 @@
 #import "CustomerDetailViewController.h"
 #import "UserTagListCell.h"
 #import "EditInfoViewController.h"
+#import "ChangeTagViewController.h"
 
 @interface CustomerDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -171,7 +172,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-
+        ChangeTagViewController *vc = [[ChangeTagViewController alloc] initWithModel:_customerModel];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
     } else if (indexPath.row == 1) {
         EditInfoViewController *vc = [[EditInfoViewController alloc] initWithModel:_customerModel EditInfoType:EditInfoType_City];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

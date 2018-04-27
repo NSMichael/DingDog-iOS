@@ -99,6 +99,8 @@
 		1A28FD6D209365C000041943 /* KafkaArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD4F209365BE00041943 /* KafkaArcLayer.m */; };
 		1A28FD6E209365C000041943 /* KafkaRefreshDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD54209365BE00041943 /* KafkaRefreshDefaults.m */; };
 		1A28FD6F209365C000041943 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A28FD5A209365BE00041943 /* Image.bundle */; };
+		1A28FD7320936D1F00041943 /* ChangeTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD7220936D1F00041943 /* ChangeTagViewController.m */; };
+		1A28FD762093702700041943 /* ChangeUserTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD752093702700041943 /* ChangeUserTagCell.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -660,6 +662,10 @@
 		1A28FD57209365BE00041943 /* KafkaRefreshStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefreshStyle.h; sourceTree = "<group>"; };
 		1A28FD58209365BE00041943 /* KafkaRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefresh.h; sourceTree = "<group>"; };
 		1A28FD5A209365BE00041943 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		1A28FD7120936D1F00041943 /* ChangeTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeTagViewController.h; sourceTree = "<group>"; };
+		1A28FD7220936D1F00041943 /* ChangeTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeTagViewController.m; sourceTree = "<group>"; };
+		1A28FD742093702700041943 /* ChangeUserTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeUserTagCell.h; sourceTree = "<group>"; };
+		1A28FD752093702700041943 /* ChangeUserTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeUserTagCell.m; sourceTree = "<group>"; };
 		1A2A7C76205FF16800786EC0 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		1A2A7C77205FF16800786EC0 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
@@ -1461,6 +1467,8 @@
 				1A28FBB3206FD31B00041943 /* CustomerListCell.m */,
 				1A28FD202088E4F800041943 /* UserTagListCell.h */,
 				1A28FD212088E4F800041943 /* UserTagListCell.m */,
+				1A28FD742093702700041943 /* ChangeUserTagCell.h */,
+				1A28FD752093702700041943 /* ChangeUserTagCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1870,6 +1878,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		1A28FD7020936CE800041943 /* ChangeTag */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FD7120936D1F00041943 /* ChangeTagViewController.h */,
+				1A28FD7220936D1F00041943 /* ChangeTagViewController.m */,
+			);
+			path = ChangeTag;
+			sourceTree = "<group>";
+		};
 		1A2A7C75205FF15600786EC0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2031,7 @@
 				BB4B9A1E20874F26004FF037 /* Selected */,
 				1A28FD1520878DCF00041943 /* CreateTag */,
 				1A28FD1C2088DDFF00041943 /* Detail */,
+				1A28FD7020936CE800041943 /* ChangeTag */,
 				BB4AE51E208F1F8800ACCF39 /* Edit */,
 				1A28FBAB206FCEAA00041943 /* Cells */,
 			);
@@ -3536,6 +3554,7 @@
 				BB467D502057DEE600D18C97 /* DDDispatchQueueLogFormatter.m in Sources */,
 				BB467E9A2057E14000D18C97 /* UIControl+RACSignalSupport.m in Sources */,
 				1A28FBF0207BB5AE00041943 /* NetworkAPIClient.m in Sources */,
+				1A28FD7320936D1F00041943 /* ChangeTagViewController.m in Sources */,
 				1A28FCB52084ECBF00041943 /* QNDnsManager.m in Sources */,
 				BB4B9A0D20872F5A004FF037 /* QNALAssetFile.m in Sources */,
 				BB74D3702058B93900F8A55B /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
@@ -3578,6 +3597,7 @@
 				1A28FCAE2084ECBF00041943 /* QNAssessment.m in Sources */,
 				BB74D4772058BA9200F8A55B /* UIScreen+YYAdd.m in Sources */,
 				BB74D4FA2058FA0F00F8A55B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				1A28FD762093702700041943 /* ChangeUserTagCell.m in Sources */,
 				1A28FC6D20839CC400041943 /* AppManager.m in Sources */,
 				BB467D842057E06300D18C97 /* AFHTTPRequestOperationManager.m in Sources */,
 				BB74D4972058BA9200F8A55B /* YYTimer.m in Sources */,
