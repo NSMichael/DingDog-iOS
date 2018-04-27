@@ -22,7 +22,6 @@
     NSArray *mSectionTitlesSearch;
 }
 
-@property (nonatomic, strong) ODRefreshControl *mRefreshControl;
 @property (nonatomic,strong) UITableView *mTableView;
 @property (nonatomic, strong) NSMutableArray *customerArray;
 
@@ -49,9 +48,6 @@
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
-//    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-//    [_mRefreshControl addTarget:self action:@selector(getCustomerList) forControlEvents:UIControlEventValueChanged];
     
     [self configSearch];
     [self getCustomerList];
@@ -126,7 +122,6 @@
 - (void)getCustomerList {
     WS(weakSelf);
     [NetworkAPIManager customer_List:^(BaseCmd *cmd, NSError *error) {
-        [weakSelf.mRefreshControl endRefreshing];
         if (error) {
             [self showHudTipStr:TIP_NETWORKERROR];
         } else {

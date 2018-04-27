@@ -15,7 +15,6 @@
 
 @interface Tab2_RootViewController ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
-@property (nonatomic, strong) ODRefreshControl *mRefreshControl;
 @property (nonatomic,strong) UITableView *mTableView;
 @property (nonatomic, strong) NSMutableArray *tagArray;
 
@@ -37,12 +36,15 @@
         make.edges.equalTo(self.view);
     }];
     
-    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCustomerTagList) forControlEvents:UIControlEventValueChanged];
-    
     [self configSearch];
     
-    [self getCustomerTagList];
+    [self.mTableView bindRefreshStyle:KafkaRefreshStyleReplicatorWoody
+                            fillColor:[UIColor colorWithRGBHex:0x178afb]
+                           atPosition:KafkaRefreshPositionHeader refreshHanler:^{
+                               [self getCustomerTagList];
+                           }];
+    
+    [self.mTableView.headRefreshControl beginRefreshing];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createTagSuccess) name:kNotification_createTagSuccess object:nil];
 }
@@ -78,7 +80,7 @@
 - (void)getCustomerTagList {
     WS(weakSelf);
     [NetworkAPIManager customer_tagList:^(BaseCmd *cmd, NSError *error) {
-        [weakSelf.mRefreshControl endRefreshing];
+        [weakSelf.mTableView.headRefreshControl endRefreshing];
         if (error) {
             [self showHudTipStr:TIP_NETWORKERROR];
         } else {

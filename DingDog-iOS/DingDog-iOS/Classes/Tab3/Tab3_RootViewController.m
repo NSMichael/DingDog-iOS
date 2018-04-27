@@ -22,7 +22,6 @@
     NSArray *mSectionTitlesSearch;
 }
 
-@property (nonatomic, strong) ODRefreshControl *mRefreshControl;
 @property (nonatomic,strong) UITableView *mTableView;
 @property (nonatomic, strong) NSMutableArray *customerArray;
 
@@ -42,11 +41,15 @@
         make.edges.equalTo(self.view);
     }];
     
-    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCustomerList) forControlEvents:UIControlEventValueChanged];
-    
     [self configSearch];
-    [self getCustomerList];
+
+    [self.mTableView bindRefreshStyle:KafkaRefreshStyleReplicatorWoody
+                            fillColor:[UIColor colorWithRGBHex:0x178afb]
+                           atPosition:KafkaRefreshPositionHeader refreshHanler:^{
+                               [self getCustomerList];
+                           }];
+    
+    [self.mTableView.headRefreshControl beginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,7 +72,7 @@
 - (void)getCustomerList {
     WS(weakSelf);
     [NetworkAPIManager customer_List:^(BaseCmd *cmd, NSError *error) {
-        [weakSelf.mRefreshControl endRefreshing];
+        [weakSelf.mTableView.headRefreshControl endRefreshing];
         if (error) {
             [self showHudTipStr:TIP_NETWORKERROR];
         } else {

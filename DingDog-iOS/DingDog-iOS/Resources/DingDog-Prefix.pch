@@ -22,7 +22,7 @@
     #import "RACEXTScope.h"
     #import "Mantle.h"
     #import "Masonry.h"
-    #import "ODRefreshControl.h"
+    #import "KafkaRefresh.h"
     #import "NetworkAPIManager.h"
     #import "NSObject+Common.h"
     #import "AppDelegate.h"

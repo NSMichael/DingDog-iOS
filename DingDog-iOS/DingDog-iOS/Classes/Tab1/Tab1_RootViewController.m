@@ -13,8 +13,6 @@
 
 @interface Tab1_RootViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
 
-@property (nonatomic, strong) ODRefreshControl *mRefreshControl;
-
 @property (nonatomic,strong) UITableView *mTableView;
 
 @property (nonatomic, strong) NSMutableArray *messageArray;
@@ -36,13 +34,16 @@
         make.edges.equalTo(self.view);
     }];
     
-    _mRefreshControl = [[ODRefreshControl alloc] initInScrollView:self.mTableView];
-    [_mRefreshControl addTarget:self action:@selector(getCoinMarketList) forControlEvents:UIControlEventValueChanged];
-    
     [self configTestData];
     [self configSearch];
-
-//    [self getCoinMarketList];
+    
+    [self.mTableView bindRefreshStyle:KafkaRefreshStyleReplicatorWoody
+                           fillColor:[UIColor colorWithRGBHex:0x178afb]
+                          atPosition:KafkaRefreshPositionHeader refreshHanler:^{
+                              [self getCoinMarketList];
+                          }];
+    
+    [self.mTableView.headRefreshControl beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,12 +86,12 @@
 }
 
 - (void)getCoinMarketList {
-    [self.mRefreshControl endRefreshing];
+    [self.mTableView.headRefreshControl endRefreshing];
     MessageModel *model = [MessageModel new];
     model.name = @"李建国";
     model.time = @"18:22";
     model.content = @"业务办理的最后期限是什么时候？";
-    [self.messageArray addObject:model];
+    [self.messageArray insertObject:model atIndex:0];
     
     [self.mTableView reloadData];
 }

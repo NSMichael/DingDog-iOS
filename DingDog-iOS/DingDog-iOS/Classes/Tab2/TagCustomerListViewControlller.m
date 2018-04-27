@@ -21,7 +21,6 @@
     NSArray *mSectionTitlesSearch;
 }
 
-@property (nonatomic, strong) ODRefreshControl *mRefreshControl;
 @property (nonatomic,strong) UITableView *mTableView;
 @property (nonatomic, strong) NSMutableArray *customerArray;
 
@@ -58,8 +57,15 @@
     }];
     
     [self configSearch];
-    [self getTagUsersList];
     [self customerNavigationItemTitleView];
+    
+    [self.mTableView bindRefreshStyle:KafkaRefreshStyleReplicatorWoody
+                            fillColor:[UIColor colorWithRGBHex:0x178afb]
+                           atPosition:KafkaRefreshPositionHeader refreshHanler:^{
+                               [self getTagUsersList];
+                           }];
+    
+    [self.mTableView.headRefreshControl beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,8 +113,9 @@
 - (void)getTagUsersList {
     WS(weakSelf);
     [NetworkAPIManager customer_tagUsersWithParams:@{@"tagid": _tagModel.tagId} andBlock:^(BaseCmd *cmd, NSError *error) {
+        [weakSelf.mTableView.headRefreshControl endRefreshing];
         if (error) {
-            [self showHudTipStr:TIP_NETWORKERROR];
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
                 
@@ -121,7 +128,7 @@
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;
-                    [self showHudTipStr:msgStr];
+                    [weakSelf showHudTipStr:msgStr];
                 }
             }];
         }

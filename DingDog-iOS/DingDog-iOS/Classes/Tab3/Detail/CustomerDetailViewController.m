@@ -38,10 +38,17 @@
     self.rdv_tabBarController.tabBar.hidden = YES;
     
     [self initSceneUI];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProfile:) name:kNotification_customerInfoUpdategSuccess object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)updateProfile:(NSNotification *)notify {
+    _customerModel = [notify object];
+    [self.mTableView reloadData];
 }
 
 - (void)initSceneUI {

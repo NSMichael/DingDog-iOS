@@ -145,7 +145,17 @@
             [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
-                [weakSelf showHudTipStr:@"修改成功"];
+                NSString *msgStr = cmd.message;
+                [weakSelf showHudTipStr:msgStr];
+                
+                if (_editType == EditInfoType_City) {
+                    _customerModel.province = _valueStr;
+                } else {
+                    _customerModel.memo = _valueStr;
+                }
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_customerInfoUpdategSuccess object:_customerModel];
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;
