@@ -7,13 +7,10 @@
 //
 
 #import "ChangeUserTagCell.h"
-#import "TTGTextTagCollectionView.h"
 
 NSString * const ChangeUserTagCellIdentifier = @"ChangeUserTagCellIdentifier";
 
 @interface ChangeUserTagCell ()
-
-@property (nonatomic, strong) TTGTextTagCollectionView *tagView;
 
 @end
 
@@ -50,6 +47,7 @@ NSString * const ChangeUserTagCellIdentifier = @"ChangeUserTagCellIdentifier";
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupConstraints];
     }
     return self;

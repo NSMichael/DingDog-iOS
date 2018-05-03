@@ -10,12 +10,15 @@
 #import "ChangeUserTagCell.h"
 #import "TagListCmd.h"
 
-@interface ChangeTagViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ChangeTagViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) CustomerModel *customerModel;
 
 @property (nonatomic,strong) UITableView *mTableView;
 @property (nonatomic, strong) NSMutableArray *tagArray;
+
+@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) UITextField *textFieldAdd;
 
 @end
 
@@ -67,8 +70,90 @@
         
         [_mTableView registerClass:[ChangeUserTagCell class] forCellReuseIdentifier:ChangeUserTagCellIdentifier];
         
-//        _mTableView.tableHeaderView = [self configHeaderView];
+        _mTableView.tableHeaderView = [self configHeaderView];
     }
+}
+
+- (UIView *)configHeaderView {
+    
+    if (!_headerView) {
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 50)];
+        
+        _textFieldAdd = [[UITextField alloc] initWithFrame:CGRectMake(16, 10, kScreenWidth-32, 36)];
+        _textFieldAdd.delegate = self;
+        _textFieldAdd.textColor = [UIColor colorWithHexString:@"0xC8C7CD"];
+        _textFieldAdd.font = kFont14;
+        _textFieldAdd.returnKeyType = UIReturnKeyDone;
+        _textFieldAdd.layer.masksToBounds = YES;
+        _textFieldAdd.layer.cornerRadius = 18;
+        _textFieldAdd.layer.borderWidth = 1;
+        _textFieldAdd.layer.borderColor = [UIColor colorWithHexString:@"0xC8C7CC"].CGColor;
+        _textFieldAdd.backgroundColor = [UIColor colorWithHexString:@"0xF7F7F7"];
+        _textFieldAdd.placeholder = @"新建标签";
+        [_headerView addSubview:_textFieldAdd];
+        
+        UILabel *lblLeft = [[UILabel alloc] initWithFrame:CGRectMake(22, 7, 30, 22)];
+        lblLeft.text = @"#";
+        lblLeft.textColor = [UIColor colorWithHexString:@"0xC8C7CD"];
+        lblLeft.font = kFont14;
+        lblLeft.textAlignment = NSTextAlignmentCenter;
+        _textFieldAdd.leftView = lblLeft;
+        _textFieldAdd.leftViewMode = UITextFieldViewModeAlways;
+    }
+    
+    return _headerView;
+}
+
+#pragma mark UITextField delegates
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [_textFieldAdd resignFirstResponder];
+    if (_textFieldAdd.text.length > 0) {
+        [self addNewCustomerTag];
+    }
+    
+    return YES;
+}
+
+- (void)addNewCustomerTag {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_customerModel.member_id forKey:@"userids"];
+    [params setObject:_textFieldAdd.text forKey:@"tagname"];
+    
+    WS(weakSelf);
+    [NetworkAPIManager customer_tagCreateWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                
+                NSMutableArray *arr = [NSMutableArray arrayWithArray:weakSelf.customerModel.tagArray];
+                [arr addObject:weakSelf.textFieldAdd.text];
+                weakSelf.customerModel.tagArray = arr;
+                
+                weakSelf.textFieldAdd.text = @"";
+                [weakSelf showHudTipStr:@"添加成功"];
+                [weakSelf getCustomerTagList];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_customerAddTagSuccess object:weakSelf.customerModel];
+                
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
 }
 
 #pragma mark - click event
@@ -78,7 +163,53 @@
 }
 
 - (void)onRightBarButtonClicked:(id)sender {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    ChangeUserTagCell *cell = [self.mTableView cellForRowAtIndexPath:indexPath];
+    NSArray *arrSelected = [cell.tagView allSelectedTags];
+    NSLog(@"%@", arrSelected);
     
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_customerModel.member_id forKey:@"userid"];
+    
+    NSArray *tagArray = arrSelected;
+    if (tagArray.count > 0) {
+        NSMutableString *muStr = [NSMutableString string];
+        for (int i = 0; i < tagArray.count; i++) {
+            [muStr appendString:tagArray[i]];
+            if (i < (tagArray.count - 1)) {
+                [muStr appendString:@","];
+            }
+        }
+        [params setObject:muStr forKey:@"tags"];
+    } else {
+        [params setObject:@"" forKey:@"tags"];
+    }
+    
+    [params setObject:_customerModel.memo forKey:@"memo"];
+    [params setObject:_customerModel.province forKey:@"province"];
+    
+    WS(weakSelf);
+    [NetworkAPIManager customer_profileUpdateWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                NSString *msgStr = cmd.message;
+                [weakSelf showHudTipStr:msgStr];
+
+                _customerModel.tagArray = arrSelected;
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_customerInfoUpdategSuccess object:_customerModel];
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 #pragma mark - Network

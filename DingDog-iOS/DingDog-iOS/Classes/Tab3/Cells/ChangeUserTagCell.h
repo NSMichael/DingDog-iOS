@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomerModel.h"
+#import "TTGTextTagCollectionView.h"
 
 extern NSString * const ChangeUserTagCellIdentifier;
 
 @interface ChangeUserTagCell : UITableViewCell
+
+@property (nonatomic, strong) TTGTextTagCollectionView *tagView;
 
 - (void)configCellDataWithCustomerModel:(CustomerModel *)model AllTagArray:(NSArray *)allTagArray;
 

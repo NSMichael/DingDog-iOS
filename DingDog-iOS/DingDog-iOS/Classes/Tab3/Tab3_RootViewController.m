@@ -50,6 +50,10 @@
                            }];
     
     [self.mTableView.headRefreshControl beginRefreshing];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getCustomerList) name:kNotification_customerAddTagSuccess object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getCustomerList) name:kNotification_customerInfoUpdategSuccess object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,6 +64,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (NSMutableArray *)customerArray {

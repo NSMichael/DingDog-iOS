@@ -41,6 +41,8 @@
     [self initSceneUI];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProfile:) name:kNotification_customerInfoUpdategSuccess object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProfile:) name:kNotification_customerAddTagSuccess object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
