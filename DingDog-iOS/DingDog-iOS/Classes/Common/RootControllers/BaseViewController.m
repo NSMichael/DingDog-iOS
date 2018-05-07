@@ -190,7 +190,7 @@
             {
                 width = MAX(width,image.size.width);
                 [button setBackgroundImage:image forState:UIControlStateNormal];
-                button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
             }
                 break;
             case NavigationBarItemType_Left:
@@ -198,14 +198,14 @@
                 width += image.size.width + 5;
                 
                 [button setImage:image forState:UIControlStateNormal];
-                button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
             }
                 break;
             case NavigationBarItemType_Right:
             {
                 width += image.size.width + 5;
                 [button setImage:image forState:UIControlStateNormal];
-                button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
             }
                 break;
                 

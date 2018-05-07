@@ -9,7 +9,7 @@
 #import "Tab4_RootViewController.h"
 #import "GroupSendModel.h"
 #import "BaseNavigationController.h"
-#import "GroupSendCustomerSelectedVC.h"
+#import "GroupSendListViewController.h"
 #import "SZTextView.h"
 
 @interface Tab4_RootViewController ()<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -115,8 +115,9 @@
 #pragma mark - click event
 
 - (void)onRightBarButtonClicked:(id)sender {
-    GroupSendCustomerSelectedVC *vc = [[GroupSendCustomerSelectedVC alloc] init];
-    [self pushViewController:vc animated:YES];
+    GroupSendListViewController *vc = [[GroupSendListViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)photoItemClicked:(id)sender

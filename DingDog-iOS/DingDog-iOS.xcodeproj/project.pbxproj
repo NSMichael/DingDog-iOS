@@ -273,6 +273,8 @@
 		BB4B9A17208732CB004FF037 /* CustomerListCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A16208732CB004FF037 /* CustomerListCmd.m */; };
 		BB4B9A1A208732E9004FF037 /* CustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A19208732E9004FF037 /* CustomerModel.m */; };
 		BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A1F20874F26004FF037 /* TagCustomerSelectedVC.m */; };
+		BB6FC19320A0232D004615D9 /* GroupSendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */; };
+		BB6FC19620A02377004615D9 /* GroupSendSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC19420A02376004615D9 /* GroupSendSuccessVC.m */; };
 		BB74D2DB2058B70400F8A55B /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D2DA2058B70400F8A55B /* UIView+Toast.m */; };
 		BB74D2E32058B71400F8A55B /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D2DD2058B71300F8A55B /* JDStatusBarNotification.m */; };
 		BB74D2E42058B71400F8A55B /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D2DF2058B71300F8A55B /* JDStatusBarView.m */; };
@@ -447,9 +449,6 @@
 		BB74D5042058FA0F00F8A55B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB74D4F92058FA0F00F8A55B /* Info.plist */; };
 		BB74D50820591EA700F8A55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB74D50720591E7F00F8A55B /* Foundation.framework */; };
 		BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */; };
-		BB86F7202084405E00DABEAC /* GroupSendCustomerSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */; };
-		BB86F7232084429100DABEAC /* GroupSendConditionSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */; };
-		BB86F726208442B200DABEAC /* GroupSendSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */; };
 		BB86F729208453D500DABEAC /* UploadTokenCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F728208453D500DABEAC /* UploadTokenCmd.m */; };
 		BB86F72D20845B8300DABEAC /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F72C20845B8300DABEAC /* SZTextView.m */; };
 		BB86F73020847C4700DABEAC /* DeviceAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86F72F20847C4700DABEAC /* DeviceAuthHelper.m */; };
@@ -1033,6 +1032,10 @@
 		BB4B9A19208732E9004FF037 /* CustomerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerModel.m; sourceTree = "<group>"; };
 		BB4B9A1F20874F26004FF037 /* TagCustomerSelectedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCustomerSelectedVC.m; sourceTree = "<group>"; };
 		BB4B9A2020874F26004FF037 /* TagCustomerSelectedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCustomerSelectedVC.h; sourceTree = "<group>"; };
+		BB6FC19120A0232D004615D9 /* GroupSendListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListViewController.h; sourceTree = "<group>"; };
+		BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListViewController.m; sourceTree = "<group>"; };
+		BB6FC19420A02376004615D9 /* GroupSendSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupSendSuccessVC.m; sourceTree = "<group>"; };
+		BB6FC19520A02377004615D9 /* GroupSendSuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupSendSuccessVC.h; sourceTree = "<group>"; };
 		BB74D2D92058B70400F8A55B /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		BB74D2DA2058B70400F8A55B /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		BB74D2DD2058B71300F8A55B /* JDStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarNotification.m; sourceTree = "<group>"; };
@@ -1394,12 +1397,6 @@
 		BB74D50720591E7F00F8A55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB74D50A205923CC00F8A55B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		BB74D50B205923CC00F8A55B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
-		BB86F71E2084405E00DABEAC /* GroupSendCustomerSelectedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendCustomerSelectedVC.h; sourceTree = "<group>"; };
-		BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendCustomerSelectedVC.m; sourceTree = "<group>"; };
-		BB86F7212084429100DABEAC /* GroupSendConditionSelectedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendConditionSelectedVC.h; sourceTree = "<group>"; };
-		BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendConditionSelectedVC.m; sourceTree = "<group>"; };
-		BB86F724208442B200DABEAC /* GroupSendSuccessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendSuccessVC.h; sourceTree = "<group>"; };
-		BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendSuccessVC.m; sourceTree = "<group>"; };
 		BB86F727208453D500DABEAC /* UploadTokenCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadTokenCmd.h; sourceTree = "<group>"; };
 		BB86F728208453D500DABEAC /* UploadTokenCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadTokenCmd.m; sourceTree = "<group>"; };
 		BB86F72B20845B8300DABEAC /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
@@ -2043,12 +2040,7 @@
 			children = (
 				BB467D1F2057D39400D18C97 /* Tab4_RootViewController.h */,
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
-				BB86F71E2084405E00DABEAC /* GroupSendCustomerSelectedVC.h */,
-				BB86F71F2084405E00DABEAC /* GroupSendCustomerSelectedVC.m */,
-				BB86F7212084429100DABEAC /* GroupSendConditionSelectedVC.h */,
-				BB86F7222084429100DABEAC /* GroupSendConditionSelectedVC.m */,
-				BB86F724208442B200DABEAC /* GroupSendSuccessVC.h */,
-				BB86F725208442B200DABEAC /* GroupSendSuccessVC.m */,
+				BB6FC19020A02322004615D9 /* GroupSend */,
 				1A28FBCB207A561900041943 /* Models */,
 				1A28FBCC207A561F00041943 /* Cells */,
 			);
@@ -2626,6 +2618,17 @@
 				BB4B9A1F20874F26004FF037 /* TagCustomerSelectedVC.m */,
 			);
 			path = Selected;
+			sourceTree = "<group>";
+		};
+		BB6FC19020A02322004615D9 /* GroupSend */ = {
+			isa = PBXGroup;
+			children = (
+				BB6FC19120A0232D004615D9 /* GroupSendListViewController.h */,
+				BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */,
+				BB6FC19520A02377004615D9 /* GroupSendSuccessVC.h */,
+				BB6FC19420A02376004615D9 /* GroupSendSuccessVC.m */,
+			);
+			path = GroupSend;
 			sourceTree = "<group>";
 		};
 		BB74D2D82058B70400F8A55B /* Toast */ = {
@@ -3426,7 +3429,6 @@
 				BB74D36F2058B93900F8A55B /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				BB467D822057E06300D18C97 /* AFURLConnectionOperation.m in Sources */,
 				BB467EA92057E14000D18C97 /* RACCommand.m in Sources */,
-				BB86F7232084429100DABEAC /* GroupSendConditionSelectedVC.m in Sources */,
 				1A28FD5B209365BF00041943 /* UIScrollView+KafkaConfiguration.m in Sources */,
 				1A28FD5E209365C000041943 /* KafkaFootRefreshControl.m in Sources */,
 				BB467E962057E14000D18C97 /* RACTestScheduler.m in Sources */,
@@ -3483,7 +3485,6 @@
 				BB74D4892058BA9200F8A55B /* NSNotificationCenter+YYAdd.m in Sources */,
 				BB74D4CC2058F77300F8A55B /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				BB74D5022058FA0F00F8A55B /* MASViewConstraint.m in Sources */,
-				BB86F726208442B200DABEAC /* GroupSendSuccessVC.m in Sources */,
 				1A28FCBD2084ECBF00041943 /* QNRefresher.m in Sources */,
 				BB74D4652058BA9200F8A55B /* YYTextDebugOption.m in Sources */,
 				BB467E9D2057E14000D18C97 /* UIButton+RACCommandSupport.m in Sources */,
@@ -3617,6 +3618,7 @@
 				BB467D862057E06300D18C97 /* AFHTTPRequestOperation.m in Sources */,
 				BB467E942057E14000D18C97 /* NSInvocation+RACTypeParsing.m in Sources */,
 				BB74D2F32058B83600F8A55B /* SysTools.m in Sources */,
+				BB6FC19320A0232D004615D9 /* GroupSendListViewController.m in Sources */,
 				BB467E892057E14000D18C97 /* RACDynamicSignal.m in Sources */,
 				BB4B9A1A208732E9004FF037 /* CustomerModel.m in Sources */,
 				BB74D4542058BA9200F8A55B /* UIButton+YYWebImage.m in Sources */,
@@ -3634,6 +3636,7 @@
 				1A28FC27207CFC7D00041943 /* MyAccountManager.m in Sources */,
 				1A28FD61209365C000041943 /* UIView+KafkaLayout.m in Sources */,
 				BB74D2DB2058B70400F8A55B /* UIView+Toast.m in Sources */,
+				BB6FC19620A02377004615D9 /* GroupSendSuccessVC.m in Sources */,
 				BB74D4492058BA9200F8A55B /* YYDiskCache.m in Sources */,
 				1A28FD6B209365C000041943 /* KafkaReplicatorHeader.m in Sources */,
 				BB467E602057E14000D18C97 /* NSUserDefaults+RACSupport.m in Sources */,
@@ -3748,7 +3751,6 @@
 				1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */,
 				BB74D5002058FA0F00F8A55B /* View+MASAdditions.m in Sources */,
 				BB74D47E2058BA9200F8A55B /* NSArray+YYAdd.m in Sources */,
-				BB86F7202084405E00DABEAC /* GroupSendCustomerSelectedVC.m in Sources */,
 				BB4B9A0120872F5A004FF037 /* QNConfiguration.m in Sources */,
 				BB74D35C2058B93900F8A55B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				BB467D8C2057E06300D18C97 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -3966,10 +3968,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YEQSU47H36;
+				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3991,10 +3993,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YEQSU47H36;
+				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
