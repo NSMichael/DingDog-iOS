@@ -103,6 +103,8 @@
 		1A28FD762093702700041943 /* ChangeUserTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD752093702700041943 /* ChangeUserTagCell.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
+		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
+		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
 		BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCB2057CE0400D18C97 /* Assets.xcassets */; };
 		BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */; };
@@ -670,6 +672,10 @@
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
 		1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Height.m"; sourceTree = "<group>"; };
 		1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
+		BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanSeeViewController.h; sourceTree = "<group>"; };
+		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
+		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
+		BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanNotSeeViewController.m; sourceTree = "<group>"; };
 		BB467CBF2057CE0400D18C97 /* DingDog-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DingDog-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CC22057CE0400D18C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB467CC32057CE0400D18C97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1901,6 +1907,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BB144B7920A19CAD00354EB9 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */,
+				BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */,
+				BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */,
+				BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
 		BB467CB62057CE0400D18C97 = {
 			isa = PBXGroup;
 			children = (
@@ -2041,6 +2058,7 @@
 				BB467D1F2057D39400D18C97 /* Tab4_RootViewController.h */,
 				BB467D202057D39400D18C97 /* Tab4_RootViewController.m */,
 				BB6FC19020A02322004615D9 /* GroupSend */,
+				BB144B7920A19CAD00354EB9 /* Select */,
 				1A28FBCB207A561900041943 /* Models */,
 				1A28FBCC207A561F00041943 /* Cells */,
 			);
@@ -3458,6 +3476,7 @@
 				1A28FC5D207E492300041943 /* SDWebImageDownloaderOperation.m in Sources */,
 				BB467E652057E14000D18C97 /* RACSignal+Operations.m in Sources */,
 				BB467EC02057E22A00D18C97 /* UIImage+RoundedCorner.m in Sources */,
+				BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */,
 				BB467D902057E06300D18C97 /* UIWebView+AFNetworking.m in Sources */,
 				BB74D3742058B93900F8A55B /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				BB74D2E92058B72100F8A55B /* MBProgressHUD.m in Sources */,
@@ -3547,6 +3566,7 @@
 				BB74D38E2058B98800F8A55B /* NSString+WBEncode.m in Sources */,
 				BB74D48A2058BA9200F8A55B /* NSDictionary+YYAdd.m in Sources */,
 				BB467E552057E14000D18C97 /* NSNotificationCenter+RACSupport.m in Sources */,
+				BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */,
 				BB467E912057E14000D18C97 /* UIAlertView+RACSignalSupport.m in Sources */,
 				BB74D4C62058F77300F8A55B /* NSArray+MTLManipulationAdditions.m in Sources */,
 				BB74D4882058BA9200F8A55B /* NSString+YYAdd.m in Sources */,
