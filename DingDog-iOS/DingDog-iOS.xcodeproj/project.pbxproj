@@ -103,6 +103,8 @@
 		1A28FD762093702700041943 /* ChangeUserTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD752093702700041943 /* ChangeUserTagCell.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
+		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
+		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
@@ -672,6 +674,10 @@
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
 		1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Height.m"; sourceTree = "<group>"; };
 		1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
+		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
+		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
+		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
+		1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTagSelectedViewController.m; sourceTree = "<group>"; };
 		BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanSeeViewController.h; sourceTree = "<group>"; };
 		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
 		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
@@ -1914,6 +1920,10 @@
 				BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */,
 				BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */,
 				BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */,
+				1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */,
+				1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */,
+				1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */,
+				1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -3504,6 +3514,7 @@
 				BB74D4892058BA9200F8A55B /* NSNotificationCenter+YYAdd.m in Sources */,
 				BB74D4CC2058F77300F8A55B /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				BB74D5022058FA0F00F8A55B /* MASViewConstraint.m in Sources */,
+				1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */,
 				1A28FCBD2084ECBF00041943 /* QNRefresher.m in Sources */,
 				BB74D4652058BA9200F8A55B /* YYTextDebugOption.m in Sources */,
 				BB467E9D2057E14000D18C97 /* UIButton+RACCommandSupport.m in Sources */,
@@ -3810,6 +3821,7 @@
 				BB74D4922058BA9200F8A55B /* YYTransaction.m in Sources */,
 				1A28FD64209365C000041943 /* KafkaNativeFooter.m in Sources */,
 				BB467E992057E14000D18C97 /* UISlider+RACSignalSupport.m in Sources */,
+				1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */,
 				BB4B9A0920872F5A004FF037 /* QNFile.m in Sources */,
 				BB86F73020847C4700DABEAC /* DeviceAuthHelper.m in Sources */,
 				BB74D4C72058F77300F8A55B /* MTLModel.m in Sources */,
@@ -3991,7 +4003,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4016,7 +4028,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

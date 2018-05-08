@@ -8,6 +8,7 @@
 
 #import "GroupSendListViewController.h"
 #import "WhoCanSeeViewController.h"
+#import "InTagSelectedViewController.h"
 
 @interface GroupSendListViewController ()
 
@@ -226,7 +227,9 @@
 }
 
 - (void)onViewINTapped:(UITapGestureRecognizer *)tapGesture {
-    [self showHudTipStr:@"onViewINTapped"];
+    InTagSelectedViewController *vc = [[InTagSelectedViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)onViewEXTapped:(UITapGestureRecognizer *)tapGesture {
