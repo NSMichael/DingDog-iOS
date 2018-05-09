@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) void(^whoCanSeeBlocked)(NSMutableArray *selectArr);
 
-- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)curSelected;
+- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)curSelectedArray AllCustomerArray:(NSMutableArray *)allArray;
 
 @end

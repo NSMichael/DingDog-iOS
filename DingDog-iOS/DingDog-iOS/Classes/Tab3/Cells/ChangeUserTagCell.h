@@ -18,4 +18,6 @@ extern NSString * const ChangeUserTagCellIdentifier;
 
 - (void)configCellDataWithCustomerModel:(CustomerModel *)model AllTagArray:(NSArray *)allTagArray;
 
+- (void)configCellDataWithAllTagArray:(NSArray *)allTagArray SelectedTagArray:(NSArray *)selectedArray;
+
 @end

@@ -10,4 +10,8 @@
 
 @interface EXTagSelectedViewController : BaseViewController
 
+@property (nonatomic, strong) void(^exTagSelectedBlock)(NSArray *arr);
+
+- (instancetype)initWithCurrentSelectedTagArray:(NSArray *)arr;
+
 @end

@@ -36,7 +36,8 @@ NSString * const ChangeUserTagCellIdentifier = @"ChangeUserTagCellIdentifier";
         _tagView.defaultConfig.tagSelectedBackgroundColor = [UIColor colorWithHexString:@"0x007AFF"];
         _tagView.defaultConfig.tagExtraSpace = CGSizeMake(65, 18);
         
-//        _tagView.defaultConfig.tagMinWidth = 60;
+        _tagView.defaultConfig.tagMinWidth = 50;
+        
 //        _tagView.userInteractionEnabled = NO;
 //        _tagView.enableTagSelection = NO;
         
@@ -102,5 +103,35 @@ NSString * const ChangeUserTagCellIdentifier = @"ChangeUserTagCellIdentifier";
     // Use manual height, update preferredMaxLayoutWidth
     _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 30;
 }
+
+- (void)configCellDataWithAllTagArray:(NSArray *)allTagArray SelectedTagArray:(NSArray *)selectedArray {
+    
+    if (allTagArray.count == 0) {
+        return;
+    }
+    
+    NSMutableArray *tagArr = [NSMutableArray array];
+    for (int i = 0; i < allTagArray.count; i++) {
+        TagModel *tagModel = allTagArray[i];
+        [tagArr addObject:tagModel.tagName];
+    }
+    [_tagView removeAllTags];
+    [_tagView addTags:tagArr];
+    
+    for (int i = 0; i < tagArr.count; i++) {
+        NSString *value1 = tagArr[i];
+        for (int j = 0; j < selectedArray.count; j++) {
+            NSString *value2 = selectedArray[j];
+            if ([value1 isEqualToString:value2]) {
+                [_tagView setTagAtIndex:i selected:YES];
+            }
+        }
+    }
+    
+    
+    // Use manual height, update preferredMaxLayoutWidth
+    _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 30;
+}
+
 
 @end

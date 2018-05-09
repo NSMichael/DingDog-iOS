@@ -9,8 +9,16 @@
 #import "GroupSendListViewController.h"
 #import "WhoCanSeeViewController.h"
 #import "InTagSelectedViewController.h"
+#import "EXTagSelectedViewController.h"
+#import "CustomerListCmd.h"
+#import "CustomerModel.h"
+#import "CustomerListCell.h"
 
-@interface GroupSendListViewController ()
+@interface GroupSendListViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray *mAllSectionArray;
+    NSArray *mSectionTitles;
+}
 
 @property (nonatomic, strong) UIView *uvTitleView;
 @property (nonatomic, strong) UILabel *lblTitleTip;
@@ -31,6 +39,12 @@
 @property (nonatomic, strong) UIView *topView4;
 
 @property (nonatomic, strong) NSMutableArray *selectedArray;
+@property (nonatomic, strong) NSArray *inTagArray;
+@property (nonatomic, strong) NSArray *exTagArray;
+
+@property (nonatomic, strong) NSMutableArray *allCustomerArray;
+
+@property (nonatomic,strong) UITableView *mTableView;
 
 @end
 
@@ -48,11 +62,38 @@
     [self setRightBarWithBtn:@"下一步" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
     
     [self customerNavigationItemTitleView];
+    
     [self.view addSubview:[self configHeaderView]];
+    
+    [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(196, 0, 0, 0));
+    }];
+    
+    
+    
+    [self getCustomerList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (UITableView *)mTableView {
+    if (!_mTableView) {
+        _mTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_mTableView];
+        
+        _mTableView.backgroundColor = [UIColor clearColor];
+        _mTableView.dataSource = self;
+        _mTableView.delegate = self;
+        
+        [_mTableView registerClass:[CustomerListCell class] forCellReuseIdentifier:CustomerListCellIdentifier];
+        
+        _mTableView.tableFooterView = [UIView new];
+        _mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    return _mTableView;
 }
 
 - (void)customerNavigationItemTitleView {
@@ -137,7 +178,6 @@
         _lblInTags.frame = CGRectMake(80, 17, kScreen_Width-80-35, 20);
         _lblInTags.textAlignment = NSTextAlignmentRight;
         _lblInTags.font = kFont14;
-        _lblInTags.text = @"#当月活跃用户 #点击A广告 #当月活跃用户";
         [_topView2 addSubview:_lblInTags];
         
         UIImageView *imgSeparatorLine2 = [UIImageView new];
@@ -174,7 +214,7 @@
         _lblEXTags.frame = CGRectMake(80, 17, kScreen_Width-80-35, 20);
         _lblEXTags.textAlignment = NSTextAlignmentRight;
         _lblEXTags.font = kFont14;
-        _lblEXTags.text = @"#当月活跃用户 #点击A广告 #当月活跃用户";
+        _lblEXTags.textColor = [UIColor colorWithRGB:0xDD002F];
         [_topView3 addSubview:_lblEXTags];
         
         UIImageView *imgSeparatorLine3 = [UIImageView new];
@@ -200,6 +240,158 @@
     return _headerView;
 }
 
+#pragma mark - network
+
+- (void)getCustomerList {
+    WS(weakSelf);
+    [NetworkAPIManager customer_List:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [self showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                
+                if ([cmd isKindOfClass:[CustomerListCmd class]]) {
+                    CustomerListCmd *customerCmd = (CustomerListCmd *)cmd;
+                    _allCustomerArray = [NSMutableArray arrayWithArray:customerCmd.itemArray];
+                }
+                
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
+}
+
+- (void)dealWithDataSourceAndRefresh {
+    
+    _selectedArray = [NSMutableArray array];
+    
+    if (_inTagArray.count > 0) {
+        
+        for (int i = 0; i < _allCustomerArray.count; i++)
+        {
+            CustomerModel *model = _allCustomerArray[i];
+            
+            for (int j = 0; j < model.tagArray.count; j++) {
+                NSString *value = model.tagArray[j];
+                if ([_inTagArray containsObject:value]) {
+                    [_selectedArray addObject:model];
+                    break;
+                }
+            }
+        }
+    }
+    
+    NSLog(@"%@", _selectedArray);
+    
+    [self generateSectionTitleIndex];
+}
+
+- (void)generateSectionTitleIndex {
+    
+    UILocalizedIndexedCollation *indexCollation = [UILocalizedIndexedCollation currentCollation];
+    //返回27，是a－z和＃
+    NSArray *sectionTitles = [indexCollation sectionTitles];
+    
+    NSMutableArray *allSectionsArray = [[NSMutableArray alloc] initWithCapacity:sectionTitles.count];
+    for (int i = 0; i < sectionTitles.count; i++) {
+        NSMutableArray *subSectionArray = [NSMutableArray arrayWithCapacity:100];
+        [allSectionsArray addObject:subSectionArray];
+    }
+    
+    for (CustomerModel *model in _selectedArray) {
+        NSString *firstLetter = [ChineseToPinyin pinyinFromChineseString:model.nickname];
+        NSInteger section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
+        
+        NSMutableArray *array = [allSectionsArray objectAtIndex:section];
+        [array addObject:model];
+    }
+    
+    //过滤掉空的
+    NSMutableIndexSet *deleteIndexSet = [[NSMutableIndexSet alloc] init];
+    for (NSInteger index = 0; index < [allSectionsArray count]; index++) {
+        NSMutableArray *subSectionArray = allSectionsArray[index];
+        if ([subSectionArray count] == 0) {
+            [deleteIndexSet addIndex:index];
+        }
+    }
+    
+    [allSectionsArray removeObjectsAtIndexes:deleteIndexSet];
+    NSMutableArray *mTitles = [sectionTitles mutableCopy];
+    [mTitles removeObjectsAtIndexes:deleteIndexSet];
+    
+    mSectionTitles = [mTitles copy];
+    mAllSectionArray = [allSectionsArray copy];
+    [self.mTableView reloadData];
+}
+
+#pragma mark - UITableView data source
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return mSectionTitles;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [mAllSectionArray count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [mAllSectionArray[section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CustomerListCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomerListCellIdentifier forIndexPath:indexPath];
+    
+    NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
+    CustomerModel *model = subsections[indexPath.row];
+    [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static CustomerListCell *cell;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!cell) {
+            cell = [[CustomerListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CustomerListCellIdentifier];
+        }
+    });
+    NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
+    CustomerModel *model = subsections[indexPath.row];
+    [cell configCellDataWithCustomerModel:model ShowSelected:NO];
+    return [cell calculateCellHeightInAutolayoutMode:cell tableView:tableView];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *contentView = [[UIView alloc] init];
+    [contentView setBackgroundColor:[UIColor colorWithHexString:@"0xF3F3F3"]];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 4, 100, 22)];
+    label.textColor = [UIColor blackColor];
+    
+    [label setText:[mSectionTitles objectAtIndex:section]];
+    [contentView addSubview:label];
+    return contentView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
 #pragma mark - Click Events
 
 - (void)onLeftBarButtonClicked:(id)sender {
@@ -212,7 +404,7 @@
 
 // 谁可以看
 - (void)onBtnCanSeeClicked:(id)sender {
-    WhoCanSeeViewController *vc = [[WhoCanSeeViewController alloc] initWithCurrentSelectedArray:_selectedArray];
+    WhoCanSeeViewController *vc = [[WhoCanSeeViewController alloc] initWithCurrentSelectedArray:_selectedArray AllCustomerArray:_allCustomerArray];
     [vc setWhoCanSeeBlocked:^(NSMutableArray *selectArr) {
         _selectedArray = selectArr;
         [self showHudTipStr:[NSString stringWithFormat:@"选了%ld个", selectArr.count]];
@@ -227,13 +419,46 @@
 }
 
 - (void)onViewINTapped:(UITapGestureRecognizer *)tapGesture {
-    InTagSelectedViewController *vc = [[InTagSelectedViewController alloc] init];
+    InTagSelectedViewController *vc = [[InTagSelectedViewController alloc] initWithCurrentSelectedTagArray:_inTagArray];
+    [vc setInTagSelectedBlock:^(NSArray *arr) {
+        if (arr.count > 0) {
+            NSMutableString *muStr = [NSMutableString string];
+            for (int i = 0; i < arr.count; i++) {
+                [muStr appendString:arr[i]];
+                if (i < (arr.count - 1)) {
+                    [muStr appendString:@";"];
+                }
+            }
+            _lblInTags.text = muStr;
+        } else {
+            _lblInTags.text = @"";
+        }
+        _inTagArray = arr;
+        [self dealWithDataSourceAndRefresh];
+    }];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)onViewEXTapped:(UITapGestureRecognizer *)tapGesture {
-    [self showHudTipStr:@"onViewEXTapped"];
+    EXTagSelectedViewController *vc = [[EXTagSelectedViewController alloc] initWithCurrentSelectedTagArray:_exTagArray];
+    [vc setExTagSelectedBlock:^(NSArray *arr) {
+        if (arr.count > 0) {
+            NSMutableString *muStr = [NSMutableString string];
+            for (int i = 0; i < arr.count; i++) {
+                [muStr appendString:arr[i]];
+                if (i < (arr.count - 1)) {
+                    [muStr appendString:@";"];
+                }
+            }
+            _lblEXTags.text = muStr;
+        } else {
+            _lblEXTags.text = @"";
+        }
+        _exTagArray = arr;
+    }];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

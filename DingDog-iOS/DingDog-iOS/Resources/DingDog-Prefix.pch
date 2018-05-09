@@ -46,6 +46,7 @@
     #import "UITableViewCell+Height.h"
     #import "NSString+Check.h"
     #import "NSDictionary+Check.h"
+    #import "ChineseToPinyin.h"
 
     #import "MyAccountManager.h"
 

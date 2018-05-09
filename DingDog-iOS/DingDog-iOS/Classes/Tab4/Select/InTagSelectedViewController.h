@@ -10,4 +10,8 @@
 
 @interface InTagSelectedViewController : BaseViewController
 
+@property (nonatomic, strong) void(^inTagSelectedBlock)(NSArray *arr);
+
+- (instancetype)initWithCurrentSelectedTagArray:(NSArray *)arr;
+
 @end

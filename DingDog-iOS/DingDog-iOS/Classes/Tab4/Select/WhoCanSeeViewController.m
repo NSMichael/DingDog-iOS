@@ -37,10 +37,11 @@
 
 @implementation WhoCanSeeViewController
 
-- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)curSelected {
+- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)curSelectedArray AllCustomerArray:(NSMutableArray *)allArray {
     self = [super init];
     if (self) {
-        _selectedArray = curSelected;
+        _selectedArray = curSelectedArray;
+        _customerArray = allArray;
     }
     return self;
 }
@@ -58,8 +59,10 @@
     }];
     
     [self configSearch];
-    [self getCustomerList];
+//    [self getCustomerList];
     [self customerNavigationItemTitleView];
+    
+    [self generateSectionTitleIndex];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,7 +107,9 @@
 
     WS(weakSelf);
     [self dismissViewControllerAnimated:YES completion:^{
-        weakSelf.whoCanSeeBlocked(weakSelf.selectedArray);
+        if (weakSelf.whoCanSeeBlocked) {
+            weakSelf.whoCanSeeBlocked(weakSelf.selectedArray);
+        }
     }];
 }
 
