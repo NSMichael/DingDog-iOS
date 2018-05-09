@@ -285,6 +285,21 @@
         }
     }
     
+    NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:_selectedArray];
+    
+    if (_exTagArray.count > 0) {
+        for (int i = 0; i < tmpArray.count; i++) {
+            CustomerModel *model = tmpArray[i];
+            for (int j = 0; j < model.tagArray.count; j++) {
+                NSString *value = model.tagArray[j];
+                if ([_exTagArray containsObject:value]) {
+                    [_selectedArray removeObject:model];
+                    break;
+                }
+            }
+        }
+    }
+    
     NSLog(@"%@", _selectedArray);
     
     [self generateSectionTitleIndex];
@@ -456,6 +471,7 @@
             _lblEXTags.text = @"";
         }
         _exTagArray = arr;
+        [self dealWithDataSourceAndRefresh];
     }];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
