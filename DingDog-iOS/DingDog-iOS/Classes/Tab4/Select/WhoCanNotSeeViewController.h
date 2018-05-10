@@ -10,4 +10,8 @@
 
 @interface WhoCanNotSeeViewController : BaseViewController
 
+@property (nonatomic, strong) void(^whoCanNotSeeBlocked)(NSMutableArray *selectArr);
+
+- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)selectedArray;
+
 @end

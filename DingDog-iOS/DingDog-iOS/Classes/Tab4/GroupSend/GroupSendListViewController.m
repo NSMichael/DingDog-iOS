@@ -10,6 +10,7 @@
 #import "WhoCanSeeViewController.h"
 #import "InTagSelectedViewController.h"
 #import "EXTagSelectedViewController.h"
+#import "WhoCanNotSeeViewController.h"
 #import "CustomerListCmd.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
@@ -267,7 +268,9 @@
 
 - (void)dealWithDataSourceAndRefresh {
     
-    _selectedArray = [NSMutableArray array];
+    if (!_selectedArray) {
+        _selectedArray = [NSMutableArray array];
+    }
     
     if (_inTagArray.count > 0) {
         
@@ -419,10 +422,12 @@
 
 // 谁可以看
 - (void)onBtnCanSeeClicked:(id)sender {
-    WhoCanSeeViewController *vc = [[WhoCanSeeViewController alloc] initWithCurrentSelectedArray:_selectedArray AllCustomerArray:_allCustomerArray];
+    WhoCanSeeViewController *vc = [[WhoCanSeeViewController alloc] initWithAllCustomerArray:_allCustomerArray CurrentSelectedArray:_selectedArray InTagArray:_inTagArray ExTagArray:_exTagArray];
+    
+    WS(weakSelf);
     [vc setWhoCanSeeBlocked:^(NSMutableArray *selectArr) {
-        _selectedArray = selectArr;
-        [self showHudTipStr:[NSString stringWithFormat:@"选了%ld个", selectArr.count]];
+        weakSelf.selectedArray = selectArr;
+        [weakSelf generateSectionTitleIndex];
     }];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
@@ -430,12 +435,21 @@
 
 // 不给谁看
 - (void)onBtnCanNotSeeClicked:(id)sender {
-    [self showHudTipStr:@"不给谁看"];
+    WhoCanNotSeeViewController *vc = [[WhoCanNotSeeViewController alloc] initWithCurrentSelectedArray:_selectedArray];
+    
+    WS(weakSelf);
+    [vc setWhoCanNotSeeBlocked:^(NSMutableArray *selectArr) {
+        weakSelf.selectedArray = selectArr;
+        [weakSelf generateSectionTitleIndex];
+    }];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)onViewINTapped:(UITapGestureRecognizer *)tapGesture {
     InTagSelectedViewController *vc = [[InTagSelectedViewController alloc] initWithCurrentSelectedTagArray:_inTagArray];
     [vc setInTagSelectedBlock:^(NSArray *arr) {
+        _selectedArray = nil;
         if (arr.count > 0) {
             NSMutableString *muStr = [NSMutableString string];
             for (int i = 0; i < arr.count; i++) {
@@ -458,6 +472,7 @@
 - (void)onViewEXTapped:(UITapGestureRecognizer *)tapGesture {
     EXTagSelectedViewController *vc = [[EXTagSelectedViewController alloc] initWithCurrentSelectedTagArray:_exTagArray];
     [vc setExTagSelectedBlock:^(NSArray *arr) {
+        _selectedArray = nil;
         if (arr.count > 0) {
             NSMutableString *muStr = [NSMutableString string];
             for (int i = 0; i < arr.count; i++) {

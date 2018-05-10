@@ -17,4 +17,8 @@ extern NSString * const CustomerListCellIdentifier;
 
 - (void)configCellDataWithCustomerModel:(CustomerModel *)model ShowSelected:(BOOL)isShow;
 
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model ExTagArray:(NSArray *)exTagArray;
+
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model;
+
 @end

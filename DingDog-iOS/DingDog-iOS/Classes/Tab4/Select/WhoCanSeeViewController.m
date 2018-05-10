@@ -9,7 +9,6 @@
 #import "WhoCanSeeViewController.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
-#import "ChineseToPinyin.h"
 #import "CustomerListCmd.h"
 
 @interface WhoCanSeeViewController () <UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating,UISearchControllerDelegate,UISearchBarDelegate>
@@ -33,15 +32,31 @@
 
 @property (nonatomic, strong) NSMutableArray *selectedArray;
 
+@property (nonatomic, strong) NSArray *inTagArray;
+@property (nonatomic, strong) NSArray *exTagArray;
+
 @end
 
 @implementation WhoCanSeeViewController
 
-- (instancetype)initWithCurrentSelectedArray:(NSMutableArray *)curSelectedArray AllCustomerArray:(NSMutableArray *)allArray {
+- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray CurrentSelectedArray:(NSMutableArray *)selectedArray InTagArray:(NSArray *)inArray ExTagArray:(NSArray *)exArray {
     self = [super init];
     if (self) {
-        _selectedArray = curSelectedArray;
         _customerArray = allArray;
+        _selectedArray = selectedArray;
+        _inTagArray = inArray;
+        _exTagArray = exArray;
+        
+        if (selectedArray.count > 0) {
+            for (int i = 0; i < allArray.count; i++) {
+                CustomerModel *model = allArray[i];
+                if ([selectedArray containsObject:model]) {
+                    model.isSelected = YES;
+                } else {
+                    model.isSelected = NO;
+                }
+            }
+        }
     }
     return self;
 }
@@ -59,7 +74,6 @@
     }];
     
     [self configSearch];
-//    [self getCustomerList];
     [self customerNavigationItemTitleView];
     
     [self generateSectionTitleIndex];
@@ -125,44 +139,6 @@
         _customerArray = [NSMutableArray array];
     }
     return _customerArray;
-}
-
-- (void)getCustomerList {
-    WS(weakSelf);
-    [NetworkAPIManager customer_List:^(BaseCmd *cmd, NSError *error) {
-        if (error) {
-            [self showHudTipStr:TIP_NETWORKERROR];
-        } else {
-            [cmd errorCheckSuccess:^{
-                
-                if ([cmd isKindOfClass:[CustomerListCmd class]]) {
-                    CustomerListCmd *customerCmd = (CustomerListCmd *)cmd;
-                    _customerArray = [NSMutableArray arrayWithArray:customerCmd.itemArray];
-                    
-                    for (int i = 0; i < customerCmd.itemArray.count; i++) {
-                        CustomerModel *model = customerCmd.itemArray[i];
-                        
-                        for (int j = 0; j < _selectedArray.count; j++) {
-                            CustomerModel *tempModel = _selectedArray[j];
-                            
-                            if ([tempModel.member_id isEqualToString:model.member_id]) {
-                                model.isSelected = YES;
-                                break;
-                            }
-                        }
-                    }
-                    
-                    [weakSelf generateSectionTitleIndex];
-                }
-                
-            } failed:^(NSInteger errCode) {
-                if (errCode == 0) {
-                    NSString *msgStr = cmd.message;
-                    [self showHudTipStr:msgStr];
-                }
-            }];
-        }
-    }];
 }
 
 - (void)generateSectionTitleIndex {
@@ -298,11 +274,11 @@
     if (self.searchController.active) {
         NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
+        [cell configCellDataWithCustomerModel:model ExTagArray:_exTagArray];
     } else {
         NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
+        [cell configCellDataWithCustomerModel:model ExTagArray:_exTagArray];
     }
     
     return cell;
@@ -319,11 +295,11 @@
     if (self.searchController.active) {
         NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
+        [cell configCellDataWithCustomerModel:model ExTagArray:_exTagArray];
     } else {
         NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
-        [cell configCellDataWithCustomerModel:model ShowSelected:YES];
+        [cell configCellDataWithCustomerModel:model ExTagArray:_exTagArray];
     }
     return [cell calculateCellHeightInAutolayoutMode:cell tableView:tableView];
 }
@@ -356,6 +332,15 @@
         NSArray *subsections = [mAllSectionArraySearch objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
         
+        if (_exTagArray.count > 0) {
+            for (int i = 0; i < model.tagArray.count; i++) {
+                NSString *value = model.tagArray[i];
+                if ([_exTagArray containsObject:value]) {
+                    return;
+                }
+            }
+        }
+        
         if (model.isSelected) {
             model.isSelected = NO;
             [self.selectedArray removeObject:model];
@@ -368,6 +353,15 @@
     } else {
         NSArray *subsections = [mAllSectionArray objectAtIndex:indexPath.section];
         CustomerModel *model = subsections[indexPath.row];
+        
+        if (_exTagArray.count > 0) {
+            for (int i = 0; i < model.tagArray.count; i++) {
+                NSString *value = model.tagArray[i];
+                if ([_exTagArray containsObject:value]) {
+                    return;
+                }
+            }
+        }
         
         if (model.isSelected) {
             [self.selectedArray removeObject:model];

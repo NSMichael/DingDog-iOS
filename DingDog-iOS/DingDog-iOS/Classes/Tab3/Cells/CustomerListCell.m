@@ -180,7 +180,143 @@ NSString * const CustomerListCellIdentifier = @"CustomerListCellIdentifier";
             make.bottom.mas_equalTo(self.contentView).offset(-12);
         }];
     }
+}
+
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model ExTagArray:(NSArray *)exTagArray {
     
+    if (!model) {
+        return;
+    }
+    
+    self.btnRadio.hidden = NO;
+    
+    if (model.isSelected) {
+        [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed"] forState:UIControlStateNormal];
+    } else {
+        [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-readed-g"] forState:UIControlStateNormal];
+    }
+    
+    if (exTagArray.count > 0) {
+        for (int i = 0; i < model.tagArray.count; i++) {
+            NSString *value1 = model.tagArray[i];
+            if ([exTagArray containsObject:value1]) {
+                [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-nontik"] forState:UIControlStateNormal];
+                break;
+            }
+        }
+    }
+    
+    [self.imgAvatar sd_setImageWithURL:[NSURL URLWithString:model.headimgurl] placeholderImage:nil];
+    self.lblName.text = model.nickname;
+    
+    NSArray *arr = model.tagArray;
+    
+    if (arr.count > 0) {
+        
+        NSMutableArray *tagArr = [NSMutableArray array];
+        for (int i = 0; i < arr.count; i++) {
+            NSString *tagStr = arr[i];
+            [tagArr addObject:tagStr];
+        }
+        [_tagView removeAllTags];
+        [_tagView addTags:tagArr];
+        
+        if (exTagArray.count > 0) {
+            for (int i = 0; i < tagArr.count; i++) {
+                NSString *value = tagArr[i];
+                if ([exTagArray containsObject:value]) {
+                    TTGTextTagConfig *config = [TTGTextTagConfig new];
+                    config.tagTextColor = [UIColor colorWithRGB:0xDD002F];
+                    config.tagTextFont = kFont10;
+                    config.tagBackgroundColor = [UIColor clearColor];
+                    config.tagBorderColor = [UIColor clearColor];
+                    config.tagShadowColor = [UIColor clearColor];
+                    [_tagView setTagAtIndex:i withConfig:config];
+                }
+            }
+        }
+        
+        // Use manual height, update preferredMaxLayoutWidth
+        _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
+        
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
+        }];
+        
+        [self.tagView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.lblName.mas_bottom).offset(3);
+            make.left.equalTo(self.imgAvatar.mas_right).offset(4);
+            make.right.equalTo(self.contentView).offset(-30);
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+        
+    } else {
+        
+        [_tagView removeAllTags];
+        
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+    }
+}
+
+- (void)configCellDataWithCustomerModel:(CustomerModel *)model {
+    
+    if (!model) {
+        return;
+    }
+    
+    self.btnRadio.hidden = NO;
+    
+    if (model.isSelected) {
+        [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-nontik-act"] forState:UIControlStateNormal];
+    } else {
+        [_btnRadio setBackgroundImage:[UIImage imageNamed:@"icon-nontik"] forState:UIControlStateNormal];
+    }
+    
+    [self.imgAvatar sd_setImageWithURL:[NSURL URLWithString:model.headimgurl] placeholderImage:nil];
+    self.lblName.text = model.nickname;
+    
+    NSArray *arr = model.tagArray;
+    
+    if (arr.count > 0) {
+        
+        NSMutableArray *tagArr = [NSMutableArray array];
+        for (int i = 0; i < arr.count; i++) {
+            NSString *tagStr = arr[i];
+            [tagArr addObject:tagStr];
+        }
+        [_tagView removeAllTags];
+        [_tagView addTags:tagArr];
+        
+        // Use manual height, update preferredMaxLayoutWidth
+        _tagView.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 72 - 30;
+        
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
+        }];
+        
+        [self.tagView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.lblName.mas_bottom).offset(3);
+            make.left.equalTo(self.imgAvatar.mas_right).offset(4);
+            make.right.equalTo(self.contentView).offset(-30);
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+        
+    } else {
+        
+        [_tagView removeAllTags];
+        
+        [self.imgAvatar mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.top.equalTo(self.contentView).offset(12);
+            make.size.mas_equalTo(CGSizeMake(48, 48));
+            make.bottom.mas_equalTo(self.contentView).offset(-12);
+        }];
+    }
 }
 
 @end
