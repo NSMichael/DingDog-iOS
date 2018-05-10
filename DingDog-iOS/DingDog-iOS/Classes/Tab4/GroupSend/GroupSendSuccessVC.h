@@ -10,4 +10,6 @@
 
 @interface GroupSendSuccessVC : BaseViewController
 
+- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray;
+
 @end

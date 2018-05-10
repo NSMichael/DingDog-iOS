@@ -14,6 +14,7 @@
 #import "CustomerListCmd.h"
 #import "CustomerModel.h"
 #import "CustomerListCell.h"
+#import "GroupSendSuccessVC.h"
 
 @interface GroupSendListViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -418,6 +419,14 @@
 
 - (void)onRightBarButtonClicked:(id)sender {
     
+    if (_selectedArray.count == 0) {
+        [self showAlertViewControllerWithText:@"请至少选择1人"];
+        return;
+    }
+    
+    GroupSendSuccessVC *vc = [[GroupSendSuccessVC alloc] initWithAllCustomerArray:_selectedArray];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 // 谁可以看
