@@ -117,18 +117,20 @@
     }
     
     if (!_uvAvatar) {
-        _uvAvatar = [[UIView alloc] initWithFrame:CGRectMake(20, 250, kScreen_Width-40, 40)];
+        _uvAvatar = [[UIView alloc] initWithFrame:CGRectMake(0, 250, kScreen_Width, 30)];
         [self.view addSubview:_uvAvatar];
         
-        CGFloat imgFirstX = (kScreen_Width-100 - (_tempArray.count * 30))/2;
+        CGFloat firstX = (kScreen_Width - _tempArray.count * 30) / 2;
         
         if (_tempArray.count > 0) {
             for (int i = 0; i <_tempArray.count; i++) {
                 CustomerModel *model = _tempArray[i];
                 UIImageView *imgAvatar = [[UIImageView alloc] init];
-                imgAvatar.frame = CGRectMake(imgFirstX + i *30, 0, 30, 30);
+                imgAvatar.frame = CGRectMake(firstX + i *30, 0, 30, 30);
                 imgAvatar.layer.cornerRadius = 15;
                 imgAvatar.layer.masksToBounds = YES;
+                imgAvatar.layer.borderWidth = 3;
+                imgAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
                 [imgAvatar sd_setImageWithURL:[NSURL URLWithString:model.headimgurl] placeholderImage:nil];
                 [_uvAvatar addSubview:imgAvatar];
             }

@@ -48,9 +48,19 @@
 
 @property (nonatomic,strong) UITableView *mTableView;
 
+@property (nonatomic, strong) CreateMessageCmd *createMessageCmd;
+
 @end
 
 @implementation GroupSendListViewController
+
+- (instancetype)initWithCreateMessageCmd:(CreateMessageCmd *)cmd {
+    self = [super init];
+    if (self) {
+        _createMessageCmd = cmd;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,8 +80,6 @@
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(196, 0, 0, 0));
     }];
-    
-    
     
     [self getCustomerList];
 }

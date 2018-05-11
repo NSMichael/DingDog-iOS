@@ -107,6 +107,11 @@
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
+		BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16920A5984200E57F63 /* CreateMessageCmd.m */; };
+		BB15D16D20A5997700E57F63 /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16C20A5997700E57F63 /* PreviewViewController.m */; };
+		BB15D19220A5A68E00E57F63 /* TGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */; };
+		BB15D19320A5A68E00E57F63 /* NSTimer+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */; };
+		BB15D19420A5A68E00E57F63 /* TGWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
 		BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCB2057CE0400D18C97 /* Assets.xcassets */; };
 		BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */; };
@@ -682,6 +687,16 @@
 		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
 		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
 		BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanNotSeeViewController.m; sourceTree = "<group>"; };
+		BB15D16820A5984200E57F63 /* CreateMessageCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateMessageCmd.h; sourceTree = "<group>"; };
+		BB15D16920A5984200E57F63 /* CreateMessageCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateMessageCmd.m; sourceTree = "<group>"; };
+		BB15D16B20A5997700E57F63 /* PreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		BB15D16C20A5997700E57F63 /* PreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		BB15D18C20A5A68E00E57F63 /* NSTimer+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+addition.h"; sourceTree = "<group>"; };
+		BB15D18D20A5A68E00E57F63 /* TGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWebViewController.h; sourceTree = "<group>"; };
+		BB15D18E20A5A68E00E57F63 /* TGWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWebProgressLayer.h; sourceTree = "<group>"; };
+		BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGWebViewController.m; sourceTree = "<group>"; };
+		BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+addition.m"; sourceTree = "<group>"; };
+		BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGWebProgressLayer.m; sourceTree = "<group>"; };
 		BB467CBF2057CE0400D18C97 /* DingDog-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DingDog-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CC22057CE0400D18C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB467CC32057CE0400D18C97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1591,6 +1606,8 @@
 				1A28FD0D208641D200041943 /* TagListCmd.m */,
 				BB4B9A15208732CB004FF037 /* CustomerListCmd.h */,
 				BB4B9A16208732CB004FF037 /* CustomerListCmd.m */,
+				BB15D16820A5984200E57F63 /* CreateMessageCmd.h */,
+				BB15D16920A5984200E57F63 /* CreateMessageCmd.m */,
 			);
 			path = NetCmd;
 			sourceTree = "<group>";
@@ -1928,6 +1945,19 @@
 			path = Select;
 			sourceTree = "<group>";
 		};
+		BB15D18B20A5A68E00E57F63 /* TGWebController */ = {
+			isa = PBXGroup;
+			children = (
+				BB15D18C20A5A68E00E57F63 /* NSTimer+addition.h */,
+				BB15D18D20A5A68E00E57F63 /* TGWebViewController.h */,
+				BB15D18E20A5A68E00E57F63 /* TGWebProgressLayer.h */,
+				BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */,
+				BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */,
+				BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */,
+			);
+			path = TGWebController;
+			sourceTree = "<group>";
+		};
 		BB467CB62057CE0400D18C97 = {
 			isa = PBXGroup;
 			children = (
@@ -2078,6 +2108,7 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BB15D18B20A5A68E00E57F63 /* TGWebController */,
 				1A28FD23209365BE00041943 /* KafkaRefresh */,
 				BB4B99CA20872F5A004FF037 /* QiniuSDK */,
 				1A28FC7A2084ECBF00041943 /* HappyDNS */,
@@ -2651,6 +2682,8 @@
 		BB6FC19020A02322004615D9 /* GroupSend */ = {
 			isa = PBXGroup;
 			children = (
+				BB15D16B20A5997700E57F63 /* PreviewViewController.h */,
+				BB15D16C20A5997700E57F63 /* PreviewViewController.m */,
 				BB6FC19120A0232D004615D9 /* GroupSendListViewController.h */,
 				BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */,
 				BB6FC19520A02377004615D9 /* GroupSendSuccessVC.h */,
@@ -3474,6 +3507,7 @@
 				BB74D4832058BA9200F8A55B /* NSThread+YYAdd.m in Sources */,
 				BB74D3782058B93900F8A55B /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				BB467E7C2057E14000D18C97 /* RACBlockTrampoline.m in Sources */,
+				BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */,
 				BB74D4502058BA9200F8A55B /* YYImage.m in Sources */,
 				BB4B9A0820872F5A004FF037 /* QNUrlSafeBase64.m in Sources */,
 				BB467EA02057E14000D18C97 /* NSObject+RACLifting.m in Sources */,
@@ -3496,6 +3530,7 @@
 				BB467EA52057E14000D18C97 /* RACDelegateProxy.m in Sources */,
 				1A28FD6D209365C000041943 /* KafkaArcLayer.m in Sources */,
 				BB467D8F2057E06300D18C97 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				BB15D19220A5A68E00E57F63 /* TGWebViewController.m in Sources */,
 				BB4B9A0020872F5A004FF037 /* QNUploadManager.m in Sources */,
 				BB467E682057E14000D18C97 /* RACEXTRuntimeExtensions.m in Sources */,
 				1A28FD62209365C000041943 /* NSObject+KafkaAnimation.m in Sources */,
@@ -3618,6 +3653,7 @@
 				1A28FD68209365C000041943 /* KafkaNativeHeader.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
 				1A28FD142086441D00041943 /* TagModel.m in Sources */,
+				BB15D16D20A5997700E57F63 /* PreviewViewController.m in Sources */,
 				BB467E812057E14000D18C97 /* RACMulticastConnection.m in Sources */,
 				1A28FC7020839FE400041943 /* UploadManager.m in Sources */,
 				BB467D4E2057DEE600D18C97 /* CLIColor.m in Sources */,
@@ -3715,6 +3751,7 @@
 				1A28FC52207E492300041943 /* UIImage+WebP.m in Sources */,
 				BB467E9E2057E14000D18C97 /* UIActionSheet+RACSignalSupport.m in Sources */,
 				BB74D4742058BA9200F8A55B /* UIApplication+YYAdd.m in Sources */,
+				BB15D19320A5A68E00E57F63 /* NSTimer+addition.m in Sources */,
 				BB4B9A0320872F5A004FF037 /* QNUpToken.m in Sources */,
 				BB4B9A1220872F5A004FF037 /* QNSessionManager.m in Sources */,
 				BB467E8F2057E14000D18C97 /* UITextField+RACSignalSupport.m in Sources */,
@@ -3756,6 +3793,7 @@
 				BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */,
 				BB467E542057E14000D18C97 /* NSFileHandle+RACSupport.m in Sources */,
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
+				BB15D19420A5A68E00E57F63 /* TGWebProgressLayer.m in Sources */,
 				BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */,
 				1A28FBF2207BB5AE00041943 /* NetworkAPIManager.m in Sources */,
 				1A28FC6420831F8100041943 /* UserCmd.m in Sources */,
@@ -4003,7 +4041,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4028,7 +4066,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

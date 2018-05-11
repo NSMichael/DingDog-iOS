@@ -12,6 +12,7 @@
 #import "UploadTokenCmd.h"
 #import "TagListCmd.h"
 #import "CustomerListCmd.h"
+#import "CreateMessageCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -231,6 +232,20 @@
             block(nil, error);
         } else {
             BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+#pragma mark - 消息
+
+// 创建消息
++ (void)message_createWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/message/create" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[CreateMessageCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];

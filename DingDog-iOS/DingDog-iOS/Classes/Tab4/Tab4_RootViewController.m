@@ -11,6 +11,8 @@
 #import "BaseNavigationController.h"
 #import "GroupSendListViewController.h"
 #import "SZTextView.h"
+#import "CreateMessageCmd.h"
+#import "PreviewViewController.h"
 
 @interface Tab4_RootViewController ()<UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -115,9 +117,56 @@
 #pragma mark - click event
 
 - (void)onRightBarButtonClicked:(id)sender {
-    GroupSendListViewController *vc = [[GroupSendListViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:nil];
+    
+    if (self.nameStr.length == 0) {
+        [self showHudTipStr:@"请输入文章标题"];
+        return;
+    }
+    
+    if (self.contentStr.length == 0) {
+        [self showHudTipStr:@"请输入文章内容"];
+        return;
+    }
+    
+    if (self.imageKeyStr.length == 0) {
+        [self showHudTipStr:@"请上传图片"];
+        return;
+    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.nameStr forKey:@"title"];
+    [params setObject:self.contentStr forKey:@"content"];
+    [params setObject:self.imageKeyStr forKey:@"images"];
+    
+    WS(weakSelf);
+    [NetworkAPIManager message_createWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                if ([cmd isKindOfClass:[CreateMessageCmd class]]) {
+                    CreateMessageCmd *msgCmd = (CreateMessageCmd *)cmd;
+                    NSLog(@"%@", msgCmd);
+                    
+                    PreviewViewController *vc = [[PreviewViewController alloc] initWithCreateMessageCmd:msgCmd];
+                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                    [weakSelf presentViewController:nav animated:YES completion:nil];
+                }
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
+    
+    /*
+     GroupSendListViewController *vc = [[GroupSendListViewController alloc] init];
+     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+     [weakSelf presentViewController:nav animated:YES completion:nil];
+     */
+    
 }
 
 - (void)photoItemClicked:(id)sender

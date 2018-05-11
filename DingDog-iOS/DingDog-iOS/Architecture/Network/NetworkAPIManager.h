@@ -66,4 +66,9 @@
 // 更新客户信息
 + (void)customer_profileUpdateWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
+#pragma mark - 消息
+
+// 创建消息
++ (void)message_createWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 @end
