@@ -47,6 +47,7 @@
     #import "NSString+Check.h"
     #import "NSDictionary+Check.h"
     #import "ChineseToPinyin.h"
+    #import "UIView+Size.h"
 
     #import "MyAccountManager.h"
 
