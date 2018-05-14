@@ -10,6 +10,8 @@
 #import "UploadTokenCmd.h"
 #import "QiniuSDK.h"
 
+#define UPLOAD_TOKEN @"Upload_Token"
+
 static UploadManager *instance;
 
 @interface UploadManager()
@@ -57,6 +59,20 @@ static UploadManager *instance;
     }
 }
 
+- (void)saveUploadToken:(NSString *)token {
+    if (token && ![token isEqualToString:@""]) {
+        [USER setObject:token forKey:UPLOAD_TOKEN];
+        [USER synchronize];
+    } else {
+        [USER removeObjectForKey:UPLOAD_TOKEN];
+        [USER synchronize];
+    }
+}
+
+- (NSString *)getUploadToken {
+    return [USER objectForKey:UPLOAD_TOKEN];
+}
+
 /**
  从档口服务器获得token
  */
@@ -72,8 +88,7 @@ static UploadManager *instance;
                     UploadTokenCmd *uploadCmd = (UploadTokenCmd *)cmd;
                     
                     weakself.token = uploadCmd.upload_Token;
-                    [USER setObject:weakself.token forKey:@"AppResToken"];
-                    [USER synchronize];
+                    [weakself saveUploadToken:uploadCmd.upload_Token];
                     
                     block(uploadCmd.upload_Token,nil);
                 }
@@ -103,7 +118,7 @@ static UploadManager *instance;
         
     }
     
-    NSString *filePath = [self getImagePath:img];
+//    NSString *filePath = [self getImagePath:img];
     
     QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
         NSLog(@"percent == %.2f", percent);
@@ -116,6 +131,20 @@ static UploadManager *instance;
     
     __weak __typeof(self) weakself = self;
     
+    [self.upManager putData:imgData key:nil token:self.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        NSLog(@"info ===== %@", info);
+        NSLog(@"resp ===== %@", resp);
+        
+        if (info.error) {
+            block(key, info.error);
+        } else {
+            block(key, nil);
+        }
+        
+    } option:uploadOption];
+    
+    
+    /*
     [weakself.upManager putFile:filePath key:nil token:self.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
         NSLog(@"info ===== %@", info);
         NSLog(@"resp ===== %@", resp);
@@ -131,6 +160,7 @@ static UploadManager *instance;
             //如果失败，这里可以把info信息上报自己的服务器，便于后面分析上传错误原因
         }
     } option:uploadOption];
+    */
     
 //    [weakself.upManager putData:imgData key:nil token:weakself.token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
 //        NSLog(@"info ===== %@", info);

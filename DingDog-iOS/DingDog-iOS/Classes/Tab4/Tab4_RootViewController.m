@@ -9,8 +9,10 @@
 #import "Tab4_RootViewController.h"
 #import "TimeLineTextCell.h"
 #import "TimeLineImageCell.h"
+#import "TZImagePickerController.h"
+#import "QiniuSDK.h"
 
-@interface Tab4_RootViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface Tab4_RootViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TZImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UITableView *mTableView;
 
@@ -161,10 +163,126 @@
 - (void)onBtnTakePhotoClick:(id)sender {
     [self.view endEditing:YES];
     
+    UIButton *bt = sender;
+    if(bt.tag<self.timelinePics.count && bt.tag>=0){
+        //显示照片
+        /*
+        NSMutableArray *photos = [NSMutableArray new];
+        for(int i=0;i<self.timelinePics.count;i++){
+            PhotoEntity *pe = self.timelinePics[i];
+            MJPhoto *photo = [[MJPhoto alloc] init];
+            if(pe.isLocal){
+                photo.image = pe.img;
+            }else{
+                photo.url = [NSURL URLWithString:pe.url];
+            }
+            [photos addObject:photo];
+        }
+        
+        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+        browser.currentPhotoIndex = bt.tag; // 弹出相册时显示的第一张图片是？
+        browser.photos = photos; // 设置所有的图片
+        [browser show];
+         */
+    } else {
+        if (self.timelinePics.count < 9) {
+            [self showActionSheetTakePhotoByMultiSelect];
+        } else{
+            [self showAlertViewControllerWithText:@"最多拍摄9张图片"];
+        }
+    }
 }
 
 - (void)onBtnDeletePhoto:(id)sender {
     
+}
+
+- (void) showActionSheetTakePhotoByMultiSelect {
+    WS(weakSelf);
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if([DeviceAuthHelper checkCameraAuthorizationStatus]){
+            UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+            if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] && (sourceType == UIImagePickerControllerSourceTypeCamera)) {
+                
+                [weakSelf showAlertViewControllerWithText:@"本设备不支持拍照功能，请从相册选取"];
+                
+                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            }
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.allowsEditing = NO;
+            
+            picker.sourceType = sourceType;
+            [weakSelf presentViewController:picker animated:YES completion:nil];
+        }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+        
+        // You can get the photos by block, the same as by delegate.
+        // 你可以通过block或者代理，来得到用户选择的照片.
+//        [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
+//
+//        }];
+        [weakSelf presentViewController:imagePickerVc animated:YES completion:nil];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - TZImagePickerControllerDelegate
+
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    
+    NSString *uploadToken = [[UploadManager GetInstance] getUploadToken];
+    if (uploadToken) {
+        WS(weakSelf);
+        
+        QNUploadManager *uploadManager = [[QNUploadManager alloc] init];
+        [photos enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            UIImage *tmpImage = (UIImage *)obj;
+            
+            NSLog(@"%@",obj);
+            NSLog(@"%ld",idx);
+            
+            QNUploadOption *uploadOption = [[QNUploadOption alloc] initWithMime:nil progressHandler:^(NSString *key, float percent) {
+                NSLog(@"percent == %.2f", percent);
+            }
+                                                                         params:nil
+                                                                       checkCrc:NO
+                                                             cancellationSignal:nil];
+            
+            NSData *imgData;
+            if (UIImagePNGRepresentation(obj) == nil) {
+                imgData = UIImageJPEGRepresentation(obj, 1);
+            } else {
+                imgData = UIImagePNGRepresentation(obj);
+            }
+            
+            [uploadManager putData:imgData key:nil token:uploadToken complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                NSLog(@"info ===== %@", info);
+                NSLog(@"resp ===== %@", resp);
+                
+                PhotoEntity *photo = [[PhotoEntity alloc] initWithLocalImg:tmpImage photoName:@""];
+
+                if (info.error) {
+                    NSLog(@"出错啦");
+                } else {
+                    NSLog(@"上传成功");
+                    NSString *key = [resp valueForKey:@"key"];
+                    if (key.length > 0) {
+                        photo.resKey = key;
+                        [weakSelf.timelinePics addObject:photo];
+                        NSLog(@"%@", _timelinePics);
+                        [weakSelf.mTableView reloadData];
+                    }
+                }
+
+            } option:uploadOption];
+        }];
+    }
 }
 
 @end

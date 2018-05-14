@@ -37,6 +37,10 @@ typedef NS_ENUM(NSInteger, RES_TYPE){
 
 - (void)startUp;
 
+- (void)saveUploadToken:(NSString *)token;
+
+- (NSString *)getUploadToken;
+
 /**
  上传图片到档口服务器
  （1）上处图片本身到七牛的服务器
