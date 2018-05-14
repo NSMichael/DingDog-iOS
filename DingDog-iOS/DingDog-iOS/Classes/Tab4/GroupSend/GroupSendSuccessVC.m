@@ -22,13 +22,16 @@
 @property (nonatomic, strong) NSMutableArray *selectedArray;
 @property (nonatomic, strong) NSMutableArray *tempArray;
 
+@property (nonatomic, strong) CreateMessageCmd *createMessageCmd;
+
 @end
 
 @implementation GroupSendSuccessVC
 
-- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray {
+- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray CreateMessageCmd:(CreateMessageCmd *)cmd {
     self = [super init];
     if (self) {
+        _createMessageCmd = cmd;
         _selectedArray = allArray;
         _tempArray = [NSMutableArray array];
         if (allArray.count > 10) {
@@ -41,6 +44,8 @@
         } else {
             _tempArray = allArray;
         }
+        
+        [self sendMessageMulti];
     }
     return self;
 }
@@ -49,12 +54,48 @@
     [super viewDidLoad];
 
     [self setLeftBarWithBtn:@"取消" imageName:nil action:@selector(onLeftBarButtonClicked:) badge:@"0"];
-    
-    [self initScene];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)sendMessageMulti {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:_createMessageCmd.msgid forKey:@"msgid"];
+    
+    NSMutableString *useridsStr = [NSMutableString string];
+    if (_selectedArray.count > 0) {
+        for (int i = 0; i < _selectedArray.count; i++) {
+            CustomerModel *model = _selectedArray[i];
+            if (model) {
+                [useridsStr appendString:model.member_id];
+                
+                if (i < (_selectedArray.count-1)) {
+                    [useridsStr appendString:@","];
+                }
+            }
+        }
+        
+        [params setObject:useridsStr forKey:@"userids"];
+    }
+    
+    WS(weakSelf);
+    [NetworkAPIManager message_multiSendWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                [weakSelf initScene];
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 - (void)onLeftBarButtonClicked:(id)sender {

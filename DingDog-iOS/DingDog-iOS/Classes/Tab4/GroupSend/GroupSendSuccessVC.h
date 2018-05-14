@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "CreateMessageCmd.h"
 
 @interface GroupSendSuccessVC : BaseViewController
 
-- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray;
+- (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray CreateMessageCmd:(CreateMessageCmd *)cmd;
 
 @end

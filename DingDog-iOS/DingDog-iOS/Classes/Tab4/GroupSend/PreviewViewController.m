@@ -32,7 +32,12 @@
 
     self.rdv_tabBarController.tabBarHidden = YES;
     
-//    [self setRightBarWithBtn:@"下一步" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
+    self.title = @"预览";
+    self.progressColor = [UIColor yellowColor];
+    
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(onRightBarButtonClicked:)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+    
 }
 
 - (void)didReceiveMemoryWarning {

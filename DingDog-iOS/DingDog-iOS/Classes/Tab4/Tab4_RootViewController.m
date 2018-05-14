@@ -11,6 +11,9 @@
 #import "TimeLineImageCell.h"
 #import "TZImagePickerController.h"
 #import "QiniuSDK.h"
+#import "PYPhotoBrowser.h"
+#import "CreateMessageCmd.h"
+#import "PreviewViewController.h"
 
 @interface Tab4_RootViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TZImagePickerControllerDelegate>
 
@@ -22,7 +25,6 @@
 @property (nonatomic, strong) NSString *nameStr, *contentStr;
 
 @property (nonatomic, strong) NSMutableArray *timelinePics;
-@property (nonatomic, assign) NSInteger photoCount;
 
 @end
 
@@ -92,7 +94,64 @@
 #pragma mark - click event
 
 - (void)onRightBarButtonClicked:(id)sender {
+    if (self.nameStr.length == 0) {
+        [self showHudTipStr:@"请输入文章标题"];
+        return;
+    }
     
+    if (self.contentStr.length == 0) {
+        [self showHudTipStr:@"请输入文章内容"];
+        return;
+    }
+    
+    if (self.timelinePics.count == 0) {
+        [self showHudTipStr:@"请上传图片"];
+        return;
+    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.nameStr forKey:@"title"];
+    [params setObject:self.contentStr forKey:@"content"];
+    
+    NSMutableString *imageKeyStr = [NSMutableString string];
+    if (self.timelinePics.count > 0) {
+        for (int i = 0; i < _timelinePics.count; i++) {
+            PhotoEntity *entity = _timelinePics[i];
+            if (entity) {
+                [imageKeyStr appendString:entity.resKey];
+                
+                if (i < (_timelinePics.count-1)) {
+                    [imageKeyStr appendString:@","];
+                }
+            }
+        }
+        
+        [params setObject:imageKeyStr forKey:@"images"];
+    }
+    
+    WS(weakSelf);
+    [NetworkAPIManager message_createWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                if ([cmd isKindOfClass:[CreateMessageCmd class]]) {
+                    CreateMessageCmd *msgCmd = (CreateMessageCmd *)cmd;
+                    NSLog(@"%@", msgCmd);
+                    
+                    PreviewViewController *vc = [[PreviewViewController alloc] initWithCreateMessageCmd:msgCmd];
+                    [weakSelf.navigationController pushViewController:vc animated:YES];
+//                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//                    [weakSelf presentViewController:nav animated:YES completion:nil];
+                }
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 #pragma mark UITextField delegates
@@ -166,24 +225,25 @@
     UIButton *bt = sender;
     if(bt.tag<self.timelinePics.count && bt.tag>=0){
         //显示照片
-        /*
         NSMutableArray *photos = [NSMutableArray new];
         for(int i=0;i<self.timelinePics.count;i++){
-            PhotoEntity *pe = self.timelinePics[i];
-            MJPhoto *photo = [[MJPhoto alloc] init];
-            if(pe.isLocal){
-                photo.image = pe.img;
-            }else{
-                photo.url = [NSURL URLWithString:pe.url];
+            PhotoEntity *entity = self.timelinePics[i];
+            if (entity.img) {
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:entity.img];
+                [photos addObject:imageView];
             }
-            [photos addObject:photo];
         }
         
-        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
-        browser.currentPhotoIndex = bt.tag; // 弹出相册时显示的第一张图片是？
-        browser.photos = photos; // 设置所有的图片
-        [browser show];
-         */
+        // 1. 创建photoBroseView对象
+        PYPhotoBrowseView *photoBroseView = [[PYPhotoBrowseView alloc] init];
+        
+        // 2.1 设置图片源(UIImageView)数组
+        photoBroseView.sourceImgageViews = photos;
+        // 2.2 设置初始化图片下标（即当前点击第几张图片）
+        photoBroseView.currentIndex = bt.tag;
+        
+        // 3.显示(浏览)
+        [photoBroseView show];
     } else {
         if (self.timelinePics.count < 9) {
             [self showActionSheetTakePhotoByMultiSelect];
@@ -194,7 +254,12 @@
 }
 
 - (void)onBtnDeletePhoto:(id)sender {
+    UIButton *bt = sender;
+    if (bt.tag < self.timelinePics.count) {
+        [self.timelinePics removeObjectAtIndex:bt.tag];
+    }
     
+    [self.mTableView reloadData];
 }
 
 - (void) showActionSheetTakePhotoByMultiSelect {
@@ -219,12 +284,6 @@
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
-        
-        // You can get the photos by block, the same as by delegate.
-        // 你可以通过block或者代理，来得到用户选择的照片.
-//        [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
-//
-//        }];
         [weakSelf presentViewController:imagePickerVc animated:YES completion:nil];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];

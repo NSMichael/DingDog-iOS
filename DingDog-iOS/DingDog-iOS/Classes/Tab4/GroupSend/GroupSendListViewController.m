@@ -432,7 +432,7 @@
         return;
     }
     
-    GroupSendSuccessVC *vc = [[GroupSendSuccessVC alloc] initWithAllCustomerArray:_selectedArray];
+    GroupSendSuccessVC *vc = [[GroupSendSuccessVC alloc] initWithAllCustomerArray:_selectedArray CreateMessageCmd:_createMessageCmd];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }

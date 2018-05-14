@@ -114,6 +114,25 @@
 		1AB6A05C20A6FA55009A04A4 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A05B20A6FA55009A04A4 /* FCFileManager.m */; };
 		1AB6A06020A6FBDA009A04A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A05F20A6FBDA009A04A4 /* UIView+Size.m */; };
 		1AB6A06320A731ED009A04A4 /* ProductImgEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A06120A731ED009A04A4 /* ProductImgEditView.m */; };
+		1AB6A0C920A9DE85009A04A4 /* UIView+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0A920A9DE85009A04A4 /* UIView+PYExtension.m */; };
+		1AB6A0CA20A9DE85009A04A4 /* MBProgressHUD+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0AC20A9DE85009A04A4 /* MBProgressHUD+PYExtension.m */; };
+		1AB6A0CB20A9DE85009A04A4 /* PYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0AE20A9DE85009A04A4 /* PYProgressView.m */; };
+		1AB6A0CC20A9DE85009A04A4 /* PYPhotoBrowserConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0B120A9DE85009A04A4 /* PYPhotoBrowserConst.m */; };
+		1AB6A0CD20A9DE85009A04A4 /* PYPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0B620A9DE85009A04A4 /* PYPhotosViewController.m */; };
+		1AB6A0CE20A9DE85009A04A4 /* PYPhotosReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0B820A9DE85009A04A4 /* PYPhotosReaderController.m */; };
+		1AB6A0CF20A9DE85009A04A4 /* PYPhotosNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0B920A9DE85009A04A4 /* PYPhotosNavigationController.m */; };
+		1AB6A0D020A9DE85009A04A4 /* PYPhotosPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0BA20A9DE85009A04A4 /* PYPhotosPreviewController.m */; };
+		1AB6A0D120A9DE85009A04A4 /* PYPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0BE20A9DE85009A04A4 /* PYPhoto.m */; };
+		1AB6A0D220A9DE85009A04A4 /* PYPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0C020A9DE85009A04A4 /* PYPhotosView.m */; };
+		1AB6A0D320A9DE85009A04A4 /* PYPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0C420A9DE85009A04A4 /* PYPhotoBrowseView.m */; };
+		1AB6A0D420A9DE85009A04A4 /* PYPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0C620A9DE85009A04A4 /* PYPhotoCell.m */; };
+		1AB6A0D520A9DE85009A04A4 /* PYPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0C720A9DE85009A04A4 /* PYPhotoView.m */; };
+		1AB6A0D620A9DE85009A04A4 /* PYPhotosView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1AB6A0C820A9DE85009A04A4 /* PYPhotosView.bundle */; };
+		1AB6A0DC20A9E039009A04A4 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0D820A9E038009A04A4 /* DALabeledCircularProgressView.m */; };
+		1AB6A0DD20A9E039009A04A4 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0D920A9E038009A04A4 /* DACircularProgressView.m */; };
+		1AB6A0E320A9E03F009A04A4 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0DF20A9E03F009A04A4 /* FLAnimatedImage.m */; };
+		1AB6A0E420A9E03F009A04A4 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0E020A9E03F009A04A4 /* FLAnimatedImageView.m */; };
+		1AB6A0E820A9E062009A04A4 /* FLAnimatedImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0E620A9E062009A04A4 /* FLAnimatedImageView+WebCache.m */; };
 		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16920A5984200E57F63 /* CreateMessageCmd.m */; };
@@ -724,6 +743,44 @@
 		1AB6A05F20A6FBDA009A04A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		1AB6A06120A731ED009A04A4 /* ProductImgEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductImgEditView.m; sourceTree = "<group>"; };
 		1AB6A06220A731ED009A04A4 /* ProductImgEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductImgEditView.h; sourceTree = "<group>"; };
+		1AB6A0A920A9DE85009A04A4 /* UIView+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYExtension.m"; sourceTree = "<group>"; };
+		1AB6A0AA20A9DE85009A04A4 /* MBProgressHUD+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+PYExtension.h"; sourceTree = "<group>"; };
+		1AB6A0AB20A9DE85009A04A4 /* UIView+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYExtension.h"; sourceTree = "<group>"; };
+		1AB6A0AC20A9DE85009A04A4 /* MBProgressHUD+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+PYExtension.m"; sourceTree = "<group>"; };
+		1AB6A0AE20A9DE85009A04A4 /* PYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYProgressView.m; sourceTree = "<group>"; };
+		1AB6A0AF20A9DE85009A04A4 /* PYPhotoBrowserConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowserConst.h; sourceTree = "<group>"; };
+		1AB6A0B020A9DE85009A04A4 /* PYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYProgressView.h; sourceTree = "<group>"; };
+		1AB6A0B120A9DE85009A04A4 /* PYPhotoBrowserConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoBrowserConst.m; sourceTree = "<group>"; };
+		1AB6A0B220A9DE85009A04A4 /* PYPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowser.h; sourceTree = "<group>"; };
+		1AB6A0B420A9DE85009A04A4 /* PYPhotosReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosReaderController.h; sourceTree = "<group>"; };
+		1AB6A0B520A9DE85009A04A4 /* PYPhotosNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosNavigationController.h; sourceTree = "<group>"; };
+		1AB6A0B620A9DE85009A04A4 /* PYPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosViewController.m; sourceTree = "<group>"; };
+		1AB6A0B720A9DE85009A04A4 /* PYPhotosPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosPreviewController.h; sourceTree = "<group>"; };
+		1AB6A0B820A9DE85009A04A4 /* PYPhotosReaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosReaderController.m; sourceTree = "<group>"; };
+		1AB6A0B920A9DE85009A04A4 /* PYPhotosNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosNavigationController.m; sourceTree = "<group>"; };
+		1AB6A0BA20A9DE85009A04A4 /* PYPhotosPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosPreviewController.m; sourceTree = "<group>"; };
+		1AB6A0BB20A9DE85009A04A4 /* PYPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosViewController.h; sourceTree = "<group>"; };
+		1AB6A0BD20A9DE85009A04A4 /* PYPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhoto.h; sourceTree = "<group>"; };
+		1AB6A0BE20A9DE85009A04A4 /* PYPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhoto.m; sourceTree = "<group>"; };
+		1AB6A0C020A9DE85009A04A4 /* PYPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotosView.m; sourceTree = "<group>"; };
+		1AB6A0C120A9DE85009A04A4 /* PYPhotoBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoBrowseView.h; sourceTree = "<group>"; };
+		1AB6A0C220A9DE85009A04A4 /* PYPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoCell.h; sourceTree = "<group>"; };
+		1AB6A0C320A9DE85009A04A4 /* PYPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotoView.h; sourceTree = "<group>"; };
+		1AB6A0C420A9DE85009A04A4 /* PYPhotoBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoBrowseView.m; sourceTree = "<group>"; };
+		1AB6A0C520A9DE85009A04A4 /* PYPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPhotosView.h; sourceTree = "<group>"; };
+		1AB6A0C620A9DE85009A04A4 /* PYPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoCell.m; sourceTree = "<group>"; };
+		1AB6A0C720A9DE85009A04A4 /* PYPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPhotoView.m; sourceTree = "<group>"; };
+		1AB6A0C820A9DE85009A04A4 /* PYPhotosView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYPhotosView.bundle; sourceTree = "<group>"; };
+		1AB6A0D820A9E038009A04A4 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		1AB6A0D920A9E038009A04A4 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		1AB6A0DA20A9E038009A04A4 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		1AB6A0DB20A9E038009A04A4 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		1AB6A0DF20A9E03F009A04A4 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		1AB6A0E020A9E03F009A04A4 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		1AB6A0E120A9E03F009A04A4 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		1AB6A0E220A9E03F009A04A4 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		1AB6A0E620A9E062009A04A4 /* FLAnimatedImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImageView+WebCache.m"; sourceTree = "<group>"; };
+		1AB6A0E720A9E062009A04A4 /* FLAnimatedImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImageView+WebCache.h"; sourceTree = "<group>"; };
 		BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanSeeViewController.h; sourceTree = "<group>"; };
 		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
 		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
@@ -2022,6 +2079,113 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		1AB6A0A720A9DE85009A04A4 /* PYPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0A820A9DE85009A04A4 /* Category */,
+				1AB6A0AD20A9DE85009A04A4 /* Other */,
+				1AB6A0B220A9DE85009A04A4 /* PYPhotoBrowser.h */,
+				1AB6A0B320A9DE85009A04A4 /* Controller */,
+				1AB6A0BC20A9DE85009A04A4 /* Model */,
+				1AB6A0BF20A9DE85009A04A4 /* View */,
+				1AB6A0C820A9DE85009A04A4 /* PYPhotosView.bundle */,
+			);
+			path = PYPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		1AB6A0A820A9DE85009A04A4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0A920A9DE85009A04A4 /* UIView+PYExtension.m */,
+				1AB6A0AA20A9DE85009A04A4 /* MBProgressHUD+PYExtension.h */,
+				1AB6A0AB20A9DE85009A04A4 /* UIView+PYExtension.h */,
+				1AB6A0AC20A9DE85009A04A4 /* MBProgressHUD+PYExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1AB6A0AD20A9DE85009A04A4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0AE20A9DE85009A04A4 /* PYProgressView.m */,
+				1AB6A0AF20A9DE85009A04A4 /* PYPhotoBrowserConst.h */,
+				1AB6A0B020A9DE85009A04A4 /* PYProgressView.h */,
+				1AB6A0B120A9DE85009A04A4 /* PYPhotoBrowserConst.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		1AB6A0B320A9DE85009A04A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0B420A9DE85009A04A4 /* PYPhotosReaderController.h */,
+				1AB6A0B520A9DE85009A04A4 /* PYPhotosNavigationController.h */,
+				1AB6A0B620A9DE85009A04A4 /* PYPhotosViewController.m */,
+				1AB6A0B720A9DE85009A04A4 /* PYPhotosPreviewController.h */,
+				1AB6A0B820A9DE85009A04A4 /* PYPhotosReaderController.m */,
+				1AB6A0B920A9DE85009A04A4 /* PYPhotosNavigationController.m */,
+				1AB6A0BA20A9DE85009A04A4 /* PYPhotosPreviewController.m */,
+				1AB6A0BB20A9DE85009A04A4 /* PYPhotosViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1AB6A0BC20A9DE85009A04A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0BD20A9DE85009A04A4 /* PYPhoto.h */,
+				1AB6A0BE20A9DE85009A04A4 /* PYPhoto.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1AB6A0BF20A9DE85009A04A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0C020A9DE85009A04A4 /* PYPhotosView.m */,
+				1AB6A0C120A9DE85009A04A4 /* PYPhotoBrowseView.h */,
+				1AB6A0C220A9DE85009A04A4 /* PYPhotoCell.h */,
+				1AB6A0C320A9DE85009A04A4 /* PYPhotoView.h */,
+				1AB6A0C420A9DE85009A04A4 /* PYPhotoBrowseView.m */,
+				1AB6A0C520A9DE85009A04A4 /* PYPhotosView.h */,
+				1AB6A0C620A9DE85009A04A4 /* PYPhotoCell.m */,
+				1AB6A0C720A9DE85009A04A4 /* PYPhotoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1AB6A0D720A9E038009A04A4 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0D820A9E038009A04A4 /* DALabeledCircularProgressView.m */,
+				1AB6A0D920A9E038009A04A4 /* DACircularProgressView.m */,
+				1AB6A0DA20A9E038009A04A4 /* DALabeledCircularProgressView.h */,
+				1AB6A0DB20A9E038009A04A4 /* DACircularProgressView.h */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		1AB6A0DE20A9E03F009A04A4 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0DF20A9E03F009A04A4 /* FLAnimatedImage.m */,
+				1AB6A0E020A9E03F009A04A4 /* FLAnimatedImageView.m */,
+				1AB6A0E120A9E03F009A04A4 /* FLAnimatedImage.h */,
+				1AB6A0E220A9E03F009A04A4 /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		1AB6A0E520A9E061009A04A4 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0E620A9E062009A04A4 /* FLAnimatedImageView+WebCache.m */,
+				1AB6A0E720A9E062009A04A4 /* FLAnimatedImageView+WebCache.h */,
+			);
+			name = FLAnimatedImage;
+			path = "../../../../../../../Downloads/PYPhotoBrowser-master/Dependency/SDWebImage/FLAnimatedImage";
+			sourceTree = "<group>";
+		};
 		BB144B7920A19CAD00354EB9 /* Select */ = {
 			isa = PBXGroup;
 			children = (
@@ -2202,6 +2366,10 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1AB6A0DE20A9E03F009A04A4 /* FLAnimatedImage */,
+				1AB6A0E520A9E061009A04A4 /* FLAnimatedImage */,
+				1AB6A0D720A9E038009A04A4 /* DACircularProgress */,
+				1AB6A0A720A9DE85009A04A4 /* PYPhotoBrowser */,
 				BBD870E220A9797F00EAFD9F /* TZImagePickerController */,
 				1AB6A05920A6FA55009A04A4 /* FCFileManager */,
 				BB15D18B20A5A68E00E57F63 /* TGWebController */,
@@ -3557,6 +3725,7 @@
 				1A28FBDC207BAB6900041943 /* README.txt in Resources */,
 				BB467E522057E14000D18C97 /* LICENSE.md in Resources */,
 				BB74D5042058FA0F00F8A55B /* Info.plist in Resources */,
+				1AB6A0D620A9DE85009A04A4 /* PYPhotosView.bundle in Resources */,
 				BBD8710720A9797F00EAFD9F /* TZImagePickerController.bundle in Resources */,
 				BB467E532057E14000D18C97 /* README.md in Resources */,
 				BB74D4CE2058F77300F8A55B /* Info.plist in Resources */,
@@ -3618,6 +3787,7 @@
 				BB467E902057E14000D18C97 /* NSString+RACSequenceAdditions.m in Sources */,
 				BB467E582057E14000D18C97 /* RACStringSequence.m in Sources */,
 				BB467D552057DEE600D18C97 /* DDASLLogCapture.m in Sources */,
+				1AB6A0CB20A9DE85009A04A4 /* PYProgressView.m in Sources */,
 				BB74D3722058B93900F8A55B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				1AB6A05220A6F7DC009A04A4 /* TimeLineImageCell.m in Sources */,
 				BB74D4682058BA9200F8A55B /* YYTextUtilities.m in Sources */,
@@ -3662,12 +3832,14 @@
 				1A28FCB82084ECBF00041943 /* QNDomain.m in Sources */,
 				1A28FC54207E492300041943 /* SDWebImageManager.m in Sources */,
 				1A28FC5D207E492300041943 /* SDWebImageDownloaderOperation.m in Sources */,
+				1AB6A0D120A9DE85009A04A4 /* PYPhoto.m in Sources */,
 				BB467E652057E14000D18C97 /* RACSignal+Operations.m in Sources */,
 				BB467EC02057E22A00D18C97 /* UIImage+RoundedCorner.m in Sources */,
 				BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */,
 				BB467D902057E06300D18C97 /* UIWebView+AFNetworking.m in Sources */,
 				BB74D3742058B93900F8A55B /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				BB74D2E92058B72100F8A55B /* MBProgressHUD.m in Sources */,
+				1AB6A0D020A9DE85009A04A4 /* PYPhotosPreviewController.m in Sources */,
 				BB74D2E52058B71400F8A55B /* JDStatusBarStyle.m in Sources */,
 				BB467EA72057E14000D18C97 /* RACUnit.m in Sources */,
 				BB74D3612058B93900F8A55B /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
@@ -3727,11 +3899,14 @@
 				BB86F782208494E500DABEAC /* ImageTools.m in Sources */,
 				1A28FC55207E492300041943 /* SDWebImageDecoder.m in Sources */,
 				BB467D282057D48300D18C97 /* LoginViewController.m in Sources */,
+				1AB6A0D520A9DE85009A04A4 /* PYPhotoView.m in Sources */,
 				BB467D892057E06300D18C97 /* UIAlertView+AFNetworking.m in Sources */,
+				1AB6A0CF20A9DE85009A04A4 /* PYPhotosNavigationController.m in Sources */,
 				BB467E9B2057E14000D18C97 /* NSString+RACKeyPathUtilities.m in Sources */,
 				BB74D4622058BA9200F8A55B /* YYTextLine.m in Sources */,
 				BB74D4812058BA9200F8A55B /* NSObject+YYAdd.m in Sources */,
 				BB74D4852058BA9200F8A55B /* NSTimer+YYAdd.m in Sources */,
+				1AB6A0CE20A9DE85009A04A4 /* PYPhotosReaderController.m in Sources */,
 				BB74D4702058BA9200F8A55B /* UITextField+YYAdd.m in Sources */,
 				1AB6A05820A6FA2A009A04A4 /* PhotoEntity.m in Sources */,
 				BB467E6E2057E14000D18C97 /* RACDynamicSequence.m in Sources */,
@@ -3749,6 +3924,8 @@
 				BB74D4672058BA9200F8A55B /* YYTextRunDelegate.m in Sources */,
 				BB74D4FE2058FA0F00F8A55B /* MASLayoutConstraint.m in Sources */,
 				BB74D5012058FA0F00F8A55B /* MASConstraint.m in Sources */,
+				1AB6A0E820A9E062009A04A4 /* FLAnimatedImageView+WebCache.m in Sources */,
+				1AB6A0E320A9E03F009A04A4 /* FLAnimatedImage.m in Sources */,
 				BB74D38F2058B98800F8A55B /* NSString+Common.m in Sources */,
 				1A28FBA9206FCBAB00041943 /* MsgSearchViewController.m in Sources */,
 				BB74D35E2058B93900F8A55B /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
@@ -3763,6 +3940,7 @@
 				BB74D48A2058BA9200F8A55B /* NSDictionary+YYAdd.m in Sources */,
 				BB467E552057E14000D18C97 /* NSNotificationCenter+RACSupport.m in Sources */,
 				BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */,
+				1AB6A0DD20A9E039009A04A4 /* DACircularProgressView.m in Sources */,
 				BB467E912057E14000D18C97 /* UIAlertView+RACSignalSupport.m in Sources */,
 				BB74D4C62058F77300F8A55B /* NSArray+MTLManipulationAdditions.m in Sources */,
 				BB74D4882058BA9200F8A55B /* NSString+YYAdd.m in Sources */,
@@ -3784,6 +3962,7 @@
 				BB74D38D2058B98800F8A55B /* NSString+EmojiExtension.m in Sources */,
 				BB467E932057E14000D18C97 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
 				BB467D0A2057D28900D18C97 /* RootTabViewController.m in Sources */,
+				1AB6A0CC20A9DE85009A04A4 /* PYPhotoBrowserConst.m in Sources */,
 				BB467E6A2057E14000D18C97 /* RACObjCRuntime.m in Sources */,
 				BB467D832057E06300D18C97 /* AFURLSessionManager.m in Sources */,
 				BB467EAC2057E14000D18C97 /* RACTuple.m in Sources */,
@@ -3829,6 +4008,7 @@
 				BB4B9A0620872F5A004FF037 /* QNPHAssetResource.m in Sources */,
 				BB74D48E2058BA9200F8A55B /* YYWeakProxy.m in Sources */,
 				BB74D3792058B93900F8A55B /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
+				1AB6A0D420A9DE85009A04A4 /* PYPhotoCell.m in Sources */,
 				BB467E5F2057E14000D18C97 /* RACTargetQueueScheduler.m in Sources */,
 				BBD8710520A9797F00EAFD9F /* UIView+Layout.m in Sources */,
 				BB467EBD2057E22A00D18C97 /* UIImage-Extensions.m in Sources */,
@@ -3843,11 +4023,13 @@
 				BB4B9A1A208732E9004FF037 /* CustomerModel.m in Sources */,
 				BBD8710020A9797F00EAFD9F /* TZImageCropManager.m in Sources */,
 				BB74D4542058BA9200F8A55B /* UIButton+YYWebImage.m in Sources */,
+				1AB6A0D220A9DE85009A04A4 /* PYPhotosView.m in Sources */,
 				BB467E922057E14000D18C97 /* RACValueTransformer.m in Sources */,
 				BB467D132057D31000D18C97 /* RDVTabBar.m in Sources */,
 				1A28FCB02084ECBF00041943 /* QNTxtResolver.m in Sources */,
 				BB74D38C2058B98800F8A55B /* NSString+Check.m in Sources */,
 				BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */,
+				1AB6A0DC20A9E039009A04A4 /* DALabeledCircularProgressView.m in Sources */,
 				BB467E7F2057E14000D18C97 /* RACBehaviorSubject.m in Sources */,
 				BB467E8C2057E14000D18C97 /* RACQueueScheduler.m in Sources */,
 				BB467E5A2057E14000D18C97 /* RACScheduler.m in Sources */,
@@ -3947,6 +4129,7 @@
 				1A28FD6C209365C000041943 /* KafkaReplicatorLayer.m in Sources */,
 				BB74D4792058BA9200F8A55B /* UIBarButtonItem+YYAdd.m in Sources */,
 				BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */,
+				1AB6A0E420A9E03F009A04A4 /* FLAnimatedImageView.m in Sources */,
 				1AB6A04220A6EF3F009A04A4 /* Tab4_RootViewController2.m in Sources */,
 				BB467E542057E14000D18C97 /* NSFileHandle+RACSupport.m in Sources */,
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
@@ -3962,6 +4145,7 @@
 				BB467D872057E06300D18C97 /* AFNetworkReachabilityManager.m in Sources */,
 				BB467E852057E14000D18C97 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				BB467EA22057E14000D18C97 /* NSObject+RACKVOWrapper.m in Sources */,
+				1AB6A0CD20A9DE85009A04A4 /* PYPhotosViewController.m in Sources */,
 				BBD8710920A9797F00EAFD9F /* TZImageManager.m in Sources */,
 				BB74D3602058B93900F8A55B /* DGActivityIndicatorAnimation.m in Sources */,
 				BB467CD22057CE0400D18C97 /* main.m in Sources */,
@@ -3977,6 +4161,7 @@
 				BBD8710120A9797F00EAFD9F /* TZAssetCell.m in Sources */,
 				BB74D36A2058B93900F8A55B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				BB467E562057E14000D18C97 /* UIStepper+RACSignalSupport.m in Sources */,
+				1AB6A0C920A9DE85009A04A4 /* UIView+PYExtension.m in Sources */,
 				BBD8710620A9797F00EAFD9F /* TZPhotoPreviewController.m in Sources */,
 				1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */,
 				BB74D5002058FA0F00F8A55B /* View+MASAdditions.m in Sources */,
@@ -4011,6 +4196,7 @@
 				1A28FC53207E492300041943 /* MKAnnotationView+WebCache.m in Sources */,
 				1AB6A05C20A6FA55009A04A4 /* FCFileManager.m in Sources */,
 				BB74D4642058BA9200F8A55B /* YYTextKeyboardManager.m in Sources */,
+				1AB6A0D320A9DE85009A04A4 /* PYPhotoBrowseView.m in Sources */,
 				BB74D4982058BA9200F8A55B /* YYThreadSafeArray.m in Sources */,
 				BB467E712057E14000D18C97 /* RACCompoundDisposableProvider.d in Sources */,
 				BB467E742057E14000D18C97 /* RACSubscriptingAssignmentTrampoline.m in Sources */,
@@ -4018,6 +4204,7 @@
 				BB4B9A0420872F5A004FF037 /* QNFormUpload.m in Sources */,
 				BB467D8E2057E06300D18C97 /* UIButton+AFNetworking.m in Sources */,
 				BB74D4842058BA9200F8A55B /* NSKeyedUnarchiver+YYAdd.m in Sources */,
+				1AB6A0CA20A9DE85009A04A4 /* MBProgressHUD+PYExtension.m in Sources */,
 				BB74D3652058B93900F8A55B /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				BB74D30B2058B8F900F8A55B /* ACPStaticImages.m in Sources */,
 				BB74D4CF2058F77300F8A55B /* MTLReflection.m in Sources */,
@@ -4206,7 +4393,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4231,7 +4418,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
