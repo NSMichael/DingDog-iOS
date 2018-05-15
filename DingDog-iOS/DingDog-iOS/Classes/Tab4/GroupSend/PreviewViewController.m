@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) CreateMessageCmd *createMessageCmd;
 
+@property (nonatomic, strong) LYWebViewController *webVC;
+
 @end
 
 @implementation PreviewViewController
@@ -21,19 +23,24 @@
     self = [super init];
     if (self) {
         _createMessageCmd = cmd;
-        
-        self.url = cmd.preview_url;
+
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.rdv_tabBarController.tabBarHidden = YES;
     
     self.title = @"预览";
-    self.progressColor = [UIColor yellowColor];
+
+    AppDelegate *app = APP;
+    app.rootVC.tabBarHidden = YES;
+    
+    _webVC = [[LYWKWebViewController alloc] initWithAddress:_createMessageCmd.preview_url];
+    _webVC.showsToolBar = NO;
+    _webVC.showsBackgroundLabel = NO;
+    [self addChildViewController:_webVC];
+    [self.view addSubview:_webVC.view];
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(onRightBarButtonClicked:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;

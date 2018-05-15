@@ -170,12 +170,16 @@
         HelpViewController *vc = [[HelpViewController alloc] initWithURLRequest:request Title:@"帮助"];
         [self.navigationController pushViewController:vc animated:YES];
         
-//        NSString *token = [[MyAccountManager sharedManager] getToken];
-//        request.HTTPMethod = @"GET";
-//        [request addValue:token forHTTPHeaderField:@"X-AUTH-TOKEN"];
-        
     } else if (indexPath.row == 2) {
         // 意见反馈
+        NSString *address = [NSString stringWithFormat:@"http://%@home/site/support", BASE_URL];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        request.URL = [NSURL URLWithString:address];
+        
+        HelpViewController *vc = [[HelpViewController alloc] initWithURLRequest:request Title:@"反馈"];
+        [self.navigationController pushViewController:vc animated:YES];
+        
     } else if (indexPath.row == 3) {
         // 清除缓存
         [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];

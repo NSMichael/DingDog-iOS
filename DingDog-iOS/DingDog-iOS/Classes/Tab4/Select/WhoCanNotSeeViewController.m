@@ -54,7 +54,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.rdv_tabBarController.tabBar.hidden = YES;
+    AppDelegate *app = APP;
+    app.rootVC.tabBarHidden = YES;
     
     [self setLeftBarWithBtn:@"取消" imageName:@"icon-button-cancel" action:@selector(onLeftBarButtonClicked:) badge:@"0"];
     [self setRightBarWithBtn:@"完成" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];

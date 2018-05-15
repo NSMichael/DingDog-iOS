@@ -7,8 +7,6 @@
 //
 
 #import "HelpViewController.h"
-#import "LYWebViewController.h"
-#import "LYWKWebViewController.h"
 
 @interface HelpViewController ()
 
@@ -22,9 +20,8 @@
     self = [super init];
     if (self) {
         
-        self.rdv_tabBarController.tabBarHidden = YES;
-        
-//        self.rdv_tabBarController.tabBar.hidden = YES;
+        AppDelegate *app = APP;
+        app.rootVC.tabBarHidden = YES;
         
         self.title = title;
         
@@ -39,8 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    self.rdv_tabBarController.tabBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

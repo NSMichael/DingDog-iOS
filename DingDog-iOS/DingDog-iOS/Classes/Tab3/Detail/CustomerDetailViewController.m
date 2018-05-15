@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.rdv_tabBarController.tabBar.hidden = YES;
+    AppDelegate *app = APP;
+    app.rootVC.tabBarHidden = YES;
     
     [self initSceneUI];
     

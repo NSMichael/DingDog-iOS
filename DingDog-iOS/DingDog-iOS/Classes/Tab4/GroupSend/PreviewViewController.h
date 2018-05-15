@@ -8,9 +8,8 @@
 
 #import "BaseViewController.h"
 #import "CreateMessageCmd.h"
-#import "TGWebViewController.h"
 
-@interface PreviewViewController : TGWebViewController
+@interface PreviewViewController : BaseViewController
 
 - (instancetype)initWithCreateMessageCmd:(CreateMessageCmd *)cmd;
 

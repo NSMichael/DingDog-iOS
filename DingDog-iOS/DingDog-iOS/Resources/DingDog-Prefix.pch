@@ -50,5 +50,7 @@
     #import "UIView+Size.h"
 
     #import "MyAccountManager.h"
+    #import "LYWebViewController.h"
+    #import "LYWKWebViewController.h"
 
 #endif /* DingDog_Prefix_pch */

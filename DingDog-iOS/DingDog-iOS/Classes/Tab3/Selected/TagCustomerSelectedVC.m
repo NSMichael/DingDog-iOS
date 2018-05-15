@@ -40,8 +40,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.rdv_tabBarController.tabBar.hidden = YES;
+        
+    AppDelegate *app = APP;
+    app.rootVC.tabBarHidden = YES;
     
     [self setRightBarWithBtn:@"确定" imageName:nil action:@selector(onRightBarButtonClicked:) badge:@"0"];
 

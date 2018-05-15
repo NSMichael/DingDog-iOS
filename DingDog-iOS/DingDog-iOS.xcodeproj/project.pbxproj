@@ -105,7 +105,6 @@
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
-		1AB6A04220A6EF3F009A04A4 /* Tab4_RootViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04020A6EF3E009A04A4 /* Tab4_RootViewController2.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
 		1AB6A04C20A6F130009A04A4 /* TimeLineTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04B20A6F12F009A04A4 /* TimeLineTextCell.m */; };
 		1AB6A04F20A6F1C0009A04A4 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04E20A6F1C0009A04A4 /* UIPlaceHolderTextView.m */; };
@@ -118,9 +117,6 @@
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16920A5984200E57F63 /* CreateMessageCmd.m */; };
 		BB15D16D20A5997700E57F63 /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16C20A5997700E57F63 /* PreviewViewController.m */; };
-		BB15D19220A5A68E00E57F63 /* TGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */; };
-		BB15D19320A5A68E00E57F63 /* NSTimer+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */; };
-		BB15D19420A5A68E00E57F63 /* TGWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */; };
 		BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB467CC32057CE0400D18C97 /* AppDelegate.m */; };
 		BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCB2057CE0400D18C97 /* Assets.xcassets */; };
 		BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */; };
@@ -778,8 +774,6 @@
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTagSelectedViewController.m; sourceTree = "<group>"; };
-		1AB6A04020A6EF3E009A04A4 /* Tab4_RootViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab4_RootViewController2.m; sourceTree = "<group>"; };
-		1AB6A04120A6EF3E009A04A4 /* Tab4_RootViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab4_RootViewController2.h; sourceTree = "<group>"; };
 		1AB6A04320A6EF61009A04A4 /* Tab4_RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tab4_RootViewController.h; sourceTree = "<group>"; };
 		1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tab4_RootViewController.m; sourceTree = "<group>"; };
 		1AB6A04A20A6F12F009A04A4 /* TimeLineTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineTextCell.h; sourceTree = "<group>"; };
@@ -804,12 +798,6 @@
 		BB15D16920A5984200E57F63 /* CreateMessageCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateMessageCmd.m; sourceTree = "<group>"; };
 		BB15D16B20A5997700E57F63 /* PreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
 		BB15D16C20A5997700E57F63 /* PreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
-		BB15D18C20A5A68E00E57F63 /* NSTimer+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+addition.h"; sourceTree = "<group>"; };
-		BB15D18D20A5A68E00E57F63 /* TGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWebViewController.h; sourceTree = "<group>"; };
-		BB15D18E20A5A68E00E57F63 /* TGWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWebProgressLayer.h; sourceTree = "<group>"; };
-		BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGWebViewController.m; sourceTree = "<group>"; };
-		BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+addition.m"; sourceTree = "<group>"; };
-		BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGWebProgressLayer.m; sourceTree = "<group>"; };
 		BB467CBF2057CE0400D18C97 /* DingDog-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DingDog-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB467CC22057CE0400D18C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB467CC32057CE0400D18C97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2246,19 +2234,6 @@
 			path = Select;
 			sourceTree = "<group>";
 		};
-		BB15D18B20A5A68E00E57F63 /* TGWebController */ = {
-			isa = PBXGroup;
-			children = (
-				BB15D18C20A5A68E00E57F63 /* NSTimer+addition.h */,
-				BB15D18D20A5A68E00E57F63 /* TGWebViewController.h */,
-				BB15D18E20A5A68E00E57F63 /* TGWebProgressLayer.h */,
-				BB15D18F20A5A68E00E57F63 /* TGWebViewController.m */,
-				BB15D19020A5A68E00E57F63 /* NSTimer+addition.m */,
-				BB15D19120A5A68E00E57F63 /* TGWebProgressLayer.m */,
-			);
-			path = TGWebController;
-			sourceTree = "<group>";
-		};
 		BB467CB62057CE0400D18C97 = {
 			isa = PBXGroup;
 			children = (
@@ -2399,8 +2374,6 @@
 			children = (
 				1AB6A04320A6EF61009A04A4 /* Tab4_RootViewController.h */,
 				1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */,
-				1AB6A04120A6EF3E009A04A4 /* Tab4_RootViewController2.h */,
-				1AB6A04020A6EF3E009A04A4 /* Tab4_RootViewController2.m */,
 				BB6FC19020A02322004615D9 /* GroupSend */,
 				BB144B7920A19CAD00354EB9 /* Select */,
 				1A28FBCB207A561900041943 /* Models */,
@@ -2418,7 +2391,6 @@
 				BBD8712D20AA781700EAFD9F /* PhotoBrowser */,
 				BBD870E220A9797F00EAFD9F /* TZImagePickerController */,
 				1AB6A05920A6FA55009A04A4 /* FCFileManager */,
-				BB15D18B20A5A68E00E57F63 /* TGWebController */,
 				1A28FD23209365BE00041943 /* KafkaRefresh */,
 				BB4B99CA20872F5A004FF037 /* QiniuSDK */,
 				1A28FC7A2084ECBF00041943 /* HappyDNS */,
@@ -4284,7 +4256,6 @@
 				1A28FD6D209365C000041943 /* KafkaArcLayer.m in Sources */,
 				BB467D8F2057E06300D18C97 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				BBD8710C20A9797F00EAFD9F /* TZImagePickerController.m in Sources */,
-				BB15D19220A5A68E00E57F63 /* TGWebViewController.m in Sources */,
 				BB4B9A0020872F5A004FF037 /* QNUploadManager.m in Sources */,
 				1AB6A06320A731ED009A04A4 /* ProductImgEditView.m in Sources */,
 				BBD871E920AABBF400EAFD9F /* SVWebViewControllerActivitySafari.m in Sources */,
@@ -4545,7 +4516,6 @@
 				1A28FC52207E492300041943 /* UIImage+WebP.m in Sources */,
 				BB467E9E2057E14000D18C97 /* UIActionSheet+RACSignalSupport.m in Sources */,
 				BB74D4742058BA9200F8A55B /* UIApplication+YYAdd.m in Sources */,
-				BB15D19320A5A68E00E57F63 /* NSTimer+addition.m in Sources */,
 				BB4B9A0320872F5A004FF037 /* QNUpToken.m in Sources */,
 				BBD8716120AA781700EAFD9F /* FLAnimatedImageView.m in Sources */,
 				BB4B9A1220872F5A004FF037 /* QNSessionManager.m in Sources */,
@@ -4589,10 +4559,8 @@
 				BB74D4792058BA9200F8A55B /* UIBarButtonItem+YYAdd.m in Sources */,
 				BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */,
 				BBD871E620AABBF400EAFD9F /* SVModalWebViewController.m in Sources */,
-				1AB6A04220A6EF3F009A04A4 /* Tab4_RootViewController2.m in Sources */,
 				BB467E542057E14000D18C97 /* NSFileHandle+RACSupport.m in Sources */,
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
-				BB15D19420A5A68E00E57F63 /* TGWebProgressLayer.m in Sources */,
 				BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */,
 				1A28FBF2207BB5AE00041943 /* NetworkAPIManager.m in Sources */,
 				1A28FC6420831F8100041943 /* UserCmd.m in Sources */,
@@ -4880,6 +4848,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;
@@ -4905,6 +4874,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;

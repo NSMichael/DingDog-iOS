@@ -71,7 +71,7 @@
 
 - (void)onRightBarButtonClicked:(id)sender {
     TagCustomerSelectedVC *vc = [[TagCustomerSelectedVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
+//    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
