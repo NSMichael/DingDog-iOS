@@ -61,10 +61,26 @@
     }];
     
     self.timelinePics = @[].mutableCopy;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(groupSendSuccess:) name:kNotification_groupSendSuccess object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.rdv_tabBarController.tabBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)groupSendSuccess:(NSNotification *)notify {
+    [self.timelinePics removeAllObjects];
+    self.nameStr = @"";
+    self.textFieldName.text = @"";
+    self.contentStr = @"";
+    [self.mTableView reloadData];
 }
 
 - (UIView *)configHeaderView {
@@ -94,6 +110,7 @@
 #pragma mark - click event
 
 - (void)onRightBarButtonClicked:(id)sender {
+    
     if (self.nameStr.length == 0) {
         [self showHudTipStr:@"请输入文章标题"];
         return;
@@ -301,6 +318,8 @@
         QNUploadManager *uploadManager = [[QNUploadManager alloc] init];
         [photos enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
+            [weakSelf showMBProgressHUD];
+            
             UIImage *tmpImage = (UIImage *)obj;
             
             NSLog(@"%@",obj);
@@ -323,6 +342,10 @@
             [uploadManager putData:imgData key:nil token:uploadToken complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                 NSLog(@"info ===== %@", info);
                 NSLog(@"resp ===== %@", resp);
+                
+                if (idx == photos.count - 1) {
+                    [weakSelf hideMBProgressHUD];
+                }
                 
                 PhotoEntity *photo = [[PhotoEntity alloc] initWithLocalImg:tmpImage photoName:@""];
 

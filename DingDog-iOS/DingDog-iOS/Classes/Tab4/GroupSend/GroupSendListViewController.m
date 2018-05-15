@@ -314,6 +314,8 @@
     
     NSLog(@"%@", _selectedArray);
     
+    _lblTitleCount.text = [NSString stringWithFormat:@"群发%ld人", _selectedArray.count];
+    
     [self generateSectionTitleIndex];
 }
 
@@ -432,7 +434,15 @@
         return;
     }
     
+    WS(weakSelf);
     GroupSendSuccessVC *vc = [[GroupSendSuccessVC alloc] initWithAllCustomerArray:_selectedArray CreateMessageCmd:_createMessageCmd];
+    [vc setOnGronpSendSuccessBlocked:^{
+        if (weakSelf.onGronpSendSuccessBlocked) {
+            [weakSelf.navigationController dismissViewControllerAnimated:NO completion:^{
+                weakSelf.onGronpSendSuccessBlocked();
+            }];
+        }
+    }];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }

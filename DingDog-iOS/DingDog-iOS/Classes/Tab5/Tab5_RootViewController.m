@@ -8,6 +8,10 @@
 
 #import "Tab5_RootViewController.h"
 #import "LoginViewController.h"
+#import "SDImageCache.h"
+#import "LYWebViewController.h"
+#import "LYWKWebViewController.h"
+#import "HelpViewController.h"
 
 @interface Tab5_RootViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,6 +29,19 @@
     [super viewDidLoad];
     
     [self initSceneUI];
+    
+    [self.mTableView bindRefreshStyle:KafkaRefreshStyleReplicatorWoody
+                            fillColor:[UIColor colorWithRGBHex:0x178afb]
+                           atPosition:KafkaRefreshPositionHeader refreshHanler:^{
+                               [self.mTableView reloadData];
+                           }];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.rdv_tabBarController.tabBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,7 +95,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,14 +106,47 @@
     cell.textLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"使用帮助";
+        cell.textLabel.text = @"群发历史";
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"意见反馈";
+        cell.textLabel.text = @"使用帮助";
     } else if (indexPath.row == 2) {
+        cell.textLabel.text = @"意见反馈";
+    } else if (indexPath.row == 3) {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = kFont16;
+        cell.textLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
         cell.textLabel.text = @"清除缓存";
-    } else {
+        
+        cell.detailTextLabel.font = kFont16;
+        cell.detailTextLabel.textColor = kColorTheme;
+        
+         NSInteger size = [[SDImageCache sharedImageCache] getSize];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f M", size/ 1000.0 / 1000];
+        
+        return cell;
+    } else if (indexPath.row == 5) {
         cell.textLabel.text = @"退出登录";
+    } else {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = kFont16;
+        cell.textLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
+        cell.textLabel.text = @"当前版本";
+        
+        cell.detailTextLabel.font = kFont16;
+        cell.detailTextLabel.textColor = kColorTheme;
+        
+        NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+        
+        // 获取App的版本号
+        NSString *appVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"V%@", appVersion];
+        
+        return cell;
     }
+    
+    [self.mTableView.headRefreshControl endRefreshing];
     
     return cell;
 }
@@ -109,12 +159,32 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        // 使用帮助
+        // 群发历史
     } else if (indexPath.row == 1) {
-        // 意见反馈
+        
+        NSString *address = [NSString stringWithFormat:@"http://%@home/site/help", BASE_URL];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        request.URL = [NSURL URLWithString:address];
+        
+        HelpViewController *vc = [[HelpViewController alloc] initWithURLRequest:request Title:@"帮助"];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+//        NSString *token = [[MyAccountManager sharedManager] getToken];
+//        request.HTTPMethod = @"GET";
+//        [request addValue:token forHTTPHeaderField:@"X-AUTH-TOKEN"];
+        
     } else if (indexPath.row == 2) {
+        // 意见反馈
+    } else if (indexPath.row == 3) {
         // 清除缓存
-    } else {
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+        [self.mTableView reloadData];
+        [self showAlertViewControllerWithText:@"缓存清除成功"];
+        
+    } else if (indexPath.row == 4) {
+        // 清当前版本
+    }else {
         // 退出登录
         LoginViewController *loginVC = [[LoginViewController alloc] init];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
@@ -122,14 +192,9 @@
             // 清除缓存
             [[MyAccountManager sharedManager] logoutAndClearBuffer];
         }];
-        
-//        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        HKLoginViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//        // Remove use info after presented to login view.
-//        [self presentViewController:loginViewController animated:YES completion:^{
-//            [HKUser userLogout];
-//        }];
     }
 }
+
+
 
 @end

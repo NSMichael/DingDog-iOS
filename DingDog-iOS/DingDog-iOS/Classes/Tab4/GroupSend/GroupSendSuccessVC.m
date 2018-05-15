@@ -87,6 +87,7 @@
             [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_groupSendSuccess object:nil];
                 [weakSelf initScene];
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
@@ -99,8 +100,15 @@
 }
 
 - (void)onLeftBarButtonClicked:(id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        
+    [self toRootViewController];
+}
+
+- (void)toRootViewController {
+    WS(weakSelf);
+    [self.navigationController dismissViewControllerAnimated:NO completion:^{
+        if (weakSelf.onGronpSendSuccessBlocked) {
+            weakSelf.onGronpSendSuccessBlocked();
+        }
     }];
 }
 
@@ -138,6 +146,7 @@
         _textFieldTagName.delegate = self;
         _textFieldTagName.font = kFont13;
         _textFieldTagName.placeholder = @"输入标签名称";
+        _textFieldTagName.returnKeyType = UIReturnKeyGo;
         _textFieldTagName.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         _textFieldTagName.textAlignment = NSTextAlignmentCenter;
         [_uvTagName addSubview:_textFieldTagName];
@@ -183,6 +192,64 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField.returnKeyType == UIReturnKeyGo) {
+        
+        [textField resignFirstResponder];
+        
+        if (textField.text.length == 0) {
+            [self showHudTipStr:@"标签名称不能为空"];
+            return false;
+        } else {
+            [self createTagWithCustomerArray];
+        }
+    }
+    return true;
+}
+
+- (void)createTagWithCustomerArray {
+    
+    NSMutableString *tempString = [NSMutableString string];
+    for (int i = 0; i < _selectedArray.count; i++) {
+        CustomerModel *model = _selectedArray[i];
+        
+        [tempString appendString:model.member_id];
+        
+        if (i < (_selectedArray.count-1)) {
+            [tempString appendString:@","];
+        }
+    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:tempString forKey:@"userids"];
+    [params setObject:_textFieldTagName.text forKey:@"tagname"];
+    
+    WS(weakSelf);
+    [NetworkAPIManager customer_tagCreateWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                
+                NSString *msgStr = cmd.message;
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
+                
+                [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_createTagSuccess object:nil];
+                    [weakSelf toRootViewController];
+                }]];
+                [weakSelf presentViewController:alertController animated:YES completion:nil];
+                
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    [weakSelf showHudTipStr:msgStr];
+                }
+            }];
+        }
+    }];
 }
 
 

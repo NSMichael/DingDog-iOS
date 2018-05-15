@@ -11,6 +11,8 @@
 
 @interface GroupSendListViewController : BaseViewController
 
+@property (nonatomic, strong) void(^onGronpSendSuccessBlocked)(void);
+
 - (instancetype)initWithCreateMessageCmd:(CreateMessageCmd *)cmd;
 
 @end

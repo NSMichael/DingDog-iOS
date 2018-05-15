@@ -175,5 +175,7 @@ _Pragma("clang diagnostic pop")
 
 #define kNotification_customerAddTagSuccess         @"customerAddTagSuccess"
 
+#define kNotification_groupSendSuccess              @"groupSendSuccess"
+
 
 #define TIP_NO_GPS_PERMISSION @"请在“设置-隐私-定位服务”中允许好面料访问您的位置"

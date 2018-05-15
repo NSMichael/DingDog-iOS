@@ -93,6 +93,11 @@
     
     [self.textFieldTagName resignFirstResponder];
     
+    if (self.tagNameStr.length == 0) {
+        [self showHudTipStr:@"标签名称不能为空"];
+        return;
+    }
+    
     NSMutableString *tempString = [NSMutableString string];
     for (int i = 0; i < _selectedArray.count; i++) {
         CustomerModel *model = _selectedArray[i];

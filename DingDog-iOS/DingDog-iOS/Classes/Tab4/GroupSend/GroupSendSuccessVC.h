@@ -11,6 +11,8 @@
 
 @interface GroupSendSuccessVC : BaseViewController
 
+@property (nonatomic, strong) void(^onGronpSendSuccessBlocked)(void);
+
 - (instancetype)initWithAllCustomerArray:(NSMutableArray *)allArray CreateMessageCmd:(CreateMessageCmd *)cmd;
 
 @end

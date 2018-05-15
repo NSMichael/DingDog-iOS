@@ -81,7 +81,7 @@
     _lblTitleTagName.font = kFont14;
     _lblTitleTagName.textColor = [UIColor blackColor];
     _lblTitleTagName.textAlignment = NSTextAlignmentCenter;
-    _lblTitleTagName.frame = CGRectMake(30, 10, 60, 14);
+    _lblTitleTagName.frame = CGRectMake(0, 10, 120, 14);
     [self.uvTitleView addSubview:_lblTitleTagName];
     _lblTitleTagName.text = _tagModel.tagName ? : @"";
     

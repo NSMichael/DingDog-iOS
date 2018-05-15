@@ -46,7 +46,11 @@
 
 - (void)onRightBarButtonClicked:(id)sender {
     
+    WS(weakSelf);
     GroupSendListViewController *vc = [[GroupSendListViewController alloc] initWithCreateMessageCmd:_createMessageCmd];
+    [vc setOnGronpSendSuccessBlocked:^{
+        [weakSelf.navigationController popViewControllerAnimated:NO];
+    }];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }
