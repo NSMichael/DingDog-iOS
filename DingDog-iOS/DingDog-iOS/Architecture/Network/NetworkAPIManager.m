@@ -13,6 +13,7 @@
 #import "TagListCmd.h"
 #import "CustomerListCmd.h"
 #import "CreateMessageCmd.h"
+#import "MsgGroupHistoryCmd.h"
 
 @implementation NetworkAPIManager
 
@@ -258,6 +259,18 @@
             block(nil, error);
         } else {
             BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 群发历史
++ (void)message_groupHistoryListBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/message/group-history" withParams:nil withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[MsgGroupHistoryCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];

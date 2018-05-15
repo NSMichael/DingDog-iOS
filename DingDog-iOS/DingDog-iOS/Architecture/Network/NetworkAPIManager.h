@@ -74,4 +74,7 @@
 // 群发消息
 + (void)message_multiSendWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
+// 群发历史
++ (void)message_groupHistoryListBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 @end

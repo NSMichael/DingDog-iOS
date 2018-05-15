@@ -113,6 +113,11 @@
 		1AB6A05C20A6FA55009A04A4 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A05B20A6FA55009A04A4 /* FCFileManager.m */; };
 		1AB6A06020A6FBDA009A04A4 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A05F20A6FBDA009A04A4 /* UIView+Size.m */; };
 		1AB6A06320A731ED009A04A4 /* ProductImgEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A06120A731ED009A04A4 /* ProductImgEditView.m */; };
+		1AB6A0EC20AB2D76009A04A4 /* GroupSendHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0EB20AB2D76009A04A4 /* GroupSendHistoryVC.m */; };
+		1AB6A0EF20AB2F0D009A04A4 /* MsgGroupHistoryCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0EE20AB2F0D009A04A4 /* MsgGroupHistoryCmd.m */; };
+		1AB6A0F220AB2F42009A04A4 /* MsgGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F120AB2F42009A04A4 /* MsgGroupModel.m */; };
+		1AB6A0F520AB30C3009A04A4 /* MsgGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F420AB30C3009A04A4 /* MsgGroupItem.m */; };
+		1AB6A0F920AB36B3009A04A4 /* GroupSendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F820AB36B3009A04A4 /* GroupSendListCell.m */; };
 		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16920A5984200E57F63 /* CreateMessageCmd.m */; };
@@ -790,6 +795,16 @@
 		1AB6A05F20A6FBDA009A04A4 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		1AB6A06120A731ED009A04A4 /* ProductImgEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductImgEditView.m; sourceTree = "<group>"; };
 		1AB6A06220A731ED009A04A4 /* ProductImgEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductImgEditView.h; sourceTree = "<group>"; };
+		1AB6A0EA20AB2D76009A04A4 /* GroupSendHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendHistoryVC.h; sourceTree = "<group>"; };
+		1AB6A0EB20AB2D76009A04A4 /* GroupSendHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendHistoryVC.m; sourceTree = "<group>"; };
+		1AB6A0ED20AB2F0D009A04A4 /* MsgGroupHistoryCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgGroupHistoryCmd.h; sourceTree = "<group>"; };
+		1AB6A0EE20AB2F0D009A04A4 /* MsgGroupHistoryCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgGroupHistoryCmd.m; sourceTree = "<group>"; };
+		1AB6A0F020AB2F42009A04A4 /* MsgGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgGroupModel.h; sourceTree = "<group>"; };
+		1AB6A0F120AB2F42009A04A4 /* MsgGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgGroupModel.m; sourceTree = "<group>"; };
+		1AB6A0F320AB30C3009A04A4 /* MsgGroupItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgGroupItem.h; sourceTree = "<group>"; };
+		1AB6A0F420AB30C3009A04A4 /* MsgGroupItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgGroupItem.m; sourceTree = "<group>"; };
+		1AB6A0F720AB36B3009A04A4 /* GroupSendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListCell.h; sourceTree = "<group>"; };
+		1AB6A0F820AB36B3009A04A4 /* GroupSendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListCell.m; sourceTree = "<group>"; };
 		BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanSeeViewController.h; sourceTree = "<group>"; };
 		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
 		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
@@ -1866,6 +1881,8 @@
 				BB4B9A16208732CB004FF037 /* CustomerListCmd.m */,
 				BB15D16820A5984200E57F63 /* CreateMessageCmd.h */,
 				BB15D16920A5984200E57F63 /* CreateMessageCmd.m */,
+				1AB6A0ED20AB2F0D009A04A4 /* MsgGroupHistoryCmd.h */,
+				1AB6A0EE20AB2F0D009A04A4 /* MsgGroupHistoryCmd.m */,
 			);
 			path = NetCmd;
 			sourceTree = "<group>";
@@ -1881,6 +1898,10 @@
 				BB4B9A19208732E9004FF037 /* CustomerModel.m */,
 				1AB6A05720A6FA2A009A04A4 /* PhotoEntity.h */,
 				1AB6A05620A6FA29009A04A4 /* PhotoEntity.m */,
+				1AB6A0F020AB2F42009A04A4 /* MsgGroupModel.h */,
+				1AB6A0F120AB2F42009A04A4 /* MsgGroupModel.m */,
+				1AB6A0F320AB30C3009A04A4 /* MsgGroupItem.h */,
+				1AB6A0F420AB30C3009A04A4 /* MsgGroupItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2219,6 +2240,24 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		1AB6A0E920AB2D5F009A04A4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0EA20AB2D76009A04A4 /* GroupSendHistoryVC.h */,
+				1AB6A0EB20AB2D76009A04A4 /* GroupSendHistoryVC.m */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		1AB6A0F620AB367C009A04A4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0F720AB36B3009A04A4 /* GroupSendListCell.h */,
+				1AB6A0F820AB36B3009A04A4 /* GroupSendListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BB144B7920A19CAD00354EB9 /* Select */ = {
 			isa = PBXGroup;
 			children = (
@@ -2337,7 +2376,9 @@
 			children = (
 				BB467D222057D39E00D18C97 /* Tab5_RootViewController.h */,
 				BB467D232057D39E00D18C97 /* Tab5_RootViewController.m */,
+				1AB6A0E920AB2D5F009A04A4 /* History */,
 				BBD8726F20AAD3D000EAFD9F /* Help */,
+				1AB6A0F620AB367C009A04A4 /* Cells */,
 			);
 			path = Tab5;
 			sourceTree = "<group>";
@@ -4182,6 +4223,7 @@
 				BB74D4862058BA9200F8A55B /* NSObject+YYAddForARC.m in Sources */,
 				BB74D47D2058BA9200F8A55B /* UIFont+YYAdd.m in Sources */,
 				BB467E8D2057E14000D18C97 /* UISegmentedControl+RACSignalSupport.m in Sources */,
+				1AB6A0F220AB2F42009A04A4 /* MsgGroupModel.m in Sources */,
 				BBD8715D20AA781700EAFD9F /* FLAnimatedImageView+WebCache.m in Sources */,
 				BB74D3632058B93900F8A55B /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				BB467E6C2057E14000D18C97 /* RACUnarySequence.m in Sources */,
@@ -4268,6 +4310,7 @@
 				BB467E5D2057E14000D18C97 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				BB467E7B2057E14000D18C97 /* RACArraySequence.m in Sources */,
 				1A28FD66209365C000041943 /* KafkaReplicatorFooter.m in Sources */,
+				1AB6A0F520AB30C3009A04A4 /* MsgGroupItem.m in Sources */,
 				BBD871EC20AABBF400EAFD9F /* SVWebViewControllerActivityChrome.m in Sources */,
 				BB4B9A17208732CB004FF037 /* CustomerListCmd.m in Sources */,
 				BB74D3062058B8F900F8A55B /* ACPIndeterminateGoogleLayer.m in Sources */,
@@ -4442,6 +4485,7 @@
 				BB4B9A1A208732E9004FF037 /* CustomerModel.m in Sources */,
 				BBD8726920AAC01100EAFD9F /* MJRefreshGifHeader.m in Sources */,
 				BBD8710020A9797F00EAFD9F /* TZImageCropManager.m in Sources */,
+				1AB6A0EF20AB2F0D009A04A4 /* MsgGroupHistoryCmd.m in Sources */,
 				BB74D4542058BA9200F8A55B /* UIButton+YYWebImage.m in Sources */,
 				BB467E922057E14000D18C97 /* RACValueTransformer.m in Sources */,
 				BB467D132057D31000D18C97 /* RDVTabBar.m in Sources */,
@@ -4535,6 +4579,7 @@
 				BB74D4932058BA9200F8A55B /* YYDispatchQueuePool.m in Sources */,
 				BB74D47C2058BA9200F8A55B /* UIControl+YYAdd.m in Sources */,
 				BB467E5E2057E14000D18C97 /* UISwitch+RACSignalSupport.m in Sources */,
+				1AB6A0F920AB36B3009A04A4 /* GroupSendListCell.m in Sources */,
 				BB74D4732058BA9200F8A55B /* UIDevice+YYAdd.m in Sources */,
 				BB467D8B2057E06300D18C97 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
@@ -4637,6 +4682,7 @@
 				BB4B9A0420872F5A004FF037 /* QNFormUpload.m in Sources */,
 				BB467D8E2057E06300D18C97 /* UIButton+AFNetworking.m in Sources */,
 				BB74D4842058BA9200F8A55B /* NSKeyedUnarchiver+YYAdd.m in Sources */,
+				1AB6A0EC20AB2D76009A04A4 /* GroupSendHistoryVC.m in Sources */,
 				BB74D3652058B93900F8A55B /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				BB74D30B2058B8F900F8A55B /* ACPStaticImages.m in Sources */,
 				BB74D4CF2058F77300F8A55B /* MTLReflection.m in Sources */,
@@ -4854,7 +4900,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4880,7 +4926,7 @@
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

@@ -12,6 +12,7 @@
 #import "LYWebViewController.h"
 #import "LYWKWebViewController.h"
 #import "HelpViewController.h"
+#import "GroupSendHistoryVC.h"
 
 @interface Tab5_RootViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -160,6 +161,8 @@
     
     if (indexPath.row == 0) {
         // 群发历史
+        GroupSendHistoryVC *vc = [[GroupSendHistoryVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
         
         NSString *address = [NSString stringWithFormat:@"http://%@home/site/help", BASE_URL];
