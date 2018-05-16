@@ -76,11 +76,11 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
 
 - (void)setupConstraints {
     
-    self.lblTitle.sd_layout.topSpaceToView(self.contentView, 12).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
+    self.lblTitle.sd_layout.topSpaceToView(self.contentView, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
     
-    self.lblText.sd_layout.topSpaceToView(self.lblTitle, 12).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
+    self.lblText.sd_layout.topSpaceToView(self.lblTitle, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
     
-    self.picContainerView.sd_layout.topSpaceToView(self.lblText, 12).leftSpaceToView(self.contentView, 1).rightSpaceToView(self.contentView, -1);
+    self.picContainerView.sd_layout.topSpaceToView(self.lblText, 10).leftSpaceToView(self.contentView, 15);
 }
 
 - (void)setModel:(MsgGroupItem *)model {
