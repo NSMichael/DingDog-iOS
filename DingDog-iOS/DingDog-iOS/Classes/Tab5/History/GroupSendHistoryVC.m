@@ -10,6 +10,7 @@
 #import "MsgGroupHistoryCmd.h"
 #import "GroupSendListCell.h"
 #import "MsgGroupModel.h"
+#import "SDAutoLayout.h"
 
 @interface GroupSendHistoryVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -64,7 +65,7 @@
         _mTableView.delegate = self;
         
         [_mTableView registerClass:[GroupSendListCell class] forCellReuseIdentifier:GroupSendListCellIdentifier];
-        
+        _mTableView.tableFooterView = [UIView new];
     }
     return _mTableView;
 }
@@ -108,12 +109,22 @@
     GroupSendListCell *cell = [tableView dequeueReusableCellWithIdentifier:GroupSendListCellIdentifier forIndexPath:indexPath];
     
     MsgGroupModel *model = _msgGroupArray[indexPath.row];
-    [cell configCellDataWithMsgGroupModel:model];
+    MsgGroupItem *item = model.msgGroupItem;
+//    [cell configCellDataWithMsgGroupModel:item];
+    
+    cell.model = item;
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MsgGroupModel *model = _msgGroupArray[indexPath.row];
+    MsgGroupItem *item = model.msgGroupItem;
+    
+    return [self.mTableView cellHeightForIndexPath:indexPath model:item keyPath:@"model" cellClass:[GroupSendListCell class] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
+    
+    /*
     static GroupSendListCell *cell;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -122,8 +133,10 @@
         }
     });
     MsgGroupModel *model = _msgGroupArray[indexPath.row];
-    [cell configCellDataWithMsgGroupModel:model];
+    MsgGroupItem *item = model.msgGroupItem;
+    [cell configCellDataWithMsgGroupModel:item];
     return [cell calculateCellHeightInAutolayoutMode:cell tableView:tableView];
+     */
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

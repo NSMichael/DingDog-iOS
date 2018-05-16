@@ -8,6 +8,9 @@
 
 #import "GroupSendListCell.h"
 #import "MsgGroupItem.h"
+#import "SDWeiXinPhotoContainerView.h"
+#import "PhotoEntity.h"
+#import "SDAutoLayout.h"
 
 NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
 
@@ -15,6 +18,7 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
 
 @property (nonatomic, strong) UILabel *lblTitle;
 @property (nonatomic, strong) UILabel *lblText;
+@property (nonatomic, strong) SDWeiXinPhotoContainerView *picContainerView;
 
 @end
 
@@ -44,6 +48,14 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
     return _lblText;
 }
 
+- (SDWeiXinPhotoContainerView *)picContainerView {
+    if (!_picContainerView) {
+        _picContainerView = [SDWeiXinPhotoContainerView new];
+        [self.contentView addSubview:_picContainerView];
+    }
+    return _picContainerView;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -64,31 +76,50 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
 
 - (void)setupConstraints {
     
-    [self.lblTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(12);
-        make.left.equalTo(self.contentView).offset(15);
-        make.right.equalTo(self.contentView).offset(-15);
-    }];
+    self.lblTitle.sd_layout.topSpaceToView(self.contentView, 12).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
     
-    [self.lblText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.lblTitle.mas_bottom).offset(10);
-        make.left.equalTo(self.contentView).offset(15);
-        make.right.equalTo(self.contentView).offset(-15);
-        make.bottom.mas_equalTo(self.contentView).offset(-12);
-    }];
+    self.lblText.sd_layout.topSpaceToView(self.lblTitle, 12).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
     
+    self.picContainerView.sd_layout.topSpaceToView(self.lblText, 12).leftSpaceToView(self.contentView, 1).rightSpaceToView(self.contentView, -1);
 }
 
-- (void)configCellDataWithMsgGroupModel:(MsgGroupModel *)groupModel {
-    if (!groupModel) {
-        return;
+- (void)setModel:(MsgGroupItem *)model {
+    
+    _model = model;
+    
+    self.lblTitle.text = model.title ? : @"";
+    
+    self.lblText.text = model.text ? : @"";
+    
+    NSString *imageStr = model.images;
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    if (imageStr.length > 0) {
+        NSArray *imagesArr = [imageStr componentsSeparatedByString:@","];
+        NSString *prefix = [MyAccountManager sharedManager].currentUser.configModel.cdn;
+        for (int i = 0; i < imagesArr.count; i++) {
+            NSString *imageKey = imagesArr[i];
+            if (imageKey.length > 0) {
+                PhotoEntity *entity = [[PhotoEntity alloc] init];
+                entity.url = [NSString stringWithFormat:@"%@/%@", prefix, imageKey];
+                [photos addObject:entity];
+            }
+        }
+        self.picContainerView.picPathStringsArray = photos;
+        
+    } else {
+        
     }
     
-    MsgGroupItem *item = groupModel.msgGroupItem;
+    UIView *bottomView;
     
-    self.lblTitle.text = item.title ? : @"";
+    if (photos.count > 0) {
+        bottomView = self.picContainerView;
+    } else {
+        bottomView = self.lblText;
+    }
     
-    self.lblText.text = item.text ? : @"";
+    [self setupAutoHeightWithBottomView:bottomView bottomMargin:kPaddingLeftWidth];
 }
 
 @end

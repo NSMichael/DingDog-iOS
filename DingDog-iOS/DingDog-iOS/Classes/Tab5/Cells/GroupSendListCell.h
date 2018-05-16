@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MsgGroupModel.h"
+#import "MsgGroupItem.h"
 
 extern NSString * const GroupSendListCellIdentifier;
 
 @interface GroupSendListCell : UITableViewCell
 
-- (void)configCellDataWithMsgGroupModel:(MsgGroupModel *)groupModel;
+@property (nonatomic, strong) MsgGroupItem *model;
 
 @end

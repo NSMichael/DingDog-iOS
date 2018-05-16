@@ -118,6 +118,10 @@
 		1AB6A0F220AB2F42009A04A4 /* MsgGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F120AB2F42009A04A4 /* MsgGroupModel.m */; };
 		1AB6A0F520AB30C3009A04A4 /* MsgGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F420AB30C3009A04A4 /* MsgGroupItem.m */; };
 		1AB6A0F920AB36B3009A04A4 /* GroupSendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0F820AB36B3009A04A4 /* GroupSendListCell.m */; };
+		1AB6A0FE20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A0FC20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m */; };
+		1AB6A10520AC8279009A04A4 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A10020AC8279009A04A4 /* UIView+SDAutoLayout.m */; };
+		1AB6A10620AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A10320AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.m */; };
+		1AB6A10920AC82B8009A04A4 /* UITapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A10820AC82B8009A04A4 /* UITapImageView.m */; };
 		BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */; };
 		BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB144B7E20A19D0F00354EB9 /* WhoCanNotSeeViewController.m */; };
 		BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB15D16920A5984200E57F63 /* CreateMessageCmd.m */; };
@@ -805,6 +809,15 @@
 		1AB6A0F420AB30C3009A04A4 /* MsgGroupItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgGroupItem.m; sourceTree = "<group>"; };
 		1AB6A0F720AB36B3009A04A4 /* GroupSendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListCell.h; sourceTree = "<group>"; };
 		1AB6A0F820AB36B3009A04A4 /* GroupSendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListCell.m; sourceTree = "<group>"; };
+		1AB6A0FC20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeiXinPhotoContainerView.m; sourceTree = "<group>"; };
+		1AB6A0FD20AC807F009A04A4 /* SDWeiXinPhotoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeiXinPhotoContainerView.h; sourceTree = "<group>"; };
+		1AB6A10020AC8279009A04A4 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		1AB6A10120AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		1AB6A10220AC8279009A04A4 /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
+		1AB6A10320AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		1AB6A10420AC8279009A04A4 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		1AB6A10720AC82B7009A04A4 /* UITapImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITapImageView.h; sourceTree = "<group>"; };
+		1AB6A10820AC82B8009A04A4 /* UITapImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITapImageView.m; sourceTree = "<group>"; };
 		BB144B7A20A19CFC00354EB9 /* WhoCanSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanSeeViewController.h; sourceTree = "<group>"; };
 		BB144B7B20A19CFC00354EB9 /* WhoCanSeeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhoCanSeeViewController.m; sourceTree = "<group>"; };
 		BB144B7D20A19D0F00354EB9 /* WhoCanNotSeeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoCanNotSeeViewController.h; sourceTree = "<group>"; };
@@ -2258,6 +2271,35 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1AB6A0FA20AC8075009A04A4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0FB20AC807F009A04A4 /* PhotoContainer */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		1AB6A0FB20AC807F009A04A4 /* PhotoContainer */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A0FD20AC807F009A04A4 /* SDWeiXinPhotoContainerView.h */,
+				1AB6A0FC20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m */,
+			);
+			path = PhotoContainer;
+			sourceTree = "<group>";
+		};
+		1AB6A0FF20AC8279009A04A4 /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1AB6A10020AC8279009A04A4 /* UIView+SDAutoLayout.m */,
+				1AB6A10120AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.h */,
+				1AB6A10220AC8279009A04A4 /* SDAutoLayout.h */,
+				1AB6A10320AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.m */,
+				1AB6A10420AC8279009A04A4 /* UIView+SDAutoLayout.h */,
+			);
+			path = SDAutoLayout;
+			sourceTree = "<group>";
+		};
 		BB144B7920A19CAD00354EB9 /* Select */ = {
 			isa = PBXGroup;
 			children = (
@@ -2426,6 +2468,7 @@
 		BB467CFE2057D01500D18C97 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1AB6A0FF20AC8279009A04A4 /* SDAutoLayout */,
 				BBD8722C20AAC01000EAFD9F /* MJRefresh */,
 				BBD871F220AABEAC00EAFD9F /* LYWebViewController */,
 				BBD871C520AABBF400EAFD9F /* SVWebViewController */,
@@ -2464,6 +2507,7 @@
 		BB467D002057D25400D18C97 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1AB6A0FA20AC8075009A04A4 /* Controls */,
 				1A28FC28207D151900041943 /* NetCmd */,
 				1A28FC2C207D187F00041943 /* Model */,
 				BB467D562057DFAF00D18C97 /* Views */,
@@ -2582,6 +2626,8 @@
 				1AB6A04E20A6F1C0009A04A4 /* UIPlaceHolderTextView.m */,
 				1AB6A06220A731ED009A04A4 /* ProductImgEditView.h */,
 				1AB6A06120A731ED009A04A4 /* ProductImgEditView.m */,
+				1AB6A10720AC82B7009A04A4 /* UITapImageView.h */,
+				1AB6A10820AC82B8009A04A4 /* UITapImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4342,6 +4388,7 @@
 				BB467D532057DEE600D18C97 /* DDAbstractDatabaseLogger.m in Sources */,
 				BB467D8D2057E06300D18C97 /* UIImageView+AFNetworking.m in Sources */,
 				BB74D48C2058BA9200F8A55B /* YYCGUtilities.m in Sources */,
+				1AB6A10520AC8279009A04A4 /* UIView+SDAutoLayout.m in Sources */,
 				BBD8716520AA781700EAFD9F /* PYPhotoBrowserConst.m in Sources */,
 				1A28FCAB2084ECBF00041943 /* QNHex.m in Sources */,
 				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
@@ -4417,6 +4464,7 @@
 				BB74D4DB2058F9C300F8A55B /* LYEmptyBaseView.m in Sources */,
 				BB74D38D2058B98800F8A55B /* NSString+EmojiExtension.m in Sources */,
 				BB467E932057E14000D18C97 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
+				1AB6A10620AC8279009A04A4 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				BB467D0A2057D28900D18C97 /* RootTabViewController.m in Sources */,
 				BB467E6A2057E14000D18C97 /* RACObjCRuntime.m in Sources */,
 				BB467D832057E06300D18C97 /* AFURLSessionManager.m in Sources */,
@@ -4425,6 +4473,7 @@
 				BB467E882057E14000D18C97 /* RACScopedDisposable.m in Sources */,
 				BB467D4F2057DEE600D18C97 /* DDContextFilterLogFormatter.m in Sources */,
 				BB467E822057E14000D18C97 /* RACBacktrace.m in Sources */,
+				1AB6A10920AC82B8009A04A4 /* UITapImageView.m in Sources */,
 				BB74D4C02058F77300F8A55B /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
 				BB74D3772058B93900F8A55B /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				BB74D4FB2058FA0F00F8A55B /* ViewController+MASAdditions.m in Sources */,
@@ -4436,6 +4485,7 @@
 				BB467EA32057E14000D18C97 /* NSObject+RACSelectorSignal.m in Sources */,
 				BB467E672057E14000D18C97 /* RACTupleSequence.m in Sources */,
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
+				1AB6A0FE20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m in Sources */,
 				1A28FD68209365C000041943 /* KafkaNativeHeader.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
 				BBD8727220AAD3D900EAFD9F /* HelpViewController.m in Sources */,
