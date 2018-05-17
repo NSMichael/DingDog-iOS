@@ -50,6 +50,32 @@
 #pragma mark Private_M
 - (void)setupViewControllers {
     
+    UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+    if (userCmd) {
+        if (userCmd.memberId.length == 0 || [userCmd.mobileId isEqualToNumber:@0]) {
+            [self setupTwoTabs];
+        } else {
+            [self setupFiveTabs];
+        }
+    } else {
+        [self setupTwoTabs];
+    }
+}
+
+- (void)setupTwoTabs {
+    Tab1_RootViewController *tab1 = [[Tab1_RootViewController alloc] init];
+    BaseNavigationController *nav_tab1 = [[BaseNavigationController alloc] initWithRootViewController:tab1];
+    
+    Tab5_RootViewController *tab5 = [[Tab5_RootViewController alloc] init];
+    UINavigationController *nav_tab5 = [[BaseNavigationController alloc] initWithRootViewController:tab5];
+    
+    [self setViewControllers:@[nav_tab1, nav_tab5]];
+    
+    [self customizeTabBarForControllerTwo];
+    self.delegate = self;
+}
+
+- (void)setupFiveTabs {
     Tab1_RootViewController *tab1 = [[Tab1_RootViewController alloc] init];
     BaseNavigationController *nav_tab1 = [[BaseNavigationController alloc] initWithRootViewController:tab1];
     
@@ -58,20 +84,36 @@
     
     Tab3_RootViewController *tab3 = [[Tab3_RootViewController alloc] init];
     UINavigationController *nav_tab3 = [[BaseNavigationController alloc] initWithRootViewController:tab3];
-
+    
     Tab4_RootViewController *tab4 = [[Tab4_RootViewController alloc] init];
     UINavigationController *nav_tab4 = [[BaseNavigationController alloc] initWithRootViewController:tab4];
     
     Tab5_RootViewController *tab5 = [[Tab5_RootViewController alloc] init];
     UINavigationController *nav_tab5 = [[BaseNavigationController alloc] initWithRootViewController:tab5];
-
+    
     [self setViewControllers:@[nav_tab1, nav_tab2, nav_tab3, nav_tab4,  nav_tab5]];
     
-    [self customizeTabBarForController];
+    [self customizeTabBarForControllerFive];
     self.delegate = self;
 }
 
-- (void)customizeTabBarForController {
+- (void)customizeTabBarForControllerTwo {
+    UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
+    NSArray *tabBarItemImages = @[@"icon-1", @"icon-5"];
+    NSArray *tabBarItemTitles = @[@"消息",  @"我"];
+    
+    NSInteger index = 0;
+    for (RDVTabBarItem *item in [[self tabBar] items]) {
+        [item setBackgroundSelectedImage:backgroundImage withUnselectedImage:backgroundImage];
+        UIImage *selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@-a", tabBarItemImages[index]]];
+        UIImage *unselectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@-n", tabBarItemImages[index]]];
+        [item setFinishedSelectedImage:selectedImage withFinishedUnselectedImage:unselectedImage];
+        [item setTitle:[NSString stringWithFormat:@"%@", tabBarItemTitles[index]]];
+        index++;
+    }
+}
+
+- (void)customizeTabBarForControllerFive {
     UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
     NSArray *tabBarItemImages = @[@"icon-1",@"icon-2", @"icon-3",@"icon-4", @"icon-5"];
     NSArray *tabBarItemTitles = @[@"消息", @"标签",@"客户",@"群发",  @"我"];

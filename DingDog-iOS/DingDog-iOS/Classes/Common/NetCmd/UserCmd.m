@@ -13,11 +13,9 @@
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
     return @{
              @"mobileId": @"mobileId",
-//             @"memberId": @"memberId",
-//             @"nickname": @"nickname",
-//             @"rcloud_token": @"rcloud_token",
-//             @"qcloud_token": @"qcloud_token",
-//             @"rcoulod_token": @"rcoulod_token",
+             @"memberId": @"memberId",
+             @"nickname": @"nickname",
+             @"headimgurl": @"headimgurl",
              @"token": @"token",
              @"identity": @"identity",
              @"configModel": @"config"

@@ -12,11 +12,10 @@
 @interface UserCmd : BaseCmd<MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *mobileId;
-@property (nonatomic, strong) NSNumber *memberId;
+@property (nonatomic, strong) NSString *memberId;
 
 @property (nonatomic, strong) NSString *nickname;
-@property (nonatomic, strong) NSString *rcloud_token;
-@property (nonatomic, strong) NSString *qcloud_token;
+@property (nonatomic, strong) NSString *headimgurl;
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *identity;

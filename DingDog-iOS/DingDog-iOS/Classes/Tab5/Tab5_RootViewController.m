@@ -107,7 +107,19 @@
     cell.textLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"群发历史";
+        UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+        if (userCmd) {
+            if (userCmd.memberId.length == 0) {
+                cell.textLabel.text = @"绑定微信";
+            } else if ([userCmd.mobileId isEqualToNumber:@0]) {
+                cell.textLabel.text = @"绑定手机号";
+            } else {
+                cell.textLabel.text = @"群发历史";
+            }
+        } else {
+            cell.textLabel.text = @"绑定手机号";
+        }
+        
     } else if (indexPath.row == 1) {
         cell.textLabel.text = @"使用帮助";
     } else if (indexPath.row == 2) {
@@ -161,8 +173,22 @@
     
     if (indexPath.row == 0) {
         // 群发历史
-        GroupSendHistoryVC *vc = [[GroupSendHistoryVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+        if (userCmd) {
+            if (userCmd.memberId.length == 0) {
+                // 绑定微信
+                [self bindWeChat];
+            } else if ([userCmd.mobileId isEqualToNumber:@0]) {
+                // 绑定手机号
+                [self bindMobile];
+            } else {
+                // 群发历史
+                [self gotoSendHistory];
+            }
+        } else {
+            // 绑定手机号
+            [self bindMobile];
+        }
     } else if (indexPath.row == 1) {
         
         NSString *address = [NSString stringWithFormat:@"http://%@home/site/help", BASE_URL];
@@ -202,6 +228,125 @@
     }
 }
 
+// 群发历史
+- (void)gotoSendHistory {
+    GroupSendHistoryVC *vc = [[GroupSendHistoryVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
+// 绑定微信
+- (void)bindWeChat {
+    [self onWXTapped];
+}
+
+// 绑定手机号
+- (void)bindMobile {
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark - 第三方登录
+
+- (void)onWXTapped {
+    NSLog(@"%s",__func__);
+    
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc] init];
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
+}
+
+- (void)wechatDidLoginNotification:(NSNotification *)notification {
+    NSString *code = [notification.userInfo objectForKey:@"code"];
+    [self getWechatAccessTokenWithCode:code];
+}
+
+- (void)getWechatAccessTokenWithCode:(NSString *)code
+{
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",
+                    kAPPSTORE_WECHAT_APPID, kAPPSTORE_WECHAT_SECRET,code];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                NSLog(@"%@",dic);
+                NSString *accessToken = dic[@"access_token"];
+                NSString *openId = dic[@"openid"];
+                
+                [self getWechatUserInfoWithAccessToken:accessToken openId:openId];
+            }
+        });
+    });
+}
+
+- (void)getWechatUserInfoWithAccessToken:(NSString *)accessToken openId:(NSString *)openId
+{
+    NSString *url =[NSString stringWithFormat:
+                    @"https://api.weixin.qq.com/sns/userinfo?access_token=%@&openid=%@",accessToken,openId];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *zoneUrl = [NSURL URLWithString:url];
+        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
+        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (data)
+            {
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingMutableContainers error:nil];
+                
+                NSLog(@"%@",dic);
+                
+                NSString *openId = [dic objectForKey:@"openid"];
+                NSString *unionid = [dic objectForKey:@"unionid"];
+                [self loginByWeChatWithOpenId:openId UnionId:unionid];
+            }
+        });
+        
+    });
+}
+
+- (void)loginByWeChatWithOpenId:(NSString *)openId UnionId:(NSString *)unionId {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:openId forKey:@"openid"];
+    [params setObject:unionId forKey:@"unionid"];
+    [params setObject:@"iOS" forKey:@"platform"];
+    
+    WS(weakSelf);
+    [NetworkAPIManager login_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                [APP setupTabViewController];
+            } failed:^(NSInteger errCode) {
+                if (errCode == 0) {
+                    NSString *msgStr = cmd.message;
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        [APP setupTabViewController];
+                    }]];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                }
+            }];
+        }
+    }];
+}
 
 @end
