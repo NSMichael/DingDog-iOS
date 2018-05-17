@@ -32,6 +32,7 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
         _lblTitle.font = kFont14;
         _lblTitle.textColor = [UIColor blackColor];
         _lblTitle.numberOfLines = 2;
+        _lblTitle.preferredMaxLayoutWidth = kScreen_Width-30;
     }
     return _lblTitle;
 }
@@ -44,6 +45,7 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
         _lblText.font = kFont14;
         _lblText.textColor = [UIColor grayColor];
         _lblText.numberOfLines = 2;
+        _lblText.preferredMaxLayoutWidth = kScreen_Width-30;
     }
     return _lblText;
 }
@@ -76,9 +78,11 @@ NSString * const GroupSendListCellIdentifier = @"GroupSendListCellIdentifier";
 
 - (void)setupConstraints {
     
-    self.lblTitle.sd_layout.topSpaceToView(self.contentView, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
+    self.lblTitle.sd_layout.topSpaceToView(self.contentView, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, 15).autoHeightRatio(0);
+    [self.lblTitle setMaxNumberOfLinesToShow:2];
     
-    self.lblText.sd_layout.topSpaceToView(self.lblTitle, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, -15);
+    self.lblText.sd_layout.topSpaceToView(self.lblTitle, 10).leftSpaceToView(self.contentView, 15).rightSpaceToView(self.contentView, 15);
+    [self.lblText setMaxNumberOfLinesToShow:2];
     
     self.picContainerView.sd_layout.topSpaceToView(self.lblText, 10).leftSpaceToView(self.contentView, 15);
 }

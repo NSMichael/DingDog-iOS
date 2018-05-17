@@ -32,6 +32,7 @@
 #import "UIView+SDAutoLayout.h"
 #import "UITapImageView.h"
 #import "PhotoEntity.h"
+#import "PYPhotoBrowseView.h"
 
 @interface SDWeiXinPhotoContainerView () 
 
@@ -105,7 +106,7 @@
 //    itemH = itemW;
     
     long perRowItemCount = [self perRowItemCountForPicPathArray:_picPathStringsArray];
-    CGFloat margin = 5;
+    CGFloat margin = 8;
     
     [_picPathStringsArray enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         long columnIndex = idx % perRowItemCount;
@@ -136,13 +137,13 @@
 - (CGFloat)itemWidthForPicPathArray:(NSArray *)array
 {
     if (array.count == 1) {
-        return kScreen_Width-75-50;
+        return kScreen_Width-30;
     } else if (array.count == 2 || array.count == 4) {
-        CGFloat w = (kScreen_Width-75-50-10)/ 3 + 20;
+        CGFloat w = (kScreen_Width-30-16)/ 3;
         return w;
     }
     else {
-        CGFloat w = (kScreen_Width-75-50-10)/3;
+        CGFloat w = (kScreen_Width-30-16)/3;
         return w;
     }
     
@@ -177,7 +178,7 @@
 {
     if (array.count < 3) {
         return array.count;
-    } else if (array.count > 3 && array.count < 7) {
+    } else if (array.count == 4) {
         return 2;
     } else {
         return 3;
@@ -186,6 +187,25 @@
 
 #pragma mark - 查看大图
 - (void)viewQuoteImage:(NSInteger)index {
+    
+    NSMutableArray *imageUrls = [NSMutableArray array];
+    for (int i = 0; i < _picPathStringsArray.count; i++) {
+        PhotoEntity *entity = _picPathStringsArray[i];
+        if (entity.url) {
+            [imageUrls addObject:entity.url];
+        }
+    }
+    
+    // 1. 创建photoBroseView对象
+    PYPhotoBrowseView *photoBroseView = [[PYPhotoBrowseView alloc] init];
+    
+    // 2.1 设置图片源(UIImageView)数组
+    photoBroseView.imagesURL = imageUrls;
+    // 2.2 设置初始化图片下标（即当前点击第几张图片）
+    photoBroseView.currentIndex = index;
+    
+    // 3.显示(浏览)
+    [photoBroseView show];
     
     /*
     NSUInteger picCount = (_picPathStringsArray.count > 0) ? _picPathStringsArray.count : 1;
