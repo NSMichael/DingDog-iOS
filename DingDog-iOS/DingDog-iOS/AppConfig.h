@@ -177,5 +177,11 @@ _Pragma("clang diagnostic pop")
 
 #define kNotification_groupSendSuccess              @"groupSendSuccess"
 
+// 微信登陆
+#define kNotification_weChatLogin                   @"weChatLogin"
+
+// 绑定微信
+#define kNotification_wechatBind                    @"wechatBind"
+
 
 #define TIP_NO_GPS_PERMISSION @"请在“设置-隐私-定位服务”中允许好面料访问您的位置"

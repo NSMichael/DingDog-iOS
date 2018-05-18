@@ -10,4 +10,6 @@
 
 @interface LoginViewController : BaseViewController
 
+- (instancetype)initWithLoginType:(LoginType)type;
+
 @end

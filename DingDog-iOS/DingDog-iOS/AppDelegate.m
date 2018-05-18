@@ -82,7 +82,7 @@
 }
 
 - (void)goToLoginVC {
-    LoginViewController *login = [[LoginViewController alloc] init];
+    LoginViewController *login = [[LoginViewController alloc] initWithLoginType:LoginType_login];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:login];
     [self.window setRootViewController:nav];
 }
@@ -154,7 +154,13 @@
         if (aresp.errCode== 0)
         {
             NSLog(@"code %@",aresp.code);
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"wechatDidLoginNotification" object:self userInfo:@{@"code":aresp.code}];
+            
+            if (_weChatType == WeChatType_Login) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_weChatLogin object:self userInfo:@{@"code":aresp.code}];
+            } else if (_weChatType == WeChatType_Bind) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotification_wechatBind object:self userInfo:@{@"code":aresp.code}];
+            }
+            
         }
     }
 }

@@ -20,6 +20,12 @@
 // 微信登录
 + (void)login_weChatWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
+// 绑定登录
++ (void)bind_weChatWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
+// 绑定手机号
++ (void)bind_mobileWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
+
 // 获取图形验证码
 + (void)register_getCaptchaWithRefresh:(NSInteger)refresh andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
@@ -28,6 +34,9 @@
 
 // 快速登录
 + (void)site_fastloginWithParams:(id)params andBlock:(void (^)(UserCmd *cmd, NSError *error))block;
+
+// 获取个人信息
++ (void)get_myProfileInfoWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block;
 
 #pragma mark - 资源
 /**

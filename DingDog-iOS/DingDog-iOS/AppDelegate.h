@@ -10,11 +10,14 @@
 #import "RootTabViewController.h"
 #import "WXApi.h"
 #import "AppManager.h"
+#import "EnumDefinition.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,strong) AppManager *appManager;
+
+@property (nonatomic, assign) WeChatType weChatType;
 
 @property (nonatomic, strong) RootTabViewController *rootVC;
 

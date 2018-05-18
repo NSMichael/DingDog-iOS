@@ -82,6 +82,30 @@
     }];
 }
 
+// 绑定登录
++ (void)bind_weChatWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/profile/bind" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 绑定手机号
++ (void)bind_mobileWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/profile/bindphone" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
 // 获取图形验证码
 + (void)register_getCaptchaWithRefresh:(NSInteger)refresh andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
     
@@ -117,6 +141,18 @@
 // 快速登录
 + (void)site_fastloginWithParams:(id)params andBlock:(void (^)(UserCmd *cmd, NSError *error))block {
     [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"home/site/fastlogin" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (error) {
+            block(nil, error);
+        } else {
+            UserCmd *cmd = [NetworkAPIManager modelOfClass:[UserCmd class] fromJSONDictionary:data error:&error];
+            block(cmd, nil);
+        }
+    }];
+}
+
+// 获取个人信息
++ (void)get_myProfileInfoWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/profile/info" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
         if (error) {
             block(nil, error);
         } else {

@@ -37,6 +37,8 @@
                                [self.mTableView reloadData];
                            }];
     
+    //跳转到主界面
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wechatBindNotification:) name:kNotification_wechatBind object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -241,7 +243,7 @@
 
 // 绑定手机号
 - (void)bindMobile {
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    LoginViewController *loginVC = [[LoginViewController alloc] initWithLoginType:LoginType_bind];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
     [self presentViewController:nav animated:YES completion:^{
         
@@ -251,6 +253,10 @@
 #pragma mark - 第三方登录
 
 - (void)onWXTapped {
+    
+    AppDelegate *app = APP;
+    app.weChatType = WeChatType_Bind;
+    
     NSLog(@"%s",__func__);
     
     //构造SendAuthReq结构体
@@ -261,7 +267,7 @@
     [WXApi sendReq:req];
 }
 
-- (void)wechatDidLoginNotification:(NSNotification *)notification {
+- (void)wechatBindNotification:(NSNotification *)notification {
     NSString *code = [notification.userInfo objectForKey:@"code"];
     [self getWechatAccessTokenWithCode:code];
 }
@@ -325,15 +331,15 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:openId forKey:@"openid"];
     [params setObject:unionId forKey:@"unionid"];
-    [params setObject:@"iOS" forKey:@"platform"];
     
     WS(weakSelf);
-    [NetworkAPIManager login_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
+    [NetworkAPIManager bind_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
         if (error) {
             [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
-                [APP setupTabViewController];
+                [weakSelf showHudTipStr:@"绑定成功"];
+                [weakSelf getProfile];
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;
@@ -344,6 +350,33 @@
                     }]];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
+            }];
+        }
+    }];
+}
+
+- (void)getProfile {
+    WS(weakSelf);
+    [NetworkAPIManager get_myProfileInfoWithParams:nil andBlock:^(BaseCmd *cmd, NSError *error) {
+        if (error) {
+            [weakSelf showHudTipStr:TIP_NETWORKERROR];
+        } else {
+            [cmd errorCheckSuccess:^{
+                if ([cmd isKindOfClass:[UserCmd class]]) {
+                    UserCmd *userCmd = (UserCmd *)cmd;
+                    NSLog(@"%@", userCmd);
+                    
+                    if (userCmd.token.length > 0) {
+                        [[MyAccountManager sharedManager] saveToken:userCmd.token];
+                    }
+                    
+                    [[MyAccountManager sharedManager] saveUserProfile:userCmd];
+                    [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
+                    
+                    [APP setupTabViewController];
+                }
+            } failed:^(NSInteger errCode) {
+                
             }];
         }
     }];

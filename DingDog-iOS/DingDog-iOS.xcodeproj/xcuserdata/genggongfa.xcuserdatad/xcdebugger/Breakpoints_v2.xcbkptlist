@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DingDog-iOS/Classes/Manager/UploadManager.m"
-            timestampString = "548071441.769215"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "548319191.7553591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-uploadImgWithRestype:img:block:"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "-onBtnLoginClicked"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
