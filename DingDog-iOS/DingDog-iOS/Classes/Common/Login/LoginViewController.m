@@ -407,22 +407,17 @@
         
         [self getPictureCodeWithRefreshCount:_refreshCount];
     } else {
+        WS(weakSelf);
         [NetworkAPIManager register_getSMSWithMobile:self.mobileStr Captcha:self.pictureCode andBlock:^(BaseCmd *cmd, NSError *error) {
             if (error) {
-                [self showHudTipStr:TIP_NETWORKERROR];
+                [weakSelf showHudTipStr:TIP_NETWORKERROR];
             } else {
                 [cmd errorCheckSuccess:^{
-                    [self showHudTipStr:@"验证码已发送，请注意查收!"];
+                    [weakSelf showHudTipStr:@"验证码已发送，请注意查收!"];
                 } failed:^(NSInteger errCode) {
                     if (errCode == 0) {
                         NSString *msgStr = cmd.message;
-                        [self showHudTipStr:msgStr];
-                        //                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
-                        //
-                        //                    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                        //                        [APP setupTabViewController];
-                        //                    }]];
-                        //                    [self presentViewController:alertController animated:YES completion:nil];
+                        [weakSelf showHudTipStr:msgStr];
                     }
                 }];
             }
@@ -468,7 +463,7 @@
                 } failed:^(NSInteger errCode) {
                     if (errCode == 0) {
                         NSString *msgStr = cmd.message;
-                        [weakSelf showHudTipStr:msgStr];
+                        [weakSelf showAlertViewControllerWithText:msgStr];
                     }
                 }];
             }
@@ -479,9 +474,10 @@
         [params setObject:self.passwordStr forKey:@"vcode"];
         [params setObject:@"iOS" forKey:@"platform"];
         
+        WS(weakSelf);
         [NetworkAPIManager site_fastloginWithParams:params andBlock:^(UserCmd *cmd, NSError *error) {
             if (error) {
-                [self showHudTipStr:TIP_NETWORKERROR];
+                [weakSelf showHudTipStr:TIP_NETWORKERROR];
             } else {
                 [cmd errorCheckSuccess:^{
                     if ([cmd isKindOfClass:[UserCmd class]]) {
@@ -500,7 +496,7 @@
                 } failed:^(NSInteger errCode) {
                     if (errCode == 0) {
                         NSString *msgStr = cmd.message;
-                        [self showHudTipStr:msgStr];
+                        [weakSelf showHudTipStr:msgStr];
                     }
                 }];
             }
@@ -769,12 +765,7 @@
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:msgStr preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                        [APP setupTabViewController];
-                    }]];
-                    [self presentViewController:alertController animated:YES completion:nil];
+                    [weakSelf showAlertViewControllerWithText:msgStr];
                 }
             }];
         }

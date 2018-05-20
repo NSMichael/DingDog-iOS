@@ -4143,7 +4143,7 @@
 				TargetAttributes = {
 					BB467CBE2057CE0400D18C97 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					BB467CD62057CE0400D18C97 = {
 						CreatedOnToolsVersion = 9.2;
@@ -4944,13 +4944,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ma Freeda (N9Z8M4PJCL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ma Freeda (N9Z8M4PJCL)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4960,8 +4960,8 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulldogo.xibot.dbg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d68ac45-0eea-4d6c-ae42-8367af9681d9";
-				PROVISIONING_PROFILE_SPECIFIER = dingdongdbg_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -4970,13 +4970,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ma Freeda (N9Z8M4PJCL)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ma Freeda (N9Z8M4PJCL)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4986,8 +4986,8 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulldogo.xibot.dbg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d68ac45-0eea-4d6c-ae42-8367af9681d9";
-				PROVISIONING_PROFILE_SPECIFIER = dingdongdbg_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
