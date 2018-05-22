@@ -295,6 +295,11 @@
 		BB4B9A17208732CB004FF037 /* CustomerListCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A16208732CB004FF037 /* CustomerListCmd.m */; };
 		BB4B9A1A208732E9004FF037 /* CustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A19208732E9004FF037 /* CustomerModel.m */; };
 		BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4B9A1F20874F26004FF037 /* TagCustomerSelectedVC.m */; };
+		BB6172E120B414DE00886BD4 /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6172DF20B414DD00886BD4 /* TLSSDK.framework */; };
+		BB6172E220B414DE00886BD4 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6172E020B414DE00886BD4 /* ImSDK.framework */; };
+		BB6172E420B4156B00886BD4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6172E320B4156B00886BD4 /* libsqlite3.tbd */; };
+		BB6172E720B415FE00886BD4 /* IMMessageExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6172E520B415FE00886BD4 /* IMMessageExt.framework */; };
+		BB6172E820B415FE00886BD4 /* IMGroupExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6172E620B415FE00886BD4 /* IMGroupExt.framework */; };
 		BB6FC19320A0232D004615D9 /* GroupSendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */; };
 		BB6FC19620A02377004615D9 /* GroupSendSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6FC19420A02376004615D9 /* GroupSendSuccessVC.m */; };
 		BB74D2DB2058B70400F8A55B /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = BB74D2DA2058B70400F8A55B /* UIView+Toast.m */; };
@@ -1186,6 +1191,11 @@
 		BB4B9A19208732E9004FF037 /* CustomerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerModel.m; sourceTree = "<group>"; };
 		BB4B9A1F20874F26004FF037 /* TagCustomerSelectedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCustomerSelectedVC.m; sourceTree = "<group>"; };
 		BB4B9A2020874F26004FF037 /* TagCustomerSelectedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCustomerSelectedVC.h; sourceTree = "<group>"; };
+		BB6172DF20B414DD00886BD4 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
+		BB6172E020B414DE00886BD4 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
+		BB6172E320B4156B00886BD4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BB6172E520B415FE00886BD4 /* IMMessageExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMMessageExt.framework; sourceTree = "<group>"; };
+		BB6172E620B415FE00886BD4 /* IMGroupExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMGroupExt.framework; sourceTree = "<group>"; };
 		BB6FC19120A0232D004615D9 /* GroupSendListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupSendListViewController.h; sourceTree = "<group>"; };
 		BB6FC19220A0232D004615D9 /* GroupSendListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupSendListViewController.m; sourceTree = "<group>"; };
 		BB6FC19420A02376004615D9 /* GroupSendSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupSendSuccessVC.m; sourceTree = "<group>"; };
@@ -1738,16 +1748,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6172E420B4156B00886BD4 /* libsqlite3.tbd in Frameworks */,
 				1A28FCC02084F60500041943 /* MobileCoreServices.framework in Frameworks */,
 				BB86F81020849B9700DABEAC /* libresolv.tbd in Frameworks */,
 				BB86F80E20849B5F00DABEAC /* libz.tbd in Frameworks */,
+				BB6172E720B415FE00886BD4 /* IMMessageExt.framework in Frameworks */,
 				BB86F7322084811100DABEAC /* Photos.framework in Frameworks */,
 				1A28FC0B207BC36200041943 /* QuartzCore.framework in Frameworks */,
 				1A28FC09207BC09E00041943 /* UIKit.framework in Frameworks */,
+				BB6172E120B414DE00886BD4 /* TLSSDK.framework in Frameworks */,
 				1A28FC07207BC08C00041943 /* CoreGraphics.framework in Frameworks */,
 				1A28FBDF207BAFA200041943 /* libc++.tbd in Frameworks */,
 				1A28FBDD207BAB6900041943 /* libWeChatSDK.a in Frameworks */,
 				BB74D50820591EA700F8A55B /* Foundation.framework in Frameworks */,
+				BB6172E820B415FE00886BD4 /* IMGroupExt.framework in Frameworks */,
+				BB6172E220B414DE00886BD4 /* ImSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2389,6 +2404,7 @@
 		BB467CF72057D00A00D18C97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BB6172D120B4148E00886BD4 /* IM */,
 				1A28FC24207CFA3800041943 /* Manager */,
 				BB467D002057D25400D18C97 /* Common */,
 				BB467CF82057D00A00D18C97 /* Tab1 */,
@@ -3053,6 +3069,25 @@
 			path = Selected;
 			sourceTree = "<group>";
 		};
+		BB6172D120B4148E00886BD4 /* IM */ = {
+			isa = PBXGroup;
+			children = (
+				BB6172D220B4148E00886BD4 /* SDK */,
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		BB6172D220B4148E00886BD4 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				BB6172E620B415FE00886BD4 /* IMGroupExt.framework */,
+				BB6172E520B415FE00886BD4 /* IMMessageExt.framework */,
+				BB6172E020B414DE00886BD4 /* ImSDK.framework */,
+				BB6172DF20B414DD00886BD4 /* TLSSDK.framework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
 		BB6FC19020A02322004615D9 /* GroupSend */ = {
 			isa = PBXGroup;
 			children = (
@@ -3638,6 +3673,7 @@
 		BB74D50620591E7F00F8A55B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB6172E320B4156B00886BD4 /* libsqlite3.tbd */,
 				1A28FCBF2084F60400041943 /* MobileCoreServices.framework */,
 				BB86F80F20849B9700DABEAC /* libresolv.tbd */,
 				BB86F80D20849B5F00DABEAC /* libz.tbd */,
@@ -4949,8 +4985,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DingDog-iOS/Classes/IM/SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4975,8 +5015,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3UY536T44;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DingDog-iOS/Classes/IM/SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/genggongfa/Documents/Work/DingDog-iOS/DingDog-iOS/DingDog-iOS/Resources/DingDog-Prefix.pch";
 				INFOPLIST_FILE = "DingDog-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
