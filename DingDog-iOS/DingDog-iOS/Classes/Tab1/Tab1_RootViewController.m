@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"111");
+    
     self.title = @"消息";
     
     [self.mTableView mas_makeConstraints:^(MASConstraintMaker *make) {
