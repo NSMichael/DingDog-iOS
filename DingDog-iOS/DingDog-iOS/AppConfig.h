@@ -137,9 +137,60 @@ _Pragma("clang diagnostic pop")
 #define ESStrongSelf    ESStrong(__weakSelf, _self);
 
 
+//==============================
+
+// 用户更新为自己的app配置
+// TLS，以及IMSDK相关的配置
+
+// 最大昵称UTF8字符串长度
+#define kNicknameMaxLength  64
+// 好友分组UTF8字符串长度
+#define kSubGroupMaxLength  30
+
+#define kDefaultUserIcon            [UIImage imageNamed:@"default_user"]
+#define kDefaultGroupIcon           [UIImage imageNamed:@"default_group"]
+#define kDefaultSystemIcon          [UIImage imageNamed:@"default_system"]
+
+//==============================
+// 聊天图片缩约图最大高度
+#define kChatPicThumbMaxHeight 190.f
+// 聊天图片缩约图最大宽度
+#define kChatPicThumbMaxWidth 66.f
+
+//==============================
+
+// IMAMsg扩展参数的键
+#define kIMAMSG_Image_ThumbWidth    @"kIMA_ThumbWidth"
+#define kIMAMSG_Image_ThumbHeight   @"kIMA_ThumbHeight"
+#define kIMAMSG_Image_OrignalPath   @"kIMA_OrignalPath"
+#define kIMAMSG_Image_ThumbPath     @"kIMA_ThumbPath"
+//==============================
+
+// IMA中用到的消息相关通知
+#define kIMAMSG_RevokeNotification @"kIMAMSG_RevokeNotification"
+#define kIMAMSG_DeleteNotification @"kIMAMSG_DeleteNotification"
+#define kIMAMSG_ResendNotification @"kIMAMSG_ResendNotification"
+#define kIMAMSG_ChangedNotification @"kIMAMSG_ChangedNotification"
+
+//==============================
+
+#define IMALocalizedError(intCode, enStr) NSLocalizedString(([NSString stringWithFormat:@"%d", (int)intCode]), enStr)
+
+//==============================
+// IMA内部使用的字休
+#define kIMALargeTextFont       [UIFont systemFontOfSize:16]
+#define kIMAMiddleTextFont      [UIFont systemFontOfSize:14]
+#define kIMASmallTextFont       [UIFont systemFontOfSize:12]
+
+
 ///=============================================
 /// sns account
 ///=============================================
+
+#define kTLSAppid       @"1400068211"
+#define kSdkAppId       @"1400068211"
+#define kSdkAccountType @"792"
+
 
 #define kAPPSTORE_WECHAT_APPID      @"wx545c6806dbb6bea8"
 #define kAPPSTORE_WECHAT_SECRET     @"86a52ba86585b2dc790586e5bf4e401b"

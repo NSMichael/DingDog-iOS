@@ -178,13 +178,76 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    [UIApplication.sharedApplication.windows enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(UIWindow *w, NSUInteger idx, BOOL *stop) {
+        if (!w.opaque && [NSStringFromClass(w.class) hasPrefix:@"UIText"]) {
+            // The keyboard sometimes disables interaction. This brings it back to normal.
+            BOOL wasHidden = w.hidden;
+            w.hidden = YES;
+            w.hidden = wasHidden;
+            *stop = YES;
+        }
+    }];
+    
+    //清空通知栏消息
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[TIMManager sharedInstance] doForeground:^{
+        
+    } fail:^(int code, NSString *msg) {
+        
+    }];
 }
+
+
+-(void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    SLOG(@"didRegisterForRemoteNotificationsWithDeviceToken:%ld", (unsigned long)deviceToken.length);
+    NSString *token = [NSString stringWithFormat:@"%@", deviceToken];
+    [[TIMManager sharedInstance] log:TIM_LOG_INFO tag:@"SetToken" msg:[NSString stringWithFormat:@"My Token is :%@", token]];
+    TIMTokenParam *param = [[TIMTokenParam alloc] init];
+    
+#if kAppStoreVersion
+    
+    // AppStore版本
+#if DEBUG
+    param.busiId = 2383;
+#else
+    param.busiId = 2382;
+#endif
+    
+#else
+    //企业证书id
+    param.busiId = 4496;
+#endif
+    
+    [param setToken:deviceToken];
+    
+    //    [[TIMManager sharedInstance] setToken:param];
+    [[TIMManager sharedInstance] setToken:param succ:^{
+        
+        NSLog(@"-----> 上传token成功 ");
+    } fail:^(int code, NSString *msg) {
+        NSLog(@"-----> 上传token失败 ");
+    }];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    SLOG(@"didFailToRegisterForRemoteNotificationsWithError:%@", error.localizedDescription);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    // 处理推送消息
+    SLOG(@"userinfo:%@",userInfo);
+    SLOG(@"收到推送消息:%@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]);
+}
+
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
