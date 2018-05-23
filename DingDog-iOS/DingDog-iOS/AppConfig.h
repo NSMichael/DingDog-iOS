@@ -189,7 +189,7 @@ _Pragma("clang diagnostic pop")
 
 #define kTLSAppid       @"1400068211"
 #define kSdkAppId       @"1400068211"
-#define kSdkAccountType @"792"
+#define kSdkAccountType @"22553"
 
 
 #define kAPPSTORE_WECHAT_APPID      @"wx545c6806dbb6bea8"

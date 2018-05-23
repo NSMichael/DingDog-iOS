@@ -33,6 +33,7 @@
     [self.window makeKeyAndVisible];
     
     self.appManager = [AppManager GetInstance];
+    [self initTimSDK];
     
     SplashView *splashView = [SplashView splashView];
     
@@ -91,6 +92,22 @@
     self.rootVC = [[RootTabViewController alloc] init];
     self.rootVC.tabBar.translucent = NO;
     [self.window setRootViewController:self.rootVC];
+}
+
+// 初始化聊天
+- (void)initTimSDK {
+    // 初始化SDK，设置sdkappid和accoutType，由腾讯云控制台分配
+    TIMSdkConfig * config = [[TIMSdkConfig alloc] init];
+    config.sdkAppId = [kSdkAppId integerValue];
+    config.accountType = kSdkAccountType;
+    [[TIMManager sharedInstance] initSdk:config];
+    
+    // 初始化用户参数配置，使用默认配置
+    TIMUserConfig * userConfig = [[TIMUserConfig alloc] init];
+    [[TIMManager sharedInstance] setUserConfig:userConfig];
+    
+    // 添加新消息监听器，实现onNewMessage:
+//    [[TIMManager sharedInstance] addMessageListener:self];
 }
 
 - (void)customizeInterface {
