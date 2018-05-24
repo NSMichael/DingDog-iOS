@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "GetCaptchaCmd.h"
 #import "UserCmd.h"
+#import "RCloudTokenModel.h"
 
 #define MAXLENGTH_11    11
 
@@ -484,14 +485,7 @@
                         UserCmd *userCmd = (UserCmd *)cmd;
                         NSLog(@"%@", userCmd);
                         
-                        if (userCmd.token.length > 0) {
-                            [[MyAccountManager sharedManager] saveToken:userCmd.token];
-                        }
-                        
-                        [[MyAccountManager sharedManager] saveUserProfile:userCmd];
-                        [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
-                        
-                        [APP setupTabViewController];
+                        [weakSelf loginIMWithUserCmd:userCmd];
                     }
                 } failed:^(NSInteger errCode) {
                     if (errCode == 0) {
@@ -502,6 +496,32 @@
             }
         }];
     }
+}
+
+- (void)loginIMWithUserCmd:(UserCmd *)userCmd {
+    //登录
+    TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
+    
+    // identifier为用户名，userSig 为用户登录凭证
+    // appidAt3rd 在私有帐号情况下，填写与sdkAppId 一样
+    login_param.identifier = userCmd.memberId ? : @"";
+    login_param.userSig = userCmd.qcloud_token;
+    login_param.appidAt3rd = kSdkAppId;
+    
+    [[TIMManager sharedInstance] login:login_param succ:^{
+        NSLog(@"Login Succ");
+        
+        if (userCmd.token.length > 0) {
+            [[MyAccountManager sharedManager] saveToken:userCmd.token];
+        }
+        
+        [[MyAccountManager sharedManager] saveUserProfile:userCmd];
+        [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
+        
+        [APP setupTabViewController];
+    } fail:^(int code, NSString *msg) {
+        NSLog(@"Login Failed: %d->%@", code, msg);
+    }];
 }
 
 - (void)getProfile {

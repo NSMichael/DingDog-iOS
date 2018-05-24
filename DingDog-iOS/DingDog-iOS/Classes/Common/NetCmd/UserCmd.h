@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ConfigModel.h"
+#import "RCloudTokenModel.h"
 
 @interface UserCmd : BaseCmd<MTLJSONSerializing>
 
@@ -19,7 +20,10 @@
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *identity;
+@property (nonatomic, strong) NSString *qcloud_token;
 
 @property (nonatomic, strong) ConfigModel *configModel;
+
+@property (nonatomic, strong) RCloudTokenModel *rcloudTokenModel;
 
 @end

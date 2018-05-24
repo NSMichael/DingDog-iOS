@@ -98,7 +98,7 @@
 - (void)initTimSDK {
     // 初始化SDK，设置sdkappid和accoutType，由腾讯云控制台分配
     TIMSdkConfig * config = [[TIMSdkConfig alloc] init];
-    config.sdkAppId = [kSdkAppId integerValue];
+    config.sdkAppId = [kSdkAppId intValue];
     config.accountType = kSdkAccountType;
     [[TIMManager sharedInstance] initSdk:config];
     
