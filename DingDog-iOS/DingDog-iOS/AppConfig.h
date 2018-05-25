@@ -30,8 +30,8 @@
 #define kVersionBuild_zhaobu [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 
 //URL
-//#define BASE_URL @"v1.api.bulldogo.com/"              // 正式的生产服务器
-#define BASE_URL @"v1.api.touzixiao.xin/"         // 测试服务器
+#define BASE_URL @"v1.api.bulldogo.com/"              // 正式的生产服务器
+//#define BASE_URL @"v1.api.touzixiao.xin/"         // 测试服务器
 //#define BASE_URL @"192.168.254.55/9tong-zml-app/"              // 魏慧
 //#define BASE_URL @"api1.ddzhaobu.com/zml"             // 找布云测试服务器
 //#define BASE_URL @"192.168.254.64:8081/9tong-zml-app"           // 刘权

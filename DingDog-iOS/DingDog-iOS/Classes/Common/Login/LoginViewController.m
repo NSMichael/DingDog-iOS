@@ -473,7 +473,7 @@
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         [params setObject:self.mobileStr forKey:@"mobile"];
         [params setObject:self.passwordStr forKey:@"vcode"];
-        [params setObject:@"iOS" forKey:@"platform"];
+        [params setObject:@"ios" forKey:@"platform"];
         
         WS(weakSelf);
         [NetworkAPIManager site_fastloginWithParams:params andBlock:^(UserCmd *cmd, NSError *error) {
@@ -774,7 +774,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:openId forKey:@"openid"];
     [params setObject:unionId forKey:@"unionid"];
-    [params setObject:@"iOS" forKey:@"platform"];
+    [params setObject:@"ios" forKey:@"platform"];
     
     WS(weakSelf);
     [NetworkAPIManager login_weChatWithParams:params andBlock:^(BaseCmd *cmd, NSError *error) {
@@ -782,7 +782,12 @@
             [weakSelf showHudTipStr:TIP_NETWORKERROR];
         } else {
             [cmd errorCheckSuccess:^{
-                [APP setupTabViewController];
+                if ([cmd isKindOfClass:[UserCmd class]]) {
+                    UserCmd *userCmd = (UserCmd *)cmd;
+                    NSLog(@"%@", userCmd);
+                    
+                    [weakSelf loginIMWithUserCmd:userCmd];
+                }
             } failed:^(NSInteger errCode) {
                 if (errCode == 0) {
                     NSString *msgStr = cmd.message;

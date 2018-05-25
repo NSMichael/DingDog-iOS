@@ -76,7 +76,7 @@
         if (error) {
             block(nil, error);
         } else {
-            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[BaseCmd class] fromJSONDictionary:data error:&error];
+            BaseCmd *cmd = [NetworkAPIManager modelOfClass:[UserCmd class] fromJSONDictionary:data error:&error];
             block(cmd, nil);
         }
     }];
