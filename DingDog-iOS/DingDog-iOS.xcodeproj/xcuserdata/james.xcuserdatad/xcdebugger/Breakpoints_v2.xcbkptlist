@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950296.875072"
+            timestampString = "548961427.965771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "781"
@@ -84,7 +84,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950296.875801"
+            timestampString = "548961427.966347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "785"
@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950377.924343"
+            timestampString = "548961427.966447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "503"
@@ -116,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950391.2490669"
+            timestampString = "548961427.966561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "522"
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950392.186892"
+            timestampString = "548961427.966665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "524"
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548950422.527032"
+            timestampString = "548961427.966761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "521"
@@ -164,12 +164,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-                  timestampString = "548950422.5962059"
+                  timestampString = "548961428.693736"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "521"
                   endingLineNumber = "521"
-                  offsetFromSymbolStart = "852">
+                  offsetFromSymbolStart = "740">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -179,12 +179,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-                  timestampString = "548950422.601487"
+                  timestampString = "548961428.697937"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
                   endingLineNumber = "522"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
