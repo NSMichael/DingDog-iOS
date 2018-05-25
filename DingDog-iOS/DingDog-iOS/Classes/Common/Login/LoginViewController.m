@@ -499,6 +499,16 @@
 }
 
 - (void)loginIMWithUserCmd:(UserCmd *)userCmd {
+    
+    if (userCmd.token.length > 0) {
+        [[MyAccountManager sharedManager] saveToken:userCmd.token];
+    }
+    
+    [[MyAccountManager sharedManager] saveUserProfile:userCmd];
+    [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
+    
+    [APP setupTabViewController];
+    
     //登录
     TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
     
@@ -510,15 +520,6 @@
     
     [[TIMManager sharedInstance] login:login_param succ:^{
         NSLog(@"Login Succ");
-        
-        if (userCmd.token.length > 0) {
-            [[MyAccountManager sharedManager] saveToken:userCmd.token];
-        }
-        
-        [[MyAccountManager sharedManager] saveUserProfile:userCmd];
-        [[AppManager GetInstance] onLoginSuccess];//执行系统级的登录任务
-        
-        [APP setupTabViewController];
     } fail:^(int code, NSString *msg) {
         NSLog(@"Login Failed: %d->%@", code, msg);
     }];

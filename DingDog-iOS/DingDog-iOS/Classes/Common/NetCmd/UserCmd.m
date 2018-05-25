@@ -20,7 +20,7 @@
              @"identity": @"identity",
              @"qcloud_token": @"qcloud_token",
              @"configModel": @"config",
-             @"rcloudTokenModel": @"rcloud_token"
+//             @"rcloudTokenModel": @"rcloud_token"
              };
 }
 
@@ -28,8 +28,8 @@
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:ConfigModel.class];
 }
 
-+ (NSValueTransformer *)rcloudTokenModelJSONTransformer {
-    return [MTLJSONAdapter dictionaryTransformerWithModelClass:RCloudTokenModel.class];
-}
+//+ (NSValueTransformer *)rcloudTokenModelJSONTransformer {
+//    return [MTLJSONAdapter dictionaryTransformerWithModelClass:RCloudTokenModel.class];
+//}
 
 @end

@@ -24,6 +24,6 @@
 
 @property (nonatomic, strong) ConfigModel *configModel;
 
-@property (nonatomic, strong) RCloudTokenModel *rcloudTokenModel;
+//@property (nonatomic, strong) RCloudTokenModel *rcloudTokenModel;
 
 @end
