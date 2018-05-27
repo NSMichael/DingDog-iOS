@@ -96,7 +96,7 @@
 
 // 绑定手机号
 + (void)bind_mobileWithParams:(id)params andBlock:(void (^)(BaseCmd *cmd, NSError *error))block {
-    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/profile/bindphone" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
+    [[NetworkAPIClient sharedJsonClient] requestJsonDataWithPath:@"my/profile/bind-phone" withParams:params withMethodType:Post andBlock:^(id data, NSError *error) {
         if (error) {
             block(nil, error);
         } else {

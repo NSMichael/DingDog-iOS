@@ -13,5 +13,179 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "549103644.63582"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "786"
+            endingLineNumber = "786"
+            landmarkName = "-loginByWeChatWithOpenId:UnionId:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewController loginByWeChatWithOpenId:UnionId:]"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.897015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "786"
+                  endingLineNumber = "786"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__55-[LoginViewController loginByWeChatWithOpenId:UnionId:]_block_invoke"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.899563"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "787"
+                  endingLineNumber = "787"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.655"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.901772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "786"
+                  endingLineNumber = "786"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "549103644.6361639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "787"
+            endingLineNumber = "787"
+            landmarkName = "-loginByWeChatWithOpenId:UnionId:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "549103644.636232"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "-onBtnLoginClicked"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoginViewController onBtnLoginClicked]"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.914318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "457"
+                  endingLineNumber = "457"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[LoginViewController onBtnLoginClicked]_block_invoke"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.916525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "458"
+                  endingLineNumber = "458"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.422"
+                  moduleName = "DingDog-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+                  timestampString = "549103644.918779"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "457"
+                  endingLineNumber = "457"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "549103644.636291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "-onBtnLoginClicked"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
+            timestampString = "549103644.636346"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "-onBtnLoginClicked"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
