@@ -68,39 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.965771"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "781"
-            endingLineNumber = "781"
-            landmarkName = "-loginByWeChatWithOpenId:UnionId:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.966347"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "785"
-            endingLineNumber = "785"
-            landmarkName = "-loginByWeChatWithOpenId:UnionId:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.966447"
+            timestampString = "549091850.458202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "503"
@@ -116,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.966561"
+            timestampString = "549091850.458482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
             landmarkName = "-loginIMWithUserCmd:"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.966665"
+            timestampString = "549091850.45875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "524"
-            endingLineNumber = "524"
+            startingLineNumber = "530"
+            endingLineNumber = "530"
             landmarkName = "-loginIMWithUserCmd:"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-            timestampString = "548961427.966761"
+            timestampString = "549091850.45907"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "527"
+            endingLineNumber = "527"
             landmarkName = "-loginIMWithUserCmd:"
             landmarkType = "7">
             <Locations>
@@ -164,12 +132,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-                  timestampString = "548961428.693736"
+                  timestampString = "549091851.150812"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "521"
-                  endingLineNumber = "521"
-                  offsetFromSymbolStart = "740">
+                  startingLineNumber = "527"
+                  endingLineNumber = "527"
+                  offsetFromSymbolStart = "976">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -179,12 +147,12 @@
                   moduleName = "DingDog-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Documents/Work/Company/DingDog-iOS/DingDog-iOS/DingDog-iOS/Classes/Common/Login/LoginViewController.m"
-                  timestampString = "548961428.697937"
+                  timestampString = "549091851.154465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "522"
-                  endingLineNumber = "522"
-                  offsetFromSymbolStart = "23">
+                  startingLineNumber = "528"
+                  endingLineNumber = "528"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>

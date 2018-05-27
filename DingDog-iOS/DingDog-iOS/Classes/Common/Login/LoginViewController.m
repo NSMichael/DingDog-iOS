@@ -509,12 +509,18 @@
     
     [APP setupTabViewController];
     
+    NSString *imMemberId = @"";
+    
+    if (userCmd.memberId.length > 0) {
+        imMemberId = [NSString stringWithFormat:@"xi_%@", userCmd.memberId];
+    }
+    
     //登录
     TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
     
     // identifier为用户名，userSig 为用户登录凭证
     // appidAt3rd 在私有帐号情况下，填写与sdkAppId 一样
-    login_param.identifier = userCmd.memberId ? : @"";
+    login_param.identifier = imMemberId;
     login_param.userSig = userCmd.qcloud_token;
     login_param.appidAt3rd = kSdkAppId;
     
