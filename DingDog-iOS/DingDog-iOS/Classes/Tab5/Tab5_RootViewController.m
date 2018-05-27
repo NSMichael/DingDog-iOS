@@ -107,16 +107,21 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     cell.textLabel.font = kFont16;
     cell.textLabel.textColor = [UIColor colorWithHexString:@"0x000000"];
+    cell.hidden = NO;
     
     if (indexPath.row == 0) {
         UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
         if (userCmd) {
-            if (userCmd.memberId.length == 0) {
-                cell.textLabel.text = @"绑定微信";
-            } else if ([userCmd.mobileId isEqualToNumber:@0]) {
-                cell.textLabel.text = @"绑定手机号";
-            } else {
+            if ([userCmd.identity isEqualToString:@"manager"]) {
                 cell.textLabel.text = @"群发历史";
+            } else if ([userCmd.identity isEqualToString:@"customer"]) {
+                if (userCmd.memberId.length == 0) {
+                    cell.textLabel.text = @"绑定微信";
+                } else if ([userCmd.mobileId isEqualToNumber:@0]) {
+                    cell.textLabel.text = @"绑定手机号";
+                } else {
+                    cell.hidden = YES;
+                }
             }
         } else {
             cell.textLabel.text = @"绑定手机号";
@@ -167,6 +172,24 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
+        if (userCmd) {
+            if ([userCmd.identity isEqualToString:@"manager"]) {
+                return 72;
+            } else if ([userCmd.identity isEqualToString:@"customer"]) {
+                if (userCmd.memberId.length == 0) {
+                    return 72;
+                } else if ([userCmd.mobileId isEqualToNumber:@0]) {
+                    return 72;
+                } else {
+                    return 0;
+                }
+            }
+        } else {
+            return 72;
+        }
+    }
     return 72;
 }
 

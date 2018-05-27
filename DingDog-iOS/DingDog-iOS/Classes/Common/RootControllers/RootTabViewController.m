@@ -52,10 +52,10 @@
     
     UserCmd *userCmd = [MyAccountManager sharedManager].currentUser;
     if (userCmd) {
-        if (userCmd.memberId.length == 0 || [userCmd.mobileId isEqualToNumber:@0]) {
-            [self setupTwoTabs];
-        } else {
+        if ([userCmd.identity isEqualToString:@"manager"]) {
             [self setupFiveTabs];
+        } else if ([userCmd.identity isEqualToString:@"customer"]) {
+            [self setupTwoTabs];
         }
     } else {
         [self setupTwoTabs];
