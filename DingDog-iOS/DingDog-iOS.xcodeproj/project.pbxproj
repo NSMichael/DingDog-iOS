@@ -220,6 +220,20 @@
 		1A71E0DA20C4422D00B62C79 /* ConversationListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CF20C4422D00B62C79 /* ConversationListTableViewCell.m */; };
 		1A71E0DB20C4422D00B62C79 /* IMAConversation+ShowAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0D620C4422D00B62C79 /* IMAConversation+ShowAPIs.m */; };
 		1A71E0DC20C4422D00B62C79 /* ConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0D720C4422D00B62C79 /* ConversationListViewController.m */; };
+		1A71E2C820C4434A00B62C79 /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2A520C4434A00B62C79 /* FTUtils+UIGestureRecognizer.m */; };
+		1A71E2C920C4434A00B62C79 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2A920C4434A00B62C79 /* FTAnimation+UIView.m */; };
+		1A71E2CA20C4434A00B62C79 /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2AB20C4434A00B62C79 /* FTAnimationManager.m */; };
+		1A71E2CB20C4434A00B62C79 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2AE20C4434A00B62C79 /* FTUtils+NSObject.m */; };
+		1A71E2CC20C4434A00B62C79 /* UIViewController+ADScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2B120C4434A00B62C79 /* UIViewController+ADScaleTransition.m */; };
+		1A71E2CD20C4434A00B62C79 /* UITableViewController+ADScaleTransititon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2B620C4434A00B62C79 /* UITableViewController+ADScaleTransititon.m */; };
+		1A71E2CE20C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2B720C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.m */; };
+		1A71E2CF20C4434A00B62C79 /* ADScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2B820C4434A00B62C79 /* ADScaleTransition.m */; };
+		1A71E2D020C4434A00B62C79 /* ADTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2B920C4434A00B62C79 /* ADTransition.m */; };
+		1A71E2D120C4434A00B62C79 /* ADFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2BB20C4434A00B62C79 /* ADFlipTransition.m */; };
+		1A71E2D220C4434A00B62C79 /* UIViewController+ADFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2BD20C4434A00B62C79 /* UIViewController+ADFlipTransition.m */; };
+		1A71E2D320C4434A00B62C79 /* UITableViewController+ADFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2C120C4434A00B62C79 /* UITableViewController+ADFlipTransition.m */; };
+		1A71E2D420C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2C220C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.m */; };
+		1A71E2D520C4434A00B62C79 /* UIViewController+ADTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E2C620C4434A00B62C79 /* UIViewController+ADTransition.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -1118,6 +1132,38 @@
 		1A71E0D520C4422D00B62C79 /* ConversationListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListTableViewCell.h; sourceTree = "<group>"; };
 		1A71E0D620C4422D00B62C79 /* IMAConversation+ShowAPIs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAConversation+ShowAPIs.m"; sourceTree = "<group>"; };
 		1A71E0D720C4422D00B62C79 /* ConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListViewController.m; sourceTree = "<group>"; };
+		1A71E2A520C4434A00B62C79 /* FTUtils+UIGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+UIGestureRecognizer.m"; sourceTree = "<group>"; };
+		1A71E2A620C4434A00B62C79 /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
+		1A71E2A720C4434A00B62C79 /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimationManager.h; sourceTree = "<group>"; };
+		1A71E2A820C4434A00B62C79 /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils.h; sourceTree = "<group>"; };
+		1A71E2A920C4434A00B62C79 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		1A71E2AA20C4434A00B62C79 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		1A71E2AB20C4434A00B62C79 /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		1A71E2AC20C4434A00B62C79 /* FTUtils+UIGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+UIGestureRecognizer.h"; sourceTree = "<group>"; };
+		1A71E2AD20C4434A00B62C79 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		1A71E2AE20C4434A00B62C79 /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		1A71E2B120C4434A00B62C79 /* UIViewController+ADScaleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ADScaleTransition.m"; sourceTree = "<group>"; };
+		1A71E2B220C4434A00B62C79 /* ADScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADScaleTransition.h; sourceTree = "<group>"; };
+		1A71E2B320C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewController+ADScaleTransition.h"; sourceTree = "<group>"; };
+		1A71E2B420C4434A00B62C79 /* UITableViewController+ADScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+ADScaleTransition.h"; sourceTree = "<group>"; };
+		1A71E2B520C4434A00B62C79 /* UIViewController+ADScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ADScaleTransition.h"; sourceTree = "<group>"; };
+		1A71E2B620C4434A00B62C79 /* UITableViewController+ADScaleTransititon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+ADScaleTransititon.m"; sourceTree = "<group>"; };
+		1A71E2B720C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewController+ADScaleTransition.m"; sourceTree = "<group>"; };
+		1A71E2B820C4434A00B62C79 /* ADScaleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADScaleTransition.m; sourceTree = "<group>"; };
+		1A71E2B920C4434A00B62C79 /* ADTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTransition.m; sourceTree = "<group>"; };
+		1A71E2BB20C4434A00B62C79 /* ADFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADFlipTransition.m; sourceTree = "<group>"; };
+		1A71E2BC20C4434A00B62C79 /* UITableViewController+ADFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+ADFlipTransition.h"; sourceTree = "<group>"; };
+		1A71E2BD20C4434A00B62C79 /* UIViewController+ADFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ADFlipTransition.m"; sourceTree = "<group>"; };
+		1A71E2BE20C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewController+ADFlipTransition.h"; sourceTree = "<group>"; };
+		1A71E2BF20C4434A00B62C79 /* ADFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFlipTransition.h; sourceTree = "<group>"; };
+		1A71E2C020C4434A00B62C79 /* UIViewController+ADFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ADFlipTransition.h"; sourceTree = "<group>"; };
+		1A71E2C120C4434A00B62C79 /* UITableViewController+ADFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+ADFlipTransition.m"; sourceTree = "<group>"; };
+		1A71E2C220C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewController+ADFlipTransition.m"; sourceTree = "<group>"; };
+		1A71E2C320C4434A00B62C79 /* UIViewController+ADTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ADTransition.h"; sourceTree = "<group>"; };
+		1A71E2C420C4434A00B62C79 /* ADHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADHeaders.h; sourceTree = "<group>"; };
+		1A71E2C520C4434A00B62C79 /* ADTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTransition.h; sourceTree = "<group>"; };
+		1A71E2C620C4434A00B62C79 /* UIViewController+ADTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ADTransition.m"; sourceTree = "<group>"; };
+		1A71E2C720C4434A00B62C79 /* AnimationHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationHeaders.h; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2973,6 +3019,85 @@
 			path = ConversationList;
 			sourceTree = "<group>";
 		};
+		1A71E2A220C4434A00B62C79 /* CommonLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2A320C4434A00B62C79 /* Animation */,
+			);
+			path = CommonLibrary;
+			sourceTree = "<group>";
+		};
+		1A71E2A320C4434A00B62C79 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2A420C4434A00B62C79 /* FTUtils */,
+				1A71E2AF20C4434A00B62C79 /* ADTransition */,
+				1A71E2C720C4434A00B62C79 /* AnimationHeaders.h */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		1A71E2A420C4434A00B62C79 /* FTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2A520C4434A00B62C79 /* FTUtils+UIGestureRecognizer.m */,
+				1A71E2A620C4434A00B62C79 /* FTAnimation.h */,
+				1A71E2A720C4434A00B62C79 /* FTAnimationManager.h */,
+				1A71E2A820C4434A00B62C79 /* FTUtils.h */,
+				1A71E2A920C4434A00B62C79 /* FTAnimation+UIView.m */,
+				1A71E2AA20C4434A00B62C79 /* FTUtils+NSObject.h */,
+				1A71E2AB20C4434A00B62C79 /* FTAnimationManager.m */,
+				1A71E2AC20C4434A00B62C79 /* FTUtils+UIGestureRecognizer.h */,
+				1A71E2AD20C4434A00B62C79 /* FTAnimation+UIView.h */,
+				1A71E2AE20C4434A00B62C79 /* FTUtils+NSObject.m */,
+			);
+			path = FTUtils;
+			sourceTree = "<group>";
+		};
+		1A71E2AF20C4434A00B62C79 /* ADTransition */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2B020C4434A00B62C79 /* Scale */,
+				1A71E2B920C4434A00B62C79 /* ADTransition.m */,
+				1A71E2BA20C4434A00B62C79 /* Flip */,
+				1A71E2C320C4434A00B62C79 /* UIViewController+ADTransition.h */,
+				1A71E2C420C4434A00B62C79 /* ADHeaders.h */,
+				1A71E2C520C4434A00B62C79 /* ADTransition.h */,
+				1A71E2C620C4434A00B62C79 /* UIViewController+ADTransition.m */,
+			);
+			path = ADTransition;
+			sourceTree = "<group>";
+		};
+		1A71E2B020C4434A00B62C79 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2B120C4434A00B62C79 /* UIViewController+ADScaleTransition.m */,
+				1A71E2B220C4434A00B62C79 /* ADScaleTransition.h */,
+				1A71E2B320C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.h */,
+				1A71E2B420C4434A00B62C79 /* UITableViewController+ADScaleTransition.h */,
+				1A71E2B520C4434A00B62C79 /* UIViewController+ADScaleTransition.h */,
+				1A71E2B620C4434A00B62C79 /* UITableViewController+ADScaleTransititon.m */,
+				1A71E2B720C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.m */,
+				1A71E2B820C4434A00B62C79 /* ADScaleTransition.m */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
+		1A71E2BA20C4434A00B62C79 /* Flip */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E2BB20C4434A00B62C79 /* ADFlipTransition.m */,
+				1A71E2BC20C4434A00B62C79 /* UITableViewController+ADFlipTransition.h */,
+				1A71E2BD20C4434A00B62C79 /* UIViewController+ADFlipTransition.m */,
+				1A71E2BE20C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.h */,
+				1A71E2BF20C4434A00B62C79 /* ADFlipTransition.h */,
+				1A71E2C020C4434A00B62C79 /* UIViewController+ADFlipTransition.h */,
+				1A71E2C120C4434A00B62C79 /* UITableViewController+ADFlipTransition.m */,
+				1A71E2C220C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.m */,
+			);
+			path = Flip;
+			sourceTree = "<group>";
+		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3806,6 +3931,7 @@
 		BB6172D120B4148E00886BD4 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				1A71E2A220C4434A00B62C79 /* CommonLibrary */,
 				1A71E0CC20C4422D00B62C79 /* ConversationList */,
 				1A71DE7520C43EEC00B62C79 /* ChatUI */,
 				1A71DCC120C43D5400B62C79 /* TIMAdapter */,
@@ -5204,6 +5330,7 @@
 				BBD8716E20AA781700EAFD9F /* PYPhotoView.m in Sources */,
 				BB467D1E2057D38A00D18C97 /* Tab3_RootViewController.m in Sources */,
 				BB74D4C92058F77300F8A55B /* MTLValueTransformer.m in Sources */,
+				1A71E2CA20C4434A00B62C79 /* FTAnimationManager.m in Sources */,
 				BBD8726620AAC01100EAFD9F /* MJRefreshAutoNormalFooter.m in Sources */,
 				1A71DD2720C43D5400B62C79 /* IMAHost+HostAPIs.m in Sources */,
 				1A28FC5C207E492300041943 /* SDImageCache.m in Sources */,
@@ -5213,6 +5340,7 @@
 				1A71DF3F20C4400300B62C79 /* EmojHelper.m in Sources */,
 				BB467D152057D31000D18C97 /* RDVTabBarItem.m in Sources */,
 				1A28FCBB2084ECBF00041943 /* QNNiuDns.m in Sources */,
+				1A71E2CF20C4434A00B62C79 /* ADScaleTransition.m in Sources */,
 				BB86F72D20845B8300DABEAC /* SZTextView.m in Sources */,
 				BB467E8A2057E14000D18C97 /* RACPassthroughSubscriber.m in Sources */,
 				1A28FBF1207BB5AE00041943 /* BaseCmd.m in Sources */,
@@ -5222,6 +5350,8 @@
 				1AB6A10520AC8279009A04A4 /* UIView+SDAutoLayout.m in Sources */,
 				BBD8716520AA781700EAFD9F /* PYPhotoBrowserConst.m in Sources */,
 				1A28FCAB2084ECBF00041943 /* QNHex.m in Sources */,
+				1A71E2CE20C4434A00B62C79 /* UICollectionViewController+ADScaleTransition.m in Sources */,
+				1A71E2CB20C4434A00B62C79 /* FTUtils+NSObject.m in Sources */,
 				1A71DD3120C43D5400B62C79 /* IMAContactManager+SubGroup.m in Sources */,
 				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
 				1A71DE9020C43EEC00B62C79 /* MicroVideoView.m in Sources */,
@@ -5317,6 +5447,7 @@
 				1A71DD2620C43D5400B62C79 /* IMAHost.m in Sources */,
 				BB74D3772058B93900F8A55B /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				BB74D4FB2058FA0F00F8A55B /* ViewController+MASAdditions.m in Sources */,
+				1A71E2C920C4434A00B62C79 /* FTAnimation+UIView.m in Sources */,
 				BBD8710D20A9797F00EAFD9F /* TZLocationManager.m in Sources */,
 				BBD8726220AAC01100EAFD9F /* MJRefreshBackStateFooter.m in Sources */,
 				BB74D4CD2058F77300F8A55B /* MTLTransformerErrorHandling.m in Sources */,
@@ -5394,6 +5525,7 @@
 				BB467E8C2057E14000D18C97 /* RACQueueScheduler.m in Sources */,
 				1A71DF4520C4400300B62C79 /* MyEmojView.m in Sources */,
 				BB467E5A2057E14000D18C97 /* RACScheduler.m in Sources */,
+				1A71E2CD20C4434A00B62C79 /* UITableViewController+ADScaleTransititon.m in Sources */,
 				1A28FD69209365C000041943 /* KafkaRingIndicatorHeader.m in Sources */,
 				1A71DF4C20C4400300B62C79 /* MyUIDefine.m in Sources */,
 				BBD8716820AA781700EAFD9F /* PYPhotosNavigationController.m in Sources */,
@@ -5456,6 +5588,7 @@
 				BB74D30C2058B8F900F8A55B /* ACPProgressLayer.m in Sources */,
 				BB74D4822058BA9200F8A55B /* NSData+YYAdd.m in Sources */,
 				BB74D44C2058BA9200F8A55B /* YYMemoryCache.m in Sources */,
+				1A71E2D520C4434A00B62C79 /* UIViewController+ADTransition.m in Sources */,
 				BBD8716420AA781700EAFD9F /* PYProgressView.m in Sources */,
 				BB74D36D2058B93900F8A55B /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				BB467E8B2057E14000D18C97 /* NSArray+RACSequenceAdditions.m in Sources */,
@@ -5502,9 +5635,11 @@
 				1A71E0D820C4422D00B62C79 /* SwipeDeleteTableView.m in Sources */,
 				BB467D8B2057E06300D18C97 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
+				1A71E2D120C4434A00B62C79 /* ADFlipTransition.m in Sources */,
 				BB74D4942058BA9200F8A55B /* YYKeychain.m in Sources */,
 				BB467E632057E14000D18C97 /* UITextView+RACSignalSupport.m in Sources */,
 				1A71DE8E20C43EEC00B62C79 /* ChatTableViewCell.m in Sources */,
+				1A71E2D320C4434A00B62C79 /* UITableViewController+ADFlipTransition.m in Sources */,
 				BB74D4DC2058F9C300F8A55B /* UIScrollView+Empty.m in Sources */,
 				BB74D45D2058BA9200F8A55B /* YYTextMagnifier.m in Sources */,
 				BB467E6D2057E14000D18C97 /* RACEmptySequence.m in Sources */,
@@ -5562,11 +5697,13 @@
 				BB74D4782058BA9200F8A55B /* UIView+YYAdd.m in Sources */,
 				BBD8710120A9797F00EAFD9F /* TZAssetCell.m in Sources */,
 				1A71DEF720C43F8600B62C79 /* ChatSystemFaceItem.m in Sources */,
+				1A71E2C820C4434A00B62C79 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BB74D36A2058B93900F8A55B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				BB467E562057E14000D18C97 /* UIStepper+RACSignalSupport.m in Sources */,
 				BBD8710620A9797F00EAFD9F /* TZPhotoPreviewController.m in Sources */,
 				1A28FBC8206FDE7900041943 /* ChineseToPinyin.m in Sources */,
 				BB74D5002058FA0F00F8A55B /* View+MASAdditions.m in Sources */,
+				1A71E2D220C4434A00B62C79 /* UIViewController+ADFlipTransition.m in Sources */,
 				BB74D47E2058BA9200F8A55B /* NSArray+YYAdd.m in Sources */,
 				BBD8710320A9797F00EAFD9F /* TZAssetModel.m in Sources */,
 				BBD8721D20AABEAC00EAFD9F /* LYWebViewMacros.m in Sources */,
@@ -5576,6 +5713,7 @@
 				BB74D4CB2058F77300F8A55B /* NSDictionary+MTLJSONKeyPath.m in Sources */,
 				1A71DE9120C43EEC00B62C79 /* RichChatTableViewCell.m in Sources */,
 				BBD8710820A9797F00EAFD9F /* TZProgressView.m in Sources */,
+				1A71E2D420C4434A00B62C79 /* UICollectionViewController+ADFlipTransition.m in Sources */,
 				1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */,
 				BB74D4522058BA9200F8A55B /* YYFrameImage.m in Sources */,
 				BB467E802057E14000D18C97 /* NSData+RACSupport.m in Sources */,
@@ -5612,6 +5750,7 @@
 				BBD871F120AABBF400EAFD9F /* SVWebViewController.m in Sources */,
 				BBD8716A20AA781700EAFD9F /* PYPhoto.m in Sources */,
 				BBD8725F20AAC01100EAFD9F /* NSBundle+MJRefresh.m in Sources */,
+				1A71E2D020C4434A00B62C79 /* ADTransition.m in Sources */,
 				BBD8721E20AABEAC00EAFD9F /* LYURLCacheUtil.m in Sources */,
 				1A71DF4120C4400300B62C79 /* MyAudioInputView.m in Sources */,
 				BBD8725B20AAC01100EAFD9F /* UIScrollView+MJRefresh.m in Sources */,
@@ -5623,6 +5762,7 @@
 				1AB6A0EC20AB2D76009A04A4 /* GroupSendHistoryVC.m in Sources */,
 				BB74D3652058B93900F8A55B /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				BB74D30B2058B8F900F8A55B /* ACPStaticImages.m in Sources */,
+				1A71E2CC20C4434A00B62C79 /* UIViewController+ADScaleTransition.m in Sources */,
 				1A71DD3420C43D5400B62C79 /* IMAPlatform.m in Sources */,
 				BB74D4CF2058F77300F8A55B /* MTLReflection.m in Sources */,
 				BB74D4922058BA9200F8A55B /* YYTransaction.m in Sources */,
