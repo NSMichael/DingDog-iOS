@@ -215,6 +215,11 @@
 		1A71DF4B20C4400300B62C79 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */; };
 		1A71DF4C20C4400300B62C79 /* MyUIDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3D20C4400300B62C79 /* MyUIDefine.m */; };
 		1A71E0CB20C441C500B62C79 /* ImageThumbPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CA20C441C500B62C79 /* ImageThumbPickerViewController.m */; };
+		1A71E0D820C4422D00B62C79 /* SwipeDeleteTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CD20C4422D00B62C79 /* SwipeDeleteTableView.m */; };
+		1A71E0D920C4422D00B62C79 /* ConnectStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CE20C4422D00B62C79 /* ConnectStatusTableViewCell.m */; };
+		1A71E0DA20C4422D00B62C79 /* ConversationListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CF20C4422D00B62C79 /* ConversationListTableViewCell.m */; };
+		1A71E0DB20C4422D00B62C79 /* IMAConversation+ShowAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0D620C4422D00B62C79 /* IMAConversation+ShowAPIs.m */; };
+		1A71E0DC20C4422D00B62C79 /* ConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0D720C4422D00B62C79 /* ConversationListViewController.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -1102,6 +1107,17 @@
 		1A71DF3D20C4400300B62C79 /* MyUIDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUIDefine.m; sourceTree = "<group>"; };
 		1A71E0C920C441C500B62C79 /* ImageThumbPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageThumbPickerViewController.h; sourceTree = "<group>"; };
 		1A71E0CA20C441C500B62C79 /* ImageThumbPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageThumbPickerViewController.m; sourceTree = "<group>"; };
+		1A71E0CD20C4422D00B62C79 /* SwipeDeleteTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeDeleteTableView.m; sourceTree = "<group>"; };
+		1A71E0CE20C4422D00B62C79 /* ConnectStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectStatusTableViewCell.m; sourceTree = "<group>"; };
+		1A71E0CF20C4422D00B62C79 /* ConversationListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListTableViewCell.m; sourceTree = "<group>"; };
+		1A71E0D020C4422D00B62C79 /* ConversationHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationHeaders.h; sourceTree = "<group>"; };
+		1A71E0D120C4422D00B62C79 /* ConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListViewController.h; sourceTree = "<group>"; };
+		1A71E0D220C4422D00B62C79 /* IMAConversation+ShowAPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAConversation+ShowAPIs.h"; sourceTree = "<group>"; };
+		1A71E0D320C4422D00B62C79 /* SwipeDeleteTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeDeleteTableView.h; sourceTree = "<group>"; };
+		1A71E0D420C4422D00B62C79 /* ConnectStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectStatusTableViewCell.h; sourceTree = "<group>"; };
+		1A71E0D520C4422D00B62C79 /* ConversationListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListTableViewCell.h; sourceTree = "<group>"; };
+		1A71E0D620C4422D00B62C79 /* IMAConversation+ShowAPIs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAConversation+ShowAPIs.m"; sourceTree = "<group>"; };
+		1A71E0D720C4422D00B62C79 /* ConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListViewController.m; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2939,6 +2955,24 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		1A71E0CC20C4422D00B62C79 /* ConversationList */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E0CD20C4422D00B62C79 /* SwipeDeleteTableView.m */,
+				1A71E0CE20C4422D00B62C79 /* ConnectStatusTableViewCell.m */,
+				1A71E0CF20C4422D00B62C79 /* ConversationListTableViewCell.m */,
+				1A71E0D020C4422D00B62C79 /* ConversationHeaders.h */,
+				1A71E0D120C4422D00B62C79 /* ConversationListViewController.h */,
+				1A71E0D220C4422D00B62C79 /* IMAConversation+ShowAPIs.h */,
+				1A71E0D320C4422D00B62C79 /* SwipeDeleteTableView.h */,
+				1A71E0D420C4422D00B62C79 /* ConnectStatusTableViewCell.h */,
+				1A71E0D520C4422D00B62C79 /* ConversationListTableViewCell.h */,
+				1A71E0D620C4422D00B62C79 /* IMAConversation+ShowAPIs.m */,
+				1A71E0D720C4422D00B62C79 /* ConversationListViewController.m */,
+			);
+			path = ConversationList;
+			sourceTree = "<group>";
+		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3772,6 +3806,7 @@
 		BB6172D120B4148E00886BD4 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				1A71E0CC20C4422D00B62C79 /* ConversationList */,
 				1A71DE7520C43EEC00B62C79 /* ChatUI */,
 				1A71DCC120C43D5400B62C79 /* TIMAdapter */,
 				BB6172D220B4148E00886BD4 /* SDK */,
@@ -5060,6 +5095,7 @@
 				1A28FBF4207BB5AE00041943 /* RMTAPIClient.m in Sources */,
 				BB467EC12057E22A00D18C97 /* UIImage+Resize.m in Sources */,
 				BB467E902057E14000D18C97 /* NSString+RACSequenceAdditions.m in Sources */,
+				1A71E0DB20C4422D00B62C79 /* IMAConversation+ShowAPIs.m in Sources */,
 				BB467E582057E14000D18C97 /* RACStringSequence.m in Sources */,
 				BB467D552057DEE600D18C97 /* DDASLLogCapture.m in Sources */,
 				BBD8726020AAC01100EAFD9F /* UIView+MJExtension.m in Sources */,
@@ -5415,6 +5451,7 @@
 				BB467D4D2057DEE600D18C97 /* DDASLLogger.m in Sources */,
 				BB74D2E32058B71400F8A55B /* JDStatusBarNotification.m in Sources */,
 				BB74D38B2058B98800F8A55B /* NSString+Helpers.m in Sources */,
+				1A71E0D920C4422D00B62C79 /* ConnectStatusTableViewCell.m in Sources */,
 				BB467E832057E14000D18C97 /* RACSignalProvider.d in Sources */,
 				BB74D30C2058B8F900F8A55B /* ACPProgressLayer.m in Sources */,
 				BB74D4822058BA9200F8A55B /* NSData+YYAdd.m in Sources */,
@@ -5462,6 +5499,7 @@
 				1AB6A0F920AB36B3009A04A4 /* GroupSendListCell.m in Sources */,
 				BB74D4732058BA9200F8A55B /* UIDevice+YYAdd.m in Sources */,
 				1A71DEB220C43F4200B62C79 /* ChatSoundRecorder.m in Sources */,
+				1A71E0D820C4422D00B62C79 /* SwipeDeleteTableView.m in Sources */,
 				BB467D8B2057E06300D18C97 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
 				BB74D4942058BA9200F8A55B /* YYKeychain.m in Sources */,
@@ -5490,6 +5528,7 @@
 				BB74D4792058BA9200F8A55B /* UIBarButtonItem+YYAdd.m in Sources */,
 				BB4B9A2120874F26004FF037 /* TagCustomerSelectedVC.m in Sources */,
 				BBD871E620AABBF400EAFD9F /* SVModalWebViewController.m in Sources */,
+				1A71E0DC20C4422D00B62C79 /* ConversationListViewController.m in Sources */,
 				BB467E542057E14000D18C97 /* NSFileHandle+RACSupport.m in Sources */,
 				BB74D4C42058F77300F8A55B /* MTLJSONAdapter.m in Sources */,
 				BB467EBF2057E22A00D18C97 /* UIImage+Alpha.m in Sources */,
@@ -5507,6 +5546,7 @@
 				BBD8710920A9797F00EAFD9F /* TZImageManager.m in Sources */,
 				BB74D3602058B93900F8A55B /* DGActivityIndicatorAnimation.m in Sources */,
 				BB467CD22057CE0400D18C97 /* main.m in Sources */,
+				1A71E0DA20C4422D00B62C79 /* ConversationListTableViewCell.m in Sources */,
 				1A28FC57207E492300041943 /* SDWebImageDownloader.m in Sources */,
 				BB74D4592058BA9200F8A55B /* YYWebImageOperation.m in Sources */,
 				1A71DEB520C43F4200B62C79 /* ChatInputBaseView.m in Sources */,
