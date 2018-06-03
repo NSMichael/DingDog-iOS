@@ -135,6 +135,17 @@
 		1A71DD3620C43D5400B62C79 /* IMAContactManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1220C43D5400B62C79 /* IMAContactManager+User.m */; };
 		1A71DD3720C43D5400B62C79 /* IMAPlatform+FriendShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1320C43D5400B62C79 /* IMAPlatform+FriendShip.m */; };
 		1A71DD3820C43D5400B62C79 /* IMAPlatform+AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1620C43D5400B62C79 /* IMAPlatform+AppConfig.m */; };
+		1A71DE8E20C43EEC00B62C79 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */; };
+		1A71DE8F20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE7A20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m */; };
+		1A71DE9020C43EEC00B62C79 /* MicroVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE7D20C43EEC00B62C79 /* MicroVideoView.m */; };
+		1A71DE9120C43EEC00B62C79 /* RichChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE7E20C43EEC00B62C79 /* RichChatTableViewCell.m */; };
+		1A71DE9220C43EEC00B62C79 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8020C43EEC00B62C79 /* ChatViewController.m */; };
+		1A71DE9320C43EEC00B62C79 /* MicroVideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8120C43EEC00B62C79 /* MicroVideoPlayView.m */; };
+		1A71DE9420C43EEC00B62C79 /* IMAChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8320C43EEC00B62C79 /* IMAChatViewController.m */; };
+		1A71DE9520C43EEC00B62C79 /* ChatHeadRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8420C43EEC00B62C79 /* ChatHeadRefreshView.m */; };
+		1A71DE9620C43EEC00B62C79 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8620C43EEC00B62C79 /* PhotoBrowserViewController.m */; };
+		1A71DE9720C43EEC00B62C79 /* RichChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8720C43EEC00B62C79 /* RichChatViewController.m */; };
+		1A71DE9820C43EEC00B62C79 /* CustomChatUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8D20C43EEC00B62C79 /* CustomChatUIViewController.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -894,6 +905,29 @@
 		1A71DD1520C43D5400B62C79 /* IMAContactManager+SubGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAContactManager+SubGroup.h"; sourceTree = "<group>"; };
 		1A71DD1620C43D5400B62C79 /* IMAPlatform+AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+AppConfig.m"; sourceTree = "<group>"; };
 		1A71DD1720C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+IMSDKCallBack.h"; sourceTree = "<group>"; };
+		1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
+		1A71DE7820C43EEC00B62C79 /* ChatHeadRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatHeadRefreshView.h; sourceTree = "<group>"; };
+		1A71DE7920C43EEC00B62C79 /* IMAChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAChatViewController.h; sourceTree = "<group>"; };
+		1A71DE7A20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTimeTipTableViewCell.m; sourceTree = "<group>"; };
+		1A71DE7B20C43EEC00B62C79 /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
+		1A71DE7C20C43EEC00B62C79 /* ChatHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatHeaders.h; sourceTree = "<group>"; };
+		1A71DE7D20C43EEC00B62C79 /* MicroVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroVideoView.m; sourceTree = "<group>"; };
+		1A71DE7E20C43EEC00B62C79 /* RichChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichChatTableViewCell.m; sourceTree = "<group>"; };
+		1A71DE7F20C43EEC00B62C79 /* RichChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichChatViewController.h; sourceTree = "<group>"; };
+		1A71DE8020C43EEC00B62C79 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		1A71DE8120C43EEC00B62C79 /* MicroVideoPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroVideoPlayView.m; sourceTree = "<group>"; };
+		1A71DE8220C43EEC00B62C79 /* ChatTimeTipTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTimeTipTableViewCell.h; sourceTree = "<group>"; };
+		1A71DE8320C43EEC00B62C79 /* IMAChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAChatViewController.m; sourceTree = "<group>"; };
+		1A71DE8420C43EEC00B62C79 /* ChatHeadRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatHeadRefreshView.m; sourceTree = "<group>"; };
+		1A71DE8520C43EEC00B62C79 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		1A71DE8620C43EEC00B62C79 /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
+		1A71DE8720C43EEC00B62C79 /* RichChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichChatViewController.m; sourceTree = "<group>"; };
+		1A71DE8820C43EEC00B62C79 /* RichChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichChatTableViewCell.h; sourceTree = "<group>"; };
+		1A71DE8920C43EEC00B62C79 /* MicroVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroVideoView.h; sourceTree = "<group>"; };
+		1A71DE8A20C43EEC00B62C79 /* MicroVideoPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroVideoPlayView.h; sourceTree = "<group>"; };
+		1A71DE8B20C43EEC00B62C79 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		1A71DE8C20C43EEC00B62C79 /* CustomChatUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomChatUIViewController.h; sourceTree = "<group>"; };
+		1A71DE8D20C43EEC00B62C79 /* CustomChatUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomChatUIViewController.m; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2508,6 +2542,44 @@
 			path = IMAUI;
 			sourceTree = "<group>";
 		};
+		1A71DE7520C43EEC00B62C79 /* ChatUI */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DE7620C43EEC00B62C79 /* Chat */,
+				1A71DE8C20C43EEC00B62C79 /* CustomChatUIViewController.h */,
+				1A71DE8D20C43EEC00B62C79 /* CustomChatUIViewController.m */,
+			);
+			path = ChatUI;
+			sourceTree = "<group>";
+		};
+		1A71DE7620C43EEC00B62C79 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */,
+				1A71DE7820C43EEC00B62C79 /* ChatHeadRefreshView.h */,
+				1A71DE7920C43EEC00B62C79 /* IMAChatViewController.h */,
+				1A71DE7A20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m */,
+				1A71DE7B20C43EEC00B62C79 /* PhotoBrowserViewController.h */,
+				1A71DE7C20C43EEC00B62C79 /* ChatHeaders.h */,
+				1A71DE7D20C43EEC00B62C79 /* MicroVideoView.m */,
+				1A71DE7E20C43EEC00B62C79 /* RichChatTableViewCell.m */,
+				1A71DE7F20C43EEC00B62C79 /* RichChatViewController.h */,
+				1A71DE8020C43EEC00B62C79 /* ChatViewController.m */,
+				1A71DE8120C43EEC00B62C79 /* MicroVideoPlayView.m */,
+				1A71DE8220C43EEC00B62C79 /* ChatTimeTipTableViewCell.h */,
+				1A71DE8320C43EEC00B62C79 /* IMAChatViewController.m */,
+				1A71DE8420C43EEC00B62C79 /* ChatHeadRefreshView.m */,
+				1A71DE8520C43EEC00B62C79 /* ChatTableViewCell.h */,
+				1A71DE8620C43EEC00B62C79 /* PhotoBrowserViewController.m */,
+				1A71DE8720C43EEC00B62C79 /* RichChatViewController.m */,
+				1A71DE8820C43EEC00B62C79 /* RichChatTableViewCell.h */,
+				1A71DE8920C43EEC00B62C79 /* MicroVideoView.h */,
+				1A71DE8A20C43EEC00B62C79 /* MicroVideoPlayView.h */,
+				1A71DE8B20C43EEC00B62C79 /* ChatViewController.h */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3341,6 +3413,7 @@
 		BB6172D120B4148E00886BD4 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				1A71DE7520C43EEC00B62C79 /* ChatUI */,
 				1A71DCC120C43D5400B62C79 /* TIMAdapter */,
 				BB6172D220B4148E00886BD4 /* SDK */,
 			);
@@ -4645,6 +4718,7 @@
 				BB467E652057E14000D18C97 /* RACSignal+Operations.m in Sources */,
 				BB467EC02057E22A00D18C97 /* UIImage+RoundedCorner.m in Sources */,
 				BB144B7C20A19CFC00354EB9 /* WhoCanSeeViewController.m in Sources */,
+				1A71DE9720C43EEC00B62C79 /* RichChatViewController.m in Sources */,
 				BB467D902057E06300D18C97 /* UIWebView+AFNetworking.m in Sources */,
 				BB74D3742058B93900F8A55B /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				BB74D2E92058B72100F8A55B /* MBProgressHUD.m in Sources */,
@@ -4683,6 +4757,7 @@
 				1A28FCBD2084ECBF00041943 /* QNRefresher.m in Sources */,
 				BB74D4652058BA9200F8A55B /* YYTextDebugOption.m in Sources */,
 				BB467E9D2057E14000D18C97 /* UIButton+RACCommandSupport.m in Sources */,
+				1A71DE9620C43EEC00B62C79 /* PhotoBrowserViewController.m in Sources */,
 				1AB6A04F20A6F1C0009A04A4 /* UIPlaceHolderTextView.m in Sources */,
 				BBD8716E20AA781700EAFD9F /* PYPhotoView.m in Sources */,
 				BB467D1E2057D38A00D18C97 /* Tab3_RootViewController.m in Sources */,
@@ -4706,6 +4781,7 @@
 				1A28FCAB2084ECBF00041943 /* QNHex.m in Sources */,
 				1A71DD3120C43D5400B62C79 /* IMAContactManager+SubGroup.m in Sources */,
 				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
+				1A71DE9020C43EEC00B62C79 /* MicroVideoView.m in Sources */,
 				BBD8721920AABEAC00EAFD9F /* LYWebViewControllerActivity.m in Sources */,
 				1A28FD65209365C000041943 /* KafkaRingIndicatorFooter.m in Sources */,
 				BB74D4512058BA9200F8A55B /* YYImageCoder.m in Sources */,
@@ -4736,6 +4812,7 @@
 				BB74D35D2058B93900F8A55B /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */,
 				BB4B9A0520872F5A004FF037 /* QNUploadOption.m in Sources */,
+				1A71DE9220C43EEC00B62C79 /* ChatViewController.m in Sources */,
 				BB467D592057DFB600D18C97 /* SplashView.m in Sources */,
 				BB74D36B2058B93900F8A55B /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				BB74D44D2058BA9200F8A55B /* YYImageCache.m in Sources */,
@@ -4842,6 +4919,7 @@
 				BBD8710520A9797F00EAFD9F /* UIView+Layout.m in Sources */,
 				BB467EBD2057E22A00D18C97 /* UIImage-Extensions.m in Sources */,
 				BB467D882057E06300D18C97 /* AFSecurityPolicy.m in Sources */,
+				1A71DE9820C43EEC00B62C79 /* CustomChatUIViewController.m in Sources */,
 				BB74D4722058BA9200F8A55B /* UIColor+YYAdd.m in Sources */,
 				BB74D4D02058F77300F8A55B /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				BB467D862057E06300D18C97 /* AFHTTPRequestOperation.m in Sources */,
@@ -4896,6 +4974,7 @@
 				BBD8726520AAC01100EAFD9F /* MJRefreshAutoGifFooter.m in Sources */,
 				BB467EAD2057E14000D18C97 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				1A28FD6A209365C000041943 /* KafkaArrowHeader.m in Sources */,
+				1A71DE8F20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m in Sources */,
 				1A71DD2520C43D5400B62C79 /* IMAGroup.m in Sources */,
 				BBD8716D20AA781700EAFD9F /* PYPhotoCell.m in Sources */,
 				BB467E782057E14000D18C97 /* UIControl+RACSignalSupportPrivate.m in Sources */,
@@ -4968,12 +5047,14 @@
 				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
 				BB74D4942058BA9200F8A55B /* YYKeychain.m in Sources */,
 				BB467E632057E14000D18C97 /* UITextView+RACSignalSupport.m in Sources */,
+				1A71DE8E20C43EEC00B62C79 /* ChatTableViewCell.m in Sources */,
 				BB74D4DC2058F9C300F8A55B /* UIScrollView+Empty.m in Sources */,
 				BB74D45D2058BA9200F8A55B /* YYTextMagnifier.m in Sources */,
 				BB467E6D2057E14000D18C97 /* RACEmptySequence.m in Sources */,
 				BB467E7E2057E14000D18C97 /* NSObject+RACPropertySubscribing.m in Sources */,
 				BB74D35A2058B93900F8A55B /* DGActivityIndicatorView.m in Sources */,
 				BB4B9A1020872F5A004FF037 /* QNUserAgent.m in Sources */,
+				1A71DE9320C43EEC00B62C79 /* MicroVideoPlayView.m in Sources */,
 				1A28FC2B207D155000041943 /* GetCaptchaCmd.m in Sources */,
 				BB74D37B2058B93900F8A55B /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				BB74D36C2058B93900F8A55B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
@@ -5028,6 +5109,7 @@
 				BB74D35C2058B93900F8A55B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				BB467D8C2057E06300D18C97 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BB74D4CB2058F77300F8A55B /* NSDictionary+MTLJSONKeyPath.m in Sources */,
+				1A71DE9120C43EEC00B62C79 /* RichChatTableViewCell.m in Sources */,
 				BBD8710820A9797F00EAFD9F /* TZProgressView.m in Sources */,
 				1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */,
 				BB74D4522058BA9200F8A55B /* YYFrameImage.m in Sources */,
@@ -5055,6 +5137,7 @@
 				1A28FD6E209365C000041943 /* KafkaRefreshDefaults.m in Sources */,
 				1A28FC53207E492300041943 /* MKAnnotationView+WebCache.m in Sources */,
 				1AB6A05C20A6FA55009A04A4 /* FCFileManager.m in Sources */,
+				1A71DE9420C43EEC00B62C79 /* IMAChatViewController.m in Sources */,
 				BB74D4642058BA9200F8A55B /* YYTextKeyboardManager.m in Sources */,
 				BB74D4982058BA9200F8A55B /* YYThreadSafeArray.m in Sources */,
 				BB467E712057E14000D18C97 /* RACCompoundDisposableProvider.d in Sources */,
@@ -5097,6 +5180,7 @@
 				BB74D4CA2058F77300F8A55B /* NSObject+MTLComparisonAdditions.m in Sources */,
 				BB467D242057D39E00D18C97 /* Tab5_RootViewController.m in Sources */,
 				BB74D45F2058BA9200F8A55B /* YYTextEffectWindow.m in Sources */,
+				1A71DE9520C43EEC00B62C79 /* ChatHeadRefreshView.m in Sources */,
 				BB74D3692058B93900F8A55B /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				1A28FD5F209365C000041943 /* UIScrollView+KafkaRefreshControl.m in Sources */,
 				1A28FD5D209365C000041943 /* KafkaRefreshControl.m in Sources */,
