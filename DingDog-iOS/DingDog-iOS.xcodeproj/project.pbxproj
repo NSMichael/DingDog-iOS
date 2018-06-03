@@ -154,6 +154,51 @@
 		1A71DEB320C43F4200B62C79 /* ChatEmojView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEA820C43F4100B62C79 /* ChatEmojView.m */; };
 		1A71DEB420C43F4200B62C79 /* ChatSystemFacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEAB20C43F4100B62C79 /* ChatSystemFacePageView.m */; };
 		1A71DEB520C43F4200B62C79 /* ChatInputBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEAC20C43F4100B62C79 /* ChatInputBaseView.m */; };
+		1A71DEF220C43F8600B62C79 /* TIMElemBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEBA20C43F8500B62C79 /* TIMElemBaseTableViewCell.m */; };
+		1A71DEF320C43F8600B62C79 /* MsgSendingTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEBD20C43F8500B62C79 /* MsgSendingTip.m */; };
+		1A71DEF420C43F8600B62C79 /* IMAMsg+UITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEBE20C43F8500B62C79 /* IMAMsg+UITableViewCell.m */; };
+		1A71DEF520C43F8600B62C79 /* ChatBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEBF20C43F8500B62C79 /* ChatBaseTableViewCell.m */; };
+		1A71DEF620C43F8600B62C79 /* ChatSystemFaceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEC320C43F8500B62C79 /* ChatSystemFaceConfig.plist */; };
+		1A71DEF720C43F8600B62C79 /* ChatSystemFaceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEC420C43F8500B62C79 /* ChatSystemFaceItem.m */; };
+		1A71DEF820C43F8600B62C79 /* 21.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEC620C43F8500B62C79 /* 21.gif */; };
+		1A71DEF920C43F8600B62C79 /* 34.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEC720C43F8500B62C79 /* 34.gif */; };
+		1A71DEFA20C43F8600B62C79 /* 20.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEC820C43F8500B62C79 /* 20.gif */; };
+		1A71DEFB20C43F8600B62C79 /* 22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEC920C43F8500B62C79 /* 22.gif */; };
+		1A71DEFC20C43F8600B62C79 /* 23.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECA20C43F8500B62C79 /* 23.gif */; };
+		1A71DEFD20C43F8600B62C79 /* 33.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECB20C43F8500B62C79 /* 33.gif */; };
+		1A71DEFE20C43F8600B62C79 /* 27.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECC20C43F8500B62C79 /* 27.gif */; };
+		1A71DEFF20C43F8600B62C79 /* 26.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECD20C43F8500B62C79 /* 26.gif */; };
+		1A71DF0020C43F8600B62C79 /* 32.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECE20C43F8500B62C79 /* 32.gif */; };
+		1A71DF0120C43F8600B62C79 /* 18.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DECF20C43F8500B62C79 /* 18.gif */; };
+		1A71DF0220C43F8600B62C79 /* 24.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED020C43F8500B62C79 /* 24.gif */; };
+		1A71DF0320C43F8600B62C79 /* 30.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED120C43F8500B62C79 /* 30.gif */; };
+		1A71DF0420C43F8600B62C79 /* 31.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED220C43F8500B62C79 /* 31.gif */; };
+		1A71DF0520C43F8600B62C79 /* 25.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED320C43F8500B62C79 /* 25.gif */; };
+		1A71DF0620C43F8600B62C79 /* 19.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED420C43F8500B62C79 /* 19.gif */; };
+		1A71DF0720C43F8600B62C79 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED520C43F8500B62C79 /* 4.gif */; };
+		1A71DF0820C43F8600B62C79 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED620C43F8500B62C79 /* 5.gif */; };
+		1A71DF0920C43F8600B62C79 /* 7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED720C43F8500B62C79 /* 7.gif */; };
+		1A71DF0A20C43F8600B62C79 /* 6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED820C43F8500B62C79 /* 6.gif */; };
+		1A71DF0B20C43F8600B62C79 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DED920C43F8500B62C79 /* 2.gif */; };
+		1A71DF0C20C43F8600B62C79 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDA20C43F8500B62C79 /* 3.gif */; };
+		1A71DF0D20C43F8600B62C79 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDB20C43F8500B62C79 /* 1.gif */; };
+		1A71DF0E20C43F8600B62C79 /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDC20C43F8500B62C79 /* 0.gif */; };
+		1A71DF0F20C43F8600B62C79 /* 8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDD20C43F8500B62C79 /* 8.gif */; };
+		1A71DF1020C43F8600B62C79 /* 9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDE20C43F8500B62C79 /* 9.gif */; };
+		1A71DF1120C43F8600B62C79 /* 14.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEDF20C43F8500B62C79 /* 14.gif */; };
+		1A71DF1220C43F8600B62C79 /* 28.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE020C43F8500B62C79 /* 28.gif */; };
+		1A71DF1320C43F8600B62C79 /* 29.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE120C43F8500B62C79 /* 29.gif */; };
+		1A71DF1420C43F8600B62C79 /* 15.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE220C43F8500B62C79 /* 15.gif */; };
+		1A71DF1520C43F8600B62C79 /* 17.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE320C43F8500B62C79 /* 17.gif */; };
+		1A71DF1620C43F8600B62C79 /* 16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE420C43F8500B62C79 /* 16.gif */; };
+		1A71DF1720C43F8600B62C79 /* 12.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE520C43F8500B62C79 /* 12.gif */; };
+		1A71DF1820C43F8600B62C79 /* 13.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE620C43F8500B62C79 /* 13.gif */; };
+		1A71DF1920C43F8600B62C79 /* 11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE720C43F8500B62C79 /* 11.gif */; };
+		1A71DF1A20C43F8600B62C79 /* 10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEE820C43F8500B62C79 /* 10.gif */; };
+		1A71DF1B20C43F8600B62C79 /* TIMElem+ShowAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEEB20C43F8500B62C79 /* TIMElem+ShowAPIs.m */; };
+		1A71DF1C20C43F8600B62C79 /* ChatTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEEC20C43F8500B62C79 /* ChatTextView.m */; };
+		1A71DF1D20C43F8600B62C79 /* ChatInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEED20C43F8500B62C79 /* ChatInputTextView.m */; };
+		1A71DF1E20C43F8600B62C79 /* TIMElem+ChatAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEEF20C43F8500B62C79 /* TIMElem+ChatAttachment.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -953,6 +998,62 @@
 		1A71DEAB20C43F4100B62C79 /* ChatSystemFacePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSystemFacePageView.m; sourceTree = "<group>"; };
 		1A71DEAC20C43F4100B62C79 /* ChatInputBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputBaseView.m; sourceTree = "<group>"; };
 		1A71DEAD20C43F4100B62C79 /* ChatInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputToolBar.h; sourceTree = "<group>"; };
+		1A71DEB720C43F8500B62C79 /* ChatInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputTextView.h; sourceTree = "<group>"; };
+		1A71DEB820C43F8500B62C79 /* TIMElem+ShowAPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMElem+ShowAPIs.h"; sourceTree = "<group>"; };
+		1A71DEB920C43F8500B62C79 /* ChatTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextView.h; sourceTree = "<group>"; };
+		1A71DEBA20C43F8500B62C79 /* TIMElemBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIMElemBaseTableViewCell.m; sourceTree = "<group>"; };
+		1A71DEBB20C43F8500B62C79 /* ChatMsgShowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMsgShowHeader.h; sourceTree = "<group>"; };
+		1A71DEBC20C43F8500B62C79 /* TIMElem+ChatAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMElem+ChatAttachment.h"; sourceTree = "<group>"; };
+		1A71DEBD20C43F8500B62C79 /* MsgSendingTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSendingTip.m; sourceTree = "<group>"; };
+		1A71DEBE20C43F8500B62C79 /* IMAMsg+UITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAMsg+UITableViewCell.m"; sourceTree = "<group>"; };
+		1A71DEBF20C43F8500B62C79 /* ChatBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBaseTableViewCell.m; sourceTree = "<group>"; };
+		1A71DEC120C43F8500B62C79 /* ChatSystemFaceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSystemFaceItem.h; sourceTree = "<group>"; };
+		1A71DEC320C43F8500B62C79 /* ChatSystemFaceConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChatSystemFaceConfig.plist; sourceTree = "<group>"; };
+		1A71DEC420C43F8500B62C79 /* ChatSystemFaceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSystemFaceItem.m; sourceTree = "<group>"; };
+		1A71DEC620C43F8500B62C79 /* 21.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 21.gif; sourceTree = "<group>"; };
+		1A71DEC720C43F8500B62C79 /* 34.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 34.gif; sourceTree = "<group>"; };
+		1A71DEC820C43F8500B62C79 /* 20.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 20.gif; sourceTree = "<group>"; };
+		1A71DEC920C43F8500B62C79 /* 22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 22.gif; sourceTree = "<group>"; };
+		1A71DECA20C43F8500B62C79 /* 23.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 23.gif; sourceTree = "<group>"; };
+		1A71DECB20C43F8500B62C79 /* 33.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 33.gif; sourceTree = "<group>"; };
+		1A71DECC20C43F8500B62C79 /* 27.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 27.gif; sourceTree = "<group>"; };
+		1A71DECD20C43F8500B62C79 /* 26.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 26.gif; sourceTree = "<group>"; };
+		1A71DECE20C43F8500B62C79 /* 32.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 32.gif; sourceTree = "<group>"; };
+		1A71DECF20C43F8500B62C79 /* 18.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 18.gif; sourceTree = "<group>"; };
+		1A71DED020C43F8500B62C79 /* 24.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 24.gif; sourceTree = "<group>"; };
+		1A71DED120C43F8500B62C79 /* 30.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 30.gif; sourceTree = "<group>"; };
+		1A71DED220C43F8500B62C79 /* 31.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 31.gif; sourceTree = "<group>"; };
+		1A71DED320C43F8500B62C79 /* 25.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 25.gif; sourceTree = "<group>"; };
+		1A71DED420C43F8500B62C79 /* 19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 19.gif; sourceTree = "<group>"; };
+		1A71DED520C43F8500B62C79 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		1A71DED620C43F8500B62C79 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		1A71DED720C43F8500B62C79 /* 7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 7.gif; sourceTree = "<group>"; };
+		1A71DED820C43F8500B62C79 /* 6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 6.gif; sourceTree = "<group>"; };
+		1A71DED920C43F8500B62C79 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		1A71DEDA20C43F8500B62C79 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		1A71DEDB20C43F8500B62C79 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		1A71DEDC20C43F8500B62C79 /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 0.gif; sourceTree = "<group>"; };
+		1A71DEDD20C43F8500B62C79 /* 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 8.gif; sourceTree = "<group>"; };
+		1A71DEDE20C43F8500B62C79 /* 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 9.gif; sourceTree = "<group>"; };
+		1A71DEDF20C43F8500B62C79 /* 14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 14.gif; sourceTree = "<group>"; };
+		1A71DEE020C43F8500B62C79 /* 28.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 28.gif; sourceTree = "<group>"; };
+		1A71DEE120C43F8500B62C79 /* 29.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 29.gif; sourceTree = "<group>"; };
+		1A71DEE220C43F8500B62C79 /* 15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 15.gif; sourceTree = "<group>"; };
+		1A71DEE320C43F8500B62C79 /* 17.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 17.gif; sourceTree = "<group>"; };
+		1A71DEE420C43F8500B62C79 /* 16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 16.gif; sourceTree = "<group>"; };
+		1A71DEE520C43F8500B62C79 /* 12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 12.gif; sourceTree = "<group>"; };
+		1A71DEE620C43F8500B62C79 /* 13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 13.gif; sourceTree = "<group>"; };
+		1A71DEE720C43F8500B62C79 /* 11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 11.gif; sourceTree = "<group>"; };
+		1A71DEE820C43F8500B62C79 /* 10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 10.gif; sourceTree = "<group>"; };
+		1A71DEE920C43F8500B62C79 /* TIMElemBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMElemBaseTableViewCell.h; sourceTree = "<group>"; };
+		1A71DEEA20C43F8500B62C79 /* TIMElemAbleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMElemAbleCell.h; sourceTree = "<group>"; };
+		1A71DEEB20C43F8500B62C79 /* TIMElem+ShowAPIs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMElem+ShowAPIs.m"; sourceTree = "<group>"; };
+		1A71DEEC20C43F8500B62C79 /* ChatTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextView.m; sourceTree = "<group>"; };
+		1A71DEED20C43F8500B62C79 /* ChatInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputTextView.m; sourceTree = "<group>"; };
+		1A71DEEE20C43F8500B62C79 /* MsgSendingTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSendingTip.h; sourceTree = "<group>"; };
+		1A71DEEF20C43F8500B62C79 /* TIMElem+ChatAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMElem+ChatAttachment.m"; sourceTree = "<group>"; };
+		1A71DEF020C43F8500B62C79 /* ChatBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBaseTableViewCell.h; sourceTree = "<group>"; };
+		1A71DEF120C43F8500B62C79 /* IMAMsg+UITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAMsg+UITableViewCell.h"; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2580,6 +2681,7 @@
 		1A71DE7620C43EEC00B62C79 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1A71DEB620C43F8500B62C79 /* ChatMsgShow */,
 				1A71DE9920C43F4100B62C79 /* ChatInputPanel */,
 				1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */,
 				1A71DE7820C43EEC00B62C79 /* ChatHeadRefreshView.h */,
@@ -2650,6 +2752,93 @@
 		1A71DEA620C43F4100B62C79 /* GIF */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
+		1A71DEB620C43F8500B62C79 /* ChatMsgShow */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DEB720C43F8500B62C79 /* ChatInputTextView.h */,
+				1A71DEB820C43F8500B62C79 /* TIMElem+ShowAPIs.h */,
+				1A71DEB920C43F8500B62C79 /* ChatTextView.h */,
+				1A71DEBA20C43F8500B62C79 /* TIMElemBaseTableViewCell.m */,
+				1A71DEBB20C43F8500B62C79 /* ChatMsgShowHeader.h */,
+				1A71DEBC20C43F8500B62C79 /* TIMElem+ChatAttachment.h */,
+				1A71DEBD20C43F8500B62C79 /* MsgSendingTip.m */,
+				1A71DEBE20C43F8500B62C79 /* IMAMsg+UITableViewCell.m */,
+				1A71DEBF20C43F8500B62C79 /* ChatBaseTableViewCell.m */,
+				1A71DEC020C43F8500B62C79 /* ChatFace */,
+				1A71DEE920C43F8500B62C79 /* TIMElemBaseTableViewCell.h */,
+				1A71DEEA20C43F8500B62C79 /* TIMElemAbleCell.h */,
+				1A71DEEB20C43F8500B62C79 /* TIMElem+ShowAPIs.m */,
+				1A71DEEC20C43F8500B62C79 /* ChatTextView.m */,
+				1A71DEED20C43F8500B62C79 /* ChatInputTextView.m */,
+				1A71DEEE20C43F8500B62C79 /* MsgSendingTip.h */,
+				1A71DEEF20C43F8500B62C79 /* TIMElem+ChatAttachment.m */,
+				1A71DEF020C43F8500B62C79 /* ChatBaseTableViewCell.h */,
+				1A71DEF120C43F8500B62C79 /* IMAMsg+UITableViewCell.h */,
+			);
+			path = ChatMsgShow;
+			sourceTree = "<group>";
+		};
+		1A71DEC020C43F8500B62C79 /* ChatFace */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DEC120C43F8500B62C79 /* ChatSystemFaceItem.h */,
+				1A71DEC220C43F8500B62C79 /* PNG */,
+				1A71DEC320C43F8500B62C79 /* ChatSystemFaceConfig.plist */,
+				1A71DEC420C43F8500B62C79 /* ChatSystemFaceItem.m */,
+				1A71DEC520C43F8500B62C79 /* GIF */,
+			);
+			path = ChatFace;
+			sourceTree = "<group>";
+		};
+		1A71DEC220C43F8500B62C79 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		1A71DEC520C43F8500B62C79 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DEC620C43F8500B62C79 /* 21.gif */,
+				1A71DEC720C43F8500B62C79 /* 34.gif */,
+				1A71DEC820C43F8500B62C79 /* 20.gif */,
+				1A71DEC920C43F8500B62C79 /* 22.gif */,
+				1A71DECA20C43F8500B62C79 /* 23.gif */,
+				1A71DECB20C43F8500B62C79 /* 33.gif */,
+				1A71DECC20C43F8500B62C79 /* 27.gif */,
+				1A71DECD20C43F8500B62C79 /* 26.gif */,
+				1A71DECE20C43F8500B62C79 /* 32.gif */,
+				1A71DECF20C43F8500B62C79 /* 18.gif */,
+				1A71DED020C43F8500B62C79 /* 24.gif */,
+				1A71DED120C43F8500B62C79 /* 30.gif */,
+				1A71DED220C43F8500B62C79 /* 31.gif */,
+				1A71DED320C43F8500B62C79 /* 25.gif */,
+				1A71DED420C43F8500B62C79 /* 19.gif */,
+				1A71DED520C43F8500B62C79 /* 4.gif */,
+				1A71DED620C43F8500B62C79 /* 5.gif */,
+				1A71DED720C43F8500B62C79 /* 7.gif */,
+				1A71DED820C43F8500B62C79 /* 6.gif */,
+				1A71DED920C43F8500B62C79 /* 2.gif */,
+				1A71DEDA20C43F8500B62C79 /* 3.gif */,
+				1A71DEDB20C43F8500B62C79 /* 1.gif */,
+				1A71DEDC20C43F8500B62C79 /* 0.gif */,
+				1A71DEDD20C43F8500B62C79 /* 8.gif */,
+				1A71DEDE20C43F8500B62C79 /* 9.gif */,
+				1A71DEDF20C43F8500B62C79 /* 14.gif */,
+				1A71DEE020C43F8500B62C79 /* 28.gif */,
+				1A71DEE120C43F8500B62C79 /* 29.gif */,
+				1A71DEE220C43F8500B62C79 /* 15.gif */,
+				1A71DEE320C43F8500B62C79 /* 17.gif */,
+				1A71DEE420C43F8500B62C79 /* 16.gif */,
+				1A71DEE520C43F8500B62C79 /* 12.gif */,
+				1A71DEE620C43F8500B62C79 /* 13.gif */,
+				1A71DEE720C43F8500B62C79 /* 11.gif */,
+				1A71DEE820C43F8500B62C79 /* 10.gif */,
 			);
 			path = GIF;
 			sourceTree = "<group>";
@@ -4645,38 +4834,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A71DF1520C43F8600B62C79 /* 17.gif in Resources */,
+				1A71DF0720C43F8600B62C79 /* 4.gif in Resources */,
+				1A71DEFB20C43F8600B62C79 /* 22.gif in Resources */,
 				BBD8722B20AABEAC00EAFD9F /* LYWebViewController.podspec in Resources */,
+				1A71DEF820C43F8600B62C79 /* 21.gif in Resources */,
 				BBD8722220AABEAC00EAFD9F /* backItemImage_hl@2x.png in Resources */,
 				BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */,
+				1A71DF1620C43F8600B62C79 /* 16.gif in Resources */,
 				BBD8722420AABEAC00EAFD9F /* LYWebViewControllerActivityChrome@2x.png in Resources */,
 				BBD871ED20AABBF400EAFD9F /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				1A28FBDC207BAB6900041943 /* README.txt in Resources */,
+				1A71DF0A20C43F8600B62C79 /* 6.gif in Resources */,
 				1A71DEB020C43F4200B62C79 /* Assets.xcassets in Resources */,
+				1A71DF0B20C43F8600B62C79 /* 2.gif in Resources */,
+				1A71DF0820C43F8600B62C79 /* 5.gif in Resources */,
 				BBD8722520AABEAC00EAFD9F /* LYWebViewControllerNext@2x.png in Resources */,
+				1A71DEF620C43F8600B62C79 /* ChatSystemFaceConfig.plist in Resources */,
 				BB467E522057E14000D18C97 /* LICENSE.md in Resources */,
+				1A71DF1820C43F8600B62C79 /* 13.gif in Resources */,
+				1A71DF1420C43F8600B62C79 /* 15.gif in Resources */,
 				BB74D5042058FA0F00F8A55B /* Info.plist in Resources */,
 				BBD8716F20AA781700EAFD9F /* PYPhotosView.bundle in Resources */,
+				1A71DF0420C43F8600B62C79 /* 31.gif in Resources */,
 				BBD8710720A9797F00EAFD9F /* TZImagePickerController.bundle in Resources */,
+				1A71DF1920C43F8600B62C79 /* 11.gif in Resources */,
+				1A71DEFC20C43F8600B62C79 /* 23.gif in Resources */,
+				1A71DEFA20C43F8600B62C79 /* 20.gif in Resources */,
+				1A71DF1120C43F8600B62C79 /* 14.gif in Resources */,
 				BBD8722820AABEAC00EAFD9F /* LYWebViewControllerBack@2x.png in Resources */,
 				BBD871EF20AABBF400EAFD9F /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
 				1A71DD1D20C43D5400B62C79 /* Localizable.strings in Resources */,
 				BBD871F020AABBF400EAFD9F /* SVWebViewController.bundle in Resources */,
+				1A71DF0520C43F8600B62C79 /* 25.gif in Resources */,
 				BBD8722920AABEAC00EAFD9F /* LYWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				BBD871E520AABBF400EAFD9F /* SVWebViewController.strings in Resources */,
 				BB467E532057E14000D18C97 /* README.md in Resources */,
 				BB74D4CE2058F77300F8A55B /* Info.plist in Resources */,
+				1A71DEFD20C43F8600B62C79 /* 33.gif in Resources */,
 				BBD871EE20AABBF400EAFD9F /* SVWebViewControllerActivityChrome@2x.png in Resources */,
+				1A71DEFF20C43F8600B62C79 /* 26.gif in Resources */,
+				1A71DF0620C43F8600B62C79 /* 19.gif in Resources */,
+				1A71DF0E20C43F8600B62C79 /* 0.gif in Resources */,
+				1A71DF1720C43F8600B62C79 /* 12.gif in Resources */,
+				1A71DF0920C43F8600B62C79 /* 7.gif in Resources */,
+				1A71DF1320C43F8600B62C79 /* 29.gif in Resources */,
+				1A71DF1A20C43F8600B62C79 /* 10.gif in Resources */,
+				1A71DEF920C43F8600B62C79 /* 34.gif in Resources */,
 				BBD8722620AABEAC00EAFD9F /* LYWebViewControllerActivitySafari@2x.png in Resources */,
 				BBD8722120AABEAC00EAFD9F /* LYWebViewController.strings in Resources */,
+				1A71DF0F20C43F8600B62C79 /* 8.gif in Resources */,
 				BBD8722320AABEAC00EAFD9F /* backItemImage@2x.png in Resources */,
+				1A71DF1020C43F8600B62C79 /* 9.gif in Resources */,
+				1A71DF0220C43F8600B62C79 /* 24.gif in Resources */,
 				BB467CCC2057CE0400D18C97 /* Assets.xcassets in Resources */,
 				1A28FD6F209365C000041943 /* Image.bundle in Resources */,
 				BBD871E820AABBF400EAFD9F /* SVWebViewControllerActivitySafari-iPad.png in Resources */,
+				1A71DF0120C43F8600B62C79 /* 18.gif in Resources */,
 				BBD8722A20AABEAC00EAFD9F /* html.bundle in Resources */,
 				BBD8722720AABEAC00EAFD9F /* LYWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				1A28FBC1206FD7DA00041943 /* .gitkeep in Resources */,
+				1A71DEFE20C43F8600B62C79 /* 27.gif in Resources */,
+				1A71DF0020C43F8600B62C79 /* 32.gif in Resources */,
 				1A28FBC4206FD7DA00041943 /* .gitkeep in Resources */,
+				1A71DF0D20C43F8600B62C79 /* 1.gif in Resources */,
+				1A71DF1220C43F8600B62C79 /* 28.gif in Resources */,
 				BBD871EB20AABBF400EAFD9F /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
+				1A71DF0C20C43F8600B62C79 /* 3.gif in Resources */,
+				1A71DF0320C43F8600B62C79 /* 30.gif in Resources */,
 				BBD8725D20AAC01100EAFD9F /* MJRefresh.bundle in Resources */,
 				BBD871EA20AABBF400EAFD9F /* SVWebViewControllerActivitySafari@2x.png in Resources */,
 			);
@@ -4705,6 +4930,7 @@
 			files = (
 				BB74D4902058BA9200F8A55B /* YYThreadSafeDictionary.m in Sources */,
 				BB467E692057E14000D18C97 /* RACChannel.m in Sources */,
+				1A71DF1E20C43F8600B62C79 /* TIMElem+ChatAttachment.m in Sources */,
 				BB74D4552058BA9200F8A55B /* UIImageView+YYWebImage.m in Sources */,
 				BB74D48B2058BA9200F8A55B /* NSObject+YYAddForKVO.m in Sources */,
 				BB467E722057E14000D18C97 /* NSURLConnection+RACSupport.m in Sources */,
@@ -4727,6 +4953,7 @@
 				BB467E8D2057E14000D18C97 /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				1AB6A0F220AB2F42009A04A4 /* MsgGroupModel.m in Sources */,
 				BBD8715D20AA781700EAFD9F /* FLAnimatedImageView+WebCache.m in Sources */,
+				1A71DEF520C43F8600B62C79 /* ChatBaseTableViewCell.m in Sources */,
 				BB74D3632058B93900F8A55B /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				1AB6A30220B71A94009A04A4 /* RCloudTokenModel.m in Sources */,
 				BB467E6C2057E14000D18C97 /* RACUnarySequence.m in Sources */,
@@ -4739,6 +4966,7 @@
 				BB467D552057DEE600D18C97 /* DDASLLogCapture.m in Sources */,
 				BBD8726020AAC01100EAFD9F /* UIView+MJExtension.m in Sources */,
 				BB74D3722058B93900F8A55B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
+				1A71DF1C20C43F8600B62C79 /* ChatTextView.m in Sources */,
 				1AB6A05220A6F7DC009A04A4 /* TimeLineImageCell.m in Sources */,
 				1A71DD3620C43D5400B62C79 /* IMAContactManager+User.m in Sources */,
 				BB74D4682058BA9200F8A55B /* YYTextUtilities.m in Sources */,
@@ -4781,6 +5009,7 @@
 				1A71DD2120C43D5400B62C79 /* IMAGroup+Admin.m in Sources */,
 				BBD8716920AA781700EAFD9F /* PYPhotosPreviewController.m in Sources */,
 				BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */,
+				1A71DEF320C43F8600B62C79 /* MsgSendingTip.m in Sources */,
 				BB74D4502058BA9200F8A55B /* YYImage.m in Sources */,
 				BB4B9A0820872F5A004FF037 /* QNUrlSafeBase64.m in Sources */,
 				BB467EA02057E14000D18C97 /* NSObject+RACLifting.m in Sources */,
@@ -4955,6 +5184,7 @@
 				BB74D4CD2058F77300F8A55B /* MTLTransformerErrorHandling.m in Sources */,
 				BB467E872057E14000D18C97 /* RACEvent.m in Sources */,
 				BB74D2E42058B71400F8A55B /* JDStatusBarView.m in Sources */,
+				1A71DEF420C43F8600B62C79 /* IMAMsg+UITableViewCell.m in Sources */,
 				BB467EA32057E14000D18C97 /* NSObject+RACSelectorSignal.m in Sources */,
 				BB467E672057E14000D18C97 /* RACTupleSequence.m in Sources */,
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
@@ -5018,6 +5248,7 @@
 				BB74D38C2058B98800F8A55B /* NSString+Check.m in Sources */,
 				BBD8726320AAC01100EAFD9F /* MJRefreshBackNormalFooter.m in Sources */,
 				BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */,
+				1A71DF1D20C43F8600B62C79 /* ChatInputTextView.m in Sources */,
 				BB467E7F2057E14000D18C97 /* RACBehaviorSubject.m in Sources */,
 				BB467E8C2057E14000D18C97 /* RACQueueScheduler.m in Sources */,
 				BB467E5A2057E14000D18C97 /* RACScheduler.m in Sources */,
@@ -5110,6 +5341,7 @@
 				1A28FCB62084ECBF00041943 /* QNLruCache.m in Sources */,
 				BBD8716020AA781700EAFD9F /* FLAnimatedImage.m in Sources */,
 				BB74D3092058B8F900F8A55B /* ACPIndeterminateLayer.m in Sources */,
+				1A71DF1B20C43F8600B62C79 /* TIMElem+ShowAPIs.m in Sources */,
 				BB74D46B2058BA9200F8A55B /* NSAttributedString+YYText.m in Sources */,
 				1A71DD1B20C43D5400B62C79 /* IMSDK+ShowAble.m in Sources */,
 				BB74D4712058BA9200F8A55B /* UIBezierPath+YYAdd.m in Sources */,
@@ -5139,6 +5371,7 @@
 				BB74D36C2058B93900F8A55B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				BB74D4582058BA9200F8A55B /* YYAnimatedImageView.m in Sources */,
 				BB74D46D2058BA9200F8A55B /* YYTextAttribute.m in Sources */,
+				1A71DEF220C43F8600B62C79 /* TIMElemBaseTableViewCell.m in Sources */,
 				BB467D8A2057E06300D18C97 /* UIProgressView+AFNetworking.m in Sources */,
 				BB4B9A0220872F5A004FF037 /* QNResumeUpload.m in Sources */,
 				1A71DEAE20C43F4200B62C79 /* ChatFunctionPanel.m in Sources */,
@@ -5179,6 +5412,7 @@
 				BB74D4992058BA9200F8A55B /* YYReachability.m in Sources */,
 				BB74D4782058BA9200F8A55B /* UIView+YYAdd.m in Sources */,
 				BBD8710120A9797F00EAFD9F /* TZAssetCell.m in Sources */,
+				1A71DEF720C43F8600B62C79 /* ChatSystemFaceItem.m in Sources */,
 				BB74D36A2058B93900F8A55B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				BB467E562057E14000D18C97 /* UIStepper+RACSignalSupport.m in Sources */,
 				BBD8710620A9797F00EAFD9F /* TZPhotoPreviewController.m in Sources */,
