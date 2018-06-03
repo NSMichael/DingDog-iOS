@@ -103,6 +103,38 @@
 		1A28FD762093702700041943 /* ChangeUserTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FD752093702700041943 /* ChangeUserTagCell.m */; };
 		1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C77205FF16800786EC0 /* MessageModel.m */; };
 		1A2A7C7B205FFEBB00786EC0 /* UITableViewCell+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */; };
+		1A71DD1920C43D5400B62C79 /* ChatAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCC520C43D5400B62C79 /* ChatAttachment.m */; };
+		1A71DD1A20C43D5400B62C79 /* TIMElem+ShowDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCC720C43D5400B62C79 /* TIMElem+ShowDescription.m */; };
+		1A71DD1B20C43D5400B62C79 /* IMSDK+ShowAble.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCCE20C43D5400B62C79 /* IMSDK+ShowAble.m */; };
+		1A71DD1C20C43D5400B62C79 /* IMAConnectConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCCF20C43D5400B62C79 /* IMAConnectConversation.m */; };
+		1A71DD1D20C43D5400B62C79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DCD220C43D5400B62C79 /* Localizable.strings */; };
+		1A71DD1E20C43D5400B62C79 /* IMAMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCD720C43D5400B62C79 /* IMAMsg.m */; };
+		1A71DD1F20C43D5400B62C79 /* IMAMsg+Draft.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCD920C43D5400B62C79 /* IMAMsg+Draft.m */; };
+		1A71DD2020C43D5400B62C79 /* CustomElemCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCDD20C43D5400B62C79 /* CustomElemCmd.m */; };
+		1A71DD2120C43D5400B62C79 /* IMAGroup+Admin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCE020C43D5400B62C79 /* IMAGroup+Admin.m */; };
+		1A71DD2220C43D5400B62C79 /* IMAGroup+Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCE120C43D5400B62C79 /* IMAGroup+Profile.m */; };
+		1A71DD2320C43D5400B62C79 /* IMASubGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCE620C43D5400B62C79 /* IMASubGroup.m */; };
+		1A71DD2420C43D5400B62C79 /* IMAGroup+MemberList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCE720C43D5400B62C79 /* IMAGroup+MemberList.m */; };
+		1A71DD2520C43D5400B62C79 /* IMAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCE920C43D5400B62C79 /* IMAGroup.m */; };
+		1A71DD2620C43D5400B62C79 /* IMAHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCED20C43D5400B62C79 /* IMAHost.m */; };
+		1A71DD2720C43D5400B62C79 /* IMAHost+HostAPIs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCEE20C43D5400B62C79 /* IMAHost+HostAPIs.m */; };
+		1A71DD2820C43D5400B62C79 /* IMAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCF220C43D5400B62C79 /* IMAUser.m */; };
+		1A71DD2920C43D5400B62C79 /* IMAGroupMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCF420C43D5400B62C79 /* IMAGroupMember.m */; };
+		1A71DD2A20C43D5400B62C79 /* IMAConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCF620C43D5400B62C79 /* IMAConversation.m */; };
+		1A71DD2B20C43D5400B62C79 /* IMACustomConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCFA20C43D5400B62C79 /* IMACustomConversation.m */; };
+		1A71DD2C20C43D5400B62C79 /* IMAPlatform+Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCFD20C43D5400B62C79 /* IMAPlatform+Friend.m */; };
+		1A71DD2D20C43D5400B62C79 /* IMAContactManager+Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DCFE20C43D5400B62C79 /* IMAContactManager+Group.m */; };
+		1A71DD2E20C43D5400B62C79 /* IMAPlatform+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0020C43D5400B62C79 /* IMAPlatform+Login.m */; };
+		1A71DD2F20C43D5400B62C79 /* IMALoginParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0120C43D5400B62C79 /* IMALoginParam.m */; };
+		1A71DD3020C43D5400B62C79 /* IMAPlatformConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0220C43D5400B62C79 /* IMAPlatformConfig.m */; };
+		1A71DD3120C43D5400B62C79 /* IMAContactManager+SubGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0320C43D5400B62C79 /* IMAContactManager+SubGroup.m */; };
+		1A71DD3220C43D5400B62C79 /* IMAContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0520C43D5400B62C79 /* IMAContactManager.m */; };
+		1A71DD3320C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD0920C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m */; };
+		1A71DD3420C43D5400B62C79 /* IMAPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1020C43D5400B62C79 /* IMAPlatform.m */; };
+		1A71DD3520C43D5400B62C79 /* IMAConversationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1120C43D5400B62C79 /* IMAConversationManager.m */; };
+		1A71DD3620C43D5400B62C79 /* IMAContactManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1220C43D5400B62C79 /* IMAContactManager+User.m */; };
+		1A71DD3720C43D5400B62C79 /* IMAPlatform+FriendShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1320C43D5400B62C79 /* IMAPlatform+FriendShip.m */; };
+		1A71DD3820C43D5400B62C79 /* IMAPlatform+AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DD1620C43D5400B62C79 /* IMAPlatform+AppConfig.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -785,6 +817,83 @@
 		1A2A7C79205FFEBB00786EC0 /* UITableViewCell+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Height.h"; sourceTree = "<group>"; };
 		1A2A7C7A205FFEBB00786EC0 /* UITableViewCell+Height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Height.m"; sourceTree = "<group>"; };
 		1A449A58205D230C0034FC73 /* DingDog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DingDog-Prefix.pch"; sourceTree = "<group>"; };
+		1A71DCC320C43D5400B62C79 /* IMAUserShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAUserShowAble.h; sourceTree = "<group>"; };
+		1A71DCC420C43D5400B62C79 /* IMAContactDrawerShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAContactDrawerShowAble.h; sourceTree = "<group>"; };
+		1A71DCC520C43D5400B62C79 /* ChatAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatAttachment.m; sourceTree = "<group>"; };
+		1A71DCC620C43D5400B62C79 /* IMAShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAShow.h; sourceTree = "<group>"; };
+		1A71DCC720C43D5400B62C79 /* TIMElem+ShowDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMElem+ShowDescription.m"; sourceTree = "<group>"; };
+		1A71DCC820C43D5400B62C79 /* IMSDK+ShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMSDK+ShowAble.h"; sourceTree = "<group>"; };
+		1A71DCC920C43D5400B62C79 /* IMAContactItemShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAContactItemShowAble.h; sourceTree = "<group>"; };
+		1A71DCCA20C43D5400B62C79 /* IMAConnectConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAConnectConversation.h; sourceTree = "<group>"; };
+		1A71DCCB20C43D5400B62C79 /* IMAConversationShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAConversationShowAble.h; sourceTree = "<group>"; };
+		1A71DCCC20C43D5400B62C79 /* ChatAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatAttachment.h; sourceTree = "<group>"; };
+		1A71DCCD20C43D5400B62C79 /* TIMElem+ShowDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMElem+ShowDescription.h"; sourceTree = "<group>"; };
+		1A71DCCE20C43D5400B62C79 /* IMSDK+ShowAble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMSDK+ShowAble.m"; sourceTree = "<group>"; };
+		1A71DCCF20C43D5400B62C79 /* IMAConnectConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAConnectConversation.m; sourceTree = "<group>"; };
+		1A71DCD020C43D5400B62C79 /* IMAShowAble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAShowAble.h; sourceTree = "<group>"; };
+		1A71DCD120C43D5400B62C79 /* TIMAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIMAdapter.h; sourceTree = "<group>"; };
+		1A71DCD320C43D5400B62C79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A71DCD720C43D5400B62C79 /* IMAMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAMsg.m; sourceTree = "<group>"; };
+		1A71DCD820C43D5400B62C79 /* CustomElemCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomElemCmd.h; sourceTree = "<group>"; };
+		1A71DCD920C43D5400B62C79 /* IMAMsg+Draft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAMsg+Draft.m"; sourceTree = "<group>"; };
+		1A71DCDA20C43D5400B62C79 /* IMAMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAMsg.h; sourceTree = "<group>"; };
+		1A71DCDB20C43D5400B62C79 /* IMAModelMSG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAModelMSG.h; sourceTree = "<group>"; };
+		1A71DCDC20C43D5400B62C79 /* IMAMsg+Draft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAMsg+Draft.h"; sourceTree = "<group>"; };
+		1A71DCDD20C43D5400B62C79 /* CustomElemCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomElemCmd.m; sourceTree = "<group>"; };
+		1A71DCDF20C43D5400B62C79 /* IMASubGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMASubGroup.h; sourceTree = "<group>"; };
+		1A71DCE020C43D5400B62C79 /* IMAGroup+Admin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAGroup+Admin.m"; sourceTree = "<group>"; };
+		1A71DCE120C43D5400B62C79 /* IMAGroup+Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAGroup+Profile.m"; sourceTree = "<group>"; };
+		1A71DCE220C43D5400B62C79 /* IMAGroup+MemberList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAGroup+MemberList.h"; sourceTree = "<group>"; };
+		1A71DCE320C43D5400B62C79 /* IMAModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAModelGroup.h; sourceTree = "<group>"; };
+		1A71DCE420C43D5400B62C79 /* IMAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAGroup.h; sourceTree = "<group>"; };
+		1A71DCE520C43D5400B62C79 /* IMAGroup+Admin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAGroup+Admin.h"; sourceTree = "<group>"; };
+		1A71DCE620C43D5400B62C79 /* IMASubGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMASubGroup.m; sourceTree = "<group>"; };
+		1A71DCE720C43D5400B62C79 /* IMAGroup+MemberList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAGroup+MemberList.m"; sourceTree = "<group>"; };
+		1A71DCE820C43D5400B62C79 /* IMAGroup+Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAGroup+Profile.h"; sourceTree = "<group>"; };
+		1A71DCE920C43D5400B62C79 /* IMAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAGroup.m; sourceTree = "<group>"; };
+		1A71DCEA20C43D5400B62C79 /* IMAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAModel.h; sourceTree = "<group>"; };
+		1A71DCEC20C43D5400B62C79 /* IMAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAUser.h; sourceTree = "<group>"; };
+		1A71DCED20C43D5400B62C79 /* IMAHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAHost.m; sourceTree = "<group>"; };
+		1A71DCEE20C43D5400B62C79 /* IMAHost+HostAPIs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAHost+HostAPIs.m"; sourceTree = "<group>"; };
+		1A71DCEF20C43D5400B62C79 /* IMAGroupMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAGroupMember.h; sourceTree = "<group>"; };
+		1A71DCF020C43D5400B62C79 /* IMAModelUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAModelUser.h; sourceTree = "<group>"; };
+		1A71DCF120C43D5400B62C79 /* IMAHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAHost.h; sourceTree = "<group>"; };
+		1A71DCF220C43D5400B62C79 /* IMAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAUser.m; sourceTree = "<group>"; };
+		1A71DCF320C43D5400B62C79 /* IMAHost+HostAPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAHost+HostAPIs.h"; sourceTree = "<group>"; };
+		1A71DCF420C43D5400B62C79 /* IMAGroupMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAGroupMember.m; sourceTree = "<group>"; };
+		1A71DCF620C43D5400B62C79 /* IMAConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAConversation.m; sourceTree = "<group>"; };
+		1A71DCF720C43D5400B62C79 /* IMACustomConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMACustomConversation.h; sourceTree = "<group>"; };
+		1A71DCF820C43D5400B62C79 /* IMAModelConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAModelConversation.h; sourceTree = "<group>"; };
+		1A71DCF920C43D5400B62C79 /* IMAConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAConversation.h; sourceTree = "<group>"; };
+		1A71DCFA20C43D5400B62C79 /* IMACustomConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMACustomConversation.m; sourceTree = "<group>"; };
+		1A71DCFB20C43D5400B62C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A71DCFD20C43D5400B62C79 /* IMAPlatform+Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+Friend.m"; sourceTree = "<group>"; };
+		1A71DCFE20C43D5400B62C79 /* IMAContactManager+Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAContactManager+Group.m"; sourceTree = "<group>"; };
+		1A71DCFF20C43D5400B62C79 /* IMAPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAPlatform.h; sourceTree = "<group>"; };
+		1A71DD0020C43D5400B62C79 /* IMAPlatform+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+Login.m"; sourceTree = "<group>"; };
+		1A71DD0120C43D5400B62C79 /* IMALoginParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMALoginParam.m; sourceTree = "<group>"; };
+		1A71DD0220C43D5400B62C79 /* IMAPlatformConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAPlatformConfig.m; sourceTree = "<group>"; };
+		1A71DD0320C43D5400B62C79 /* IMAContactManager+SubGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAContactManager+SubGroup.m"; sourceTree = "<group>"; };
+		1A71DD0420C43D5400B62C79 /* IMAPlatform+AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+AppConfig.h"; sourceTree = "<group>"; };
+		1A71DD0520C43D5400B62C79 /* IMAContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAContactManager.m; sourceTree = "<group>"; };
+		1A71DD0620C43D5400B62C79 /* IMAPlatform+FriendShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+FriendShip.h"; sourceTree = "<group>"; };
+		1A71DD0720C43D5400B62C79 /* IMAContactManager+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAContactManager+User.h"; sourceTree = "<group>"; };
+		1A71DD0820C43D5400B62C79 /* IMAConversationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAConversationManager.h; sourceTree = "<group>"; };
+		1A71DD0920C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+IMSDKCallBack.m"; sourceTree = "<group>"; };
+		1A71DD0A20C43D5400B62C79 /* IMAPlatformHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAPlatformHeaders.h; sourceTree = "<group>"; };
+		1A71DD0B20C43D5400B62C79 /* IMAContactManager+Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAContactManager+Group.h"; sourceTree = "<group>"; };
+		1A71DD0C20C43D5400B62C79 /* IMAPlatform+Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+Friend.h"; sourceTree = "<group>"; };
+		1A71DD0D20C43D5400B62C79 /* IMAPlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAPlatformConfig.h; sourceTree = "<group>"; };
+		1A71DD0E20C43D5400B62C79 /* IMALoginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMALoginParam.h; sourceTree = "<group>"; };
+		1A71DD0F20C43D5400B62C79 /* IMAPlatform+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+Login.h"; sourceTree = "<group>"; };
+		1A71DD1020C43D5400B62C79 /* IMAPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAPlatform.m; sourceTree = "<group>"; };
+		1A71DD1120C43D5400B62C79 /* IMAConversationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAConversationManager.m; sourceTree = "<group>"; };
+		1A71DD1220C43D5400B62C79 /* IMAContactManager+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAContactManager+User.m"; sourceTree = "<group>"; };
+		1A71DD1320C43D5400B62C79 /* IMAPlatform+FriendShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+FriendShip.m"; sourceTree = "<group>"; };
+		1A71DD1420C43D5400B62C79 /* IMAContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAContactManager.h; sourceTree = "<group>"; };
+		1A71DD1520C43D5400B62C79 /* IMAContactManager+SubGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAContactManager+SubGroup.h"; sourceTree = "<group>"; };
+		1A71DD1620C43D5400B62C79 /* IMAPlatform+AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMAPlatform+AppConfig.m"; sourceTree = "<group>"; };
+		1A71DD1720C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAPlatform+IMSDKCallBack.h"; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2244,6 +2353,161 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1A71DCC120C43D5400B62C79 /* TIMAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCC220C43D5400B62C79 /* TIMShow */,
+				1A71DCD120C43D5400B62C79 /* TIMAdapter.h */,
+				1A71DCD220C43D5400B62C79 /* Localizable.strings */,
+				1A71DCD420C43D5400B62C79 /* TIMModelInterface */,
+				1A71DCD520C43D5400B62C79 /* TIMModel */,
+				1A71DCFC20C43D5400B62C79 /* Playform */,
+				1A71DD1820C43D5400B62C79 /* IMAUI */,
+			);
+			path = TIMAdapter;
+			sourceTree = "<group>";
+		};
+		1A71DCC220C43D5400B62C79 /* TIMShow */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCC320C43D5400B62C79 /* IMAUserShowAble.h */,
+				1A71DCC420C43D5400B62C79 /* IMAContactDrawerShowAble.h */,
+				1A71DCC520C43D5400B62C79 /* ChatAttachment.m */,
+				1A71DCC620C43D5400B62C79 /* IMAShow.h */,
+				1A71DCC720C43D5400B62C79 /* TIMElem+ShowDescription.m */,
+				1A71DCC820C43D5400B62C79 /* IMSDK+ShowAble.h */,
+				1A71DCC920C43D5400B62C79 /* IMAContactItemShowAble.h */,
+				1A71DCCA20C43D5400B62C79 /* IMAConnectConversation.h */,
+				1A71DCCB20C43D5400B62C79 /* IMAConversationShowAble.h */,
+				1A71DCCC20C43D5400B62C79 /* ChatAttachment.h */,
+				1A71DCCD20C43D5400B62C79 /* TIMElem+ShowDescription.h */,
+				1A71DCCE20C43D5400B62C79 /* IMSDK+ShowAble.m */,
+				1A71DCCF20C43D5400B62C79 /* IMAConnectConversation.m */,
+				1A71DCD020C43D5400B62C79 /* IMAShowAble.h */,
+			);
+			path = TIMShow;
+			sourceTree = "<group>";
+		};
+		1A71DCD420C43D5400B62C79 /* TIMModelInterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TIMModelInterface;
+			sourceTree = "<group>";
+		};
+		1A71DCD520C43D5400B62C79 /* TIMModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCD620C43D5400B62C79 /* MSG */,
+				1A71DCDE20C43D5400B62C79 /* Group */,
+				1A71DCEA20C43D5400B62C79 /* IMAModel.h */,
+				1A71DCEB20C43D5400B62C79 /* User */,
+				1A71DCF520C43D5400B62C79 /* Conversation */,
+			);
+			path = TIMModel;
+			sourceTree = "<group>";
+		};
+		1A71DCD620C43D5400B62C79 /* MSG */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCD720C43D5400B62C79 /* IMAMsg.m */,
+				1A71DCD820C43D5400B62C79 /* CustomElemCmd.h */,
+				1A71DCD920C43D5400B62C79 /* IMAMsg+Draft.m */,
+				1A71DCDA20C43D5400B62C79 /* IMAMsg.h */,
+				1A71DCDB20C43D5400B62C79 /* IMAModelMSG.h */,
+				1A71DCDC20C43D5400B62C79 /* IMAMsg+Draft.h */,
+				1A71DCDD20C43D5400B62C79 /* CustomElemCmd.m */,
+			);
+			path = MSG;
+			sourceTree = "<group>";
+		};
+		1A71DCDE20C43D5400B62C79 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCDF20C43D5400B62C79 /* IMASubGroup.h */,
+				1A71DCE020C43D5400B62C79 /* IMAGroup+Admin.m */,
+				1A71DCE120C43D5400B62C79 /* IMAGroup+Profile.m */,
+				1A71DCE220C43D5400B62C79 /* IMAGroup+MemberList.h */,
+				1A71DCE320C43D5400B62C79 /* IMAModelGroup.h */,
+				1A71DCE420C43D5400B62C79 /* IMAGroup.h */,
+				1A71DCE520C43D5400B62C79 /* IMAGroup+Admin.h */,
+				1A71DCE620C43D5400B62C79 /* IMASubGroup.m */,
+				1A71DCE720C43D5400B62C79 /* IMAGroup+MemberList.m */,
+				1A71DCE820C43D5400B62C79 /* IMAGroup+Profile.h */,
+				1A71DCE920C43D5400B62C79 /* IMAGroup.m */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		1A71DCEB20C43D5400B62C79 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCEC20C43D5400B62C79 /* IMAUser.h */,
+				1A71DCED20C43D5400B62C79 /* IMAHost.m */,
+				1A71DCEE20C43D5400B62C79 /* IMAHost+HostAPIs.m */,
+				1A71DCEF20C43D5400B62C79 /* IMAGroupMember.h */,
+				1A71DCF020C43D5400B62C79 /* IMAModelUser.h */,
+				1A71DCF120C43D5400B62C79 /* IMAHost.h */,
+				1A71DCF220C43D5400B62C79 /* IMAUser.m */,
+				1A71DCF320C43D5400B62C79 /* IMAHost+HostAPIs.h */,
+				1A71DCF420C43D5400B62C79 /* IMAGroupMember.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1A71DCF520C43D5400B62C79 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCF620C43D5400B62C79 /* IMAConversation.m */,
+				1A71DCF720C43D5400B62C79 /* IMACustomConversation.h */,
+				1A71DCF820C43D5400B62C79 /* IMAModelConversation.h */,
+				1A71DCF920C43D5400B62C79 /* IMAConversation.h */,
+				1A71DCFA20C43D5400B62C79 /* IMACustomConversation.m */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		1A71DCFC20C43D5400B62C79 /* Playform */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DCFD20C43D5400B62C79 /* IMAPlatform+Friend.m */,
+				1A71DCFE20C43D5400B62C79 /* IMAContactManager+Group.m */,
+				1A71DCFF20C43D5400B62C79 /* IMAPlatform.h */,
+				1A71DD0020C43D5400B62C79 /* IMAPlatform+Login.m */,
+				1A71DD0120C43D5400B62C79 /* IMALoginParam.m */,
+				1A71DD0220C43D5400B62C79 /* IMAPlatformConfig.m */,
+				1A71DD0320C43D5400B62C79 /* IMAContactManager+SubGroup.m */,
+				1A71DD0420C43D5400B62C79 /* IMAPlatform+AppConfig.h */,
+				1A71DD0520C43D5400B62C79 /* IMAContactManager.m */,
+				1A71DD0620C43D5400B62C79 /* IMAPlatform+FriendShip.h */,
+				1A71DD0720C43D5400B62C79 /* IMAContactManager+User.h */,
+				1A71DD0820C43D5400B62C79 /* IMAConversationManager.h */,
+				1A71DD0920C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m */,
+				1A71DD0A20C43D5400B62C79 /* IMAPlatformHeaders.h */,
+				1A71DD0B20C43D5400B62C79 /* IMAContactManager+Group.h */,
+				1A71DD0C20C43D5400B62C79 /* IMAPlatform+Friend.h */,
+				1A71DD0D20C43D5400B62C79 /* IMAPlatformConfig.h */,
+				1A71DD0E20C43D5400B62C79 /* IMALoginParam.h */,
+				1A71DD0F20C43D5400B62C79 /* IMAPlatform+Login.h */,
+				1A71DD1020C43D5400B62C79 /* IMAPlatform.m */,
+				1A71DD1120C43D5400B62C79 /* IMAConversationManager.m */,
+				1A71DD1220C43D5400B62C79 /* IMAContactManager+User.m */,
+				1A71DD1320C43D5400B62C79 /* IMAPlatform+FriendShip.m */,
+				1A71DD1420C43D5400B62C79 /* IMAContactManager.h */,
+				1A71DD1520C43D5400B62C79 /* IMAContactManager+SubGroup.h */,
+				1A71DD1620C43D5400B62C79 /* IMAPlatform+AppConfig.m */,
+				1A71DD1720C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.h */,
+			);
+			path = Playform;
+			sourceTree = "<group>";
+		};
+		1A71DD1820C43D5400B62C79 /* IMAUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IMAUI;
+			sourceTree = "<group>";
+		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3077,6 +3341,7 @@
 		BB6172D120B4148E00886BD4 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				1A71DCC120C43D5400B62C79 /* TIMAdapter */,
 				BB6172D220B4148E00886BD4 /* SDK */,
 			);
 			path = IM;
@@ -4246,6 +4511,7 @@
 				BBD8710720A9797F00EAFD9F /* TZImagePickerController.bundle in Resources */,
 				BBD8722820AABEAC00EAFD9F /* LYWebViewControllerBack@2x.png in Resources */,
 				BBD871EF20AABBF400EAFD9F /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
+				1A71DD1D20C43D5400B62C79 /* Localizable.strings in Resources */,
 				BBD871F020AABBF400EAFD9F /* SVWebViewController.bundle in Resources */,
 				BBD8722920AABEAC00EAFD9F /* LYWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				BBD871E520AABBF400EAFD9F /* SVWebViewController.strings in Resources */,
@@ -4299,6 +4565,7 @@
 				BB467D092057D28900D18C97 /* BaseNavigationController.m in Sources */,
 				BB467E622057E14000D18C97 /* RACIndexSetSequence.m in Sources */,
 				BB74D4602058BA9200F8A55B /* YYTextInput.m in Sources */,
+				1A71DD3320C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m in Sources */,
 				BB467D542057DEE600D18C97 /* DDFileLogger.m in Sources */,
 				BB467D4C2057DEE600D18C97 /* DDTTYLogger.m in Sources */,
 				BB86F729208453D500DABEAC /* UploadTokenCmd.m in Sources */,
@@ -4325,6 +4592,7 @@
 				BBD8726020AAC01100EAFD9F /* UIView+MJExtension.m in Sources */,
 				BB74D3722058B93900F8A55B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				1AB6A05220A6F7DC009A04A4 /* TimeLineImageCell.m in Sources */,
+				1A71DD3620C43D5400B62C79 /* IMAContactManager+User.m in Sources */,
 				BB74D4682058BA9200F8A55B /* YYTextUtilities.m in Sources */,
 				BBD8716220AA781700EAFD9F /* UIView+PYExtension.m in Sources */,
 				1A28FCB72084ECBF00041943 /* QNNetworkInfo.m in Sources */,
@@ -4356,10 +4624,12 @@
 				BBD8710B20A9797F00EAFD9F /* TZPhotoPreviewCell.m in Sources */,
 				BB74D4762058BA9200F8A55B /* UIScrollView+YYAdd.m in Sources */,
 				BB467E9F2057E14000D18C97 /* RACSerialDisposable.m in Sources */,
+				1A71DD2820C43D5400B62C79 /* IMAUser.m in Sources */,
 				BBD8715F20AA781700EAFD9F /* DACircularProgressView.m in Sources */,
 				BB74D4832058BA9200F8A55B /* NSThread+YYAdd.m in Sources */,
 				BB74D3782058B93900F8A55B /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				BB467E7C2057E14000D18C97 /* RACBlockTrampoline.m in Sources */,
+				1A71DD2120C43D5400B62C79 /* IMAGroup+Admin.m in Sources */,
 				BBD8716920AA781700EAFD9F /* PYPhotosPreviewController.m in Sources */,
 				BB15D16A20A5984200E57F63 /* CreateMessageCmd.m in Sources */,
 				BB74D4502058BA9200F8A55B /* YYImage.m in Sources */,
@@ -4418,6 +4688,7 @@
 				BB467D1E2057D38A00D18C97 /* Tab3_RootViewController.m in Sources */,
 				BB74D4C92058F77300F8A55B /* MTLValueTransformer.m in Sources */,
 				BBD8726620AAC01100EAFD9F /* MJRefreshAutoNormalFooter.m in Sources */,
+				1A71DD2720C43D5400B62C79 /* IMAHost+HostAPIs.m in Sources */,
 				1A28FC5C207E492300041943 /* SDImageCache.m in Sources */,
 				BB467E792057E14000D18C97 /* NSObject+RACDeallocating.m in Sources */,
 				BB467EA42057E14000D18C97 /* RACSubscriber.m in Sources */,
@@ -4433,6 +4704,7 @@
 				1AB6A10520AC8279009A04A4 /* UIView+SDAutoLayout.m in Sources */,
 				BBD8716520AA781700EAFD9F /* PYPhotoBrowserConst.m in Sources */,
 				1A28FCAB2084ECBF00041943 /* QNHex.m in Sources */,
+				1A71DD3120C43D5400B62C79 /* IMAContactManager+SubGroup.m in Sources */,
 				1A2A7C78205FF16800786EC0 /* MessageModel.m in Sources */,
 				BBD8721920AABEAC00EAFD9F /* LYWebViewControllerActivity.m in Sources */,
 				1A28FD65209365C000041943 /* KafkaRingIndicatorFooter.m in Sources */,
@@ -4444,6 +4716,7 @@
 				BB74D35F2058B93900F8A55B /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				BB74D4802058BA9200F8A55B /* NSBundle+YYAdd.m in Sources */,
 				BB86F782208494E500DABEAC /* ImageTools.m in Sources */,
+				1A71DD3520C43D5400B62C79 /* IMAConversationManager.m in Sources */,
 				1A28FC55207E492300041943 /* SDWebImageDecoder.m in Sources */,
 				BB467D282057D48300D18C97 /* LoginViewController.m in Sources */,
 				BB467D892057E06300D18C97 /* UIAlertView+AFNetworking.m in Sources */,
@@ -4455,6 +4728,8 @@
 				BB74D4702058BA9200F8A55B /* UITextField+YYAdd.m in Sources */,
 				1AB6A05820A6FA2A009A04A4 /* PhotoEntity.m in Sources */,
 				BB467E6E2057E14000D18C97 /* RACDynamicSequence.m in Sources */,
+				1A71DD2220C43D5400B62C79 /* IMAGroup+Profile.m in Sources */,
+				1A71DD2020C43D5400B62C79 /* CustomElemCmd.m in Sources */,
 				BB74D3762058B93900F8A55B /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				1A28FC58207E492300041943 /* UIImage+GIF.m in Sources */,
 				1A28FC23207BC8EF00041943 /* NSObject+Common.m in Sources */,
@@ -4483,6 +4758,7 @@
 				BB74D38E2058B98800F8A55B /* NSString+WBEncode.m in Sources */,
 				BB74D48A2058BA9200F8A55B /* NSDictionary+YYAdd.m in Sources */,
 				BB467E552057E14000D18C97 /* NSNotificationCenter+RACSupport.m in Sources */,
+				1A71DD2E20C43D5400B62C79 /* IMAPlatform+Login.m in Sources */,
 				BB144B7F20A19D0F00354EB9 /* WhoCanNotSeeViewController.m in Sources */,
 				BBD8721A20AABEAC00EAFD9F /* LYWebViewController.m in Sources */,
 				BB467E912057E14000D18C97 /* UIAlertView+RACSignalSupport.m in Sources */,
@@ -4499,6 +4775,7 @@
 				BB4B9A0D20872F5A004FF037 /* QNALAssetFile.m in Sources */,
 				BB74D3702058B93900F8A55B /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				BB74D4C32058F77300F8A55B /* EXTRuntimeExtensions.m in Sources */,
+				1A71DD2C20C43D5400B62C79 /* IMAPlatform+Friend.m in Sources */,
 				BB74D48D2058BA9200F8A55B /* CALayer+YYAdd.m in Sources */,
 				BB74D4C82058F77300F8A55B /* NSDictionary+MTLMappingAdditions.m in Sources */,
 				1A28FC59207E492300041943 /* UIImage+MultiFormat.m in Sources */,
@@ -4517,6 +4794,7 @@
 				BB467E822057E14000D18C97 /* RACBacktrace.m in Sources */,
 				1AB6A10920AC82B8009A04A4 /* UITapImageView.m in Sources */,
 				BB74D4C02058F77300F8A55B /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
+				1A71DD2620C43D5400B62C79 /* IMAHost.m in Sources */,
 				BB74D3772058B93900F8A55B /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				BB74D4FB2058FA0F00F8A55B /* ViewController+MASAdditions.m in Sources */,
 				BBD8710D20A9797F00EAFD9F /* TZLocationManager.m in Sources */,
@@ -4594,10 +4872,12 @@
 				BB74D4612058BA9200F8A55B /* YYTextLayout.m in Sources */,
 				1A28FCB42084ECBF00041943 /* QNHosts.m in Sources */,
 				1A28FC27207CFC7D00041943 /* MyAccountManager.m in Sources */,
+				1A71DD2A20C43D5400B62C79 /* IMAConversation.m in Sources */,
 				1A28FD61209365C000041943 /* UIView+KafkaLayout.m in Sources */,
 				BB74D2DB2058B70400F8A55B /* UIView+Toast.m in Sources */,
 				BB6FC19620A02377004615D9 /* GroupSendSuccessVC.m in Sources */,
 				BB74D4492058BA9200F8A55B /* YYDiskCache.m in Sources */,
+				1A71DD2920C43D5400B62C79 /* IMAGroupMember.m in Sources */,
 				1A28FD6B209365C000041943 /* KafkaReplicatorHeader.m in Sources */,
 				BB467E602057E14000D18C97 /* NSUserDefaults+RACSupport.m in Sources */,
 				BBD8710A20A9797F00EAFD9F /* TZPhotoPickerController.m in Sources */,
@@ -4606,14 +4886,17 @@
 				BB467E952057E14000D18C97 /* NSSet+RACSequenceAdditions.m in Sources */,
 				BB4AE521208F1F9900ACCF39 /* EditInfoViewController.m in Sources */,
 				BB467E842057E14000D18C97 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
+				1A71DD3220C43D5400B62C79 /* IMAContactManager.m in Sources */,
 				BB74D3682058B93900F8A55B /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				BB467D812057E06300D18C97 /* AFHTTPSessionManager.m in Sources */,
+				1A71DD1C20C43D5400B62C79 /* IMAConnectConversation.m in Sources */,
 				BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */,
 				BB74D4DE2058F9C300F8A55B /* LYEmptyView.m in Sources */,
 				BB74D4572058BA9200F8A55B /* CALayer+YYWebImage.m in Sources */,
 				BBD8726520AAC01100EAFD9F /* MJRefreshAutoGifFooter.m in Sources */,
 				BB467EAD2057E14000D18C97 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				1A28FD6A209365C000041943 /* KafkaArrowHeader.m in Sources */,
+				1A71DD2520C43D5400B62C79 /* IMAGroup.m in Sources */,
 				BBD8716D20AA781700EAFD9F /* PYPhotoCell.m in Sources */,
 				BB467E782057E14000D18C97 /* UIControl+RACSignalSupportPrivate.m in Sources */,
 				BBD8721F20AABEAC00EAFD9F /* UIProgressView+Webkit.m in Sources */,
@@ -4622,8 +4905,10 @@
 				BBD8726E20AAC01100EAFD9F /* MJRefreshComponent.m in Sources */,
 				BB467E772057E14000D18C97 /* RACReplaySubject.m in Sources */,
 				1A28FCB92084ECBF00041943 /* QNRecord.m in Sources */,
+				1A71DD1920C43D5400B62C79 /* ChatAttachment.m in Sources */,
 				BB467D852057E06300D18C97 /* AFURLRequestSerialization.m in Sources */,
 				BB74D47B2058BA9200F8A55B /* UIImage+YYAdd.m in Sources */,
+				1A71DD2420C43D5400B62C79 /* IMAGroup+MemberList.m in Sources */,
 				1A28FC6A208397B600041943 /* NSDictionary+Check.m in Sources */,
 				BB467D802057E06300D18C97 /* AFURLResponseSerialization.m in Sources */,
 				BB74D4562058BA9200F8A55B /* MKAnnotationView+YYWebImage.m in Sources */,
@@ -4644,11 +4929,14 @@
 				BB74D4FF2058FA0F00F8A55B /* NSArray+MASAdditions.m in Sources */,
 				BB74D38A2058B98800F8A55B /* NSString+URL.m in Sources */,
 				BB467E752057E14000D18C97 /* NSOrderedSet+RACSequenceAdditions.m in Sources */,
+				1A71DD3720C43D5400B62C79 /* IMAPlatform+FriendShip.m in Sources */,
 				BB467E762057E14000D18C97 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				1A28FCAD2084ECBF00041943 /* QNIP.m in Sources */,
 				BB74D36E2058B93900F8A55B /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
+				1A71DD3820C43D5400B62C79 /* IMAPlatform+AppConfig.m in Sources */,
 				BB4B9A1320872F5A004FF037 /* QNFileRecorder.m in Sources */,
 				BB74D44B2058BA9200F8A55B /* YYKVStorage.m in Sources */,
+				1A71DD1A20C43D5400B62C79 /* TIMElem+ShowDescription.m in Sources */,
 				1A28FC52207E492300041943 /* UIImage+WebP.m in Sources */,
 				BB467E9E2057E14000D18C97 /* UIActionSheet+RACSignalSupport.m in Sources */,
 				BB74D4742058BA9200F8A55B /* UIApplication+YYAdd.m in Sources */,
@@ -4659,14 +4947,17 @@
 				BB74D45C2058BA9200F8A55B /* YYTextView.m in Sources */,
 				BB74D4C22058F77300F8A55B /* EXTScope.m in Sources */,
 				BB467D522057DEE600D18C97 /* DDLog.m in Sources */,
+				1A71DD2B20C43D5400B62C79 /* IMACustomConversation.m in Sources */,
 				BB74D4952058BA9200F8A55B /* YYGestureRecognizer.m in Sources */,
 				BB467E702057E14000D18C97 /* NSString+RACSupport.m in Sources */,
 				1A28FCB62084ECBF00041943 /* QNLruCache.m in Sources */,
 				BBD8716020AA781700EAFD9F /* FLAnimatedImage.m in Sources */,
 				BB74D3092058B8F900F8A55B /* ACPIndeterminateLayer.m in Sources */,
 				BB74D46B2058BA9200F8A55B /* NSAttributedString+YYText.m in Sources */,
+				1A71DD1B20C43D5400B62C79 /* IMSDK+ShowAble.m in Sources */,
 				BB74D4712058BA9200F8A55B /* UIBezierPath+YYAdd.m in Sources */,
 				BB74D48F2058BA9200F8A55B /* YYAsyncLayer.m in Sources */,
+				1A71DD2D20C43D5400B62C79 /* IMAContactManager+Group.m in Sources */,
 				BB467E612057E14000D18C97 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				BB74D4932058BA9200F8A55B /* YYDispatchQueuePool.m in Sources */,
 				BB74D47C2058BA9200F8A55B /* UIControl+YYAdd.m in Sources */,
@@ -4690,6 +4981,7 @@
 				BB74D46D2058BA9200F8A55B /* YYTextAttribute.m in Sources */,
 				BB467D8A2057E06300D18C97 /* UIProgressView+AFNetworking.m in Sources */,
 				BB4B9A0220872F5A004FF037 /* QNResumeUpload.m in Sources */,
+				1A71DD1E20C43D5400B62C79 /* IMAMsg.m in Sources */,
 				BB74D4752058BA9200F8A55B /* UITableView+YYAdd.m in Sources */,
 				BBD8716620AA781700EAFD9F /* PYPhotosViewController.m in Sources */,
 				1A28FD6C209365C000041943 /* KafkaReplicatorLayer.m in Sources */,
@@ -4717,6 +5009,8 @@
 				BB467D1B2057D37E00D18C97 /* Tab2_RootViewController.m in Sources */,
 				1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */,
 				1AB6A06020A6FBDA009A04A4 /* UIView+Size.m in Sources */,
+				1A71DD2320C43D5400B62C79 /* IMASubGroup.m in Sources */,
+				1A71DD1F20C43D5400B62C79 /* IMAMsg+Draft.m in Sources */,
 				BB74D3072058B8F900F8A55B /* ACPStaticImagesAlternative.m in Sources */,
 				BB467EBE2057E22A00D18C97 /* UIImage+Common.m in Sources */,
 				BB74D4992058BA9200F8A55B /* YYReachability.m in Sources */,
@@ -4739,6 +5033,7 @@
 				BB74D4522058BA9200F8A55B /* YYFrameImage.m in Sources */,
 				BB467E802057E14000D18C97 /* NSData+RACSupport.m in Sources */,
 				BB467EB12057E1F300D18C97 /* UIColor+expanded.m in Sources */,
+				1A71DD2F20C43D5400B62C79 /* IMALoginParam.m in Sources */,
 				BB74D4C52058F77300F8A55B /* MTLModel+NSCoding.m in Sources */,
 				BB74D35B2058B93900F8A55B /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				BB74D5032058FA0F00F8A55B /* MASViewAttribute.m in Sources */,
@@ -4774,9 +5069,11 @@
 				BB4B9A0420872F5A004FF037 /* QNFormUpload.m in Sources */,
 				BB467D8E2057E06300D18C97 /* UIButton+AFNetworking.m in Sources */,
 				BB74D4842058BA9200F8A55B /* NSKeyedUnarchiver+YYAdd.m in Sources */,
+				1A71DD3020C43D5400B62C79 /* IMAPlatformConfig.m in Sources */,
 				1AB6A0EC20AB2D76009A04A4 /* GroupSendHistoryVC.m in Sources */,
 				BB74D3652058B93900F8A55B /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				BB74D30B2058B8F900F8A55B /* ACPStaticImages.m in Sources */,
+				1A71DD3420C43D5400B62C79 /* IMAPlatform.m in Sources */,
 				BB74D4CF2058F77300F8A55B /* MTLReflection.m in Sources */,
 				BB74D4922058BA9200F8A55B /* YYTransaction.m in Sources */,
 				1A28FD64209365C000041943 /* KafkaNativeFooter.m in Sources */,
@@ -4840,6 +5137,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1A71DCD220C43D5400B62C79 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A71DCD320C43D5400B62C79 /* en */,
+				1A71DCFB20C43D5400B62C79 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BB467CCD2057CE0400D18C97 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
