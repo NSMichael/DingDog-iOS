@@ -199,6 +199,21 @@
 		1A71DF1C20C43F8600B62C79 /* ChatTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEEC20C43F8500B62C79 /* ChatTextView.m */; };
 		1A71DF1D20C43F8600B62C79 /* ChatInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEED20C43F8500B62C79 /* ChatInputTextView.m */; };
 		1A71DF1E20C43F8600B62C79 /* TIMElem+ChatAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEEF20C43F8500B62C79 /* TIMElem+ChatAttachment.m */; };
+		1A71DF3E20C4400300B62C79 /* ChatImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2020C4400300B62C79 /* ChatImageBrowserView.m */; };
+		1A71DF3F20C4400300B62C79 /* EmojHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2120C4400300B62C79 /* EmojHelper.m */; };
+		1A71DF4020C4400300B62C79 /* NSStringEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2220C4400300B62C79 /* NSStringEx.m */; };
+		1A71DF4120C4400300B62C79 /* MyAudioInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2320C4400300B62C79 /* MyAudioInputView.m */; };
+		1A71DF4220C4400300B62C79 /* MyEmojBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2420C4400300B62C79 /* MyEmojBoardView.m */; };
+		1A71DF4320C4400300B62C79 /* MyVolumeMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2820C4400300B62C79 /* MyVolumeMeter.m */; };
+		1A71DF4420C4400300B62C79 /* MyPttRecordBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2920C4400300B62C79 /* MyPttRecordBtn.m */; };
+		1A71DF4520C4400300B62C79 /* MyEmojView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2A20C4400300B62C79 /* MyEmojView.m */; };
+		1A71DF4620C4400300B62C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DF2B20C4400300B62C79 /* Assets.xcassets */; };
+		1A71DF4720C4400300B62C79 /* PYMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF2F20C4400300B62C79 /* PYMethod.m */; };
+		1A71DF4820C4400300B62C79 /* MyAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3520C4400300B62C79 /* MyAudioManager.m */; };
+		1A71DF4920C4400300B62C79 /* MyChatToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3620C4400300B62C79 /* MyChatToolBarView.m */; };
+		1A71DF4A20C4400300B62C79 /* MyMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3720C4400300B62C79 /* MyMoreView.m */; };
+		1A71DF4B20C4400300B62C79 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */; };
+		1A71DF4C20C4400300B62C79 /* MyUIDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3D20C4400300B62C79 /* MyUIDefine.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -1054,6 +1069,36 @@
 		1A71DEEF20C43F8500B62C79 /* TIMElem+ChatAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMElem+ChatAttachment.m"; sourceTree = "<group>"; };
 		1A71DEF020C43F8500B62C79 /* ChatBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBaseTableViewCell.h; sourceTree = "<group>"; };
 		1A71DEF120C43F8500B62C79 /* IMAMsg+UITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMAMsg+UITableViewCell.h"; sourceTree = "<group>"; };
+		1A71DF2020C4400300B62C79 /* ChatImageBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageBrowserView.m; sourceTree = "<group>"; };
+		1A71DF2120C4400300B62C79 /* EmojHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojHelper.m; sourceTree = "<group>"; };
+		1A71DF2220C4400300B62C79 /* NSStringEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringEx.m; sourceTree = "<group>"; };
+		1A71DF2320C4400300B62C79 /* MyAudioInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAudioInputView.m; sourceTree = "<group>"; };
+		1A71DF2420C4400300B62C79 /* MyEmojBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEmojBoardView.m; sourceTree = "<group>"; };
+		1A71DF2520C4400300B62C79 /* PYMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYMethod.h; sourceTree = "<group>"; };
+		1A71DF2620C4400300B62C79 /* MyChatToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyChatToolBarView.h; sourceTree = "<group>"; };
+		1A71DF2720C4400300B62C79 /* MyAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAudioManager.h; sourceTree = "<group>"; };
+		1A71DF2820C4400300B62C79 /* MyVolumeMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVolumeMeter.m; sourceTree = "<group>"; };
+		1A71DF2920C4400300B62C79 /* MyPttRecordBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPttRecordBtn.m; sourceTree = "<group>"; };
+		1A71DF2A20C4400300B62C79 /* MyEmojView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEmojView.m; sourceTree = "<group>"; };
+		1A71DF2B20C4400300B62C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A71DF2C20C4400300B62C79 /* MyMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoreView.h; sourceTree = "<group>"; };
+		1A71DF2D20C4400300B62C79 /* MyUIDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUIDefine.h; sourceTree = "<group>"; };
+		1A71DF2E20C4400300B62C79 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		1A71DF2F20C4400300B62C79 /* PYMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYMethod.m; sourceTree = "<group>"; };
+		1A71DF3020C4400300B62C79 /* MyEmojBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEmojBoardView.h; sourceTree = "<group>"; };
+		1A71DF3120C4400300B62C79 /* MyAudioInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAudioInputView.h; sourceTree = "<group>"; };
+		1A71DF3220C4400300B62C79 /* NSStringEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringEx.h; sourceTree = "<group>"; };
+		1A71DF3320C4400300B62C79 /* EmojHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojHelper.h; sourceTree = "<group>"; };
+		1A71DF3420C4400300B62C79 /* ChatImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatImageBrowserView.h; sourceTree = "<group>"; };
+		1A71DF3520C4400300B62C79 /* MyAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAudioManager.m; sourceTree = "<group>"; };
+		1A71DF3620C4400300B62C79 /* MyChatToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyChatToolBarView.m; sourceTree = "<group>"; };
+		1A71DF3720C4400300B62C79 /* MyMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoreView.m; sourceTree = "<group>"; };
+		1A71DF3820C4400300B62C79 /* MyPttRecordBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPttRecordBtn.h; sourceTree = "<group>"; };
+		1A71DF3920C4400300B62C79 /* MyEmojView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEmojView.h; sourceTree = "<group>"; };
+		1A71DF3A20C4400300B62C79 /* MyVolumeMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVolumeMeter.h; sourceTree = "<group>"; };
+		1A71DF3B20C4400300B62C79 /* ChatViewsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewsHeader.h; sourceTree = "<group>"; };
+		1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		1A71DF3D20C4400300B62C79 /* MyUIDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUIDefine.m; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2681,6 +2726,7 @@
 		1A71DE7620C43EEC00B62C79 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1A71DF1F20C4400300B62C79 /* ChatViews */,
 				1A71DEB620C43F8500B62C79 /* ChatMsgShow */,
 				1A71DE9920C43F4100B62C79 /* ChatInputPanel */,
 				1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */,
@@ -2841,6 +2887,43 @@
 				1A71DEE820C43F8500B62C79 /* 10.gif */,
 			);
 			path = GIF;
+			sourceTree = "<group>";
+		};
+		1A71DF1F20C4400300B62C79 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DF2020C4400300B62C79 /* ChatImageBrowserView.m */,
+				1A71DF2120C4400300B62C79 /* EmojHelper.m */,
+				1A71DF2220C4400300B62C79 /* NSStringEx.m */,
+				1A71DF2320C4400300B62C79 /* MyAudioInputView.m */,
+				1A71DF2420C4400300B62C79 /* MyEmojBoardView.m */,
+				1A71DF2520C4400300B62C79 /* PYMethod.h */,
+				1A71DF2620C4400300B62C79 /* MyChatToolBarView.h */,
+				1A71DF2720C4400300B62C79 /* MyAudioManager.h */,
+				1A71DF2820C4400300B62C79 /* MyVolumeMeter.m */,
+				1A71DF2920C4400300B62C79 /* MyPttRecordBtn.m */,
+				1A71DF2A20C4400300B62C79 /* MyEmojView.m */,
+				1A71DF2B20C4400300B62C79 /* Assets.xcassets */,
+				1A71DF2C20C4400300B62C79 /* MyMoreView.h */,
+				1A71DF2D20C4400300B62C79 /* MyUIDefine.h */,
+				1A71DF2E20C4400300B62C79 /* UIViewAdditions.h */,
+				1A71DF2F20C4400300B62C79 /* PYMethod.m */,
+				1A71DF3020C4400300B62C79 /* MyEmojBoardView.h */,
+				1A71DF3120C4400300B62C79 /* MyAudioInputView.h */,
+				1A71DF3220C4400300B62C79 /* NSStringEx.h */,
+				1A71DF3320C4400300B62C79 /* EmojHelper.h */,
+				1A71DF3420C4400300B62C79 /* ChatImageBrowserView.h */,
+				1A71DF3520C4400300B62C79 /* MyAudioManager.m */,
+				1A71DF3620C4400300B62C79 /* MyChatToolBarView.m */,
+				1A71DF3720C4400300B62C79 /* MyMoreView.m */,
+				1A71DF3820C4400300B62C79 /* MyPttRecordBtn.h */,
+				1A71DF3920C4400300B62C79 /* MyEmojView.h */,
+				1A71DF3A20C4400300B62C79 /* MyVolumeMeter.h */,
+				1A71DF3B20C4400300B62C79 /* ChatViewsHeader.h */,
+				1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */,
+				1A71DF3D20C4400300B62C79 /* MyUIDefine.m */,
+			);
+			path = ChatViews;
 			sourceTree = "<group>";
 		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
@@ -4841,6 +4924,7 @@
 				1A71DEF820C43F8600B62C79 /* 21.gif in Resources */,
 				BBD8722220AABEAC00EAFD9F /* backItemImage_hl@2x.png in Resources */,
 				BB467CCF2057CE0400D18C97 /* LaunchScreen.storyboard in Resources */,
+				1A71DF4620C4400300B62C79 /* Assets.xcassets in Resources */,
 				1A71DF1620C43F8600B62C79 /* 16.gif in Resources */,
 				BBD8722420AABEAC00EAFD9F /* LYWebViewControllerActivityChrome@2x.png in Resources */,
 				BBD871ED20AABBF400EAFD9F /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
@@ -4941,6 +5025,7 @@
 				BB74D4602058BA9200F8A55B /* YYTextInput.m in Sources */,
 				1A71DD3320C43D5400B62C79 /* IMAPlatform+IMSDKCallBack.m in Sources */,
 				BB467D542057DEE600D18C97 /* DDFileLogger.m in Sources */,
+				1A71DF4920C4400300B62C79 /* MyChatToolBarView.m in Sources */,
 				BB467D4C2057DEE600D18C97 /* DDTTYLogger.m in Sources */,
 				BB86F729208453D500DABEAC /* UploadTokenCmd.m in Sources */,
 				BB74D3662058B93900F8A55B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
@@ -4990,6 +5075,7 @@
 				BB74D45A2058BA9200F8A55B /* NSObject+YYModel.m in Sources */,
 				BBD8721C20AABEAC00EAFD9F /* LYUIWebViewController.m in Sources */,
 				1A28FD1820878DE600041943 /* CreateTagViewController.m in Sources */,
+				1A71DF4020C4400300B62C79 /* NSStringEx.m in Sources */,
 				BB74D4692058BA9200F8A55B /* NSParagraphStyle+YYText.m in Sources */,
 				1A28FD1B2088D64500041943 /* TagCustomerListViewControlller.m in Sources */,
 				BB467EAA2057E14000D18C97 /* RACEmptySignal.m in Sources */,
@@ -5016,6 +5102,7 @@
 				BB467E592057E14000D18C97 /* NSObject+RACDescription.m in Sources */,
 				BB4B9A0C20872F5A004FF037 /* QNAsyncRun.m in Sources */,
 				BB74D4632058BA9200F8A55B /* YYTextSelectionView.m in Sources */,
+				1A71DF3E20C4400300B62C79 /* ChatImageBrowserView.m in Sources */,
 				BB467E6F2057E14000D18C97 /* RACSequence.m in Sources */,
 				1A28FCB82084ECBF00041943 /* QNDomain.m in Sources */,
 				1A28FC54207E492300041943 /* SDWebImageManager.m in Sources */,
@@ -5031,6 +5118,7 @@
 				BB467EA72057E14000D18C97 /* RACUnit.m in Sources */,
 				BB74D3612058B93900F8A55B /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				BBD8726D20AAC01100EAFD9F /* MJRefreshAutoFooter.m in Sources */,
+				1A71DF4320C4400300B62C79 /* MyVolumeMeter.m in Sources */,
 				BB467EA52057E14000D18C97 /* RACDelegateProxy.m in Sources */,
 				1A28FD6D209365C000041943 /* KafkaArcLayer.m in Sources */,
 				BB467D8F2057E06300D18C97 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -5073,6 +5161,7 @@
 				BB467E792057E14000D18C97 /* NSObject+RACDeallocating.m in Sources */,
 				BB467EA42057E14000D18C97 /* RACSubscriber.m in Sources */,
 				BB467D2F2057DE0600D18C97 /* iConsole.m in Sources */,
+				1A71DF3F20C4400300B62C79 /* EmojHelper.m in Sources */,
 				BB467D152057D31000D18C97 /* RDVTabBarItem.m in Sources */,
 				1A28FCBB2084ECBF00041943 /* QNNiuDns.m in Sources */,
 				BB86F72D20845B8300DABEAC /* SZTextView.m in Sources */,
@@ -5190,6 +5279,7 @@
 				BB74D4FC2058FA0F00F8A55B /* MASCompositeConstraint.m in Sources */,
 				1AB6A0FE20AC807F009A04A4 /* SDWeiXinPhotoContainerView.m in Sources */,
 				1A28FD68209365C000041943 /* KafkaNativeHeader.m in Sources */,
+				1A71DF4420C4400300B62C79 /* MyPttRecordBtn.m in Sources */,
 				1A28FC5A207E492300041943 /* SDWebImageCompat.m in Sources */,
 				BBD8727220AAD3D900EAFD9F /* HelpViewController.m in Sources */,
 				BBD8726A20AAC01100EAFD9F /* MJRefreshFooter.m in Sources */,
@@ -5199,6 +5289,7 @@
 				1A28FC7020839FE400041943 /* UploadManager.m in Sources */,
 				BB467D4E2057DEE600D18C97 /* CLIColor.m in Sources */,
 				BB74D3712058B93900F8A55B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				1A71DF4220C4400300B62C79 /* MyEmojBoardView.m in Sources */,
 				BBD8726B20AAC01100EAFD9F /* MJRefreshHeader.m in Sources */,
 				BB74D4662058BA9200F8A55B /* YYLabel.m in Sources */,
 				BB74D4C12058F77300F8A55B /* NSError+MTLModelException.m in Sources */,
@@ -5246,13 +5337,16 @@
 				BB467D132057D31000D18C97 /* RDVTabBar.m in Sources */,
 				1A28FCB02084ECBF00041943 /* QNTxtResolver.m in Sources */,
 				BB74D38C2058B98800F8A55B /* NSString+Check.m in Sources */,
+				1A71DF4A20C4400300B62C79 /* MyMoreView.m in Sources */,
 				BBD8726320AAC01100EAFD9F /* MJRefreshBackNormalFooter.m in Sources */,
 				BB74D50C205923CC00F8A55B /* TTTAttributedLabel.m in Sources */,
 				1A71DF1D20C43F8600B62C79 /* ChatInputTextView.m in Sources */,
 				BB467E7F2057E14000D18C97 /* RACBehaviorSubject.m in Sources */,
 				BB467E8C2057E14000D18C97 /* RACQueueScheduler.m in Sources */,
+				1A71DF4520C4400300B62C79 /* MyEmojView.m in Sources */,
 				BB467E5A2057E14000D18C97 /* RACScheduler.m in Sources */,
 				1A28FD69209365C000041943 /* KafkaRingIndicatorHeader.m in Sources */,
+				1A71DF4C20C4400300B62C79 /* MyUIDefine.m in Sources */,
 				BBD8716820AA781700EAFD9F /* PYPhotosNavigationController.m in Sources */,
 				BBD8726720AAC01100EAFD9F /* MJRefreshNormalHeader.m in Sources */,
 				BB74D4612058BA9200F8A55B /* YYTextLayout.m in Sources */,
@@ -5279,6 +5373,7 @@
 				BB873C3D205FA94D0013C6D6 /* MessageListCell.m in Sources */,
 				BB74D4DE2058F9C300F8A55B /* LYEmptyView.m in Sources */,
 				BB74D4572058BA9200F8A55B /* CALayer+YYWebImage.m in Sources */,
+				1A71DF4820C4400300B62C79 /* MyAudioManager.m in Sources */,
 				BBD8726520AAC01100EAFD9F /* MJRefreshAutoGifFooter.m in Sources */,
 				BB467EAD2057E14000D18C97 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				1A28FD6A209365C000041943 /* KafkaArrowHeader.m in Sources */,
@@ -5409,6 +5504,7 @@
 				1A71DD1F20C43D5400B62C79 /* IMAMsg+Draft.m in Sources */,
 				BB74D3072058B8F900F8A55B /* ACPStaticImagesAlternative.m in Sources */,
 				BB467EBE2057E22A00D18C97 /* UIImage+Common.m in Sources */,
+				1A71DF4B20C4400300B62C79 /* UIViewAdditions.m in Sources */,
 				BB74D4992058BA9200F8A55B /* YYReachability.m in Sources */,
 				BB74D4782058BA9200F8A55B /* UIView+YYAdd.m in Sources */,
 				BBD8710120A9797F00EAFD9F /* TZAssetCell.m in Sources */,
@@ -5438,6 +5534,7 @@
 				BB74D3922058B9CB00F8A55B /* NSData+WBEncode.m in Sources */,
 				BB74D47F2058BA9200F8A55B /* NSNumber+YYAdd.m in Sources */,
 				1A28FBC2206FD7DA00041943 /* TTGTagCollectionView.m in Sources */,
+				1A71DF4720C4400300B62C79 /* PYMethod.m in Sources */,
 				1A28FCB22084ECBF00041943 /* QNResolver.m in Sources */,
 				1A28FC60207E492300041943 /* UIView+WebCacheOperation.m in Sources */,
 				BB467EA62057E14000D18C97 /* RACEagerSequence.m in Sources */,
@@ -5463,6 +5560,7 @@
 				BBD8716A20AA781700EAFD9F /* PYPhoto.m in Sources */,
 				BBD8725F20AAC01100EAFD9F /* NSBundle+MJRefresh.m in Sources */,
 				BBD8721E20AABEAC00EAFD9F /* LYURLCacheUtil.m in Sources */,
+				1A71DF4120C4400300B62C79 /* MyAudioInputView.m in Sources */,
 				BBD8725B20AAC01100EAFD9F /* UIScrollView+MJRefresh.m in Sources */,
 				BB74D4DD2058F9C300F8A55B /* UIView+LYExtension.m in Sources */,
 				BB4B9A0420872F5A004FF037 /* QNFormUpload.m in Sources */,
