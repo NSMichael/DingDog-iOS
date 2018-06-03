@@ -146,6 +146,14 @@
 		1A71DE9620C43EEC00B62C79 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8620C43EEC00B62C79 /* PhotoBrowserViewController.m */; };
 		1A71DE9720C43EEC00B62C79 /* RichChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8720C43EEC00B62C79 /* RichChatViewController.m */; };
 		1A71DE9820C43EEC00B62C79 /* CustomChatUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE8D20C43EEC00B62C79 /* CustomChatUIViewController.m */; };
+		1A71DEAE20C43F4200B62C79 /* ChatFunctionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE9B20C43F4100B62C79 /* ChatFunctionPanel.m */; };
+		1A71DEAF20C43F4200B62C79 /* ChatInputPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DE9C20C43F4100B62C79 /* ChatInputPanel.m */; };
+		1A71DEB020C43F4200B62C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A71DEA020C43F4100B62C79 /* Assets.xcassets */; };
+		1A71DEB120C43F4200B62C79 /* ChatInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEA120C43F4100B62C79 /* ChatInputToolBar.m */; };
+		1A71DEB220C43F4200B62C79 /* ChatSoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEA720C43F4100B62C79 /* ChatSoundRecorder.m */; };
+		1A71DEB320C43F4200B62C79 /* ChatEmojView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEA820C43F4100B62C79 /* ChatEmojView.m */; };
+		1A71DEB420C43F4200B62C79 /* ChatSystemFacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEAB20C43F4100B62C79 /* ChatSystemFacePageView.m */; };
+		1A71DEB520C43F4200B62C79 /* ChatInputBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DEAC20C43F4100B62C79 /* ChatInputBaseView.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -928,6 +936,23 @@
 		1A71DE8B20C43EEC00B62C79 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		1A71DE8C20C43EEC00B62C79 /* CustomChatUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomChatUIViewController.h; sourceTree = "<group>"; };
 		1A71DE8D20C43EEC00B62C79 /* CustomChatUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomChatUIViewController.m; sourceTree = "<group>"; };
+		1A71DE9A20C43F4100B62C79 /* ChatSoundRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSoundRecorder.h; sourceTree = "<group>"; };
+		1A71DE9B20C43F4100B62C79 /* ChatFunctionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatFunctionPanel.m; sourceTree = "<group>"; };
+		1A71DE9C20C43F4100B62C79 /* ChatInputPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputPanel.m; sourceTree = "<group>"; };
+		1A71DE9D20C43F4100B62C79 /* ChatEmojView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmojView.h; sourceTree = "<group>"; };
+		1A71DE9E20C43F4100B62C79 /* ChatInputAbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputAbleView.h; sourceTree = "<group>"; };
+		1A71DE9F20C43F4100B62C79 /* ChatInputHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputHeaders.h; sourceTree = "<group>"; };
+		1A71DEA020C43F4100B62C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A71DEA120C43F4100B62C79 /* ChatInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputToolBar.m; sourceTree = "<group>"; };
+		1A71DEA220C43F4100B62C79 /* ChatInputBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputBaseView.h; sourceTree = "<group>"; };
+		1A71DEA320C43F4100B62C79 /* ChatSystemFacePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSystemFacePageView.h; sourceTree = "<group>"; };
+		1A71DEA720C43F4100B62C79 /* ChatSoundRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSoundRecorder.m; sourceTree = "<group>"; };
+		1A71DEA820C43F4100B62C79 /* ChatEmojView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmojView.m; sourceTree = "<group>"; };
+		1A71DEA920C43F4100B62C79 /* ChatInputPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputPanel.h; sourceTree = "<group>"; };
+		1A71DEAA20C43F4100B62C79 /* ChatFunctionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatFunctionPanel.h; sourceTree = "<group>"; };
+		1A71DEAB20C43F4100B62C79 /* ChatSystemFacePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSystemFacePageView.m; sourceTree = "<group>"; };
+		1A71DEAC20C43F4100B62C79 /* ChatInputBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputBaseView.m; sourceTree = "<group>"; };
+		1A71DEAD20C43F4100B62C79 /* ChatInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatInputToolBar.h; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2555,6 +2580,7 @@
 		1A71DE7620C43EEC00B62C79 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1A71DE9920C43F4100B62C79 /* ChatInputPanel */,
 				1A71DE7720C43EEC00B62C79 /* ChatTableViewCell.m */,
 				1A71DE7820C43EEC00B62C79 /* ChatHeadRefreshView.h */,
 				1A71DE7920C43EEC00B62C79 /* IMAChatViewController.h */,
@@ -2578,6 +2604,54 @@
 				1A71DE8B20C43EEC00B62C79 /* ChatViewController.h */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		1A71DE9920C43F4100B62C79 /* ChatInputPanel */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DE9A20C43F4100B62C79 /* ChatSoundRecorder.h */,
+				1A71DE9B20C43F4100B62C79 /* ChatFunctionPanel.m */,
+				1A71DE9C20C43F4100B62C79 /* ChatInputPanel.m */,
+				1A71DE9D20C43F4100B62C79 /* ChatEmojView.h */,
+				1A71DE9E20C43F4100B62C79 /* ChatInputAbleView.h */,
+				1A71DE9F20C43F4100B62C79 /* ChatInputHeaders.h */,
+				1A71DEA020C43F4100B62C79 /* Assets.xcassets */,
+				1A71DEA120C43F4100B62C79 /* ChatInputToolBar.m */,
+				1A71DEA220C43F4100B62C79 /* ChatInputBaseView.h */,
+				1A71DEA320C43F4100B62C79 /* ChatSystemFacePageView.h */,
+				1A71DEA420C43F4100B62C79 /* ChatFace */,
+				1A71DEA720C43F4100B62C79 /* ChatSoundRecorder.m */,
+				1A71DEA820C43F4100B62C79 /* ChatEmojView.m */,
+				1A71DEA920C43F4100B62C79 /* ChatInputPanel.h */,
+				1A71DEAA20C43F4100B62C79 /* ChatFunctionPanel.h */,
+				1A71DEAB20C43F4100B62C79 /* ChatSystemFacePageView.m */,
+				1A71DEAC20C43F4100B62C79 /* ChatInputBaseView.m */,
+				1A71DEAD20C43F4100B62C79 /* ChatInputToolBar.h */,
+			);
+			path = ChatInputPanel;
+			sourceTree = "<group>";
+		};
+		1A71DEA420C43F4100B62C79 /* ChatFace */ = {
+			isa = PBXGroup;
+			children = (
+				1A71DEA520C43F4100B62C79 /* PNG */,
+				1A71DEA620C43F4100B62C79 /* GIF */,
+			);
+			path = ChatFace;
+			sourceTree = "<group>";
+		};
+		1A71DEA520C43F4100B62C79 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		1A71DEA620C43F4100B62C79 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GIF;
 			sourceTree = "<group>";
 		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
@@ -4577,6 +4651,7 @@
 				BBD8722420AABEAC00EAFD9F /* LYWebViewControllerActivityChrome@2x.png in Resources */,
 				BBD871ED20AABBF400EAFD9F /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				1A28FBDC207BAB6900041943 /* README.txt in Resources */,
+				1A71DEB020C43F4200B62C79 /* Assets.xcassets in Resources */,
 				BBD8722520AABEAC00EAFD9F /* LYWebViewControllerNext@2x.png in Resources */,
 				BB467E522057E14000D18C97 /* LICENSE.md in Resources */,
 				BB74D5042058FA0F00F8A55B /* Info.plist in Resources */,
@@ -4695,6 +4770,7 @@
 				1A28FD222088E4F800041943 /* UserTagListCell.m in Sources */,
 				1A28FD1F2088DE1900041943 /* CustomerDetailViewController.m in Sources */,
 				BBD8710B20A9797F00EAFD9F /* TZPhotoPreviewCell.m in Sources */,
+				1A71DEB120C43F4200B62C79 /* ChatInputToolBar.m in Sources */,
 				BB74D4762058BA9200F8A55B /* UIScrollView+YYAdd.m in Sources */,
 				BB467E9F2057E14000D18C97 /* RACSerialDisposable.m in Sources */,
 				1A71DD2820C43D5400B62C79 /* IMAUser.m in Sources */,
@@ -4920,6 +4996,7 @@
 				BB467EBD2057E22A00D18C97 /* UIImage-Extensions.m in Sources */,
 				BB467D882057E06300D18C97 /* AFSecurityPolicy.m in Sources */,
 				1A71DE9820C43EEC00B62C79 /* CustomChatUIViewController.m in Sources */,
+				1A71DEB320C43F4200B62C79 /* ChatEmojView.m in Sources */,
 				BB74D4722058BA9200F8A55B /* UIColor+YYAdd.m in Sources */,
 				BB74D4D02058F77300F8A55B /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				BB467D862057E06300D18C97 /* AFHTTPRequestOperation.m in Sources */,
@@ -4975,6 +5052,7 @@
 				BB467EAD2057E14000D18C97 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				1A28FD6A209365C000041943 /* KafkaArrowHeader.m in Sources */,
 				1A71DE8F20C43EEC00B62C79 /* ChatTimeTipTableViewCell.m in Sources */,
+				1A71DEAF20C43F4200B62C79 /* ChatInputPanel.m in Sources */,
 				1A71DD2520C43D5400B62C79 /* IMAGroup.m in Sources */,
 				BBD8716D20AA781700EAFD9F /* PYPhotoCell.m in Sources */,
 				BB467E782057E14000D18C97 /* UIControl+RACSignalSupportPrivate.m in Sources */,
@@ -5043,6 +5121,7 @@
 				BB467E5E2057E14000D18C97 /* UISwitch+RACSignalSupport.m in Sources */,
 				1AB6A0F920AB36B3009A04A4 /* GroupSendListCell.m in Sources */,
 				BB74D4732058BA9200F8A55B /* UIDevice+YYAdd.m in Sources */,
+				1A71DEB220C43F4200B62C79 /* ChatSoundRecorder.m in Sources */,
 				BB467D8B2057E06300D18C97 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1A28FBC3206FD7DA00041943 /* TTGTextTagCollectionView.m in Sources */,
 				BB74D4942058BA9200F8A55B /* YYKeychain.m in Sources */,
@@ -5062,6 +5141,7 @@
 				BB74D46D2058BA9200F8A55B /* YYTextAttribute.m in Sources */,
 				BB467D8A2057E06300D18C97 /* UIProgressView+AFNetworking.m in Sources */,
 				BB4B9A0220872F5A004FF037 /* QNResumeUpload.m in Sources */,
+				1A71DEAE20C43F4200B62C79 /* ChatFunctionPanel.m in Sources */,
 				1A71DD1E20C43D5400B62C79 /* IMAMsg.m in Sources */,
 				BB74D4752058BA9200F8A55B /* UITableView+YYAdd.m in Sources */,
 				BBD8716620AA781700EAFD9F /* PYPhotosViewController.m in Sources */,
@@ -5078,6 +5158,7 @@
 				BB467E982057E14000D18C97 /* RACReturnSignal.m in Sources */,
 				BB74D3672058B93900F8A55B /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				BB74D46E2058BA9200F8A55B /* YYTextArchiver.m in Sources */,
+				1A71DEB420C43F4200B62C79 /* ChatSystemFacePageView.m in Sources */,
 				1A28FCAF2084ECBF00041943 /* QNIpModel.m in Sources */,
 				BB467D872057E06300D18C97 /* AFNetworkReachabilityManager.m in Sources */,
 				BB467E852057E14000D18C97 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
@@ -5087,6 +5168,7 @@
 				BB467CD22057CE0400D18C97 /* main.m in Sources */,
 				1A28FC57207E492300041943 /* SDWebImageDownloader.m in Sources */,
 				BB74D4592058BA9200F8A55B /* YYWebImageOperation.m in Sources */,
+				1A71DEB520C43F4200B62C79 /* ChatInputBaseView.m in Sources */,
 				BB467D1B2057D37E00D18C97 /* Tab2_RootViewController.m in Sources */,
 				1A28FBCF207A56A300041943 /* GroupSendModel.m in Sources */,
 				1AB6A06020A6FBDA009A04A4 /* UIView+Size.m in Sources */,
