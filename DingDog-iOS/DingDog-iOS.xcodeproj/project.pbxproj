@@ -214,6 +214,7 @@
 		1A71DF4A20C4400300B62C79 /* MyMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3720C4400300B62C79 /* MyMoreView.m */; };
 		1A71DF4B20C4400300B62C79 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */; };
 		1A71DF4C20C4400300B62C79 /* MyUIDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71DF3D20C4400300B62C79 /* MyUIDefine.m */; };
+		1A71E0CB20C441C500B62C79 /* ImageThumbPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A71E0CA20C441C500B62C79 /* ImageThumbPickerViewController.m */; };
 		1AB6A03C20A20074009A04A4 /* InTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */; };
 		1AB6A03F20A2008B009A04A4 /* EXTagSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A03E20A2008B009A04A4 /* EXTagSelectedViewController.m */; };
 		1AB6A04520A6EF61009A04A4 /* Tab4_RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB6A04420A6EF61009A04A4 /* Tab4_RootViewController.m */; };
@@ -1099,6 +1100,8 @@
 		1A71DF3B20C4400300B62C79 /* ChatViewsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewsHeader.h; sourceTree = "<group>"; };
 		1A71DF3C20C4400300B62C79 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		1A71DF3D20C4400300B62C79 /* MyUIDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUIDefine.m; sourceTree = "<group>"; };
+		1A71E0C920C441C500B62C79 /* ImageThumbPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageThumbPickerViewController.h; sourceTree = "<group>"; };
+		1A71E0CA20C441C500B62C79 /* ImageThumbPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageThumbPickerViewController.m; sourceTree = "<group>"; };
 		1AB6A03A20A20074009A04A4 /* InTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InTagSelectedViewController.h; sourceTree = "<group>"; };
 		1AB6A03B20A20074009A04A4 /* InTagSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTagSelectedViewController.m; sourceTree = "<group>"; };
 		1AB6A03D20A2008B009A04A4 /* EXTagSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTagSelectedViewController.h; sourceTree = "<group>"; };
@@ -2726,6 +2729,7 @@
 		1A71DE7620C43EEC00B62C79 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1A71E0C820C441C500B62C79 /* Image */,
 				1A71DF1F20C4400300B62C79 /* ChatViews */,
 				1A71DEB620C43F8500B62C79 /* ChatMsgShow */,
 				1A71DE9920C43F4100B62C79 /* ChatInputPanel */,
@@ -2924,6 +2928,15 @@
 				1A71DF3D20C4400300B62C79 /* MyUIDefine.m */,
 			);
 			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		1A71E0C820C441C500B62C79 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1A71E0C920C441C500B62C79 /* ImageThumbPickerViewController.h */,
+				1A71E0CA20C441C500B62C79 /* ImageThumbPickerViewController.m */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		1AB6A04920A6F12F009A04A4 /* Cells */ = {
@@ -5589,6 +5602,7 @@
 				BB74D44F2058BA9200F8A55B /* YYSpriteSheetImage.m in Sources */,
 				BB74D2ED2058B73C00F8A55B /* GTMStackTrace.m in Sources */,
 				BB4B9A0A20872F5A004FF037 /* QNEtag.m in Sources */,
+				1A71E0CB20C441C500B62C79 /* ImageThumbPickerViewController.m in Sources */,
 				BB467CC42057CE0400D18C97 /* AppDelegate.m in Sources */,
 				BB74D4FD2058FA0F00F8A55B /* MASConstraintMaker.m in Sources */,
 				BB74D4CA2058F77300F8A55B /* NSObject+MTLComparisonAdditions.m in Sources */,
